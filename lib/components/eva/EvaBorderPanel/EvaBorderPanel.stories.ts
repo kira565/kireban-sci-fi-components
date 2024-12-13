@@ -11,4 +11,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {args: {children : [], mode: 'warning'}};
+export const Default: Story = {args: {children : ["Loading Profile..."], mode: 'warning'}};

@@ -1,4 +1,3 @@
-import "./index.css";
-//import MyButtonComponent from "./components/Button";
+import EvaBorderPanel from "./components/eva/EvaBorderPanel/EvaBorderPanel";
 
-//export { MyButtonComponent };
+export {EvaBorderPanel}
