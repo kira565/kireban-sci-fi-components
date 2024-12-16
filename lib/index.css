@@ -113,6 +113,11 @@
     box-shadow: 0 0 10px 2px var(--glow-color);
   }
 
+  .glowedWarning {
+    --glow-color: rgba(var(--warning-glow-rgb), 0.5);
+    box-shadow: 0 0 10px 2px var(--glow-color);
+  }
+
   .glowedBorder {
       --border-glow-color: rgba(var(--glow-rgb), .7);
       border-radius: var(--gutter-size);
@@ -189,6 +194,13 @@
 
   .redMainBorder {
     @apply border-solid border-evaTextDanger;
+  }
+
+  .hoveredItem {
+    @apply group-hover:bg-white group-hover:text-[#0F172A]
+  }
+  .activeItem {
+    @apply bg-evaTextWarning text-white
   }
 
   .boxShadowLeft {

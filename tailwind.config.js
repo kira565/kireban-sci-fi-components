@@ -17,6 +17,7 @@ export default {
           borderGlowColorWarning: "rgba(var(--warning-glow-rgb), 0.7)",
           borderGlowColorDanger: "rgba(var(--danger-glow-rgb), 0.7)",
           darkGrayBg: "rgb(15 23 42)",
+          hoveredElement: 'group-hover:bg-white group-hover:text-[rgb(15 23 42)]'
         },
         backgroundImage: {
           repeatLinearGrad: "repeating-linear-gradient(-45deg, var(--glow-color) calc(-1 * var(--glow-size)), var(--stripe-color) 0, var(--stripe-color), calc(var(--stripe-size) - var(--glow-size) / 2), var(--glow-color) calc(var(--stripe-size) + var(--glow-size) / 2), transparent calc(var(--stripe-size) + var(--glow-size) / 2), transparent calc(2 * var(--stripe-size)), var(--glow-color) calc(2 * var(--stripe-size) - var(--glow-size)))"
