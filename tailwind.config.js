@@ -13,6 +13,7 @@ export default {
           evaTextDanger: "#f30",
           evaTextWarning: "#fa0",
           evaFillDanger: "#f23",
+          selectHoverColor: "#FFFFFF",
           borderGlowColorWarning: "rgba(var(--warning-glow-rgb), 0.7)",
           borderGlowColorDanger: "rgba(var(--danger-glow-rgb), 0.7)",
           darkGrayBg: "rgb(15 23 42)",
