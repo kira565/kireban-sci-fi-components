@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin'
+
 // ./tailwind.config.js
 export default {
   content: ["./lib/**/*.{js,ts,jsx,tsx}"],

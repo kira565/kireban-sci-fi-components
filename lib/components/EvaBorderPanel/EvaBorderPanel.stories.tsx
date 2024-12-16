@@ -1,4 +1,3 @@
-// ./lib/components/navbar/navbar.stories.ts
 import { Meta, StoryObj } from '@storybook/react';
 import EvaBorderPanel, { EvaBorderPanelProps } from './EvaBorderPanel';
 
@@ -11,4 +10,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {args: {children : ["Loading Profile..."], mode: 'warning'}};
+export const Default: Story = {args: {children : ["Loading Profile..."], mode: 'warning', pulseAnimation: true}};
