@@ -14,7 +14,7 @@ const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({
   return (
     <div className={`piece ${pulseAnimation && 'animate-pulse'}`}>
       <div
-        className={`rounded-md border-solid border-[3px] ${
+        className={`glowedBorder ${
           mode === "warning"
             ? "text-evaTextWarning text-shadow-warning border-evaTextWarning"
             : "text-evaTextDanger text-shadow-danger border-evaTextDanger"
