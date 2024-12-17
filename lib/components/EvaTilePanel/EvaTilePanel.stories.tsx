@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EvaTilePanel, { EvaTilePanelProps } from './EvaTilePanel';
+import { EvaTilePanelProps } from './EvaTilePanel';
+import { EvaTilePanel } from '../../main';
 
 const meta = {
  title: "EvaTilePanel Example",
@@ -10,4 +11,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {args: {tilesPerRowCount: 15, rowsCount: 15}};
+export const Default: Story = {args: {tilesPerRowCount: 15, rowsCount: 15, animationActive: true}};

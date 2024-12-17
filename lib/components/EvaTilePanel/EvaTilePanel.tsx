@@ -1,11 +1,13 @@
 export interface EvaTilePanelProps {
   rowsCount: number;
   tilesPerRowCount: number;
+  animationActive?: boolean;
 }
 
 const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
   rowsCount,
   tilesPerRowCount,
+  animationActive = false
 }) => {
   function renderAllRowsAndTiles() {
     return Array(rowsCount)
@@ -16,7 +18,7 @@ const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
             {Array(tilesPerRowCount)
               .fill(null)
               .map((_, idx) => {
-                return <div key={idx} className="hex blink" />;
+                return <div key={idx} className={`hex ${animationActive ? 'animation-active' : ''}`} />;
               })}
           </div>
         );

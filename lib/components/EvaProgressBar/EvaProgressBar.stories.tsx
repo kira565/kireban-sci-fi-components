@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EvaProgressBar, {EvaProgressBarProps } from './EvaProgressBar';
+import {EvaProgressBarProps } from './EvaProgressBar';
+import { EvaProgressBar } from '../../main';
 
 const meta = {
  title: "EvaProgressBar Example",

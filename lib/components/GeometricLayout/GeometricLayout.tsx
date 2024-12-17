@@ -1,24 +1,37 @@
+import EvaTilePanel from "../EvaTilePanel/EvaTilePanel";
+import LayoutArtifact from "./LayoutArtifact";
+
 export interface GeometricLayoutProps {
     children: React.ReactNode[];
 }
 
-const GeometricLayout: React.FC<GeometricLayoutProps> = ({children}) => {
+const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
   return (
-<div className="relative w-screen h-screen p-2 text-white">
-  <div className="fixed top-1 left-1">1</div>
-  <div className="fixed bottom-1 left-1">2</div>
-  <div className="fixed bottom-1 right-1">3</div>
+    <div className="relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed]">
+      {/* Sticky Header */}
+      <div className="sticky top-0 w-full shadow-md z-10 flex gap-2 items-center">
+        <EvaTilePanel tilesPerRowCount={2} rowsCount={2} />
+        <span className="h-2 text-xl">Header section</span>
+      </div>
 
-  {/* Content with spacing to avoid overflow */}
-  <div className="flex items-center justify-center h-full text-center px-4 pt-8 pb-8">
-    <div className="content mx-auto max-w-screen-md text-2xl md:text-1xl font-bold">
-      {/* Children or content */}
-      <div className="content h-full">
-        {children}
+      {/* Fixed Artifacts */}
+      <div className="fixed bottom-3 left-3">
+        <LayoutArtifact />
+      </div>
+      <div className="fixed bottom-3 right-3 [transform:rotateY(180deg)]">
+        <LayoutArtifact />
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto flex items-center justify-center text-center px-4 pt-8 pb-8">
+        <div className="content mx-auto max-w-screen-md text-2xl md:text-1xl font-bold">
+          {/* Children or content */}
+          <div className="content">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   );
 };
 

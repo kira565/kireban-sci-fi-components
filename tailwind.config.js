@@ -17,6 +17,7 @@ export default {
           borderGlowColorWarning: "rgba(var(--warning-glow-rgb), 0.7)",
           borderGlowColorDanger: "rgba(var(--danger-glow-rgb), 0.7)",
           darkGrayBg: "rgb(15 23 42)",
+          darkText: "#0F172A",
           hoveredElement: 'group-hover:bg-white group-hover:text-[rgb(15 23 42)]'
         },
         backgroundImage: {

@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EvaOptionList, { EvaOptionListProps } from './EvaOptionList';
+import { EvaOptionListProps } from './EvaOptionList';
+import { EvaOptionList } from '../../main';
 
 const meta = {
  title: "EvaOptionList Example",

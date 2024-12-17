@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EvaUnitBox, {EvaUnitBoxProps } from './EvaUnitBox';
+import {EvaUnitBoxProps } from './EvaUnitBox';
+import { EvaUnitBox } from '../../main';
 
 const meta = {
  title: "EvaUnitBox Example",

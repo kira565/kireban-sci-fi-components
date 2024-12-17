@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import GeometricLayout, { GeometricLayoutProps } from './GeometricLayout';
+import { GeometricLayoutProps } from './GeometricLayout';
+import { GeometricLayout } from '../../main';
 
 const meta = {
  title: "GeometricLayout Example",

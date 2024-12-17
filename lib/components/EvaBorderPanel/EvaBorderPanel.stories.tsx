@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import EvaBorderPanel, { EvaBorderPanelProps } from './EvaBorderPanel';
+import { EvaBorderPanelProps } from './EvaBorderPanel';
+import { EvaBorderPanel } from '../../main';
 
 const meta = {
  title: "EvaBorderPanel Example",
