@@ -26,6 +26,11 @@
     src: local('Recharge-Bold') url('./assets/fonts/Recharge-Bolt.otf');
   }
 
+  @font-face {
+    font-family: 'Eva';
+    src: local('Eva') url('./assets/fonts/Eva.ttf');
+  }
+
   .trapezoid {
     position: relative;
 

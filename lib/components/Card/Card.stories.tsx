@@ -18,6 +18,7 @@ export const Default: Story = {
     height: '600px',
     borderColor: 'evaTextWarning',
     textColor: 'white',
-    animated: true
+    animated: true,
+    icon: 'da'
   }
 };

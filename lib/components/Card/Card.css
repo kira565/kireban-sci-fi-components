@@ -8,7 +8,13 @@
   --aug-br: 2rem;
   --aug-bl: 1.5rem;
   --aug-br-inset1: 7rem;
+  --aug-tl: 40px;
+  --aug-tl-inset2: 100px;
 }
+.with-icon {
+  padding-left: 40px;
+}
+
 .card.animated {
   animation: leftHoverBorder 8s linear;
 }

@@ -6,6 +6,7 @@ export interface CardProps {
   borderColor: string;
   textColor: string;
   animated: boolean;
+  icon?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,20 +15,19 @@ const Card: React.FC<CardProps> = ({
   height,
   borderColor,
   textColor,
+  icon,
   animated
 }) => {
   return (
-    <div className="card-container relative" style={{ width, height }}>
+    <div className={`card-container relative`} style={{ width, height }}>
       <div
-        data-augmented-ui="bl-clip tr-clip br-clip-x border"
-        className={`w-full h-full card text-${borderColor} ${animated ? 'animated' : ''}`}
-      >
-        <div className={`text-${textColor}`}>{children}</div>
+        data-augmented-ui={`bl-clip tr-clip br-clip-x bl-clip ${icon ? 'tl-clip-y' : ''} border`}
+        className={`w-full h-full card text-${borderColor} ${animated ? 'animated' : ''}`}>
+        <div className={`text-${textColor} ${icon ? 'with-icon' : ''}`}>{children}</div>
       </div>
       <div
         className={`artifact text-${borderColor} ${animated ? 'animated' : ''}`}
-        data-augmented-ui="tl-clip border"
-      ></div>
+        data-augmented-ui="tl-clip border"></div>
     </div>
   );
 };

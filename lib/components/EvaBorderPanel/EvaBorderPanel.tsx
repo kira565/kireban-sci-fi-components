@@ -14,8 +14,7 @@ const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({ children, mode, pulseAn
           mode === 'warning'
             ? 'text-evaTextWarning text-shadow-warning border-evaTextWarning'
             : 'text-evaTextDanger text-shadow-danger border-evaTextDanger'
-        }  ${mode} label`}
-      >
+        }  ${mode} label`}>
         {children}
       </div>
     </div>

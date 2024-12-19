@@ -13,7 +13,11 @@ const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
         <div className="ml-2 mt-2">
           <EvaTilePanel tilesPerRowCount={2} rowsCount={2} />
         </div>
-        <span className="h-2 text-xl">Header section</span>
+        <div
+          className="font-bold h-[40px] flex items-center text-[40px] font-[Eva]"
+          style={{ transform: 'scaleX(0.79)' }}>
+          EVANGELION 2.0
+        </div>
       </div>
 
       {/* Fixed Artifacts */}
