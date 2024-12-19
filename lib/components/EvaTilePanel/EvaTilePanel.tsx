@@ -18,7 +18,9 @@ const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
             {Array(tilesPerRowCount)
               .fill(null)
               .map((_, idx) => {
-                return <div key={idx} className={`hex ${animationActive ? 'animation-active' : ''}`} />;
+                return (
+                  <div key={idx} className={`hex ${animationActive ? 'animation-active' : ''}`} />
+                );
               })}
           </div>
         );
@@ -28,4 +30,4 @@ const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
   return <div className="piece rotateMethod">{renderAllRowsAndTiles()}</div>;
 };
 
-export default EvaTilePanel
+export default EvaTilePanel;

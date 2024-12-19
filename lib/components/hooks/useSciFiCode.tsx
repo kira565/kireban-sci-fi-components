@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 /**
  * Hook to generate a futuristic sci-fi code.
@@ -9,7 +9,7 @@ const useSciFiCode = (index: number): string => {
   return useMemo(() => {
     // Function to get a pseudo-random character based on index and seed
     const getChar = (seed: number, base: number) => {
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       return chars[(seed + base) % chars.length];
     };
 
