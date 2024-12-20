@@ -13,7 +13,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: ['Loading Profile... please wait'],
+    headBlockChildren: ['This is head block'],
+    mainBlockChildren: ['This is main block'],
     width: '600px',
     height: '600px',
     borderColor: 'evaTextWarning',

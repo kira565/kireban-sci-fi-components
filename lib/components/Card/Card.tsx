@@ -1,6 +1,7 @@
 import './Card.css';
 export interface CardProps {
-  children: React.ReactNode[];
+  headBlockChildren: React.ReactNode[];
+  mainBlockChildren: React.ReactNode[];
   height: string;
   width: string;
   borderColor: string;
@@ -10,24 +11,27 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
-  children,
+  headBlockChildren,
   width,
   height,
   borderColor,
   textColor,
   icon,
+  mainBlockChildren,
   animated
 }) => {
   return (
     <div className={`card-container relative`} style={{ width, height }}>
       <div
-        data-augmented-ui={`bl-clip tr-clip br-clip-x bl-clip ${icon ? 'tl-clip-y' : ''} border`}
+        data-augmented-ui={`bl-clip tr-clip br-clip-x bl-clip tl-clip-y border`}
         className={`w-full h-full card text-${borderColor} ${animated ? 'animated' : ''}`}>
-        <div className={`text-${textColor} ${icon ? 'with-icon' : ''}`}>{children}</div>
+        <div className={`text-${textColor} head-block`}>{headBlockChildren}</div>
+        <div className={`text-${textColor} main-block'`}>{mainBlockChildren}</div>
       </div>
       <div
         className={`artifact text-${borderColor} ${animated ? 'animated' : ''}`}
         data-augmented-ui="tl-clip border"></div>
+      <div className={`icon-artifact text-${borderColor}`} data-augmented-ui="br-clip border"></div>
     </div>
   );
 };
