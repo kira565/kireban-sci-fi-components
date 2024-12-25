@@ -16,7 +16,6 @@ const Card: React.FC<CardProps> = ({
   height,
   borderColor,
   textColor,
-  icon,
   mainBlockChildren,
   animated
 }) => {
