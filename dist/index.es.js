@@ -441,7 +441,11 @@ function j1() {
   return zi || (zi = 1, process.env.NODE_ENV === "production" ? nr.exports = Z1() : nr.exports = D1()), nr.exports;
 }
 var O = j1();
-const z2 = ({ children: s, mode: e, pulseAnimation: t }) => /* @__PURE__ */ O.jsx("div", { className: `piece ${t && "animate-pulse"}`, children: /* @__PURE__ */ O.jsx(
+const z2 = ({
+  children: s,
+  mode: e = "warning",
+  pulseAnimation: t = !0
+}) => /* @__PURE__ */ O.jsx("div", { className: `piece ${t && "animate-pulse"}`, children: /* @__PURE__ */ O.jsx(
   "div",
   {
     className: `glowedBorder ${e === "warning" ? "text-evaTextWarning text-shadow-warning border-evaTextWarning" : "text-evaTextDanger text-shadow-danger border-evaTextDanger"}  ${e} label`,

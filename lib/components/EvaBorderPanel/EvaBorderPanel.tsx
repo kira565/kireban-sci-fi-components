@@ -1,10 +1,14 @@
 export interface EvaBorderPanelProps {
   children: React.ReactNode;
-  mode: 'warning' | 'danger';
+  mode?: 'warning' | 'danger';
   pulseAnimation?: boolean;
 }
 
-const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({ children, mode, pulseAnimation }) => {
+const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({
+  children,
+  mode = 'warning',
+  pulseAnimation = true
+}) => {
   return (
     <div className={`piece ${pulseAnimation && 'animate-pulse'}`}>
       <div

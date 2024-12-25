@@ -20,7 +20,7 @@ export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
 
 declare interface EvaBorderPanelProps {
     children: React.ReactNode;
-    mode: 'warning' | 'danger';
+    mode?: 'warning' | 'danger';
     pulseAnimation?: boolean;
 }
 
