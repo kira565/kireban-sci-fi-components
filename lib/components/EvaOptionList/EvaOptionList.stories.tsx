@@ -16,7 +16,9 @@ export const Default: Story = {
     width: 'w-[400px]',
     options: [
       { title: 'WELCOME', clickHandler: () => {}, isActive: true, sciFiCode: 0 },
-      { title: 'ABOUT', clickHandler: () => {}, isActive: false, sciFiCode: 1 }
+      { title: 'ABOUT', clickHandler: () => {}, isActive: false, sciFiCode: 1 },
+      { title: 'SKILLS', clickHandler: () => {}, isActive: false, sciFiCode: 2 },
+      { title: 'EXPERIENCE', clickHandler: () => {}, isActive: false, sciFiCode: 3 }
     ]
   }
 };

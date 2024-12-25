@@ -3,6 +3,7 @@ import dts from 'vite-plugin-dts';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
   build: {
@@ -23,5 +24,5 @@ export default defineConfig({
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true // Clears the output directory before building.
   },
-  plugins: [react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()]
+  plugins: [svgr(), react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()]
 });
