@@ -1,4 +1,6 @@
+import 'augmented-ui';
 import './Card.css';
+
 export interface CardProps {
   headBlockChildren: React.ReactNode[];
   mainBlockChildren: React.ReactNode[];

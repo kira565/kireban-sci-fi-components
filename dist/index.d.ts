@@ -1,5 +1,3 @@
-import { default as default_2 } from 'react';
-
 export declare const Card: React.FC<CardProps>;
 
 declare interface CardProps {
@@ -18,10 +16,10 @@ export declare const Circle: React.FC<CircleProps>;
 declare interface CircleProps {
 }
 
-export declare const EvaBorderPanel: default_2.FC<EvaBorderPanelProps>;
+export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
 
 declare interface EvaBorderPanelProps {
-    children: default_2.ReactNode[];
+    children: React.ReactNode;
     mode: 'warning' | 'danger';
     pulseAnimation?: boolean;
 }
@@ -40,7 +38,7 @@ declare interface EvaOptionListProps {
     width?: string;
 }
 
-export declare const EvaProgressBar: default_2.FC<EvaProgressBarProps>;
+export declare const EvaProgressBar: React.FC<EvaProgressBarProps>;
 
 declare interface EvaProgressBarProps {
     barsCount: number;

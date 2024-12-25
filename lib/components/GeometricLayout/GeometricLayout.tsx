@@ -1,5 +1,8 @@
 import EvaTilePanel from '../EvaTilePanel/EvaTilePanel';
 import LayoutArtifact from './LayoutArtifact';
+import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+gsap.registerPlugin(MotionPathPlugin);
 
 export interface GeometricLayoutProps {
   children: React.ReactNode[];

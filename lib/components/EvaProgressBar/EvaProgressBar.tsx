@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface EvaProgressBarProps {
   barsCount: number;
@@ -15,8 +15,7 @@ const EvaProgressBar: React.FC<EvaProgressBarProps> = ({ barsCount, currentBarIn
           key={i}
           className={`h-full w-[7px] rounded-md bg-evaTextDanger glowedDanger ${
             i < currentBarIndex ? 'visible' : 'hidden'
-          }`}
-        ></div>
+          }`}></div>
       );
     }
 

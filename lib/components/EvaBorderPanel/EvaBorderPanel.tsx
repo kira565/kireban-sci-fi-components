@@ -1,7 +1,5 @@
-import React from 'react';
-
 export interface EvaBorderPanelProps {
-  children: React.ReactNode[];
+  children: React.ReactNode;
   mode: 'warning' | 'danger';
   pulseAnimation?: boolean;
 }
