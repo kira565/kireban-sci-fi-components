@@ -13,7 +13,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Generates the output file name based on the format.
     },
     rollupOptions: {
-      external: ['react', 'react-dom'], // Defines external dependencies for Rollup bundling.
+      external: ['react', 'react-dom', 'tailwindcss'], // Defines external dependencies for Rollup bundling.
       output: {
         globals: {
           react: 'React',
@@ -21,7 +21,7 @@ export default defineConfig({
         }
       }
     },
-    sourcemap: true, // Generates source maps for debugging.
+    outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true // Clears the output directory before building.
   },
   plugins: [svgr(), react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()]
