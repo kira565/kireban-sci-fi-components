@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import svgr from 'vite-plugin-svgr';
@@ -8,21 +7,27 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'), // Specifies the entry point for building the library.
-      name: 'kireban-sci-fi-components', // Sets the name of the generated library.
-      fileName: (format) => `index.${format}.js` // Generates the output file name based on the format.
+      entry: resolve(__dirname, 'lib/main.ts'), // Library entry point.
+      name: 'kireban-sci-fi-components', // Library name for UMD build.
+      fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'tailwindcss'], // Defines external dependencies for Rollup bundling.
+      external: ['react', 'react-dom'], // Ensure React and ReactDOM are external.
       output: {
         globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
+          react: 'React', // Global variable for React in UMD builds.
+          'react-dom': 'ReactDOM' // Global variable for ReactDOM in UMD builds.
         }
       }
     },
-    outDir: resolve(__dirname, 'dist'),
-    emptyOutDir: true // Clears the output directory before building.
+    sourcemap: true, // Optionally generate source maps.
+    outDir: resolve(__dirname, 'dist'), // Output directory.
+    emptyOutDir: true // Clear output directory before building.
   },
-  plugins: [svgr(), react(), dts({ rollupTypes: true }), cssInjectedByJsPlugin()]
+  plugins: [
+    svgr(), // Enables importing SVGs as React components.
+    react(), // SWC React plugin for faster builds.
+    dts({ rollupTypes: true }) // Generate TypeScript declaration files.
+    //cssInjectedByJsPlugin() // Inline CSS in JS (optional; see notes above).
+  ]
 });
