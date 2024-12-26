@@ -81,5 +81,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "kireban-sci-fi-components": "https://github.com/kira565/kireban-sci-fi-components.git"
   }
 }

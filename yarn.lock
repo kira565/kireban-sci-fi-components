@@ -3256,6 +3256,10 @@ keyv@^4.5.4:
   dependencies:
     json-buffer "3.0.1"
 
+"kireban-sci-fi-components@https://github.com/kira565/kireban-sci-fi-components.git":
+  version "0.0.0"
+  resolved "https://github.com/kira565/kireban-sci-fi-components.git#477fe8f120f3a910d64d9e7a63c2b1dd24cf6305"
+
 kolorist@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.8.0.tgz#edddbbbc7894bc13302cdf740af6374d4a04743c"
