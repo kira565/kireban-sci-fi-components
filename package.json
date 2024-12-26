@@ -15,7 +15,8 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js",
       "default": "./dist/index.es.js"
-    }
+    },
+    "./dist/sci-fi-components.css": "./dist/sci-fi-components.css"
   },
   "scripts": {
     "dev": "vite",

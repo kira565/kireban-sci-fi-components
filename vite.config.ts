@@ -3,6 +3,7 @@ import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
 import svgr from 'vite-plugin-svgr';
+import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
   build: {
@@ -12,11 +13,12 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
-      external: ['react', 'react-dom'], // Ensure React and ReactDOM are external.
+      external: ['react', 'react-dom', 'tailwindcss'], // Ensure React and ReactDOM are external.
       output: {
         globals: {
           react: 'React', // Global variable for React in UMD builds.
-          'react-dom': 'ReactDOM' // Global variable for ReactDOM in UMD builds.
+          'react-dom': 'ReactDOM', // Global variable for ReactDOM in UMD builds.
+          tailwindcss: 'tailwindcss'
         }
       }
     },
@@ -29,5 +31,10 @@ export default defineConfig({
     react(), // SWC React plugin for faster builds.
     dts({ rollupTypes: true }) // Generate TypeScript declaration files.
     //cssInjectedByJsPlugin() // Inline CSS in JS (optional; see notes above).
-  ]
+  ],
+  css: {
+    postcss: {
+      plugins: [tailwindcss]
+    }
+  }
 });
