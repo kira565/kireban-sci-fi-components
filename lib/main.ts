@@ -7,7 +7,6 @@ import EvaTilePanel from './components/EvaTilePanel/EvaTilePanel';
 import EvaOptionList from './components/EvaOptionList/EvaOptionList';
 import GeometricLayout from './components/GeometricLayout/GeometricLayout';
 import Card from './components/Card/Card';
-import Circle from './components/Circle/Circle';
 
 export {
   EvaBorderPanel,
@@ -16,6 +15,5 @@ export {
   EvaTilePanel,
   EvaOptionList,
   GeometricLayout,
-  Card,
-  Circle
+  Card
 };

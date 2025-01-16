@@ -32,7 +32,9 @@ const Card: React.FC<CardProps> = ({
       <div
         className={`artifact text-${borderColor} ${animated ? 'animated' : ''}`}
         data-augmented-ui="tl-clip border"></div>
-      <div className={`icon-artifact text-${borderColor}`} data-augmented-ui="br-clip border"></div>
+      <div
+        className={`icon-artifact text-${borderColor} p-1`}
+        data-augmented-ui="br-clip border"></div>
     </div>
   );
 };

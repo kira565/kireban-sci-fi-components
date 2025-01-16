@@ -10,16 +10,16 @@ export interface GeometricLayoutProps {
 
 const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
   return (
-    <div className="relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed]">
+    <div className="relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ">
       {/* Sticky Header */}
-      <div className="sticky top-0 bg-gray-100 dark:bg-darkGrayBg w-full shadow-md z-10 flex gap-2 items-center">
-        <div className="ml-2 mt-2">
+      <div className="sticky top-0 bg-gray-100 dark:bg-darkGrayBg w-full shadow-md z-10 flex gap-2 items-center border-b-evaTextDanger glowed-border-b">
+        <div className="ml-2 mt-2 hidden md:block z-10">
           <EvaTilePanel tilesPerRowCount={2} rowsCount={2} />
         </div>
         <div
-          className="font-bold h-[40px] flex items-center text-[40px] font-[Eva]"
+          className="font-bold flex items-center text-[40px] font-[Eva]"
           style={{ transform: 'scaleX(0.79)' }}>
-          EVANGELION 2.0
+          NEON GENESIS EVANGELION
         </div>
       </div>
 
