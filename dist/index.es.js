@@ -440,7 +440,7 @@ function Ps() {
   return Nr || (Nr = 1, process.env.NODE_ENV === "production" ? ti.exports = ws() : ti.exports = Ss()), ti.exports;
 }
 var ei = Ps();
-const wa = async ({ unitNumber: a, subjectName: t }) => /* @__PURE__ */ ei.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
+const wa = ({ unitNumber: a, subjectName: t }) => /* @__PURE__ */ ei.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
   /* @__PURE__ */ ei.jsx("div", { className: "text-xl font-[400] label", children: "Subject" }),
   /* @__PURE__ */ ei.jsx("div", { className: "text-2xl font-[600] label", children: a }),
   /* @__PURE__ */ ei.jsx("div", { className: "text-xl font-[400] label", children: t })
