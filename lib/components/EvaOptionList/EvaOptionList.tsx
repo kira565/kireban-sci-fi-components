@@ -1,4 +1,3 @@
-'use client';
 import EvaListOptionComponent, { EvaListOptionProps } from './EvaListOptionComponent';
 
 export interface EvaOptionListProps {

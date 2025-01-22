@@ -1,4 +1,3 @@
-'use client';
 export interface EvaTilePanelProps {
   rowsCount: number;
   tilesPerRowCount: number;

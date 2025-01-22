@@ -1,4 +1,3 @@
-'use client';
 export interface EvaBorderPanelProps {
   children: React.ReactNode;
   mode?: 'warning' | 'danger';

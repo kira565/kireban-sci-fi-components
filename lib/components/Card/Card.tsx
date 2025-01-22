@@ -1,4 +1,3 @@
-'use client';
 import 'augmented-ui';
 import './Card.css';
 

@@ -1,4 +1,3 @@
-'use client';
 import EvaTilePanel from '../EvaTilePanel/EvaTilePanel';
 import LayoutArtifact from './LayoutArtifact';
 import gsap from 'gsap';
