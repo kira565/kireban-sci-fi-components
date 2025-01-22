@@ -11,11 +11,6 @@ declare interface CardProps {
     icon?: string;
 }
 
-export declare const Circle: React.FC<CircleProps>;
-
-declare interface CircleProps {
-}
-
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
 
 declare interface EvaBorderPanelProps {
