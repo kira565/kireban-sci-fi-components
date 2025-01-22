@@ -1,3 +1,4 @@
+'use client';
 import './index.css';
 
 import EvaBorderPanel from './components/EvaBorderPanel/EvaBorderPanel';
