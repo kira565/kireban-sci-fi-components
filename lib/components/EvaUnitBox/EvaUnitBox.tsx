@@ -1,3 +1,4 @@
+'use client';
 export interface EvaUnitBoxProps {
   unitNumber: string;
   subjectName: string;
