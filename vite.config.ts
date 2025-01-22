@@ -8,7 +8,7 @@ import tailwindcss from 'tailwindcss';
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'), // Library entry point.
+      entry: resolve(__dirname, 'lib/index.ts'), // Library entry point.
       name: 'kireban-sci-fi-components', // Library name for UMD build.
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
