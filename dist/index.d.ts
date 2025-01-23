@@ -55,6 +55,13 @@ declare interface EvaUnitBoxProps {
     subjectName: string;
 }
 
+export declare const FingerPrintButton: React.FC<FingerPrintButtonProps>;
+
+declare interface FingerPrintButtonProps {
+    width: number;
+    height: number;
+}
+
 export declare const GeometricLayout: React.FC<GeometricLayoutProps>;
 
 declare interface GeometricLayoutProps {
