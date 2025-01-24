@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 export interface FingerPrintButtonProps {
   width: number;
   height: number;
-  onCLick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onCLick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height, onCLick }) => {
