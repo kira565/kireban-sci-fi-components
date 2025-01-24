@@ -29,7 +29,16 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'), // Output directory.
     emptyOutDir: true // Clear output directory before building.
   },
-  plugins: [svgr(), react(), dts({ rollupTypes: true })],
+  plugins: [
+    svgr({
+      svgrOptions: {
+        plugins: ['@svgr/plugin-jsx']
+      },
+      include: '**/*.svg?react'
+    }),
+    react(),
+    dts({ rollupTypes: true })
+  ],
   css: {
     postcss: {
       plugins: [tailwindcss]
