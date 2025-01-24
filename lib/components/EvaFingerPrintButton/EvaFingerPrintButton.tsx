@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import FingerPrintSvg from '../../assets/svg/fgp.svg?react';
+//import { useRef } from 'react';
+//import FingerPrintSvg from '../../assets/svg/fgp.svg?react';
 // import { gsap } from 'gsap';
 
 export interface FingerPrintButtonProps {
@@ -8,7 +8,7 @@ export interface FingerPrintButtonProps {
 }
 
 export const EvaFingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height }) => {
-  const svgRef = useRef<SVGSVGElement>(null);
+  // const svgRef = useRef<SVGSVGElement>(null);
   // const timeLine = useRef<gsap.core.Timeline>(
   //   gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
   // );
@@ -90,7 +90,8 @@ export const EvaFingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ width: `${width}px`, height: `${height}px` }}>
-      <FingerPrintSvg ref={svgRef} />
+      {/* <FingerPrintSvg ref={svgRef} /> */}
+      pizdaq
     </button>
   );
 };
