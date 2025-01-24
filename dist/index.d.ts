@@ -19,6 +19,8 @@ declare interface EvaBorderPanelProps {
     pulseAnimation?: boolean;
 }
 
+export declare const EvaFingerPrintButton: React.FC<FingerPrintButtonProps>;
+
 declare interface EvaListOptionProps {
     title: string;
     clickHandler: () => void;
@@ -54,8 +56,6 @@ declare interface EvaUnitBoxProps {
     unitNumber: string;
     subjectName: string;
 }
-
-export declare const FingerPrintButton: React.FC<FingerPrintButtonProps>;
 
 declare interface FingerPrintButtonProps {
     width: number;

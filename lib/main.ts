@@ -1,7 +1,7 @@
 'use client';
 import './index.css';
 
-export { FingerPrintButton } from './components/FingerPrintButton/FingerPrintButton';
+export { EvaFingerPrintButton } from './components/FingerPrintButton/EvaFingerPrintButton';
 export { EvaBorderPanel } from './components/EvaBorderPanel/EvaBorderPanel';
 export { EvaProgressBar } from './components/EvaProgressBar/EvaProgressBar';
 export { EvaUnitBox } from './components/EvaUnitBox/EvaUnitBox';

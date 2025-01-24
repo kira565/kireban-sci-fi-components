@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FingerPrintButton } from '../../main';
-import { FingerPrintButtonProps } from './FingerPrintButton';
+import { EvaFingerPrintButton, FingerPrintButtonProps } from './EvaFingerPrintButton';
 
 const meta = {
   title: 'FingerPrintButton Example',
-  component: FingerPrintButton
+  component: EvaFingerPrintButton
 } satisfies Meta<FingerPrintButtonProps>;
 
 export default meta;
