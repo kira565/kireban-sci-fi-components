@@ -77,7 +77,6 @@
     "vitest": "^2.1.8"
   },
   "peerDependencies": {
-    "gsap": "^3.12.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^3.4.16"

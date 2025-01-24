@@ -17,12 +17,11 @@ export default defineConfig({
       onwarn(warning) {
         console.warn(warning);
       },
-      external: ['react', 'react-dom', 'gsap'], // Ensure React and ReactDOM are external.
+      external: ['react', 'react-dom'], // Ensure React and ReactDOM are external.
       output: {
         globals: {
           react: 'React', // Global variable for React in UMD builds.
-          'react-dom': 'ReactDOM', // Global variable for ReactDOM in UMD builds.
-          gsap: 'gsap'
+          'react-dom': 'ReactDOM' // Global variable for ReactDOM in UMD builds.
         }
       }
     },
