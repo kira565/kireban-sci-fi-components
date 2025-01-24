@@ -60,6 +60,7 @@ export declare const FingerPrintButton: React.FC<FingerPrintButtonProps>;
 declare interface FingerPrintButtonProps {
     width: number;
     height: number;
+    onCLick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export declare const GeometricLayout: React.FC<GeometricLayoutProps>;
