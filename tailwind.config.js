@@ -2,6 +2,7 @@ import plugin from 'tailwindcss/plugin';
 
 // ./tailwind.config.js
 export default {
+  mode: 'jit',
   content: ['./lib/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'selector',
   theme: {
