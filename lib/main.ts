@@ -8,7 +8,7 @@ import EvaTilePanel from './components/EvaTilePanel/EvaTilePanel';
 import EvaOptionList from './components/EvaOptionList/EvaOptionList';
 import GeometricLayout from './components/GeometricLayout/GeometricLayout';
 import Card from './components/Card/Card';
-import { FingerPrintButton } from './components/FingerPrintButton/FingerPrintButton';
+import FingerPrintButton from './components/FingerPrintButton/FingerPrintButton';
 
 export {
   EvaBorderPanel,

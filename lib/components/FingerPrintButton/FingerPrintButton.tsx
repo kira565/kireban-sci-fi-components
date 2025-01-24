@@ -1,4 +1,3 @@
-'use client';
 import { useRef } from 'react';
 import FingerPrintSvg from '../../assets/svg/fgp.svg?react';
 import { gsap } from 'gsap';
@@ -9,7 +8,7 @@ export interface FingerPrintButtonProps {
   onCLick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height, onCLick }) => {
+const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height, onCLick }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
@@ -99,3 +98,5 @@ export const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, hei
     </button>
   );
 };
+
+export default FingerPrintButton;
