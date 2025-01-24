@@ -1,3 +1,10 @@
+export declare const ButtonFinger: React.FC<ButtonFingerProps>;
+
+declare interface ButtonFingerProps {
+    width: string;
+    height: string;
+}
+
 export declare const Card: React.FC<CardProps>;
 
 declare interface CardProps {
@@ -18,8 +25,6 @@ declare interface EvaBorderPanelProps {
     mode?: 'warning' | 'danger';
     pulseAnimation?: boolean;
 }
-
-export declare const EvaFingerPrintButton: React.FC<FingerPrintButtonProps>;
 
 declare interface EvaListOptionProps {
     title: string;
@@ -55,11 +60,6 @@ export declare const EvaUnitBox: React.FC<EvaUnitBoxProps>;
 declare interface EvaUnitBoxProps {
     unitNumber: string;
     subjectName: string;
-}
-
-declare interface FingerPrintButtonProps {
-    width: number;
-    height: number;
 }
 
 export declare const GeometricLayout: React.FC<GeometricLayoutProps>;
