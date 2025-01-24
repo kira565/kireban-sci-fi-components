@@ -4,7 +4,7 @@ export interface EvaTilePanelProps {
   animationActive?: boolean;
 }
 
-const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
+export const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
   rowsCount,
   tilesPerRowCount,
   animationActive = false
@@ -29,5 +29,3 @@ const EvaTilePanel: React.FC<EvaTilePanelProps> = ({
 
   return <div className="piece rotateMethod">{renderAllRowsAndTiles()}</div>;
 };
-
-export default EvaTilePanel;

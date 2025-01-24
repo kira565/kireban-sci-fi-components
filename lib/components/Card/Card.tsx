@@ -12,7 +12,7 @@ export interface CardProps {
   icon?: string;
 }
 
-const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps> = ({
   headBlockChildren,
   width,
   height,
@@ -38,5 +38,3 @@ const Card: React.FC<CardProps> = ({
     </div>
   );
 };
-
-export default Card;

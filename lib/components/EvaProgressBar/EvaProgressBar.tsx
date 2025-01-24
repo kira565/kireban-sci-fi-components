@@ -5,7 +5,7 @@ export interface EvaProgressBarProps {
   currentBarIndex: number;
 }
 
-const EvaProgressBar: React.FC<EvaProgressBarProps> = ({ barsCount, currentBarIndex }) => {
+export const EvaProgressBar: React.FC<EvaProgressBarProps> = ({ barsCount, currentBarIndex }) => {
   function renderBars(): ReactNode[] {
     const arr: ReactNode[] = [];
 
@@ -41,5 +41,3 @@ const EvaProgressBar: React.FC<EvaProgressBarProps> = ({ barsCount, currentBarIn
     </div>
   );
 };
-
-export default EvaProgressBar;

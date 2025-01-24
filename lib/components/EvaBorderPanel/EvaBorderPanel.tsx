@@ -4,7 +4,7 @@ export interface EvaBorderPanelProps {
   pulseAnimation?: boolean;
 }
 
-const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({
+export const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({
   children,
   mode = 'warning',
   pulseAnimation = true
@@ -22,5 +22,3 @@ const EvaBorderPanel: React.FC<EvaBorderPanelProps> = ({
     </div>
   );
 };
-
-export default EvaBorderPanel;

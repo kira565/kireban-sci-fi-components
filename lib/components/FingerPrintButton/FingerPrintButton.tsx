@@ -7,7 +7,7 @@ export interface FingerPrintButtonProps {
   height: number;
 }
 
-const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height }) => {
+export const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
@@ -96,5 +96,3 @@ const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height }) 
     </button>
   );
 };
-
-export default FingerPrintButton;

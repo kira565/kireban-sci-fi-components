@@ -5,7 +5,7 @@ export interface EvaOptionListProps {
   width?: string;
 }
 
-const EvaOptionList: React.FC<EvaOptionListProps> = ({ options, width = 'w-full' }) => {
+export const EvaOptionList: React.FC<EvaOptionListProps> = ({ options, width = 'w-full' }) => {
   return (
     <div className={`flex flex-col gap-2 ${width}`}>
       {options.map((option, index) => (
@@ -14,5 +14,3 @@ const EvaOptionList: React.FC<EvaOptionListProps> = ({ options, width = 'w-full'
     </div>
   );
 };
-
-export default EvaOptionList;

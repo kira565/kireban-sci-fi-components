@@ -1,14 +1,14 @@
-import EvaTilePanel from '../EvaTilePanel/EvaTilePanel';
 import LayoutArtifact from './LayoutArtifact';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { EvaTilePanel } from '../EvaTilePanel/EvaTilePanel';
 gsap.registerPlugin(MotionPathPlugin);
 
 export interface GeometricLayoutProps {
   children: React.ReactNode[];
 }
 
-const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
+export const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
   return (
     <div className="relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ">
       {/* Sticky Header */}
@@ -41,5 +41,3 @@ const GeometricLayout: React.FC<GeometricLayoutProps> = ({ children }) => {
     </div>
   );
 };
-
-export default GeometricLayout;
