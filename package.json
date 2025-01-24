@@ -66,7 +66,7 @@
     "storybook": "8.4.7",
     "storybook-dark-mode": "^4.0.2",
     "tailwindcss": "^3.4.16",
-    "typescript": "~5.6.2",
+    "typescript": "^5.7.3",
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.1",
     "vite-plugin-css-injected-by-js": "^3.5.2",
@@ -75,10 +75,10 @@
     "vitest": "^2.1.8"
   },
   "peerDependencies": {
+    "gsap": "^3.12.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.16",
-    "gsap": "^3.12.5"
+    "tailwindcss": "^3.4.16"
   },
   "eslintConfig": {
     "extends": [

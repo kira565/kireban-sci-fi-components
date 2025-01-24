@@ -13,6 +13,9 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
+      onwarn(warning) {
+        console.warn(warning);
+      },
       external: ['react', 'react-dom', 'gsap'], // Ensure React and ReactDOM are external.
       output: {
         globals: {

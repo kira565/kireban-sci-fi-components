@@ -1,17 +1,6 @@
 'use client';
 import './index.css';
 
-// export {
-//   EvaBorderPanel,
-//   EvaProgressBar,
-//   EvaUnitBox,
-//   EvaTilePanel,
-//   EvaOptionList,
-//   GeometricLayout,
-//   Card,
-//   FingerPrintButton
-// };
-
 export { default as FingerPrintButton } from './components/FingerPrintButton/FingerPrintButton';
 export { default as EvaBorderPanel } from './components/EvaBorderPanel/EvaBorderPanel';
 export { default as EvaProgressBar } from './components/EvaProgressBar/EvaProgressBar';

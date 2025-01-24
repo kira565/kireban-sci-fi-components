@@ -5,10 +5,9 @@ import { gsap } from 'gsap';
 export interface FingerPrintButtonProps {
   width: number;
   height: number;
-  onCLick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height, onCLick }) => {
+const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
@@ -92,7 +91,6 @@ const FingerPrintButton: React.FC<FingerPrintButtonProps> = ({ width, height, on
       className={`text-black dark:text-white dark:fill-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={onCLick}
       style={{ width: `${width}px`, height: `${height}px` }}>
       <FingerPrintSvg ref={svgRef} />
     </button>
