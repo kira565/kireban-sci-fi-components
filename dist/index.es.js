@@ -1,5 +1,5 @@
 import * as L from "react";
-import Pt, { useMemo as Ot, createElement as Wt, useRef as it } from "react";
+import Pt, { useRef as it, useMemo as Ot, createElement as Wt } from "react";
 import $t, { gsap as ee } from "gsap";
 var je = { exports: {} }, xe = {};
 /**
@@ -442,7 +442,59 @@ function Yt() {
   return st || (st = 1, process.env.NODE_ENV === "production" ? je.exports = Vt() : je.exports = Bt()), je.exports;
 }
 var v = Yt();
-const Lr = ({
+const Zt = (o) => /* @__PURE__ */ L.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 80", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...o }, /* @__PURE__ */ L.createElement("g", { clipPath: "url(#clip0_2004_472)" }, /* @__PURE__ */ L.createElement("path", { className: "scanner", d: "M0 0 H463", opacity: 0, stroke: "#3ee73e", strokeWidth: 2, fill: "#3ee73e" }), /* @__PURE__ */ L.createElement("path", { d: "M43.3464 45.3351V42.717C43.3464 41.6847 42.4622 40.8448 41.3754 40.8448C40.2886 40.8448 39.4044 41.6847 39.4044 42.717V45.0808C39.4044 47.9293 38.2996 50.6642 36.2933 52.7815L33.5271 55.7009C33.2947 55.9462 33.3156 56.324 33.5739 56.5448C33.832 56.7656 34.2297 56.7456 34.4622 56.5004L37.2284 53.581C39.4429 51.2438 40.6625 48.2251 40.6625 45.0808V42.717C40.6625 42.3436 40.9823 42.0398 41.3754 42.0398C41.7685 42.0398 42.0883 42.3436 42.0883 42.717V45.3351C42.0883 48.8405 40.7211 52.1995 38.2385 54.7934L35.5421 57.6106C35.3084 57.8547 35.3274 58.2327 35.5844 58.4547C35.705 58.5588 35.8564 58.61 36.0073 58.61C36.1784 58.61 36.3489 58.5442 36.473 58.4145L39.1693 55.5972C41.8629 52.7829 43.3464 49.1384 43.3464 45.3351Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M46.0303 42.7169C46.0303 40.2789 43.9421 38.2955 41.3754 38.2955C38.8087 38.2955 36.7205 40.2789 36.7205 42.7169V45.0807C36.7205 47.2985 35.8603 49.4277 34.2984 51.0761L32.3318 53.1516C32.0994 53.3969 32.1204 53.7747 32.3786 53.9955C32.6369 54.2162 33.0345 54.1962 33.267 53.951L35.2335 51.8755C37.0037 50.0073 37.9787 47.5942 37.9787 45.0807V42.7169C37.9787 40.9378 39.5024 39.4905 41.3755 39.4905C43.2485 39.4905 44.7723 40.9378 44.7723 42.7169V45.335C44.7723 49.4759 43.1573 53.444 40.2245 56.5081L37.9495 58.8852C37.7157 59.1293 37.7347 59.5073 37.9917 59.7293C38.1123 59.8334 38.2637 59.8846 38.4146 59.8846C38.5857 59.8846 38.7562 59.8187 38.8803 59.689L41.1554 57.3119C44.299 54.0274 46.0303 49.7739 46.0303 45.335V42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.7142 42.717C48.7142 38.8733 45.422 35.7463 41.3754 35.7463C37.3287 35.7463 34.0366 38.8733 34.0366 42.717V45.0808C34.0366 46.6677 33.4211 48.1913 32.3034 49.3708L30.5327 51.2396C30.3003 51.4849 30.3212 51.8626 30.5795 52.0835C30.8376 52.3042 31.2354 52.2841 31.4679 52.039L33.2386 50.1702C34.5645 48.7709 35.2947 46.9634 35.2947 45.0808V42.717C35.2947 39.5322 38.0224 36.9413 41.3754 36.9413C44.7283 36.9413 47.4561 39.5322 47.4561 42.717V45.3351C47.4561 50.1116 45.5931 54.6887 42.2103 58.223L41.5807 58.8808C41.347 59.125 41.366 59.5029 41.6231 59.7249C41.7436 59.8289 41.8951 59.8802 42.0459 59.8802C42.217 59.8802 42.3875 59.8143 42.5116 59.6847L43.1411 59.0268C46.7349 55.272 48.7141 50.4096 48.7141 45.3351V42.717H48.7142Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M31.3527 42.7169C31.3527 43.047 31.6344 43.3144 31.9818 43.3144C32.3292 43.3144 32.6108 43.047 32.6108 42.7169C32.6108 40.705 33.3798 38.7615 34.7763 37.2444C36.1598 35.7414 38.0585 34.7585 40.1228 34.4768C40.4667 34.4298 40.7054 34.127 40.656 33.8004C40.6066 33.4738 40.2874 33.2474 39.9439 33.294C37.5821 33.6163 35.4104 34.7399 33.8291 36.4579C32.2322 38.1928 31.3527 40.4157 31.3527 42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M32.6107 45.0808C32.6107 44.7508 32.3291 44.4833 31.9817 44.4833C31.6343 44.4833 31.3526 44.7508 31.3526 45.0808C31.3526 46.037 30.9818 46.9548 30.3085 47.6654L28.7335 49.3277C28.5011 49.5729 28.5221 49.9507 28.7803 50.1715C28.9006 50.2743 29.0509 50.3249 29.2009 50.3249C29.373 50.3249 29.5445 50.2581 29.6687 50.1271L31.2437 48.4648C32.1252 47.5344 32.6107 46.3327 32.6107 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M50.1634 50.4144C49.8272 50.3312 49.4836 50.522 49.3956 50.8411C49.1633 51.6839 48.8745 52.5217 48.5367 53.3313C48.4087 53.6381 48.5668 53.9853 48.8898 54.1068C48.9659 54.1354 49.0442 54.149 49.1214 54.149C49.3717 54.149 49.6085 54.006 49.7064 53.7714C50.0628 52.917 50.3676 52.033 50.6127 51.1436C50.7006 50.8245 50.4994 50.4979 50.1634 50.4144Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.0696 35.6373C47.8112 35.4165 47.4134 35.4368 47.1812 35.6821C46.949 35.9275 46.9701 36.3053 47.2284 36.5259C49.0787 38.1058 50.1399 40.3623 50.1399 42.7169V45.335C50.1399 46.3287 50.0677 47.33 49.9254 48.3112C49.878 48.6381 50.1186 48.9396 50.4627 48.9846C50.4918 48.9884 50.5207 48.9903 50.5493 48.9903C50.8587 48.9903 51.1283 48.7734 51.1717 48.4742C51.3218 47.4391 51.3979 46.3829 51.3979 45.3349V42.7169C51.398 40.0239 50.1848 37.4434 48.0696 35.6373Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M45.1289 35.1947C45.2162 35.2342 45.3082 35.2529 45.3989 35.2529C45.634 35.2529 45.8595 35.1271 45.9673 34.9121C46.1167 34.6142 45.9834 34.2576 45.6698 34.1158C44.7635 33.7059 43.8002 33.4294 42.8067 33.2939C42.4624 33.2473 42.1441 33.4738 42.0947 33.8003C42.0453 34.1269 42.284 34.4298 42.6278 34.4767C43.4957 34.5952 44.3372 34.8367 45.1289 35.1947Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M41.3754 30.6478C41.1401 30.6478 40.9021 30.654 40.6678 30.6662C40.3209 30.6844 40.0552 30.9663 40.0743 31.2957C40.0935 31.6252 40.3899 31.8789 40.7371 31.8593C40.9484 31.8482 41.1631 31.8427 41.3754 31.8427C47.6881 31.8427 52.8239 36.7208 52.8239 42.7169V45.335C52.8239 45.665 53.1055 45.9324 53.4529 45.9324C53.8003 45.9324 54.082 45.665 54.082 45.335V42.7169C54.082 36.062 48.3818 30.6478 41.3754 30.6478Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M34.4976 33.8896C34.6214 33.8896 34.7467 33.8548 34.8561 33.7826C35.9027 33.0913 37.052 32.5753 38.2725 32.2484C38.6069 32.1588 38.8015 31.8287 38.7073 31.5112C38.613 31.1936 38.2653 31.009 37.9311 31.0982C36.5757 31.4611 35.2995 32.0342 34.1379 32.8013C33.8527 32.9898 33.7822 33.3621 33.9806 33.633C34.1028 33.8001 34.2985 33.8896 34.4976 33.8896Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M29.9269 45.0808V42.717C29.9269 39.9375 31.0351 37.2904 33.0474 35.2631C33.2856 35.023 33.274 34.645 33.0212 34.4185C32.7684 34.1921 32.3703 34.2034 32.132 34.4434C29.8987 36.6932 28.6688 39.6316 28.6688 42.717V45.0808C28.6688 45.406 28.5427 45.7182 28.3137 45.9599L27.5381 46.7784C27.3056 47.0237 27.3266 47.4015 27.5849 47.6222C27.705 47.7251 27.8555 47.7757 28.0055 47.7757C28.1776 47.7757 28.349 47.709 28.4732 47.5779L29.2489 46.7594C29.6861 46.2978 29.9269 45.7017 29.9269 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M55.9669 38.0648C55.277 36.1174 54.1805 34.358 52.708 32.8355C52.4729 32.5925 52.075 32.5764 51.8192 32.7997C51.5634 33.023 51.5465 33.4009 51.7815 33.644C53.1341 35.0424 54.1412 36.658 54.7746 38.4459C54.863 38.6955 55.108 38.853 55.3706 38.853C55.4372 38.853 55.5048 38.8428 55.5714 38.8216C55.9005 38.7163 56.0777 38.3775 55.9669 38.0648Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M46.3465 28.881C46.018 28.7742 45.6602 28.9406 45.5477 29.2529C45.4352 29.5651 45.6105 29.9048 45.9392 30.0115C47.3263 30.4623 48.6286 31.1154 49.8099 31.9528C49.9229 32.0329 50.0548 32.0715 50.1857 32.0715C50.3774 32.0715 50.5668 31.9885 50.6903 31.8313C50.8982 31.5669 50.8408 31.1924 50.5624 30.9951C49.2761 30.0834 47.8576 29.372 46.3465 28.881Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M31.6014 33.0304C34.2475 30.6207 37.7186 29.2935 41.3754 29.2935C42.0544 29.2935 42.7372 29.34 43.4047 29.4314C43.7489 29.4791 44.0676 29.252 44.1172 28.9254C44.1669 28.5988 43.9284 28.2959 43.5846 28.2487C42.8576 28.1492 42.1143 28.0986 41.3754 28.0986C37.3925 28.0986 33.6122 29.5438 30.7308 32.1679C27.8583 34.7839 26.1785 38.2945 26.0006 42.053C25.985 42.3827 26.2538 42.662 26.6007 42.6767C26.6104 42.6772 26.62 42.6773 26.6295 42.6773C26.9639 42.6773 27.2423 42.4272 27.2575 42.1067C27.4206 38.6563 28.9633 35.433 31.6014 33.0304Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M41.3753 25.5493C39.9686 25.5493 38.5669 25.7041 37.2091 26.0096C36.871 26.0856 36.6619 26.4076 36.7419 26.7286C36.822 27.0497 37.161 27.2483 37.499 27.1723C38.762 26.8883 40.0661 26.7442 41.3753 26.7442C45.988 26.7442 50.2936 28.4898 53.499 31.6591C53.6226 31.7813 53.7875 31.8428 53.9528 31.8428C54.1095 31.8428 54.2665 31.7875 54.3885 31.6762C54.639 31.4475 54.6471 31.0693 54.4063 30.8314C52.7362 29.18 50.7744 27.881 48.5754 26.9705C46.2978 26.0274 43.8753 25.5493 41.3753 25.5493Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M27.2456 32.9902C27.3607 33.0758 27.4973 33.1173 27.633 33.1173C27.8198 33.1173 28.0046 33.0387 28.1287 32.8882C29.9214 30.7132 32.2816 29.0072 34.9539 27.9544C35.2748 27.828 35.4271 27.4784 35.294 27.1736C35.1609 26.8688 34.7927 26.724 34.472 26.8506C31.6001 27.9819 29.0641 29.8149 27.1381 32.1514C26.9239 32.4113 26.9721 32.7868 27.2456 32.9902Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M32.6532 26.085C32.745 26.085 32.8382 26.0659 32.9262 26.0254C35.5747 24.8108 38.4174 24.195 41.3753 24.195C42.9167 24.195 44.4519 24.3672 45.938 24.7069C46.2756 24.7838 46.6155 24.5866 46.6967 24.2658C46.778 23.945 46.5701 23.6223 46.2323 23.5451C44.6499 23.1834 43.0158 23 41.3753 23C38.2264 23 35.1997 23.6558 32.3793 24.9493C32.0665 25.0928 31.9353 25.45 32.0863 25.7472C32.1948 25.9606 32.4194 26.085 32.6532 26.085Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.5671 25.5001C49.2156 25.7454 49.8575 26.0274 50.4749 26.3382C50.5687 26.3855 50.6695 26.4079 50.7688 26.4079C50.9943 26.4079 51.2123 26.2925 51.3252 26.09C51.4878 25.7985 51.3709 25.4369 51.0639 25.2823C50.4066 24.9515 49.7231 24.6512 49.0325 24.39C48.7097 24.2679 48.3439 24.4175 48.2154 24.7239C48.0869 25.0305 48.2444 25.3781 48.5671 25.5001Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-top", d: "M40.8143 11.61429L34 5H47.6286L40.8143 11.61429Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-right", d: "M66 40.7945L70 34L70 47.5891L66 40.7945Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-right-top", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 18.2286L70.4849 5L70.4849 5L67 5L57 5L57 8.30714L67 8.30714L67 18.2286L70.4849 18.2286Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-right-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 71.9214L70.4849 62L67.1137 62L67.1137 71.9214L57 71.9214L57 75.2286L67.1137 75.2286L67.1137 75.2286L70.4849 75.2286L70.4849 75.2286L70.4849 71.9214Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-left-top", fillRule: "evenodd", clipRule: "evenodd", d: "M10 8.30715V18.2286H13.37123L13.37123 8.30715H23.4849V5H13.37123V5L10 5V5V8.30715Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-left-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M13.37125 75.2286L23.4849 75.2286L23.4849 71.9214L13.37125 71.9214L13.37125 62L10 62L10 71.9214L10 71.9214L10 75.2286L10 75.2286L13.37125 75.2286Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-left", d: "M14 40.7946L10 47.5891L10 34L14 40.7946Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-bot", d: "M40.815 69L47.63 75.6143L34 75.6143L40.815 69Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("text", { className: "text font-[RobotoCondensed]", x: 22, y: 15, opacity: 0, fontWeight: 600, fontSize: 5, textAnchor: "left", fill: "#3ee73e" }, `\r
+            ACCESS GRANTED\r
+        `)), /* @__PURE__ */ L.createElement("defs", null, /* @__PURE__ */ L.createElement("clipPath", { id: "clip0_2004_472" }, /* @__PURE__ */ L.createElement("rect", { width: 80, height: 80, fill: "white" })))), Lr = ({ width: o, height: e, onCLick: t }) => {
+  const r = it(null), n = it(
+    ee.timeline({ paused: !0, yoyo: !0, repeat: 0 })
+  ), i = (a) => (n.current.clear(), n.current.to(a(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(a(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(a(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(a(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(a(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(a(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(a(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(a(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(a("text"), {
+    opacity: 1,
+    duration: 1,
+    ease: "power1.in"
+  }).to(a(".scanner"), {
+    opacity: 1,
+    y: 80,
+    duration: 1,
+    repeat: -1,
+    yoyo: !0,
+    ease: "power1.inOut"
+  })), s = (a, d = !1) => {
+    a.forEach((u) => {
+      const h = u.getTotalLength();
+      d ? ee.to(u, {
+        stroke: "currentColor"
+      }) : (ee.set(u, {
+        strokeDasharray: h,
+        strokeDashoffset: h,
+        stroke: "transparent"
+      }), ee.to(u, {
+        strokeDashoffset: 0,
+        stroke: "#3ee73e",
+        duration: 1,
+        ease: "power1.inOut"
+      }));
+    });
+  }, c = () => {
+    const a = ee.utils.selector(r.current), d = a(".stroke-fng");
+    s(d), i(a), n.current.play();
+  }, f = () => {
+    if (r.current) {
+      const a = ee.utils.selector(r.current), d = a(".stroke-fng");
+      n.current.reverse(), ee.killTweensOf(d), s(d, !0), ee.killTweensOf(a(".scanner")), ee.set(a(".scanner"), { y: 0, opacity: 0 });
+    }
+  };
+  return /* @__PURE__ */ v.jsx(
+    "button",
+    {
+      className: "text-black dark:text-white dark:fill-white",
+      onMouseEnter: c,
+      onMouseLeave: f,
+      onClick: t,
+      style: { width: `${o}px`, height: `${e}px` },
+      children: /* @__PURE__ */ v.jsx(Zt, { ref: r })
+    }
+  );
+}, jr = ({
   children: o,
   mode: e = "warning",
   pulseAnimation: t = !0
@@ -452,7 +504,7 @@ const Lr = ({
     className: `glowedBorder ${e === "warning" ? "text-evaTextWarning text-shadow-warning border-evaTextWarning" : "text-evaTextDanger text-shadow-danger border-evaTextDanger"}  ${e} label`,
     children: o
   }
-) }), jr = ({ barsCount: o, currentBarIndex: e }) => {
+) }), Sr = ({ barsCount: o, currentBarIndex: e }) => {
   function t() {
     const r = [];
     for (let n = 0; n < o; n++)
@@ -479,11 +531,11 @@ const Lr = ({
     /* @__PURE__ */ v.jsx("div", { className: "h-[105px] flex flex-row overflow-hidden gap-[3px]", children: t() }),
     /* @__PURE__ */ v.jsx("div", { className: "h-[15px]" })
   ] });
-}, Sr = ({ unitNumber: o, subjectName: e }) => /* @__PURE__ */ v.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
+}, Mr = ({ unitNumber: o, subjectName: e }) => /* @__PURE__ */ v.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
   /* @__PURE__ */ v.jsx("div", { className: "text-xl font-[400] label", children: "Subject" }),
   /* @__PURE__ */ v.jsx("div", { className: "text-2xl font-[600] label", children: o }),
   /* @__PURE__ */ v.jsx("div", { className: "text-xl font-[400] label", children: e })
-] }), Zt = ({
+] }), Gt = ({
   rowsCount: o,
   tilesPerRowCount: e,
   animationActive: t = !1
@@ -492,14 +544,14 @@ const Lr = ({
     return Array(o).fill(null).map((n, i) => /* @__PURE__ */ v.jsx("div", { className: "hex-row rotate-method", children: Array(e).fill(null).map((s, c) => /* @__PURE__ */ v.jsx("div", { className: `hex ${t ? "animation-active" : ""}` }, c)) }, i));
   }
   return /* @__PURE__ */ v.jsx("div", { className: "piece rotateMethod", children: r() });
-}, Gt = (o) => Ot(() => {
+}, zt = (o) => Ot(() => {
   const e = (i, s) => {
     const c = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     return c[(i + s) % c.length];
   }, t = (i, s) => (i % s).toString(), r = `U-${t(o * 3, 9)}`, n = `${e(o, 20)}${t(o * 7, 99)}`;
   return `${r}${n}`;
-}, [o]), zt = ({ title: o, sciFiCode: e, isActive: t }) => {
-  const r = Gt(e);
+}, [o]), Dt = ({ title: o, sciFiCode: e, isActive: t }) => {
+  const r = zt(e);
   return /* @__PURE__ */ v.jsxs(
     "div",
     {
@@ -545,7 +597,7 @@ const Lr = ({
       ]
     }
   );
-}, Mr = ({ options: o, width: e = "w-full" }) => /* @__PURE__ */ v.jsx("div", { className: `flex flex-col gap-2 ${e}`, children: o.map((t, r) => /* @__PURE__ */ Wt(zt, { ...t, key: r, sciFiCode: r })) }), ct = () => /* @__PURE__ */ v.jsxs("div", { className: "w-[150px] h-[50px] flex flex-row align-top gap-[2px]", children: [
+}, Rr = ({ options: o, width: e = "w-full" }) => /* @__PURE__ */ v.jsx("div", { className: `flex flex-col gap-2 ${e}`, children: o.map((t, r) => /* @__PURE__ */ Wt(Dt, { ...t, key: r, sciFiCode: r })) }), ct = () => /* @__PURE__ */ v.jsxs("div", { className: "w-[150px] h-[50px] flex flex-row align-top gap-[2px]", children: [
   /* @__PURE__ */ v.jsxs("div", { className: "flex flex-col gap-1", children: [
     /* @__PURE__ */ v.jsx("div", { className: "h-full w-[4px] artifact-border" }),
     /* @__PURE__ */ v.jsx("div", { className: "h-1/6 artifact-border" })
@@ -568,13 +620,13 @@ const Lr = ({
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-var Dt = /[achlmqstvz]|(-?\d*\.?\d*(?:e[\-+]?\d+)?)[0-9]/ig, Ut = /(?:(-)?\d*\.?\d*(?:e[\-+]?\d+)?)[0-9]/ig, Xt = /[\+\-]?\d*\.?\d+e[\+\-]?\d+/ig, It = /(^[#\.][a-z]|[a-y][a-z])/i, Ft = Math.PI / 180, Ht = 180 / Math.PI, Se = Math.sin, Me = Math.cos, X = Math.abs, te = Math.sqrt, qt = Math.atan2, Ue = 1e8, ft = function(e) {
+var Ut = /[achlmqstvz]|(-?\d*\.?\d*(?:e[\-+]?\d+)?)[0-9]/ig, Xt = /(?:(-)?\d*\.?\d*(?:e[\-+]?\d+)?)[0-9]/ig, It = /[\+\-]?\d*\.?\d+e[\+\-]?\d+/ig, Ft = /(^[#\.][a-z]|[a-y][a-z])/i, Ht = Math.PI / 180, qt = 180 / Math.PI, Se = Math.sin, Me = Math.cos, X = Math.abs, te = Math.sqrt, Jt = Math.atan2, Ue = 1e8, ft = function(e) {
   return typeof e == "string";
 }, vt = function(e) {
   return typeof e == "number";
-}, Jt = function(e) {
+}, Qt = function(e) {
   return typeof e > "u";
-}, Qt = {}, Kt = {}, Pe = 1e5, bt = function(e) {
+}, Kt = {}, er = {}, Pe = 1e5, bt = function(e) {
   return Math.round((e + Ue) % 1 * Pe) / Pe || (e < 0 ? 0 : 1);
 }, M = function(e) {
   return Math.round(e * Pe) / Pe || 0;
@@ -594,67 +646,67 @@ var Dt = /[achlmqstvz]|(-?\d*\.?\d*(?:e[\-+]?\d+)?)[0-9]/ig, Ut = /(?:(-)?\d*\.?
     for (; e[++i] < t && i < n; )
       ;
   return i < n ? i : n - 1;
-}, er = function(e, t) {
+}, tr = function(e, t) {
   var r = e.length;
   for (e.reverse(); r--; )
-    e[r].reversed || nr(e[r]);
+    e[r].reversed || or(e[r]);
 }, ht = function(e, t) {
   return t.totalLength = e.totalLength, e.samples ? (t.samples = e.samples.slice(0), t.lookup = e.lookup.slice(0), t.minLength = e.minLength, t.resolution = e.resolution) : e.totalPoints && (t.totalPoints = e.totalPoints), t;
-}, tr = function(e, t) {
+}, rr = function(e, t) {
   var r = e.length, n = e[r - 1] || [], i = n.length;
   r && t[0] === n[i - 2] && t[1] === n[i - 1] && (t = n.concat(t.slice(2)), r--), e[r] = t;
 };
 function Re(o) {
-  o = ft(o) && It.test(o) && document.querySelector(o) || o;
+  o = ft(o) && Ft.test(o) && document.querySelector(o) || o;
   var e = o.getAttribute ? o : 0, t;
   return e && (o = o.getAttribute("d")) ? (e._gsPath || (e._gsPath = {}), t = e._gsPath[o], t && !t._dirty ? t : e._gsPath[o] = Oe(o)) : o ? ft(o) ? Oe(o) : vt(o[0]) ? [o] : o : console.warn("Expecting a <path> element or an SVG path data string");
 }
-function rr(o) {
+function nr(o) {
   for (var e = [], t = 0; t < o.length; t++)
     e[t] = ht(o[t], o[t].slice(0));
   return ht(o, e);
 }
-function nr(o) {
+function or(o) {
   var e = 0, t;
   for (o.reverse(); e < o.length; e += 2)
     t = o[e], o[e] = o[e + 1], o[e + 1] = t;
   o.reversed = !o.reversed;
 }
-var or = function(e, t) {
+var ir = function(e, t) {
   var r = document.createElementNS("http://www.w3.org/2000/svg", "path"), n = [].slice.call(e.attributes), i = n.length, s;
   for (t = "," + t + ","; --i > -1; )
     s = n[i].nodeName.toLowerCase(), t.indexOf("," + s + ",") < 0 && r.setAttributeNS(null, s, n[i].nodeValue);
   return r;
-}, ir = {
+}, ar = {
   rect: "rx,ry,x,y,width,height",
   circle: "r,cx,cy",
   ellipse: "rx,ry,cx,cy",
   line: "x1,x2,y1,y2"
-}, ar = function(e, t) {
+}, lr = function(e, t) {
   for (var r = t ? t.split(",") : [], n = {}, i = r.length; --i > -1; )
     n[r[i]] = +e.getAttribute(r[i]) || 0;
   return n;
 };
-function lr(o, e) {
+function sr(o, e) {
   var t = o.tagName.toLowerCase(), r = 0.552284749831, n, i, s, c, f, a, d, u, h, g, x, p, b, y, w, _, T, j, N, R, A, k;
-  return t === "path" || !o.getBBox ? o : (a = or(o, "x,y,width,height,cx,cy,rx,ry,r,x1,x2,y1,y2,points"), k = ar(o, ir[t]), t === "rect" ? (c = k.rx, f = k.ry || c, i = k.x, s = k.y, g = k.width - c * 2, x = k.height - f * 2, c || f ? (p = i + c * (1 - r), b = i + c, y = b + g, w = y + c * r, _ = y + c, T = s + f * (1 - r), j = s + f, N = j + x, R = N + f * r, A = N + f, n = "M" + _ + "," + j + " V" + N + " C" + [_, R, w, A, y, A, y - (y - b) / 3, A, b + (y - b) / 3, A, b, A, p, A, i, R, i, N, i, N - (N - j) / 3, i, j + (N - j) / 3, i, j, i, T, p, s, b, s, b + (y - b) / 3, s, y - (y - b) / 3, s, y, s, w, s, _, T, _, j].join(",") + "z") : n = "M" + (i + g) + "," + s + " v" + x + " h" + -g + " v" + -x + " h" + g + "z") : t === "circle" || t === "ellipse" ? (t === "circle" ? (c = f = k.r, u = c * r) : (c = k.rx, f = k.ry, u = f * r), i = k.cx, s = k.cy, d = c * r, n = "M" + (i + c) + "," + s + " C" + [i + c, s + u, i + d, s + f, i, s + f, i - d, s + f, i - c, s + u, i - c, s, i - c, s - u, i - d, s - f, i, s - f, i + d, s - f, i + c, s - u, i + c, s].join(",") + "z") : t === "line" ? n = "M" + k.x1 + "," + k.y1 + " L" + k.x2 + "," + k.y2 : (t === "polyline" || t === "polygon") && (h = (o.getAttribute("points") + "").match(Ut) || [], i = h.shift(), s = h.shift(), n = "M" + i + "," + s + " L" + h.join(","), t === "polygon" && (n += "," + i + "," + s + "z")), a.setAttribute("d", Et(a._gsRawPath = Oe(n))), e && o.parentNode && (o.parentNode.insertBefore(a, o), o.parentNode.removeChild(o)), a);
+  return t === "path" || !o.getBBox ? o : (a = ir(o, "x,y,width,height,cx,cy,rx,ry,r,x1,x2,y1,y2,points"), k = lr(o, ar[t]), t === "rect" ? (c = k.rx, f = k.ry || c, i = k.x, s = k.y, g = k.width - c * 2, x = k.height - f * 2, c || f ? (p = i + c * (1 - r), b = i + c, y = b + g, w = y + c * r, _ = y + c, T = s + f * (1 - r), j = s + f, N = j + x, R = N + f * r, A = N + f, n = "M" + _ + "," + j + " V" + N + " C" + [_, R, w, A, y, A, y - (y - b) / 3, A, b + (y - b) / 3, A, b, A, p, A, i, R, i, N, i, N - (N - j) / 3, i, j + (N - j) / 3, i, j, i, T, p, s, b, s, b + (y - b) / 3, s, y - (y - b) / 3, s, y, s, w, s, _, T, _, j].join(",") + "z") : n = "M" + (i + g) + "," + s + " v" + x + " h" + -g + " v" + -x + " h" + g + "z") : t === "circle" || t === "ellipse" ? (t === "circle" ? (c = f = k.r, u = c * r) : (c = k.rx, f = k.ry, u = f * r), i = k.cx, s = k.cy, d = c * r, n = "M" + (i + c) + "," + s + " C" + [i + c, s + u, i + d, s + f, i, s + f, i - d, s + f, i - c, s + u, i - c, s, i - c, s - u, i - d, s - f, i, s - f, i + d, s - f, i + c, s - u, i + c, s].join(",") + "z") : t === "line" ? n = "M" + k.x1 + "," + k.y1 + " L" + k.x2 + "," + k.y2 : (t === "polyline" || t === "polygon") && (h = (o.getAttribute("points") + "").match(Xt) || [], i = h.shift(), s = h.shift(), n = "M" + i + "," + s + " L" + h.join(","), t === "polygon" && (n += "," + i + "," + s + "z")), a.setAttribute("d", Et(a._gsRawPath = Oe(n))), e && o.parentNode && (o.parentNode.insertBefore(a, o), o.parentNode.removeChild(o)), a);
 }
 function _t(o, e, t) {
   var r = o[e], n = o[e + 2], i = o[e + 4], s;
-  return r += (n - r) * t, n += (i - n) * t, r += (n - r) * t, s = n + (i + (o[e + 6] - i) * t - n) * t - r, r = o[e + 1], n = o[e + 3], i = o[e + 5], r += (n - r) * t, n += (i - n) * t, r += (n - r) * t, M(qt(n + (i + (o[e + 7] - i) * t - n) * t - r, s) * Ht);
+  return r += (n - r) * t, n += (i - n) * t, r += (n - r) * t, s = n + (i + (o[e + 6] - i) * t - n) * t - r, r = o[e + 1], n = o[e + 3], i = o[e + 5], r += (n - r) * t, n += (i - n) * t, r += (n - r) * t, M(Jt(n + (i + (o[e + 7] - i) * t - n) * t - r, s) * qt);
 }
 function wt(o, e, t) {
-  t = Jt(t) ? 1 : ut(t) || 0, e = ut(e) || 0;
-  var r = Math.max(0, ~~(X(t - e) - 1e-8)), n = rr(o);
-  if (e > t && (e = 1 - e, t = 1 - t, er(n), n.totalLength = 0), e < 0 || t < 0) {
+  t = Qt(t) ? 1 : ut(t) || 0, e = ut(e) || 0;
+  var r = Math.max(0, ~~(X(t - e) - 1e-8)), n = nr(o);
+  if (e > t && (e = 1 - e, t = 1 - t, tr(n), n.totalLength = 0), e < 0 || t < 0) {
     var i = Math.abs(~~Math.min(e, t)) + 1;
     e += i, t += i;
   }
   n.totalLength || le(n);
-  var s = t > 1, c = pt(n, e, Qt, !0), f = pt(n, t, Kt), a = f.segment, d = c.segment, u = f.segIndex, h = c.segIndex, g = f.i, x = c.i, p = h === u, b = g === x && p, y, w, _, T, j, N, R, A;
+  var s = t > 1, c = pt(n, e, Kt, !0), f = pt(n, t, er), a = f.segment, d = c.segment, u = f.segIndex, h = c.segIndex, g = f.i, x = c.i, p = h === u, b = g === x && p, y, w, _, T, j, N, R, A;
   if (s || r) {
     for (y = u < h || p && g < x || b && f.t < c.t, dt(n, h, x, c.t) && (h++, y || (u++, b ? (f.t = (f.t - c.t) / (1 - c.t), g = 0) : p && (g -= x))), Math.abs(1 - (t - e)) < 1e-5 ? u = h - 1 : !f.t && u ? u-- : dt(n, u, g, f.t) && y && h++, c.t === 1 && (h = (h + 1) % n.length), j = [], N = n.length, R = 1 + N * r, A = h, R += (N - h + u) % N, T = 0; T < R; T++)
-      tr(j, n[A++ % N]);
+      rr(j, n[A++ % N]);
     n = j;
   } else if (_ = f.t === 1 ? 6 : Xe(a, g, f.t), e !== t)
     for (w = Xe(d, x, b ? c.t / f.t : c.t), p && (_ += w), a.splice(g + _ + 2), (w || x) && d.splice(0, x + w), T = n.length; T--; )
@@ -663,7 +715,7 @@ function wt(o, e, t) {
     a.angle = _t(a, g + _, 0), g += _, c = a[g], f = a[g + 1], a.length = a.totalLength = 0, a.totalPoints = n.totalPoints = 8, a.push(c, f, c, f, c, f, c, f);
   return n.totalLength = 0, n;
 }
-function sr(o, e, t) {
+function cr(o, e, t) {
   e = e || 0, o.samples || (o.samples = [], o.lookup = []);
   var r = ~~o.resolution || 12, n = 1 / r, i = o.length, s = o[e], c = o[e + 1], f = e ? e / 6 * r : 0, a = o.samples, d = o.lookup, u = (e ? o.minLength : Ue) || Ue, h = a[f + t * r - 1], g = e ? a[f - 1] : 0, x, p, b, y, w, _, T, j, N, R, A, k, O, W, G, V, J;
   for (a.length = d.length = 0, p = e + 2; p < i; p += 6) {
@@ -688,7 +740,7 @@ function sr(o, e, t) {
 function le(o, e) {
   var t, r, n;
   for (n = t = r = 0; n < o.length; n++)
-    o[n].resolution = ~~e || 12, r += o[n].length, t += sr(o[n]);
+    o[n].resolution = ~~e || 12, r += o[n].length, t += cr(o[n]);
   return o.totalPoints = r, o.totalLength = t, o;
 }
 function Xe(o, e, t) {
@@ -747,10 +799,10 @@ function ve(o, e, t, r, n, i, s) {
       u = f[d], h = f[d + 1], f[d] = u * e + h * r + i, f[d + 1] = u * t + h * n + s;
   return o._dirty = 1, o;
 }
-function cr(o, e, t, r, n, i, s, c, f) {
+function fr(o, e, t, r, n, i, s, c, f) {
   if (!(o === c && e === f)) {
     t = X(t), r = X(r);
-    var a = n % 360 * Ft, d = Me(a), u = Se(a), h = Math.PI, g = h * 2, x = (o - c) / 2, p = (e - f) / 2, b = d * x + u * p, y = -u * x + d * p, w = b * b, _ = y * y, T = w / (t * t) + _ / (r * r);
+    var a = n % 360 * Ht, d = Me(a), u = Se(a), h = Math.PI, g = h * 2, x = (o - c) / 2, p = (e - f) / 2, b = d * x + u * p, y = -u * x + d * p, w = b * b, _ = y * y, T = w / (t * t) + _ / (r * r);
     T > 1 && (t = te(T) * t, r = te(T) * r);
     var j = t * t, N = r * r, R = (j * N - j * _ - N * w) / (j * _ + N * w);
     R < 0 && (R = 0);
@@ -765,10 +817,10 @@ function cr(o, e, t, r, n, i, s, c, f) {
   }
 }
 function Oe(o) {
-  var e = (o + "").replace(Xt, function(k) {
+  var e = (o + "").replace(It, function(k) {
     var O = +k;
     return O < 1e-4 && O > -1e-4 ? 0 : O;
-  }).match(Dt) || [], t = [], r = 0, n = 0, i = 2 / 3, s = e.length, c = 0, f = "ERROR: malformed path: " + o, a, d, u, h, g, x, p, b, y, w, _, T, j, N, R, A = function(O, W, G, V) {
+  }).match(Ut) || [], t = [], r = 0, n = 0, i = 2 / 3, s = e.length, c = 0, f = "ERROR: malformed path: " + o, a, d, u, h, g, x, p, b, y, w, _, T, j, N, R, A = function(O, W, G, V) {
     w = (G - O) / 3, _ = (V - W) / 3, p.push(O + w, W + _, G - w, V - _, G, V);
   };
   if (!o || !isNaN(e[0]) || isNaN(e[1]))
@@ -791,7 +843,7 @@ function Oe(o) {
     else if (g === "L" || g === "Z")
       g === "Z" && (u = b, h = y, p.closed = !0), (g === "L" || X(r - u) > 0.5 || X(n - h) > 0.5) && (A(r, n, u, h), g === "L" && (a += 2)), r = u, n = h;
     else if (g === "A") {
-      if (N = e[a + 4], R = e[a + 5], w = e[a + 6], _ = e[a + 7], d = 7, N.length > 1 && (N.length < 3 ? (_ = w, w = R, d--) : (_ = R, w = N.substr(2), d -= 2), R = N.charAt(1), N = N.charAt(0)), T = cr(r, n, +e[a + 1], +e[a + 2], +e[a + 3], +N, +R, (x ? r : 0) + w * 1, (x ? n : 0) + _ * 1), a += d, T)
+      if (N = e[a + 4], R = e[a + 5], w = e[a + 6], _ = e[a + 7], d = 7, N.length > 1 && (N.length < 3 ? (_ = w, w = R, d--) : (_ = R, w = N.substr(2), d -= 2), R = N.charAt(1), N = N.charAt(0)), T = fr(r, n, +e[a + 1], +e[a + 2], +e[a + 3], +N, +R, (x ? r : 0) + w * 1, (x ? n : 0) + _ * 1), a += d, T)
         for (d = 0; d < T.length; d++)
           p.push(T[d]);
       r = p[p.length - 2], n = p[p.length - 1];
@@ -799,7 +851,7 @@ function Oe(o) {
       console.log(f);
   return a = p.length, a < 6 ? (t.pop(), a = 0) : p[0] === p[a - 2] && p[1] === p[a - 1] && (p.closed = !0), t.totalPoints = c + a, t;
 }
-function fr(o, e) {
+function ur(o, e) {
   e === void 0 && (e = 1);
   for (var t = o[0], r = 0, n = [t, r], i = 2; i < o.length; i += 2)
     n.push(t, r, o[i], r = (o[i] - t) * e / 2, t = o[i], -r);
@@ -851,17 +903,17 @@ var re, se, Je, Ve, be, Ae, We, ye, F = "transform", Fe = F + "Origin", Nt, kt =
     i && i.appendChild && (i.appendChild(r), r.appendChild(n), r.setAttribute("style", "position:static;transform:translate3d(0,0,1px)"), Nt = n.offsetParent !== r, i.removeChild(r));
   }
   return t;
-}, ur = function(e) {
+}, dr = function(e) {
   for (var t, r; e && e !== Ve; )
     r = e._gsap, r && r.uncache && r.get(e, "x"), r && !r.scaleX && !r.scaleY && r.renderTransform && (r.scaleX = r.scaleY = 1e-4, r.renderTransform(1, r), t ? t.push(r) : t = [r]), e = e.parentNode;
   return t;
-}, Tt = [], Lt = [], dr = function() {
+}, Tt = [], Lt = [], hr = function() {
   return se.pageYOffset || re.scrollTop || Je.scrollTop || Ve.scrollTop || 0;
-}, hr = function() {
+}, pr = function() {
   return se.pageXOffset || re.scrollLeft || Je.scrollLeft || Ve.scrollLeft || 0;
 }, Qe = function(e) {
   return e.ownerSVGElement || ((e.tagName + "").toLowerCase() === "svg" ? e : null);
-}, pr = function o(e) {
+}, gr = function o(e) {
   if (se.getComputedStyle(e).position === "fixed")
     return !0;
   if (e = e.parentNode, e && e.nodeType === 1)
@@ -872,19 +924,19 @@ var re, se, Je, Ve, be, Ae, We, ye, F = "transform", Fe = F + "Origin", Nt, kt =
     return t && (r ? (Ae || (Ae = o(e)), a.setAttribute("width", 0.01), a.setAttribute("height", 0.01), a.setAttribute("transform", "translate(" + s + "," + c + ")"), Ae.appendChild(a)) : (be || (be = o(e), be.style.cssText = f), a.style.cssText = f + "width:0.1px;height:0.1px;top:" + c + "px;left:" + s + "px", be.appendChild(a))), a;
   }
   throw "Need document and parent.";
-}, gr = function(e) {
+}, xr = function(e) {
   for (var t = new _e(), r = 0; r < e.numberOfItems; r++)
     t.multiply(e.getItem(r).matrix);
   return t;
-}, xr = function(e) {
+}, mr = function(e) {
   var t = e.getCTM(), r;
   return t || (r = e.style[F], e.style[F] = "none", e.appendChild(ye), t = ye.getCTM(), e.removeChild(ye), r ? e.style[F] = r : e.style.removeProperty(F.replace(/([A-Z])/g, "-$1").toLowerCase())), t || We.clone();
-}, mr = function(e, t) {
+}, Cr = function(e, t) {
   var r = Qe(e), n = e === r, i = r ? Tt : Lt, s = e.parentNode, c, f, a, d, u, h;
   if (e === se)
     return e;
   if (i.length || i.push(Ge(e, 1), Ge(e, 2), Ge(e, 3)), c = r ? Ae : be, r)
-    n ? (a = xr(e), d = -a.e / a.a, u = -a.f / a.d, f = We) : e.getBBox ? (a = e.getBBox(), f = e.transform ? e.transform.baseVal : {}, f = f.numberOfItems ? f.numberOfItems > 1 ? gr(f) : f.getItem(0).matrix : We, d = f.a * a.x + f.c * a.y, u = f.b * a.x + f.d * a.y) : (f = new _e(), d = u = 0), t && e.tagName.toLowerCase() === "g" && (d = u = 0), (n ? r : s).appendChild(c), c.setAttribute("transform", "matrix(" + f.a + "," + f.b + "," + f.c + "," + f.d + "," + (f.e + d) + "," + (f.f + u) + ")");
+    n ? (a = mr(e), d = -a.e / a.a, u = -a.f / a.d, f = We) : e.getBBox ? (a = e.getBBox(), f = e.transform ? e.transform.baseVal : {}, f = f.numberOfItems ? f.numberOfItems > 1 ? xr(f) : f.getItem(0).matrix : We, d = f.a * a.x + f.c * a.y, u = f.b * a.x + f.d * a.y) : (f = new _e(), d = u = 0), t && e.tagName.toLowerCase() === "g" && (d = u = 0), (n ? r : s).appendChild(c), c.setAttribute("transform", "matrix(" + f.a + "," + f.b + "," + f.c + "," + f.d + "," + (f.e + d) + "," + (f.f + u) + ")");
   else {
     if (d = u = 0, Nt)
       for (f = e.offsetParent, a = e; a && (a = a.parentNode) && a !== f && a.parentNode; )
@@ -922,7 +974,7 @@ var re, se, Je, Ve, be, Ae, We, ye, F = "transform", Fe = F + "Origin", Nt, kt =
 function he(o, e, t, r) {
   if (!o || !o.parentNode || (re || kt(o)).documentElement === o)
     return new _e();
-  var n = ur(o), i = Qe(o), s = i ? Tt : Lt, c = mr(o, t), f = s[0].getBoundingClientRect(), a = s[1].getBoundingClientRect(), d = s[2].getBoundingClientRect(), u = c.parentNode, h = !r && pr(o), g = new _e((a.left - f.left) / 100, (a.top - f.top) / 100, (d.left - f.left) / 100, (d.top - f.top) / 100, f.left + (h ? 0 : hr()), f.top + (h ? 0 : dr()));
+  var n = dr(o), i = Qe(o), s = i ? Tt : Lt, c = Cr(o, t), f = s[0].getBoundingClientRect(), a = s[1].getBoundingClientRect(), d = s[2].getBoundingClientRect(), u = c.parentNode, h = !r && gr(o), g = new _e((a.left - f.left) / 100, (a.top - f.top) / 100, (d.left - f.left) / 100, (d.top - f.top) / 100, f.left + (h ? 0 : pr()), f.top + (h ? 0 : hr()));
   if (u.removeChild(c), n)
     for (f = n.length; f--; )
       a = n[f], a.scaleX = a.scaleY = 0, a.renderTransform(1, a);
@@ -937,7 +989,7 @@ function he(o, e, t, r) {
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,top,marginTop,yPercent".split(","), br = Math.PI / 180, U, jt, ue, He, De, xt, yr = function() {
+var vr = "x,translateX,left,marginLeft,xPercent".split(","), br = "y,translateY,top,marginTop,yPercent".split(","), yr = Math.PI / 180, U, jt, ue, He, De, xt, _r = function() {
   return U || typeof window < "u" && (U = window.gsap) && U.registerPlugin && U;
 }, Ce = function(e, t, r, n) {
   for (var i = t.length, s = n === 2 ? 0 : n, c = 0; c < i; c++)
@@ -954,13 +1006,13 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
     t = [t];
   else {
     c.fromCurrent !== !1 && t.unshift(de(r, n, f), i ? de(r, i, a) : 0), c.relative && St(t);
-    var d = i ? Ie : fr;
+    var d = i ? Ie : ur;
     t = [d(t, c.curviness)];
   }
   return t = s(Mt(t, r, c)), $e(e, r, n, t, "x", f), i && $e(e, r, i, t, "y", a), le(t, c.resolution || (c.curviness === 0 ? 20 : 12));
-}, _r = function(e) {
+}, wr = function(e) {
   return e;
-}, wr = /[-+\.]*\d+\.?(?:e-|e\+)?\d*/g, Ct = function(e, t, r) {
+}, Er = /[-+\.]*\d+\.?(?:e-|e\+)?\d*/g, Ct = function(e, t, r) {
   var n = he(e), i = 0, s = 0, c;
   return (e.tagName + "").toLowerCase() === "svg" ? (c = e.viewBox.baseVal, c.width || (c = {
     width: +e.getAttribute("width"),
@@ -974,7 +1026,7 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
   });
 }, qe = function(e, t, r, n) {
   var i = he(e.parentNode, !0, !0), s = i.clone().multiply(he(t)), c = Ct(e, r, i), f = Ct(t, n, i), a = f.x, d = f.y, u;
-  return s.e = s.f = 0, n === "auto" && t.getTotalLength && t.tagName.toLowerCase() === "path" && (u = t.getAttribute("d").match(wr) || [], u = s.apply({
+  return s.e = s.f = 0, n === "auto" && t.getTotalLength && t.tagName.toLowerCase() === "path" && (u = t.getAttribute("d").match(Er) || [], u = s.apply({
     x: +u[0],
     y: +u[1]
   }), a += u.x, d += u.y), u && (u = s.apply(t.getBBox()), a -= u.x, d -= u.y), s.e = a - c.x, s.f = d - c.y, s;
@@ -987,9 +1039,9 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
     y: d
   }), ve(e, x.a, x.b, x.c, x.d, u + x.e - (p.x - x.e), h + x.f - (p.y - x.f)))), i ? ve(e, i.a, i.b, i.c, i.d, i.e, i.f) : (s || c) && ve(e, 1, 0, 0, 1, s || 0, c || 0), e);
 }, $e = function(e, t, r, n, i, s) {
-  var c = t._gsap, f = c.harness, a = f && f.aliases && f.aliases[r], d = a && a.indexOf(",") < 0 ? a : r, u = e._pt = new jt(e._pt, t, d, 0, 0, _r, 0, c.set(t, d, e));
+  var c = t._gsap, f = c.harness, a = f && f.aliases && f.aliases[r], d = a && a.indexOf(",") < 0 ? a : r, u = e._pt = new jt(e._pt, t, d, 0, 0, wr, 0, c.set(t, d, e));
   u.u = ue(c.get(t, d, s)) || 0, u.path = n, u.pp = i, e._props.push(d);
-}, Er = function(e, t) {
+}, Nr = function(e, t) {
   return function(r) {
     return e || t !== 1 ? wt(r, e, t) : r;
   };
@@ -1006,10 +1058,10 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
     (!(typeof t == "object" && !t.style) || !t.path) && (t = {
       path: t
     });
-    var n = [], i = t, s = i.path, c = i.autoRotate, f = i.unitX, a = i.unitY, d = i.x, u = i.y, h = s[0], g = Er(t.start, "end" in t ? t.end : 1), x, p;
+    var n = [], i = t, s = i.path, c = i.autoRotate, f = i.unitX, a = i.unitY, d = i.x, u = i.y, h = s[0], g = Nr(t.start, "end" in t ? t.end : 1), x, p;
     if (this.rawPaths = n, this.target = e, this.tween = r, this.styles = De && De(e, "transform"), (this.rotate = c || c === 0) && (this.rOffset = parseFloat(c) || 0, this.radians = !!t.useRadians, this.rProp = t.rotation || "rotation", this.rSet = e._gsap.set(e, this.rProp, this), this.ru = ue(e._gsap.get(e, this.rProp)) || 0), Array.isArray(s) && !("closed" in s) && typeof h != "number") {
       for (p in h)
-        !d && ~Cr.indexOf(p) ? d = p : !u && ~vr.indexOf(p) && (u = p);
+        !d && ~vr.indexOf(p) ? d = p : !u && ~br.indexOf(p) && (u = p);
       d && u ? n.push(mt(this, Ce(Ce([], s, d, 0), s, u, 1), e, d, u, g, t, f || ue(s[0][d]), a || ue(s[0][u]))) : d = u = 0;
       for (p in h)
         p !== d && p !== u && n.push(mt(this, Ce([], s, p, 2), e, p, 0, g, t, ue(s[0][p])));
@@ -1023,7 +1075,7 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
         gt(r[n], e, !n && t.rotate, r[n]);
       for (; i; )
         i.set(i.t, i.p, i.path[i.pp] + i.u, i.d, e), i = i._next;
-      t.rotate && t.rSet(t.target, t.rProp, r[0].angle * (t.radians ? br : 1) + t.rOffset + t.ru, t, e);
+      t.rotate && t.rSet(t.target, t.rProp, r[0].angle * (t.radians ? yr : 1) + t.rOffset + t.ru, t, e);
     } else
       t.styles.revert();
   },
@@ -1041,7 +1093,7 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
   cacheRawPathMeasurements: le,
   convertToPath: function(e, t) {
     return He(e).map(function(r) {
-      return lr(r, t !== !1);
+      return sr(r, t !== !1);
     });
   },
   convertCoordinates: function(e, t, r) {
@@ -1062,11 +1114,11 @@ var Cr = "x,translateX,left,marginLeft,xPercent".split(","), vr = "y,translateY,
     return t.relative && St(r), [t.type === "cubic" ? r : Ie(r, t.curviness)];
   }
 };
-yr() && U.registerPlugin(Rt);
+_r() && U.registerPlugin(Rt);
 $t.registerPlugin(Rt);
-const Rr = ({ children: o }) => /* @__PURE__ */ v.jsxs("div", { className: "relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ", children: [
+const Ar = ({ children: o }) => /* @__PURE__ */ v.jsxs("div", { className: "relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ", children: [
   /* @__PURE__ */ v.jsxs("div", { className: "sticky top-0 bg-gray-100 dark:bg-darkGrayBg w-full shadow-md z-10 flex gap-2 items-center border-b-evaTextDanger glowed-border-b", children: [
-    /* @__PURE__ */ v.jsx("div", { className: "ml-2 mt-2 hidden md:block z-10", children: /* @__PURE__ */ v.jsx(Zt, { tilesPerRowCount: 2, rowsCount: 2 }) }),
+    /* @__PURE__ */ v.jsx("div", { className: "ml-2 mt-2 hidden md:block z-10", children: /* @__PURE__ */ v.jsx(Gt, { tilesPerRowCount: 2, rowsCount: 2 }) }),
     /* @__PURE__ */ v.jsx(
       "div",
       {
@@ -1079,7 +1131,7 @@ const Rr = ({ children: o }) => /* @__PURE__ */ v.jsxs("div", { className: "rela
   /* @__PURE__ */ v.jsx("div", { className: "fixed bottom-3 left-3", children: /* @__PURE__ */ v.jsx(ct, {}) }),
   /* @__PURE__ */ v.jsx("div", { className: "fixed bottom-3 right-3 [transform:rotateY(180deg)]", children: /* @__PURE__ */ v.jsx(ct, {}) }),
   /* @__PURE__ */ v.jsx("div", { className: "flex-1 overflow-y-auto flex items-center justify-center text-center px-4 pt-8 pb-8", children: /* @__PURE__ */ v.jsx("div", { className: "content mx-auto max-w-screen-md text-2xl md:text-1xl font-bold", children: /* @__PURE__ */ v.jsx("div", { className: "content", children: o }) }) })
-] }), Ar = ({
+] }), Pr = ({
   headBlockChildren: o,
   width: e,
   height: t,
@@ -1113,67 +1165,15 @@ const Rr = ({ children: o }) => /* @__PURE__ */ v.jsxs("div", { className: "rela
       "data-augmented-ui": "br-clip border"
     }
   )
-] }), Nr = (o) => /* @__PURE__ */ L.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 80", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...o }, /* @__PURE__ */ L.createElement("g", { clipPath: "url(#clip0_2004_472)" }, /* @__PURE__ */ L.createElement("path", { className: "scanner", d: "M0 0 H463", opacity: 0, stroke: "#3ee73e", strokeWidth: 2, fill: "#3ee73e" }), /* @__PURE__ */ L.createElement("path", { d: "M43.3464 45.3351V42.717C43.3464 41.6847 42.4622 40.8448 41.3754 40.8448C40.2886 40.8448 39.4044 41.6847 39.4044 42.717V45.0808C39.4044 47.9293 38.2996 50.6642 36.2933 52.7815L33.5271 55.7009C33.2947 55.9462 33.3156 56.324 33.5739 56.5448C33.832 56.7656 34.2297 56.7456 34.4622 56.5004L37.2284 53.581C39.4429 51.2438 40.6625 48.2251 40.6625 45.0808V42.717C40.6625 42.3436 40.9823 42.0398 41.3754 42.0398C41.7685 42.0398 42.0883 42.3436 42.0883 42.717V45.3351C42.0883 48.8405 40.7211 52.1995 38.2385 54.7934L35.5421 57.6106C35.3084 57.8547 35.3274 58.2327 35.5844 58.4547C35.705 58.5588 35.8564 58.61 36.0073 58.61C36.1784 58.61 36.3489 58.5442 36.473 58.4145L39.1693 55.5972C41.8629 52.7829 43.3464 49.1384 43.3464 45.3351Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M46.0303 42.7169C46.0303 40.2789 43.9421 38.2955 41.3754 38.2955C38.8087 38.2955 36.7205 40.2789 36.7205 42.7169V45.0807C36.7205 47.2985 35.8603 49.4277 34.2984 51.0761L32.3318 53.1516C32.0994 53.3969 32.1204 53.7747 32.3786 53.9955C32.6369 54.2162 33.0345 54.1962 33.267 53.951L35.2335 51.8755C37.0037 50.0073 37.9787 47.5942 37.9787 45.0807V42.7169C37.9787 40.9378 39.5024 39.4905 41.3755 39.4905C43.2485 39.4905 44.7723 40.9378 44.7723 42.7169V45.335C44.7723 49.4759 43.1573 53.444 40.2245 56.5081L37.9495 58.8852C37.7157 59.1293 37.7347 59.5073 37.9917 59.7293C38.1123 59.8334 38.2637 59.8846 38.4146 59.8846C38.5857 59.8846 38.7562 59.8187 38.8803 59.689L41.1554 57.3119C44.299 54.0274 46.0303 49.7739 46.0303 45.335V42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.7142 42.717C48.7142 38.8733 45.422 35.7463 41.3754 35.7463C37.3287 35.7463 34.0366 38.8733 34.0366 42.717V45.0808C34.0366 46.6677 33.4211 48.1913 32.3034 49.3708L30.5327 51.2396C30.3003 51.4849 30.3212 51.8626 30.5795 52.0835C30.8376 52.3042 31.2354 52.2841 31.4679 52.039L33.2386 50.1702C34.5645 48.7709 35.2947 46.9634 35.2947 45.0808V42.717C35.2947 39.5322 38.0224 36.9413 41.3754 36.9413C44.7283 36.9413 47.4561 39.5322 47.4561 42.717V45.3351C47.4561 50.1116 45.5931 54.6887 42.2103 58.223L41.5807 58.8808C41.347 59.125 41.366 59.5029 41.6231 59.7249C41.7436 59.8289 41.8951 59.8802 42.0459 59.8802C42.217 59.8802 42.3875 59.8143 42.5116 59.6847L43.1411 59.0268C46.7349 55.272 48.7141 50.4096 48.7141 45.3351V42.717H48.7142Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M31.3527 42.7169C31.3527 43.047 31.6344 43.3144 31.9818 43.3144C32.3292 43.3144 32.6108 43.047 32.6108 42.7169C32.6108 40.705 33.3798 38.7615 34.7763 37.2444C36.1598 35.7414 38.0585 34.7585 40.1228 34.4768C40.4667 34.4298 40.7054 34.127 40.656 33.8004C40.6066 33.4738 40.2874 33.2474 39.9439 33.294C37.5821 33.6163 35.4104 34.7399 33.8291 36.4579C32.2322 38.1928 31.3527 40.4157 31.3527 42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M32.6107 45.0808C32.6107 44.7508 32.3291 44.4833 31.9817 44.4833C31.6343 44.4833 31.3526 44.7508 31.3526 45.0808C31.3526 46.037 30.9818 46.9548 30.3085 47.6654L28.7335 49.3277C28.5011 49.5729 28.5221 49.9507 28.7803 50.1715C28.9006 50.2743 29.0509 50.3249 29.2009 50.3249C29.373 50.3249 29.5445 50.2581 29.6687 50.1271L31.2437 48.4648C32.1252 47.5344 32.6107 46.3327 32.6107 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M50.1634 50.4144C49.8272 50.3312 49.4836 50.522 49.3956 50.8411C49.1633 51.6839 48.8745 52.5217 48.5367 53.3313C48.4087 53.6381 48.5668 53.9853 48.8898 54.1068C48.9659 54.1354 49.0442 54.149 49.1214 54.149C49.3717 54.149 49.6085 54.006 49.7064 53.7714C50.0628 52.917 50.3676 52.033 50.6127 51.1436C50.7006 50.8245 50.4994 50.4979 50.1634 50.4144Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.0696 35.6373C47.8112 35.4165 47.4134 35.4368 47.1812 35.6821C46.949 35.9275 46.9701 36.3053 47.2284 36.5259C49.0787 38.1058 50.1399 40.3623 50.1399 42.7169V45.335C50.1399 46.3287 50.0677 47.33 49.9254 48.3112C49.878 48.6381 50.1186 48.9396 50.4627 48.9846C50.4918 48.9884 50.5207 48.9903 50.5493 48.9903C50.8587 48.9903 51.1283 48.7734 51.1717 48.4742C51.3218 47.4391 51.3979 46.3829 51.3979 45.3349V42.7169C51.398 40.0239 50.1848 37.4434 48.0696 35.6373Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M45.1289 35.1947C45.2162 35.2342 45.3082 35.2529 45.3989 35.2529C45.634 35.2529 45.8595 35.1271 45.9673 34.9121C46.1167 34.6142 45.9834 34.2576 45.6698 34.1158C44.7635 33.7059 43.8002 33.4294 42.8067 33.2939C42.4624 33.2473 42.1441 33.4738 42.0947 33.8003C42.0453 34.1269 42.284 34.4298 42.6278 34.4767C43.4957 34.5952 44.3372 34.8367 45.1289 35.1947Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M41.3754 30.6478C41.1401 30.6478 40.9021 30.654 40.6678 30.6662C40.3209 30.6844 40.0552 30.9663 40.0743 31.2957C40.0935 31.6252 40.3899 31.8789 40.7371 31.8593C40.9484 31.8482 41.1631 31.8427 41.3754 31.8427C47.6881 31.8427 52.8239 36.7208 52.8239 42.7169V45.335C52.8239 45.665 53.1055 45.9324 53.4529 45.9324C53.8003 45.9324 54.082 45.665 54.082 45.335V42.7169C54.082 36.062 48.3818 30.6478 41.3754 30.6478Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M34.4976 33.8896C34.6214 33.8896 34.7467 33.8548 34.8561 33.7826C35.9027 33.0913 37.052 32.5753 38.2725 32.2484C38.6069 32.1588 38.8015 31.8287 38.7073 31.5112C38.613 31.1936 38.2653 31.009 37.9311 31.0982C36.5757 31.4611 35.2995 32.0342 34.1379 32.8013C33.8527 32.9898 33.7822 33.3621 33.9806 33.633C34.1028 33.8001 34.2985 33.8896 34.4976 33.8896Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M29.9269 45.0808V42.717C29.9269 39.9375 31.0351 37.2904 33.0474 35.2631C33.2856 35.023 33.274 34.645 33.0212 34.4185C32.7684 34.1921 32.3703 34.2034 32.132 34.4434C29.8987 36.6932 28.6688 39.6316 28.6688 42.717V45.0808C28.6688 45.406 28.5427 45.7182 28.3137 45.9599L27.5381 46.7784C27.3056 47.0237 27.3266 47.4015 27.5849 47.6222C27.705 47.7251 27.8555 47.7757 28.0055 47.7757C28.1776 47.7757 28.349 47.709 28.4732 47.5779L29.2489 46.7594C29.6861 46.2978 29.9269 45.7017 29.9269 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M55.9669 38.0648C55.277 36.1174 54.1805 34.358 52.708 32.8355C52.4729 32.5925 52.075 32.5764 51.8192 32.7997C51.5634 33.023 51.5465 33.4009 51.7815 33.644C53.1341 35.0424 54.1412 36.658 54.7746 38.4459C54.863 38.6955 55.108 38.853 55.3706 38.853C55.4372 38.853 55.5048 38.8428 55.5714 38.8216C55.9005 38.7163 56.0777 38.3775 55.9669 38.0648Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M46.3465 28.881C46.018 28.7742 45.6602 28.9406 45.5477 29.2529C45.4352 29.5651 45.6105 29.9048 45.9392 30.0115C47.3263 30.4623 48.6286 31.1154 49.8099 31.9528C49.9229 32.0329 50.0548 32.0715 50.1857 32.0715C50.3774 32.0715 50.5668 31.9885 50.6903 31.8313C50.8982 31.5669 50.8408 31.1924 50.5624 30.9951C49.2761 30.0834 47.8576 29.372 46.3465 28.881Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M31.6014 33.0304C34.2475 30.6207 37.7186 29.2935 41.3754 29.2935C42.0544 29.2935 42.7372 29.34 43.4047 29.4314C43.7489 29.4791 44.0676 29.252 44.1172 28.9254C44.1669 28.5988 43.9284 28.2959 43.5846 28.2487C42.8576 28.1492 42.1143 28.0986 41.3754 28.0986C37.3925 28.0986 33.6122 29.5438 30.7308 32.1679C27.8583 34.7839 26.1785 38.2945 26.0006 42.053C25.985 42.3827 26.2538 42.662 26.6007 42.6767C26.6104 42.6772 26.62 42.6773 26.6295 42.6773C26.9639 42.6773 27.2423 42.4272 27.2575 42.1067C27.4206 38.6563 28.9633 35.433 31.6014 33.0304Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M41.3753 25.5493C39.9686 25.5493 38.5669 25.7041 37.2091 26.0096C36.871 26.0856 36.6619 26.4076 36.7419 26.7286C36.822 27.0497 37.161 27.2483 37.499 27.1723C38.762 26.8883 40.0661 26.7442 41.3753 26.7442C45.988 26.7442 50.2936 28.4898 53.499 31.6591C53.6226 31.7813 53.7875 31.8428 53.9528 31.8428C54.1095 31.8428 54.2665 31.7875 54.3885 31.6762C54.639 31.4475 54.6471 31.0693 54.4063 30.8314C52.7362 29.18 50.7744 27.881 48.5754 26.9705C46.2978 26.0274 43.8753 25.5493 41.3753 25.5493Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M27.2456 32.9902C27.3607 33.0758 27.4973 33.1173 27.633 33.1173C27.8198 33.1173 28.0046 33.0387 28.1287 32.8882C29.9214 30.7132 32.2816 29.0072 34.9539 27.9544C35.2748 27.828 35.4271 27.4784 35.294 27.1736C35.1609 26.8688 34.7927 26.724 34.472 26.8506C31.6001 27.9819 29.0641 29.8149 27.1381 32.1514C26.9239 32.4113 26.9721 32.7868 27.2456 32.9902Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M32.6532 26.085C32.745 26.085 32.8382 26.0659 32.9262 26.0254C35.5747 24.8108 38.4174 24.195 41.3753 24.195C42.9167 24.195 44.4519 24.3672 45.938 24.7069C46.2756 24.7838 46.6155 24.5866 46.6967 24.2658C46.778 23.945 46.5701 23.6223 46.2323 23.5451C44.6499 23.1834 43.0158 23 41.3753 23C38.2264 23 35.1997 23.6558 32.3793 24.9493C32.0665 25.0928 31.9353 25.45 32.0863 25.7472C32.1948 25.9606 32.4194 26.085 32.6532 26.085Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { d: "M48.5671 25.5001C49.2156 25.7454 49.8575 26.0274 50.4749 26.3382C50.5687 26.3855 50.6695 26.4079 50.7688 26.4079C50.9943 26.4079 51.2123 26.2925 51.3252 26.09C51.4878 25.7985 51.3709 25.4369 51.0639 25.2823C50.4066 24.9515 49.7231 24.6512 49.0325 24.39C48.7097 24.2679 48.3439 24.4175 48.2154 24.7239C48.0869 25.0305 48.2444 25.3781 48.5671 25.5001Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-top", d: "M40.8143 11.61429L34 5H47.6286L40.8143 11.61429Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-right", d: "M66 40.7945L70 34L70 47.5891L66 40.7945Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-right-top", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 18.2286L70.4849 5L70.4849 5L67 5L57 5L57 8.30714L67 8.30714L67 18.2286L70.4849 18.2286Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-right-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 71.9214L70.4849 62L67.1137 62L67.1137 71.9214L57 71.9214L57 75.2286L67.1137 75.2286L67.1137 75.2286L70.4849 75.2286L70.4849 75.2286L70.4849 71.9214Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-left-top", fillRule: "evenodd", clipRule: "evenodd", d: "M10 8.30715V18.2286H13.37123L13.37123 8.30715H23.4849V5H13.37123V5L10 5V5V8.30715Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "corner-left-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M13.37125 75.2286L23.4849 75.2286L23.4849 71.9214L13.37125 71.9214L13.37125 62L10 62L10 71.9214L10 71.9214L10 75.2286L10 75.2286L13.37125 75.2286Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-left", d: "M14 40.7946L10 47.5891L10 34L14 40.7946Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("path", { className: "edge-triangle-bot", d: "M40.815 69L47.63 75.6143L34 75.6143L40.815 69Z", fill: "currentColor" }), /* @__PURE__ */ L.createElement("text", { className: "text font-[RobotoCondensed]", x: 22, y: 15, opacity: 0, fontWeight: 600, fontSize: 5, textAnchor: "left", fill: "#3ee73e" }, `\r
-            ACCESS GRANTED\r
-        `)), /* @__PURE__ */ L.createElement("defs", null, /* @__PURE__ */ L.createElement("clipPath", { id: "clip0_2004_472" }, /* @__PURE__ */ L.createElement("rect", { width: 80, height: 80, fill: "white" })))), Pr = ({ width: o, height: e, onCLick: t }) => {
-  const r = it(null), n = it(
-    ee.timeline({ paused: !0, yoyo: !0, repeat: 0 })
-  ), i = (a) => (n.current.clear(), n.current.to(a(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(a(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(a(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(a(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(a(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(a(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(a(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(a(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(a("text"), {
-    opacity: 1,
-    duration: 1,
-    ease: "power1.in"
-  }).to(a(".scanner"), {
-    opacity: 1,
-    y: 80,
-    duration: 1,
-    repeat: -1,
-    yoyo: !0,
-    ease: "power1.inOut"
-  })), s = (a, d = !1) => {
-    a.forEach((u) => {
-      const h = u.getTotalLength();
-      d ? ee.to(u, {
-        stroke: "currentColor"
-      }) : (ee.set(u, {
-        strokeDasharray: h,
-        strokeDashoffset: h,
-        stroke: "transparent"
-      }), ee.to(u, {
-        strokeDashoffset: 0,
-        stroke: "#3ee73e",
-        duration: 1,
-        ease: "power1.inOut"
-      }));
-    });
-  }, c = () => {
-    const a = ee.utils.selector(r.current), d = a(".stroke-fng");
-    s(d), i(a), n.current.play();
-  }, f = () => {
-    if (r.current) {
-      const a = ee.utils.selector(r.current), d = a(".stroke-fng");
-      n.current.reverse(), ee.killTweensOf(d), s(d, !0), ee.killTweensOf(a(".scanner")), ee.set(a(".scanner"), { y: 0, opacity: 0 });
-    }
-  };
-  return /* @__PURE__ */ v.jsx(
-    "button",
-    {
-      className: "text-black dark:text-white dark:fill-white",
-      onMouseEnter: c,
-      onMouseLeave: f,
-      onClick: t,
-      style: { width: `${o}px`, height: `${e}px` },
-      children: /* @__PURE__ */ v.jsx(Nr, { ref: r })
-    }
-  );
-};
+] });
 export {
-  Ar as Card,
-  Lr as EvaBorderPanel,
-  Mr as EvaOptionList,
-  jr as EvaProgressBar,
-  Zt as EvaTilePanel,
-  Sr as EvaUnitBox,
-  Pr as FingerPrintButton,
-  Rr as GeometricLayout
+  Pr as Card,
+  jr as EvaBorderPanel,
+  Rr as EvaOptionList,
+  Sr as EvaProgressBar,
+  Gt as EvaTilePanel,
+  Mr as EvaUnitBox,
+  Lr as FingerPrintButton,
+  Ar as GeometricLayout
 };
 //# sourceMappingURL=index.es.js.map

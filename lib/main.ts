@@ -1,22 +1,22 @@
 'use client';
 import './index.css';
 
-import EvaBorderPanel from './components/EvaBorderPanel/EvaBorderPanel';
-import EvaProgressBar from './components/EvaProgressBar/EvaProgressBar';
-import EvaUnitBox from './components/EvaUnitBox/EvaUnitBox';
-import EvaTilePanel from './components/EvaTilePanel/EvaTilePanel';
-import EvaOptionList from './components/EvaOptionList/EvaOptionList';
-import GeometricLayout from './components/GeometricLayout/GeometricLayout';
-import Card from './components/Card/Card';
-import FingerPrintButton from './components/FingerPrintButton/FingerPrintButton';
+// export {
+//   EvaBorderPanel,
+//   EvaProgressBar,
+//   EvaUnitBox,
+//   EvaTilePanel,
+//   EvaOptionList,
+//   GeometricLayout,
+//   Card,
+//   FingerPrintButton
+// };
 
-export {
-  EvaBorderPanel,
-  EvaProgressBar,
-  EvaUnitBox,
-  EvaTilePanel,
-  EvaOptionList,
-  GeometricLayout,
-  Card,
-  FingerPrintButton
-};
+export { default as FingerPrintButton } from './components/FingerPrintButton/FingerPrintButton';
+export { default as EvaBorderPanel } from './components/EvaBorderPanel/EvaBorderPanel';
+export { default as EvaProgressBar } from './components/EvaProgressBar/EvaProgressBar';
+export { default as EvaUnitBox } from './components/EvaUnitBox/EvaUnitBox';
+export { default as EvaTilePanel } from './components/EvaTilePanel/EvaTilePanel';
+export { default as EvaOptionList } from './components/EvaOptionList/EvaOptionList';
+export { default as GeometricLayout } from './components/GeometricLayout/GeometricLayout';
+export { default as Card } from './components/Card/Card';
