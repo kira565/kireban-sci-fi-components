@@ -13,11 +13,12 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
-      external: ['react', 'react-dom'], // Ensure React and ReactDOM are external.
+      external: ['react', 'react-dom', 'gsap'], // Ensure React and ReactDOM are external.
       output: {
         globals: {
           react: 'React', // Global variable for React in UMD builds.
-          'react-dom': 'ReactDOM' // Global variable for ReactDOM in UMD builds.
+          'react-dom': 'ReactDOM', // Global variable for ReactDOM in UMD builds.
+          gsap: 'gsap'
         }
       }
     },
@@ -25,12 +26,7 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'), // Output directory.
     emptyOutDir: true // Clear output directory before building.
   },
-  plugins: [
-    svgr(), // Enables importing SVGs as React components.
-    react(), // SWC React plugin for faster builds.
-    dts({ rollupTypes: true }) // Generate TypeScript declaration files.
-    //cssInjectedByJsPlugin() // Inline CSS in JS (optional; see notes above).
-  ],
+  plugins: [svgr(), react(), dts({ rollupTypes: true })],
   css: {
     postcss: {
       plugins: [tailwindcss]
