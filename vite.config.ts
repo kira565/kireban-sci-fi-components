@@ -14,7 +14,6 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
-      treeshake: false,
       onwarn(warning) {
         console.warn(warning);
       },
@@ -27,7 +26,7 @@ export default defineConfig({
         }
       }
     },
-    sourcemap: true, // Optionally generate source maps.
+    sourcemap: false, // Optionally generate source maps.
     outDir: resolve(__dirname, 'dist'), // Output directory.
     emptyOutDir: true // Clear output directory before building.
   },
