@@ -10,6 +10,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'), // Library entry point.
       name: 'kireban-sci-fi-components', // Library name for UMD build.
+      formats: ['es', 'cjs'],
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
