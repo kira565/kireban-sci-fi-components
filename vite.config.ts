@@ -14,6 +14,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js` // Format-specific file names.
     },
     rollupOptions: {
+      treeshake: false,
       onwarn(warning) {
         console.warn(warning);
       },
