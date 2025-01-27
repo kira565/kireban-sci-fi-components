@@ -1,17 +1,28 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import SvgBtnFg from '../../assets/svg/fgp.svg?react';
 import gsap from 'gsap';
 
 export interface ButtonFingerProps {
   width: string;
   height: string;
+  onClick: (event: React.MouseEvent) => void;
+  delayAppearingMs?: number;
 }
 
-export const ButtonFinger: React.FC<ButtonFingerProps> = ({ width, height }) => {
+export const ButtonFinger: React.FC<ButtonFingerProps> = ({
+  width,
+  height,
+  onClick,
+  delayAppearingMs
+}) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
   );
+
+  useEffect(() => {
+    gsap.from(svgRef.current, {});
+  }, []);
 
   const animateElements = (q: gsap.utils.SelectorFunc) => {
     timeLine.current.clear();
@@ -88,6 +99,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({ width, height }) => 
       className={`text-black dark:text-white dark:fill-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
       style={{ height, width }}>
       <SvgBtnFg ref={svgRef} />
     </button>

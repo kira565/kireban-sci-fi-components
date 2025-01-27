@@ -10,4 +10,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = { args: { width: '150px', height: '150px' } };
+export const Default: Story = {
+  args: { width: '150px', height: '150px', onClick: () => console.log('clicked') }
+};
