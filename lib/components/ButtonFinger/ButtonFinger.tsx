@@ -16,6 +16,7 @@ export interface ButtonFingerProps {
    */
   destroyCallback?: () => void;
   ref?: React.RefObject<HTMLButtonElement | null>;
+  delayedRenderMs?: number;
 }
 
 export const ButtonFinger: React.FC<ButtonFingerProps> = ({
@@ -24,6 +25,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   onClick,
   hideAfterClick = false,
   destroyCallback,
+  delayedRenderMs = 0,
   ref
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -43,62 +45,61 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
 
-    gsap.delayedCall(0.1, () => {
-      appearTimeLine.current
-        .from(q('.corner-left-bot'), {
-          x: 20,
-          y: -22,
-          scale: 0.2,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.edge-triangle-left', {
-          scale: 0.4,
-          x: 20,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.corner-left-top', {
-          scale: 0.2,
-          x: 20,
-          y: 26,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.edge-triangle-top', {
-          scale: 0.2,
-          y: 26,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.corner-right-top', {
-          scale: 0.2,
-          x: -19,
-          y: 26,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.edge-triangle-right', {
-          scale: 0.4,
-          x: -27,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.corner-right-bot', {
-          scale: 0.2,
-          x: -19,
-          y: -22,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from('.edge-triangle-bot', {
-          scale: 0.2,
-          y: -27.5,
-          duration: 0.1,
-          ease: 'power2.out'
-        })
-        .from(paths, { scale: 0, duration: 0.5, ease: 'power2.out' });
-    });
+    appearTimeLine.current
+      .delay(delayedRenderMs)
+      .from(q('.corner-left-bot'), {
+        x: 20,
+        y: -22,
+        scale: 0.2,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-left', {
+        scale: 0.4,
+        x: 20,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-left-top', {
+        scale: 0.2,
+        x: 20,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-top', {
+        scale: 0.2,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-right-top', {
+        scale: 0.2,
+        x: -19,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-right', {
+        scale: 0.4,
+        x: -27,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-right-bot', {
+        scale: 0.2,
+        x: -19,
+        y: -22,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-bot', {
+        scale: 0.2,
+        y: -27.5,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from(paths, { scale: 0, duration: 0.5, ease: 'power2.out' });
   }, []);
 
   const animateElements = (q: gsap.utils.SelectorFunc) => {
