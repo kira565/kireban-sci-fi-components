@@ -2513,15 +2513,15 @@ const qs = ({
       delay: n,
       onComplete: () => {
         var m;
-        (m = s.current) != null && m.matches(":hover") && f(0.1);
+        (m = s.current) != null && m.matches(":hover") && !l.current.isActive() && f();
       },
       onReverseComplete: () => {
         r && J.to(a.current, { opacity: 0 }), i && i();
       }
     })
-  ), f = (m = 0) => {
-    const x = J.utils.selector(a.current), v = x(".stroke-fng");
-    _(v), d(x, m), l.current.play();
+  ), f = () => {
+    const m = J.utils.selector(a.current), x = m(".stroke-fng");
+    _(x), d(m), l.current.play();
   };
   Cn(() => {
     const m = J.utils.selector(a.current), x = m(".stroke-fng");
@@ -2571,7 +2571,7 @@ const qs = ({
       ease: "power2.out"
     }).from(x, { scale: 0, duration: 0.5, ease: "power2.out" });
   }, []);
-  const d = (m, x = 0) => (l.current.clear(), l.current.delay(x).to(m(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(m(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(m(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(m(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(m(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(m(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(m(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(m(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(m("text"), {
+  const d = (m) => (l.current.clear(), l.current.to(m(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(m(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(m(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(m(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(m(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(m(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(m(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(m(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(m("text"), {
     opacity: 1,
     duration: 1,
     ease: "power1.in"
