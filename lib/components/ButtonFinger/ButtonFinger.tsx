@@ -6,22 +6,94 @@ export interface ButtonFingerProps {
   width: string;
   height: string;
   onClick: (event: React.MouseEvent) => void;
-  delayAppearingMs?: number;
+  /**
+   * Flag for single use button behaviour
+   */
+  hideAfterClick?: boolean;
+  /**
+   * This callback will be called after dissapearing animation completed, you can destroy component then
+   * @returns
+   */
+  destroyCallback?: () => void;
 }
 
 export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   width,
   height,
   onClick,
-  delayAppearingMs
+  hideAfterClick = false,
+  destroyCallback
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
   );
+  const appearTimeLine = useRef<gsap.core.Timeline>(
+    gsap.timeline({
+      onReverseComplete: () => {
+        if (hideAfterClick) gsap.to(svgRef.current, { opacity: 0 });
+        if (destroyCallback) destroyCallback();
+      }
+    })
+  );
 
   useEffect(() => {
-    gsap.from(svgRef.current, {});
+    const q = gsap.utils.selector(svgRef.current);
+    const paths = q('.stroke-fng') as unknown as SVGPathElement[];
+    appearTimeLine.current
+      .from(q('.corner-left-bot'), {
+        x: 20,
+        y: -22,
+        scale: 0.2,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-left', {
+        scale: 0.4,
+        x: 20,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-left-top', {
+        scale: 0.2,
+        x: 20,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-top', {
+        scale: 0.2,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-right-top', {
+        scale: 0.2,
+        x: -19,
+        y: 26,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-right', {
+        scale: 0.4,
+        x: -27,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.corner-right-bot', {
+        scale: 0.2,
+        x: -19,
+        y: -22,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from('.edge-triangle-bot', {
+        scale: 0.2,
+        y: -27.5,
+        duration: 0.1,
+        ease: 'power2.out'
+      })
+      .from(paths, { scale: 0, duration: 0.5, ease: 'power2.out' });
   }, []);
 
   const animateElements = (q: gsap.utils.SelectorFunc) => {
@@ -76,30 +148,76 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   };
 
   const handleMouseEnter = () => {
+    if (!svgRef.current) return;
+    if (appearTimeLine.current.reversed()) return;
+
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
     animatePaths(paths);
     animateElements(q);
-    timeLine.current.play();
+
+    if (appearTimeLine.current.isActive()) {
+      gsap.delayedCall(appearTimeLine.current.duration() - appearTimeLine.current.time(), () => {
+        timeLine.current.play();
+      });
+    } else {
+      timeLine.current.play();
+    }
   };
 
   const handleMouseLeave = () => {
-    if (svgRef.current) {
-      const q = gsap.utils.selector(svgRef.current);
-      const paths = q('.stroke-fng') as unknown as SVGPathElement[];
+    if (!svgRef.current) return;
+    if (appearTimeLine.current.reversed()) return;
+
+    const q = gsap.utils.selector(svgRef.current);
+    const paths = q('.stroke-fng') as unknown as SVGPathElement[];
+
+    const kill = () => {
       timeLine.current.reverse();
       gsap.killTweensOf(paths);
       animatePaths(paths, true);
       gsap.killTweensOf(q('.scanner'));
       gsap.set(q('.scanner'), { y: 0, opacity: 0 });
+    };
+
+    if (appearTimeLine.current.isActive()) {
+      gsap.delayedCall(appearTimeLine.current.duration() - appearTimeLine.current.time(), () => {
+        kill();
+      });
+    } else {
+      kill();
     }
   };
+
+  const hadleCLick = (event: React.MouseEvent) => {
+    if (appearTimeLine.current.isActive()) return;
+
+    const q = gsap.utils.selector(svgRef.current);
+
+    if (hideAfterClick) {
+      gsap.killTweensOf(q('.scanner'));
+      timeLine.current.kill();
+      gsap.set(q('.scanner'), { y: 0, opacity: 0 });
+      gsap.set(q('.text'), { opacity: 0 });
+      appearTimeLine.current.reverse();
+    } else {
+      gsap.to(svgRef.current, {
+        scale: 1.1,
+        duration: 0.05,
+        repeat: 1,
+        yoyo: true,
+        ease: 'power1.out'
+      });
+    }
+    onClick(event);
+  };
+
   return (
     <button
       className={`text-black dark:text-white dark:fill-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={onClick}
+      onClick={hadleCLick}
       style={{ height, width }}>
       <SvgBtnFg ref={svgRef} />
     </button>

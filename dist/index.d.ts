@@ -3,6 +3,16 @@ export declare const ButtonFinger: React.FC<ButtonFingerProps>;
 declare interface ButtonFingerProps {
     width: string;
     height: string;
+    onClick: (event: React.MouseEvent) => void;
+    /**
+     * Flag for single use button behaviour
+     */
+    hideAfterClick?: boolean;
+    /**
+     * This callback will be called after dissapearing animation completed, you can destroy component then
+     * @returns
+     */
+    destroyCallback?: () => void;
 }
 
 export declare const Card: React.FC<CardProps>;
