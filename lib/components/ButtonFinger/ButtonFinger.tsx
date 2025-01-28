@@ -15,7 +15,7 @@ export interface ButtonFingerProps {
    * @returns
    */
   destroyCallback?: () => void;
-  ref?: React.RefObject<HTMLButtonElement>;
+  ref?: React.RefObject<HTMLButtonElement | null>;
 }
 
 export const ButtonFinger: React.FC<ButtonFingerProps> = ({
