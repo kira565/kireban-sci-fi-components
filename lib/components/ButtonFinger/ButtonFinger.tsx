@@ -15,6 +15,7 @@ export interface ButtonFingerProps {
    * @returns
    */
   destroyCallback?: () => void;
+  ref?: React.RefObject<HTMLButtonElement>;
 }
 
 export const ButtonFinger: React.FC<ButtonFingerProps> = ({
@@ -22,7 +23,8 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   height,
   onClick,
   hideAfterClick = false,
-  destroyCallback
+  destroyCallback,
+  ref
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
@@ -214,6 +216,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
 
   return (
     <button
+      ref={ref}
       className={`text-black dark:text-white dark:fill-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
