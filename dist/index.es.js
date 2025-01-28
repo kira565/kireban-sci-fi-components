@@ -2513,13 +2513,15 @@ const qs = ({
       delay: n,
       onComplete: () => {
         var m;
-        (m = s.current) != null && m.matches(":hover") && !l.current.isActive() && f();
+        (m = s.current) != null && m.matches(":hover") && f();
       },
       onReverseComplete: () => {
         r && J.to(a.current, { opacity: 0 }), i && i();
       }
     })
   ), f = () => {
+    if (l.current.isActive() || u.current.reversed() || u.current.isActive() || u.current.rawTime() < 0)
+      return;
     const m = J.utils.selector(a.current), x = m(".stroke-fng");
     _(x), d(m), l.current.play();
   };
@@ -2599,7 +2601,7 @@ const qs = ({
       }));
     });
   }, p = () => {
-    a.current && (u.current.reversed() || u.current.isActive() || u.current.rawTime() < 0 || f());
+    a.current && f();
   }, g = () => {
     if (!a.current || u.current.reversed() || u.current.isActive() || u.current.rawTime() < 0)
       return;

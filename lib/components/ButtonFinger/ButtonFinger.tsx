@@ -35,7 +35,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
     gsap.timeline({
       delay: delayedAppearing,
       onComplete: () => {
-        if (buttonRef.current?.matches(':hover') && !timeLine.current.isActive()) {
+        if (buttonRef.current?.matches(':hover')) {
           startHoverAnimation();
         }
       },
@@ -47,6 +47,13 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   );
 
   const startHoverAnimation = () => {
+    if (
+      timeLine.current.isActive() ||
+      appearTimeLine.current.reversed() ||
+      appearTimeLine.current.isActive() ||
+      appearTimeLine.current.rawTime() < 0
+    )
+      return;
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
     animatePaths(paths);
@@ -167,12 +174,6 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
 
   const handleMouseEnter = () => {
     if (!svgRef.current) return;
-    if (
-      appearTimeLine.current.reversed() ||
-      appearTimeLine.current.isActive() ||
-      appearTimeLine.current.rawTime() < 0
-    )
-      return;
 
     startHoverAnimation();
   };
