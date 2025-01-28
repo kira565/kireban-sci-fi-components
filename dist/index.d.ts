@@ -3,7 +3,7 @@ export declare const ButtonFinger: React.FC<ButtonFingerProps>;
 declare interface ButtonFingerProps {
     width: string;
     height: string;
-    onClick: (event: React.MouseEvent) => void;
+    onClick?: (event: React.MouseEvent) => void;
     /**
      * Flag for single use button behaviour
      */

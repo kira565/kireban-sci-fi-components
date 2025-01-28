@@ -2612,7 +2612,7 @@ const qs = ({
       repeat: 1,
       yoyo: !0,
       ease: "power1.out"
-    }), t(_);
+    }), t && t(_);
   };
   return /* @__PURE__ */ P.jsx(
     "button",

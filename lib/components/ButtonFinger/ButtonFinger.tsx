@@ -5,7 +5,7 @@ import gsap from 'gsap';
 export interface ButtonFingerProps {
   width: string;
   height: string;
-  onClick: (event: React.MouseEvent) => void;
+  onClick?: (event: React.MouseEvent) => void;
   /**
    * Flag for single use button behaviour
    */
@@ -209,7 +209,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
         ease: 'power1.out'
       });
     }
-    onClick(event);
+    if (onClick) onClick(event);
   };
 
   return (
