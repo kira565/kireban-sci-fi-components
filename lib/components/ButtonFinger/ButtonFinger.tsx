@@ -36,7 +36,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
       delay: delayedAppearing,
       onComplete: () => {
         if (buttonRef.current?.matches(':hover')) {
-          startHoverAnimation();
+          startHoverAnimation(0.1);
         }
       },
       onReverseComplete: () => {
@@ -46,11 +46,11 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
     })
   );
 
-  const startHoverAnimation = () => {
+  const startHoverAnimation = (delay = 0) => {
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
     animatePaths(paths);
-    animateElements(q);
+    animateElements(q, delay);
     timeLine.current.play();
   };
 
@@ -114,9 +114,10 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
       .from(paths, { scale: 0, duration: 0.5, ease: 'power2.out' });
   }, []);
 
-  const animateElements = (q: gsap.utils.SelectorFunc) => {
+  const animateElements = (q: gsap.utils.SelectorFunc, delay = 0) => {
     timeLine.current.clear();
     return timeLine.current
+      .delay(delay)
       .to(q('.corner-left-bot'), { x: -10, y: 5, duration: 0.05 })
       .to(q('.edge-triangle-left'), { x: -10, duration: 0.05 })
       .to(q('.corner-left-top'), { x: -10, y: -5, duration: 0.05 })
