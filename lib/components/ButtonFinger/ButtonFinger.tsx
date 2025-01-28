@@ -15,8 +15,7 @@ export interface ButtonFingerProps {
    * @returns
    */
   destroyCallback?: () => void;
-  ref?: React.RefObject<HTMLButtonElement | null>;
-  delayedRenderMs?: number;
+  delayedAppearing?: number;
 }
 
 export const ButtonFinger: React.FC<ButtonFingerProps> = ({
@@ -25,15 +24,21 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   onClick,
   hideAfterClick = false,
   destroyCallback,
-  delayedRenderMs = 0,
-  ref
+  delayedAppearing = 0
 }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const timeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({ paused: true, yoyo: true, repeat: 0 })
   );
   const appearTimeLine = useRef<gsap.core.Timeline>(
     gsap.timeline({
+      delay: delayedAppearing,
+      onComplete: () => {
+        if (buttonRef.current?.matches(':hover')) {
+          startHoverAnimation();
+        }
+      },
       onReverseComplete: () => {
         if (hideAfterClick) gsap.to(svgRef.current, { opacity: 0 });
         if (destroyCallback) destroyCallback();
@@ -41,12 +46,19 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
     })
   );
 
+  const startHoverAnimation = () => {
+    const q = gsap.utils.selector(svgRef.current);
+    const paths = q('.stroke-fng') as unknown as SVGPathElement[];
+    animatePaths(paths);
+    animateElements(q);
+    timeLine.current.play();
+  };
+
   useEffect(() => {
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
 
     appearTimeLine.current
-      .delay(delayedRenderMs)
       .from(q('.corner-left-bot'), {
         x: 20,
         y: -22,
@@ -155,25 +167,24 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
 
   const handleMouseEnter = () => {
     if (!svgRef.current) return;
-    if (appearTimeLine.current.reversed()) return;
+    if (
+      appearTimeLine.current.reversed() ||
+      appearTimeLine.current.isActive() ||
+      appearTimeLine.current.rawTime() < 0
+    )
+      return;
 
-    const q = gsap.utils.selector(svgRef.current);
-    const paths = q('.stroke-fng') as unknown as SVGPathElement[];
-    animatePaths(paths);
-    animateElements(q);
-
-    if (appearTimeLine.current.isActive()) {
-      gsap.delayedCall(appearTimeLine.current.duration() - appearTimeLine.current.time(), () => {
-        timeLine.current.play();
-      });
-    } else {
-      timeLine.current.play();
-    }
+    startHoverAnimation();
   };
 
   const handleMouseLeave = () => {
     if (!svgRef.current) return;
-    if (appearTimeLine.current.reversed()) return;
+    if (
+      appearTimeLine.current.reversed() ||
+      appearTimeLine.current.isActive() ||
+      appearTimeLine.current.rawTime() < 0
+    )
+      return;
 
     const q = gsap.utils.selector(svgRef.current);
     const paths = q('.stroke-fng') as unknown as SVGPathElement[];
@@ -196,7 +207,12 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
   };
 
   const hadleCLick = (event: React.MouseEvent) => {
-    if (appearTimeLine.current.isActive()) return;
+    if (
+      appearTimeLine.current.reversed() ||
+      appearTimeLine.current.isActive() ||
+      appearTimeLine.current.rawTime() < 0
+    )
+      return;
 
     const q = gsap.utils.selector(svgRef.current);
 
@@ -220,7 +236,7 @@ export const ButtonFinger: React.FC<ButtonFingerProps> = ({
 
   return (
     <button
-      ref={ref}
+      ref={buttonRef}
       className={`text-black dark:text-white dark:fill-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

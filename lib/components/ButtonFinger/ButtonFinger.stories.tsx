@@ -16,6 +16,7 @@ export const Default: Story = {
     width: '150px',
     height: '150px',
     onClick: fn(),
-    hideAfterClick: true
+    hideAfterClick: true,
+    delayedAppearing: 5
   }
 };

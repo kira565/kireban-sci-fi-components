@@ -13,8 +13,7 @@ declare interface ButtonFingerProps {
      * @returns
      */
     destroyCallback?: () => void;
-    ref?: React.RefObject<HTMLButtonElement | null>;
-    delayedRenderMs?: number;
+    delayedAppearing?: number;
 }
 
 export declare const Card: React.FC<CardProps>;
