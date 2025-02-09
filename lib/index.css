@@ -10,6 +10,11 @@
   }
 
   @font-face {
+    font-family: 'Rolbox';
+    src: local('Rolbox'), url('./assets/fonts/Rolbox.ttf');
+  }
+
+  @font-face {
     font-family: 'RobotoCondensed';
     src: local('RobotoCondensed-Bold'), url('./assets/fonts/RobotoCondensed-Bold.ttf');
     font-weight: 700;
@@ -19,6 +24,12 @@
     font-family: 'RobotoCondensed';
     src: local('RobotoCondensed-SemiBold'), url('./assets/fonts/RobotoCondensed-SemiBold.ttf');
     font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'Oxanium';
+    src: local('Oxanium-Regular'), url('./assets/fonts/Oxanium-Regular.ttf');
+    font-weight: 400;
   }
 
   @font-face {
