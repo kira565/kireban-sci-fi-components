@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import LayerSvg from '../../assets/svg/layers1.svg?react';
 
 export interface ProjectiveCardProps {
   children?: React.ReactNode;

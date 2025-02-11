@@ -29,6 +29,14 @@ declare interface CardProps {
     icon?: string;
 }
 
+export declare const CircleIndicator: React.FC<CircleIndicatorProps>;
+
+declare interface CircleIndicatorProps {
+    children?: React.ReactNode;
+    primaryColour?: string;
+    secondaryColour?: string;
+}
+
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
 
 declare interface EvaBorderPanelProps {
@@ -77,6 +85,13 @@ export declare const GeometricLayout: React.FC<GeometricLayoutProps>;
 
 declare interface GeometricLayoutProps {
     children: React.ReactNode[];
+}
+
+export declare const LoadingBattery: React.FC<LoadingBatteryProps>;
+
+declare interface LoadingBatteryProps {
+    width?: string;
+    height?: string;
 }
 
 export { }

@@ -1,24 +1,84 @@
 import SolarChargeSvg from '../../../assets/svg/solar-charge.svg?react';
 import SolarGraph from '../../../assets/svg/graph.svg?react';
+import gsap from 'gsap';
+import { useEffect, useRef, useState } from 'react';
 
 export interface LoadingBatteryProps {
   width?: string;
   height?: string;
 }
 
-export const Tile: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export const Tile: React.FC<{ children?: React.ReactNode; label: string; limit: number }> = ({
+  children,
+  label,
+  limit
+}) => {
+  const [number, setNumber] = useState('0');
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setNumber((prev) => {
+        const num = parseFloat(prev);
+        if (num < limit) {
+          const random = Math.random() * (limit - num) + num;
+          const toFixed = random.toFixed(1);
+          return toFixed;
+        } else {
+          clearInterval(intervalId);
+          return prev;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [limit]);
+
   return (
     <div className="flex items-center gap-1">
       <div className="h-3/4 w-[0.3rem] bg-green-500"></div>
-      <div>{children}</div>
+      <div className="opacity-60 w-full">
+        {label}
+        {number}
+        {children}
+      </div>
     </div>
   );
 };
 
 export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
   width = '640px',
-  height = '220px'
+  height = '200px'
 }) => {
+  const loadingBarRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    if (loadingBarRef.current) {
+      gsap.to('#mask-rect', {
+        x: 931, // Двигаем маску справа налево
+        duration: 8, // Скорость анимации
+        ease: 'linear', // Плавное движение
+        onComplete: () => {
+          gsap.to('#loading-content', {
+            opacity: 0.5, // Затемняем немного
+            duration: 0.8, // Длительность одного цикла пульсации
+            repeat: -1, // Бесконечно
+            yoyo: true, // Возвращаем обратно
+            ease: 'sine.inOut' // Мягкое появление и исчезновение
+          });
+        }
+      });
+
+      gsap.to('#solar-graph', {
+        x: '-=1300', // Move the wave group to the left for smooth scrolling
+        duration: 5,
+        repeat: -1,
+        ease: 'linear',
+        modifiers: {
+          x: gsap.utils.unitize((value) => parseFloat(value) % 1300) // Keep x within range
+        }
+      });
+    }
+  }, []);
+
   return (
     <div
       style={{ width, height }}
@@ -32,24 +92,28 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
         </div>
         <div className="flex flex-row p-1 text-[0.85rem] justify-between w-[65%]">
           <div className="flex flex-col h-full justify-between">
-            <Tile>SPEC-37.74</Tile>
-            <Tile>PV-CAP 92.6</Tile>
-            <Tile>SOL-CHR 55%</Tile>
+            <Tile limit={50.5} label="SPEC-"></Tile>
+            <Tile limit={100} label="PV-CAP "></Tile>
+            <Tile limit={100} label="SOL-CHR ">
+              %
+            </Tile>
           </div>
           <div className="flex flex-col h-full justify-between">
-            <Tile>PHOTON-INT 8.9</Tile>
-            <Tile>VOLT-REG 220</Tile>
-            <Tile>AUX-ENG 12.5</Tile>
+            <Tile limit={9.8} label="PHOTON-INT "></Tile>
+            <Tile limit={220} label="VOLT-REG "></Tile>
+            <Tile limit={14.5} label="AUX-ENG "></Tile>
           </div>
           <div className="flex flex-col h-full justify-between">
-            <Tile>SYN-SAT 99.4</Tile>
-            <Tile>BATT-OPT 98.2%</Tile>
-            <Tile>ION-FREQ 47.5</Tile>
+            <Tile limit={99.8} label="SYN-SAT "></Tile>
+            <Tile limit={99.9} label="BATT-OPT ">
+              %
+            </Tile>
+            <Tile limit={50.5} label="ION-FREQ "></Tile>
           </div>
         </div>
       </div>
       <div className="mt-auto">
-        <SolarChargeSvg></SolarChargeSvg>
+        <SolarChargeSvg ref={loadingBarRef}></SolarChargeSvg>
       </div>
     </div>
   );
