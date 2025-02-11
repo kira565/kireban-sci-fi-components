@@ -5,11 +5,15 @@ export interface CircleIndicatorProps {
   children?: React.ReactNode;
   primaryColour?: string;
   secondaryColour?: string;
+  width?: string;
+  height?: string;
 }
 export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   children,
   primaryColour = '#CFFF55',
-  secondaryColour = '#909090'
+  secondaryColour = '#909090',
+  width = '220px',
+  height = '150px'
 }) => {
   const timeline = useRef<gsap.core.Timeline>(gsap.timeline({ paused: true }));
   const rectRef = useRef<SVGPathElement>(null);
@@ -70,28 +74,28 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
       });
 
     timeline.current.play();
-  }, []);
+  }, [primaryColour, secondaryColour]);
 
   return (
-    <div style={{ width: '200px', height: '200px' }}>
+    <div style={{ width, height }}>
       <svg
         className="w-full h-full"
-        viewBox="0 0 122 86"
+        viewBox="0 0 135 86"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path
           ref={rectRef}
           id="text-path"
           opacity="0.9"
-          d="M65 0H0V15H80V0Z"
+          d="M65 0H0V15H135V0Z"
           fill="white"
           fillOpacity="0.15"
         />
         <text
           ref={textRef}
-          className="text font-[Rolbox]"
-          fontWeight="400"
-          fontSize="6"
+          className="text font-[Oxanium]"
+          fontWeight={600}
+          fontSize="8"
           opacity={0}
           fill="white"
           x="2"

@@ -35,6 +35,8 @@ declare interface CircleIndicatorProps {
     children?: React.ReactNode;
     primaryColour?: string;
     secondaryColour?: string;
+    width?: string;
+    height?: string;
 }
 
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
