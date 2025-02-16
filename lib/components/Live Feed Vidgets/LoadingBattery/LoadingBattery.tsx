@@ -14,6 +14,7 @@ export const Tile: React.FC<{ children?: React.ReactNode; label: string; limit: 
   limit
 }) => {
   const [number, setNumber] = useState('0');
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setNumber((prev) => {
@@ -49,8 +50,18 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
   height = '200px'
 }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
+  const panelRef = useRef(null);
 
   useEffect(() => {
+    if (panelRef.current) {
+      gsap.from(panelRef.current, {
+        x: '-100%',
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power3.out'
+      });
+    }
+
     if (loadingBarRef.current) {
       gsap.to('#mask-rect', {
         x: 931, // Двигаем маску справа налево
@@ -81,6 +92,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
 
   return (
     <div
+      ref={panelRef}
       style={{ width, height }}
       className="border-evaTextWarning glowedBorder font-[Oxanium] text-white flex flex-col">
       <div className="flex flex-row h-3/4 p-1 gap-1">
