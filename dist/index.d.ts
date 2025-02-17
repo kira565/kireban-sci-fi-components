@@ -92,7 +92,7 @@ declare interface GeometricLayoutProps {
 export declare const LoadingBattery: React.FC<LoadingBatteryProps>;
 
 declare interface LoadingBatteryProps {
-    width?: string;
+    width: string;
     height?: string;
 }
 

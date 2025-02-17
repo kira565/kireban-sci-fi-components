@@ -4,15 +4,16 @@ import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
 
 export interface LoadingBatteryProps {
-  width?: string;
+  width: string;
   height?: string;
 }
 
-export const Tile: React.FC<{ children?: React.ReactNode; label: string; limit: number }> = ({
-  children,
-  label,
-  limit
-}) => {
+export const Tile: React.FC<{
+  children?: React.ReactNode;
+  label: string;
+  limit: number;
+  textSize: number;
+}> = ({ children, label, limit, textSize }) => {
   const [number, setNumber] = useState('0');
 
   useEffect(() => {
@@ -34,9 +35,11 @@ export const Tile: React.FC<{ children?: React.ReactNode; label: string; limit: 
   }, [limit]);
 
   return (
-    <div className="flex items-center gap-1">
-      <div className="h-3/4 w-[0.3rem] bg-green-500"></div>
-      <div className="opacity-60 w-full">
+    <div className="flex items-center gap-1 w-[100%]">
+      <div className="h-3/4 w-[3%] bg-green-500"></div>
+      <div
+        style={{ fontSize: `${textSize}px`, width: `${textSize * 15}px` }}
+        className="opacity-50">
         {label}
         {number}
         {children}
@@ -45,12 +48,14 @@ export const Tile: React.FC<{ children?: React.ReactNode; label: string; limit: 
   );
 };
 
-export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
-  width = '640px',
-  height = '200px'
-}) => {
+export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
+
+  const numericWidth = parseFloat(width);
+
+  const computedHeaderTextSize = numericWidth * 0.3;
+  const textScale = numericWidth * 0.08;
 
   useEffect(() => {
     if (panelRef.current) {
@@ -96,31 +101,31 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
       style={{ width, height }}
       className="border-evaTextWarning glowedBorder font-[Oxanium] text-white flex flex-col">
       <div className="flex flex-row h-3/4 p-1 gap-1">
-        <div className="flex flex-col w-[48%]">
-          <div className="text-4xl">SOLAR ENERGY</div>
-          <div className="h-full">
+        <div className="flex flex-col w-[50%]">
+          <div style={{ fontSize: `${computedHeaderTextSize}px` }}>SOLAR ENERGY</div>
+          <div className="h-1/2">
             <SolarGraph />
           </div>
         </div>
-        <div className="flex flex-row p-1 text-[0.85rem] justify-between w-[65%]">
-          <div className="flex flex-col h-full justify-between">
-            <Tile limit={50.5} label="SPEC-"></Tile>
-            <Tile limit={100} label="PV-CAP "></Tile>
-            <Tile limit={100} label="SOL-CHR ">
+        <div className="flex flex-row p-1 justify-between w-[50%]">
+          <div className="flex flex-col h-full justify-between w-1/3">
+            <Tile textSize={textScale} limit={50.5} label="SPEC-"></Tile>
+            <Tile textSize={textScale} limit={100} label="PV-CAP "></Tile>
+            <Tile textSize={textScale} limit={100} label="SOL-CHR ">
               %
             </Tile>
           </div>
-          <div className="flex flex-col h-full justify-between">
-            <Tile limit={9.8} label="PHOTON-INT "></Tile>
-            <Tile limit={220} label="VOLT-REG "></Tile>
-            <Tile limit={14.5} label="AUX-ENG "></Tile>
+          <div className="flex flex-col h-full justify-between w-1/3">
+            <Tile textSize={textScale} limit={9.8} label="PHOTON-INT "></Tile>
+            <Tile textSize={textScale} limit={220} label="VOLT-REG "></Tile>
+            <Tile textSize={textScale} limit={14.5} label="AUX-ENG "></Tile>
           </div>
-          <div className="flex flex-col h-full justify-between">
-            <Tile limit={99.8} label="SYN-SAT "></Tile>
-            <Tile limit={99.9} label="BATT-OPT ">
+          <div className="flex flex-col h-full justify-between w-1/3">
+            <Tile textSize={textScale} limit={99.8} label="SYN-SAT "></Tile>
+            <Tile textSize={textScale} limit={99.9} label="BATT-OPT ">
               %
             </Tile>
-            <Tile limit={50.5} label="ION-FREQ "></Tile>
+            <Tile textSize={textScale} limit={50.5} label="ION-FREQ "></Tile>
           </div>
         </div>
       </div>
