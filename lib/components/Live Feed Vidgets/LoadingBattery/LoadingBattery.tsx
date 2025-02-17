@@ -1,5 +1,8 @@
 import SolarChargeSvg from '../../../assets/svg/solar-charge.svg?react';
 import SolarGraph from '../../../assets/svg/graph.svg?react';
+import Border from '../../../assets/svg/modular_parts/border.svg?react';
+import BorderT1 from '../../../assets/svg/modular_parts/bordert1.svg?react';
+import BorderT2 from '../../../assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
 
@@ -120,38 +123,51 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
     <div
       ref={panelRef}
       style={{ width, height }}
-      className="border-evaTextWarning glowedBorder font-[Oxanium] text-white flex flex-col">
-      <div className="flex flex-row h-3/4 p-1 gap-1">
-        <div className="flex flex-col w-[50%]">
-          <div style={{ fontSize: `${scale.header}px` }}>SOLAR ENERGY</div>
-          <div className="h-1/2">
-            <SolarGraph />
-          </div>
-        </div>
-        <div className="flex flex-row p-1 justify-between w-[50%]">
-          <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
-            <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
-            <Tile textSize={scale.text} limit={100} label="SOL-CHR ">
-              %
-            </Tile>
-          </div>
-          <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={scale.text} limit={9.8} label="PHOTON-INT "></Tile>
-            <Tile textSize={scale.text} limit={220} label="VOLT-REG "></Tile>
-            <Tile textSize={scale.text} limit={14.5} label="AUX-ENG "></Tile>
-          </div>
-          <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={scale.text} limit={99.8} label="SYN-SAT "></Tile>
-            <Tile textSize={scale.text} limit={99.9} label="BATT-OPT ">
-              %
-            </Tile>
-            <Tile textSize={scale.text} limit={50.5} label="ION-FREQ "></Tile>
-          </div>
-        </div>
+      className="font-[Oxanium] text-white flex gap-1 flex-row">
+      <div className="w-[5%] pt-5 h-full">
+        <Border />
       </div>
-      <div className="mt-auto">
-        <SolarChargeSvg ref={loadingBarRef}></SolarChargeSvg>
+      <div className="flex-col flex">
+        <div className="h-[10%] flex">
+          <div className="w-[30%]">
+            <BorderT2 />
+          </div>
+          <div className="w-[70%]">
+            <BorderT1 />
+          </div>
+        </div>
+        <div className="flex flex-row h-[70%] p-1 gap-1">
+          <div className="flex flex-col w-[50%]">
+            <div style={{ fontSize: `${scale.header}px` }}>SOLAR ENERGY</div>
+            <div className="h-1/2">
+              <SolarGraph />
+            </div>
+          </div>
+          <div className="flex flex-row p-1 justify-between w-[50%]">
+            <div className="flex flex-col h-full justify-between w-1/3">
+              <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
+              <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
+              <Tile textSize={scale.text} limit={100} label="SOL-CHR ">
+                %
+              </Tile>
+            </div>
+            <div className="flex flex-col h-full justify-between w-1/3">
+              <Tile textSize={scale.text} limit={9.8} label="PHOTON-INT "></Tile>
+              <Tile textSize={scale.text} limit={220} label="VOLT-REG "></Tile>
+              <Tile textSize={scale.text} limit={14.5} label="AUX-ENG "></Tile>
+            </div>
+            <div className="flex flex-col h-full justify-between w-1/3">
+              <Tile textSize={scale.text} limit={99.8} label="SYN-SAT "></Tile>
+              <Tile textSize={scale.text} limit={99.9} label="BATT-OPT ">
+                %
+              </Tile>
+              <Tile textSize={scale.text} limit={50.5} label="ION-FREQ "></Tile>
+            </div>
+          </div>
+        </div>
+        <div className="mt-auto">
+          <SolarChargeSvg ref={loadingBarRef}></SolarChargeSvg>
+        </div>
       </div>
     </div>
   );
