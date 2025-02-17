@@ -2953,7 +2953,7 @@ const Qr = ({
     )
   ] });
 }, ii = ({ width: l, height: e }) => {
-  const t = _e(null), r = _e(null), i = parseFloat(l), n = i * 0.8, s = i * 0.25;
+  const t = _e(null), r = _e(null), i = parseFloat(l), n = i * 1.1, s = i * 0.35;
   return q9(() => {
     r.current && j.from(r.current, {
       x: "-100%",
