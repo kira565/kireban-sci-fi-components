@@ -1,4 +1,5 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
+import './preview.css';
 // Decorator to toggle dark mode
 
 // Example decorator to toggle dark mode
