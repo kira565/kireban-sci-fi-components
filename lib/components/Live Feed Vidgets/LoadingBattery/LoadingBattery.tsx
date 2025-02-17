@@ -51,13 +51,33 @@ export const Tile: React.FC<{
 export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
-
-  const numericWidth = parseFloat(width);
-
-  const computedHeaderTextSize = numericWidth * 1.1;
-  const textScale = numericWidth * 0.35;
+  const [scale, setScale] = useState({ text: 12, header: 24 });
 
   useEffect(() => {
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
+        console.log(containerWidth);
+        let newScale;
+        if (containerWidth < 300) {
+          newScale = { text: 4, header: 10 }; // small
+        } else if (containerWidth >= 300 && containerWidth < 600) {
+          newScale = { text: 5, header: 18 }; // med
+        } else if (containerWidth >= 600 && containerWidth < 900) {
+          newScale = { text: 10, header: 32 }; // Large
+        } else {
+          newScale = { text: 12, header: 38 }; // ExtraLarge
+        }
+
+        setScale(newScale);
+        console.log(newScale);
+      }
+    });
+
+    if (panelRef.current) {
+      observer.observe(panelRef.current);
+    }
+
     if (panelRef.current) {
       gsap.from(panelRef.current, {
         x: '-100%',
@@ -93,6 +113,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
         }
       });
     }
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -102,30 +123,30 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       className="border-evaTextWarning glowedBorder font-[Oxanium] text-white flex flex-col">
       <div className="flex flex-row h-3/4 p-1 gap-1">
         <div className="flex flex-col w-[50%]">
-          <div style={{ fontSize: `${computedHeaderTextSize}px` }}>SOLAR ENERGY</div>
+          <div style={{ fontSize: `${scale.header}px` }}>SOLAR ENERGY</div>
           <div className="h-1/2">
             <SolarGraph />
           </div>
         </div>
         <div className="flex flex-row p-1 justify-between w-[50%]">
           <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={textScale} limit={50.5} label="SPEC-"></Tile>
-            <Tile textSize={textScale} limit={100} label="PV-CAP "></Tile>
-            <Tile textSize={textScale} limit={100} label="SOL-CHR ">
+            <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
+            <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
+            <Tile textSize={scale.text} limit={100} label="SOL-CHR ">
               %
             </Tile>
           </div>
           <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={textScale} limit={9.8} label="PHOTON-INT "></Tile>
-            <Tile textSize={textScale} limit={220} label="VOLT-REG "></Tile>
-            <Tile textSize={textScale} limit={14.5} label="AUX-ENG "></Tile>
+            <Tile textSize={scale.text} limit={9.8} label="PHOTON-INT "></Tile>
+            <Tile textSize={scale.text} limit={220} label="VOLT-REG "></Tile>
+            <Tile textSize={scale.text} limit={14.5} label="AUX-ENG "></Tile>
           </div>
           <div className="flex flex-col h-full justify-between w-1/3">
-            <Tile textSize={textScale} limit={99.8} label="SYN-SAT "></Tile>
-            <Tile textSize={textScale} limit={99.9} label="BATT-OPT ">
+            <Tile textSize={scale.text} limit={99.8} label="SYN-SAT "></Tile>
+            <Tile textSize={scale.text} limit={99.9} label="BATT-OPT ">
               %
             </Tile>
-            <Tile textSize={textScale} limit={50.5} label="ION-FREQ "></Tile>
+            <Tile textSize={scale.text} limit={50.5} label="ION-FREQ "></Tile>
           </div>
         </div>
       </div>
