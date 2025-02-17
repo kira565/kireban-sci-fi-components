@@ -54,8 +54,8 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
 
   const numericWidth = parseFloat(width);
 
-  const computedHeaderTextSize = numericWidth * 0.8;
-  const textScale = numericWidth * 0.25;
+  const computedHeaderTextSize = numericWidth * 1.1;
+  const textScale = numericWidth * 0.35;
 
   useEffect(() => {
     if (panelRef.current) {
