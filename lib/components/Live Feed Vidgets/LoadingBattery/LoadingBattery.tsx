@@ -60,7 +60,6 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
-        console.log(containerWidth);
         let newScale;
         if (containerWidth < 300) {
           newScale = { text: 4, header: 10 }; // small
@@ -73,7 +72,6 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
         }
 
         setScale(newScale);
-        console.log(newScale);
       }
     });
 
@@ -124,11 +122,11 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       ref={panelRef}
       style={{ width, height }}
       className="font-[Oxanium] text-white flex gap-1 flex-row">
-      <div className="w-[5%] mt-auto h-[100%]">
+      <div className="flex flex-col justify-center max-w-[4%] min-w-[10px]">
         <Border />
       </div>
       <div className="flex-col flex">
-        <div className="h-[10%] flex">
+        <div className="max-h-[10%] flex">
           <div className="w-[30%]">
             <BorderT2 />
           </div>
