@@ -107,7 +107,7 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
         <path
           className="animate-pulse"
           d="M1.52616 21.3872H0V22.9385H1.52616V21.3872Z"
-          fill={primaryColour}
+          fill={'#CFFF55'}
         />
         <g opacity="0.65">
           <path
@@ -133,7 +133,7 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
           ref={greenIndicator}
           opacity="0.45"
           d="M120.988 25.2749H109.356V27.1859H120.988V25.2749Z"
-          fill={primaryColour}
+          fill={'#CFFF55'}
         />
         <path
           ref={redIndicator}

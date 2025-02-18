@@ -5,10 +5,12 @@ import BorderT1 from '../../../assets/svg/modular_parts/bordert1.svg?react';
 import BorderT2 from '../../../assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
+import { appearFrom } from '../../../utils';
 
 export interface LoadingBatteryProps {
   width: string;
   height?: string;
+  appear?: 'top' | 'left' | 'bottom' | 'right';
 }
 
 export const Tile: React.FC<{
@@ -51,7 +53,7 @@ export const Tile: React.FC<{
   );
 };
 
-export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height }) => {
+export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, appear }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
   const [scale, setScale] = useState({ text: 12, header: 24, sidePx: 13 });
@@ -79,13 +81,8 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       observer.observe(panelRef.current);
     }
 
-    if (panelRef.current) {
-      gsap.from(panelRef.current, {
-        x: '-100%',
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power3.out'
-      });
+    if (appear) {
+      appearFrom(panelRef, appear);
     }
 
     if (loadingBarRef.current) {

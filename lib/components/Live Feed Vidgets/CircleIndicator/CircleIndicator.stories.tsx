@@ -12,6 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: '08-P6 TRUSS 01/02 SOLAR ARRAYS'
+    children: '08-P6 TRUSS 01/02 SOLAR ARRAYS',
+    primaryColour: '#fa0'
   }
 };
