@@ -54,7 +54,7 @@ export const Tile: React.FC<{
 export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
-  const [scale, setScale] = useState({ text: 12, header: 24 });
+  const [scale, setScale] = useState({ text: 12, header: 24, sidePx: 13 });
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
@@ -62,13 +62,13 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
         let newScale;
         if (containerWidth < 300) {
-          newScale = { text: 4, header: 10 }; // small
+          newScale = { text: 4, header: 10, sidePx: 13 }; // small
         } else if (containerWidth >= 300 && containerWidth < 600) {
-          newScale = { text: 5, header: 18 }; // med
+          newScale = { text: 5, header: 18, sidePx: 16 }; // med
         } else if (containerWidth >= 600 && containerWidth < 900) {
-          newScale = { text: 10, header: 32 }; // Large
+          newScale = { text: 10, header: 32, sidePx: 25 }; // Large
         } else {
-          newScale = { text: 12, header: 38 }; // ExtraLarge
+          newScale = { text: 12, header: 38, sidePx: 28 }; // ExtraLarge
         }
 
         setScale(newScale);
@@ -122,7 +122,9 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       ref={panelRef}
       style={{ width, height }}
       className="font-[Oxanium] text-white flex gap-1 flex-row">
-      <div className="flex flex-col justify-center max-w-[4%] min-w-[13px]">
+      <div
+        className="flex flex-col justify-center"
+        style={{ minWidth: `${scale.sidePx}px`, maxWidth: `${scale.sidePx}px` }}>
         <Border />
       </div>
       <div className="flex-col flex">
