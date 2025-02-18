@@ -122,7 +122,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       ref={panelRef}
       style={{ width, height }}
       className="font-[Oxanium] text-white flex gap-1 flex-row">
-      <div className="flex flex-col justify-center max-w-[4%] min-w-[10px]">
+      <div className="flex flex-col justify-center max-w-[4%] min-w-[13px]">
         <Border />
       </div>
       <div className="flex-col flex">
