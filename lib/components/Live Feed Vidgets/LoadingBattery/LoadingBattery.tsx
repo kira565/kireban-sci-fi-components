@@ -5,10 +5,12 @@ import BorderT1 from '../../../assets/svg/modular_parts/bordert1.svg?react';
 import BorderT2 from '../../../assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
+import { appearFrom } from '../../../utils';
 
 export interface LoadingBatteryProps {
   width: string;
   height?: string;
+  appear?: 'top' | 'left' | 'bottom' | 'right';
 }
 
 export const Tile: React.FC<{
@@ -51,29 +53,27 @@ export const Tile: React.FC<{
   );
 };
 
-export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height }) => {
+export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, appear }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
-  const [scale, setScale] = useState({ text: 12, header: 24 });
+  const [scale, setScale] = useState({ text: 12, header: 24, sidePx: 13 });
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
-        console.log(containerWidth);
         let newScale;
         if (containerWidth < 300) {
-          newScale = { text: 4, header: 10 }; // small
+          newScale = { text: 4, header: 10, sidePx: 13 }; // small
         } else if (containerWidth >= 300 && containerWidth < 600) {
-          newScale = { text: 5, header: 18 }; // med
+          newScale = { text: 5, header: 18, sidePx: 16 }; // med
         } else if (containerWidth >= 600 && containerWidth < 900) {
-          newScale = { text: 10, header: 32 }; // Large
+          newScale = { text: 10, header: 32, sidePx: 25 }; // Large
         } else {
-          newScale = { text: 12, header: 38 }; // ExtraLarge
+          newScale = { text: 12, header: 38, sidePx: 28 }; // ExtraLarge
         }
 
         setScale(newScale);
-        console.log(newScale);
       }
     });
 
@@ -81,13 +81,8 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       observer.observe(panelRef.current);
     }
 
-    if (panelRef.current) {
-      gsap.from(panelRef.current, {
-        x: '-100%',
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power3.out'
-      });
+    if (appear) {
+      appearFrom(panelRef, appear);
     }
 
     if (loadingBarRef.current) {
@@ -124,11 +119,13 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height })
       ref={panelRef}
       style={{ width, height }}
       className="font-[Oxanium] text-white flex gap-1 flex-row">
-      <div className="w-[5%] mt-auto h-[100%]">
+      <div
+        className="flex flex-col justify-center"
+        style={{ minWidth: `${scale.sidePx}px`, maxWidth: `${scale.sidePx}px` }}>
         <Border />
       </div>
       <div className="flex-col flex">
-        <div className="h-[10%] flex">
+        <div className="max-h-[10%] flex">
           <div className="w-[30%]">
             <BorderT2 />
           </div>
