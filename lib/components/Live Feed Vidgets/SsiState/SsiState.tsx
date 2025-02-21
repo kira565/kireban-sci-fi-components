@@ -44,6 +44,19 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
         ease: 'easeInOut' // Smooth animation
       });
     }
+
+    const points = gsap.utils.toArray('#points > g');
+    gsap.to(points, {
+      opacity: 0,
+      duration: 0.2, // Animation duration
+      repeat: -1, // Infinite loop
+      yoyo: true, // Makes the animation go back and forth
+      stagger: {
+        each: 0.1, // Delay between each rect animation
+        from: 'random' // Random order
+      },
+      ease: 'power1.inOut' // Smooth easing
+    });
   }, []);
 
   return (
@@ -52,3 +65,11 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
     </div>
   );
 };
+//#010101
+//#090909
+//#0D0D0D
+//#050505
+//#070707
+//#0C0C0C
+//#0B0B0B
+//#0A0A0A
