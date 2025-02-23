@@ -66,11 +66,11 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
         if (containerWidth < 300) {
           newScale = { text: 4, header: 10, sidePx: 13 }; // small
         } else if (containerWidth >= 300 && containerWidth < 600) {
-          newScale = { text: 5, header: 18, sidePx: 16 }; // med
+          newScale = { text: 8, header: 18, sidePx: 16 }; // med
         } else if (containerWidth >= 600 && containerWidth < 900) {
-          newScale = { text: 10, header: 32, sidePx: 25 }; // Large
+          newScale = { text: 12, header: 32, sidePx: 25 }; // Large
         } else {
-          newScale = { text: 12, header: 38, sidePx: 28 }; // ExtraLarge
+          newScale = { text: 14, header: 38, sidePx: 28 }; // ExtraLarge
         }
 
         setScale(newScale);

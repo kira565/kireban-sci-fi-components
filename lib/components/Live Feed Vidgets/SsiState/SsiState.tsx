@@ -60,7 +60,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
   }, []);
 
   return (
-    <div style={{ width, height }}>
+    <div style={{ width, height }} className="border-[0.5px] border-evaTextWarning p-4">
       <Globe ref={globeRef} />
     </div>
   );

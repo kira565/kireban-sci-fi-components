@@ -45,12 +45,12 @@ var y9 = {};
 var t1;
 function T0() {
   return t1 || (t1 = 1, process.env.NODE_ENV !== "production" && function() {
-    function l(d) {
-      if (d == null) return null;
-      if (typeof d == "function")
-        return d.$$typeof === ce ? null : d.displayName || d.name || null;
-      if (typeof d == "string") return d;
-      switch (d) {
+    function l(_) {
+      if (_ == null) return null;
+      if (typeof _ == "function")
+        return _.$$typeof === ce ? null : _.displayName || _.name || null;
+      if (typeof _ == "string") return _;
+      switch (_) {
         case T:
           return "Fragment";
         case y:
@@ -64,46 +64,46 @@ function T0() {
         case V:
           return "SuspenseList";
       }
-      if (typeof d == "object")
-        switch (typeof d.tag == "number" && console.error(
+      if (typeof _ == "object")
+        switch (typeof _.tag == "number" && console.error(
           "Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."
-        ), d.$$typeof) {
+        ), _.$$typeof) {
           case N:
-            return (d.displayName || "Context") + ".Provider";
+            return (_.displayName || "Context") + ".Provider";
           case b:
-            return (d._context.displayName || "Context") + ".Consumer";
+            return (_._context.displayName || "Context") + ".Consumer";
           case j:
-            var L = d.render;
-            return d = d.displayName, d || (d = L.displayName || L.name || "", d = d !== "" ? "ForwardRef(" + d + ")" : "ForwardRef"), d;
+            var L = _.render;
+            return _ = _.displayName, _ || (_ = L.displayName || L.name || "", _ = _ !== "" ? "ForwardRef(" + _ + ")" : "ForwardRef"), _;
           case $:
-            return L = d.displayName || null, L !== null ? L : l(d.type) || "Memo";
+            return L = _.displayName || null, L !== null ? L : l(_.type) || "Memo";
           case H:
-            L = d._payload, d = d._init;
+            L = _._payload, _ = _._init;
             try {
-              return l(d(L));
+              return l(_(L));
             } catch {
             }
         }
       return null;
     }
-    function e(d) {
-      return "" + d;
+    function e(_) {
+      return "" + _;
     }
-    function t(d) {
+    function t(_) {
       try {
-        e(d);
+        e(_);
         var L = !1;
       } catch {
         L = !0;
       }
       if (L) {
         L = console;
-        var O = L.error, R = typeof Symbol == "function" && Symbol.toStringTag && d[Symbol.toStringTag] || d.constructor.name || "Object";
+        var O = L.error, R = typeof Symbol == "function" && Symbol.toStringTag && _[Symbol.toStringTag] || _.constructor.name || "Object";
         return O.call(
           L,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           R
-        ), e(d);
+        ), e(_);
       }
     }
     function r() {
@@ -111,42 +111,42 @@ function T0() {
     function i() {
       if (ne === 0) {
         Me = console.log, Bt = console.info, Ht = console.warn, Yt = console.error, Ut = console.group, $t = console.groupCollapsed, Gt = console.groupEnd;
-        var d = {
+        var _ = {
           configurable: !0,
           enumerable: !0,
           value: r,
           writable: !0
         };
         Object.defineProperties(console, {
-          info: d,
-          log: d,
-          warn: d,
-          error: d,
-          group: d,
-          groupCollapsed: d,
-          groupEnd: d
+          info: _,
+          log: _,
+          warn: _,
+          error: _,
+          group: _,
+          groupCollapsed: _,
+          groupEnd: _
         });
       }
       ne++;
     }
     function n() {
       if (ne--, ne === 0) {
-        var d = { configurable: !0, enumerable: !0, writable: !0 };
+        var _ = { configurable: !0, enumerable: !0, writable: !0 };
         Object.defineProperties(console, {
-          log: de({}, d, { value: Me }),
-          info: de({}, d, { value: Bt }),
-          warn: de({}, d, { value: Ht }),
-          error: de({}, d, { value: Yt }),
-          group: de({}, d, { value: Ut }),
-          groupCollapsed: de({}, d, { value: $t }),
-          groupEnd: de({}, d, { value: Gt })
+          log: de({}, _, { value: Me }),
+          info: de({}, _, { value: Bt }),
+          warn: de({}, _, { value: Ht }),
+          error: de({}, _, { value: Yt }),
+          group: de({}, _, { value: Ut }),
+          groupCollapsed: de({}, _, { value: $t }),
+          groupEnd: de({}, _, { value: Gt })
         });
       }
       0 > ne && console.error(
         "disabledDepth fell below zero. This is a bug in React. Please file an issue."
       );
     }
-    function s(d) {
+    function s(_) {
       if (et === void 0)
         try {
           throw Error();
@@ -156,11 +156,11 @@ function T0() {
     at`) ? " (<anonymous>)" : -1 < O.stack.indexOf("@") ? "@unknown:0:0" : "";
         }
       return `
-` + et + d + Xt;
+` + et + _ + Xt;
     }
-    function a(d, L) {
-      if (!d || tt) return "";
-      var O = rt.get(d);
+    function a(_, L) {
+      if (!_ || tt) return "";
+      var O = rt.get(_);
       if (O !== void 0) return O;
       tt = !0, O = Error.prepareStackTrace, Error.prepareStackTrace = void 0;
       var R = null;
@@ -183,14 +183,14 @@ function T0() {
                   } catch (Ne) {
                     var j9 = Ne;
                   }
-                  Reflect.construct(d, [], ze);
+                  Reflect.construct(_, [], ze);
                 } else {
                   try {
                     ze.call();
                   } catch (Ne) {
                     j9 = Ne;
                   }
-                  d.call(ze.prototype);
+                  _.call(ze.prototype);
                 }
               } else {
                 try {
@@ -198,7 +198,7 @@ function T0() {
                 } catch (Ne) {
                   j9 = Ne;
                 }
-                (ze = d()) && typeof ze.catch == "function" && ze.catch(function() {
+                (ze = _()) && typeof ze.catch == "function" && ze.catch(function() {
                 });
               }
             } catch (Ne) {
@@ -244,7 +244,7 @@ function T0() {
                       " at new ",
                       " at "
                     );
-                    return d.displayName && w9.includes("<anonymous>") && (w9 = w9.replace("<anonymous>", d.displayName)), typeof d == "function" && rt.set(d, w9), w9;
+                    return _.displayName && w9.includes("<anonymous>") && (w9 = w9.replace("<anonymous>", _.displayName)), typeof _ == "function" && rt.set(_, w9), w9;
                   }
                 while (1 <= W && 0 <= Z);
               break;
@@ -253,112 +253,112 @@ function T0() {
       } finally {
         tt = !1, ve.H = R, n(), Error.prepareStackTrace = O;
       }
-      return se = (se = d ? d.displayName || d.name : "") ? s(se) : "", typeof d == "function" && rt.set(d, se), se;
+      return se = (se = _ ? _.displayName || _.name : "") ? s(se) : "", typeof _ == "function" && rt.set(_, se), se;
     }
-    function o(d) {
-      if (d == null) return "";
-      if (typeof d == "function") {
-        var L = d.prototype;
+    function o(_) {
+      if (_ == null) return "";
+      if (typeof _ == "function") {
+        var L = _.prototype;
         return a(
-          d,
+          _,
           !(!L || !L.isReactComponent)
         );
       }
-      if (typeof d == "string") return s(d);
-      switch (d) {
+      if (typeof _ == "string") return s(_);
+      switch (_) {
         case A:
           return s("Suspense");
         case V:
           return s("SuspenseList");
       }
-      if (typeof d == "object")
-        switch (d.$$typeof) {
+      if (typeof _ == "object")
+        switch (_.$$typeof) {
           case j:
-            return d = a(d.render, !1), d;
+            return _ = a(_.render, !1), _;
           case $:
-            return o(d.type);
+            return o(_.type);
           case H:
-            L = d._payload, d = d._init;
+            L = _._payload, _ = _._init;
             try {
-              return o(d(L));
+              return o(_(L));
             } catch {
             }
         }
       return "";
     }
     function f() {
-      var d = ve.A;
-      return d === null ? null : d.getOwner();
+      var _ = ve.A;
+      return _ === null ? null : _.getOwner();
     }
-    function u(d) {
-      if (Fe.call(d, "key")) {
-        var L = Object.getOwnPropertyDescriptor(d, "key").get;
+    function u(_) {
+      if (Fe.call(_, "key")) {
+        var L = Object.getOwnPropertyDescriptor(_, "key").get;
         if (L && L.isReactWarning) return !1;
       }
-      return d.key !== void 0;
+      return _.key !== void 0;
     }
-    function _(d, L) {
+    function d(_, L) {
       function O() {
         qt || (qt = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
           L
         ));
       }
-      O.isReactWarning = !0, Object.defineProperty(d, "key", {
+      O.isReactWarning = !0, Object.defineProperty(_, "key", {
         get: O,
         configurable: !0
       });
     }
     function C() {
-      var d = l(this.type);
-      return Jt[d] || (Jt[d] = !0, console.error(
+      var _ = l(this.type);
+      return Jt[_] || (Jt[_] = !0, console.error(
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
-      )), d = this.props.ref, d !== void 0 ? d : null;
+      )), _ = this.props.ref, _ !== void 0 ? _ : null;
     }
-    function p(d, L, O, R, ee, W) {
-      return O = W.ref, d = {
+    function p(_, L, O, R, ee, W) {
+      return O = W.ref, _ = {
         $$typeof: M,
-        type: d,
+        type: _,
         key: L,
         props: W,
         _owner: ee
-      }, (O !== void 0 ? O : null) !== null ? Object.defineProperty(d, "ref", {
+      }, (O !== void 0 ? O : null) !== null ? Object.defineProperty(_, "ref", {
         enumerable: !1,
         get: C
-      }) : Object.defineProperty(d, "ref", { enumerable: !1, value: null }), d._store = {}, Object.defineProperty(d._store, "validated", {
+      }) : Object.defineProperty(_, "ref", { enumerable: !1, value: null }), _._store = {}, Object.defineProperty(_._store, "validated", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
         value: 0
-      }), Object.defineProperty(d, "_debugInfo", {
+      }), Object.defineProperty(_, "_debugInfo", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
         value: null
-      }), Object.freeze && (Object.freeze(d.props), Object.freeze(d)), d;
+      }), Object.freeze && (Object.freeze(_.props), Object.freeze(_)), _;
     }
-    function g(d, L, O, R, ee, W) {
-      if (typeof d == "string" || typeof d == "function" || d === T || d === S || d === k || d === A || d === V || d === Y || typeof d == "object" && d !== null && (d.$$typeof === H || d.$$typeof === $ || d.$$typeof === N || d.$$typeof === b || d.$$typeof === j || d.$$typeof === Ze || d.getModuleId !== void 0)) {
+    function g(_, L, O, R, ee, W) {
+      if (typeof _ == "string" || typeof _ == "function" || _ === T || _ === S || _ === k || _ === A || _ === V || _ === Y || typeof _ == "object" && _ !== null && (_.$$typeof === H || _.$$typeof === $ || _.$$typeof === N || _.$$typeof === b || _.$$typeof === j || _.$$typeof === Ze || _.getModuleId !== void 0)) {
         var Z = L.children;
         if (Z !== void 0)
           if (R)
             if (a9(Z)) {
               for (R = 0; R < Z.length; R++)
-                c(Z[R], d);
+                c(Z[R], _);
               Object.freeze && Object.freeze(Z);
             } else
               console.error(
                 "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
               );
-          else c(Z, d);
+          else c(Z, _);
       } else
-        Z = "", (d === void 0 || typeof d == "object" && d !== null && Object.keys(d).length === 0) && (Z += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports."), d === null ? R = "null" : a9(d) ? R = "array" : d !== void 0 && d.$$typeof === M ? (R = "<" + (l(d.type) || "Unknown") + " />", Z = " Did you accidentally export a JSX literal instead of a component?") : R = typeof d, console.error(
+        Z = "", (_ === void 0 || typeof _ == "object" && _ !== null && Object.keys(_).length === 0) && (Z += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports."), _ === null ? R = "null" : a9(_) ? R = "array" : _ !== void 0 && _.$$typeof === M ? (R = "<" + (l(_.type) || "Unknown") + " />", Z = " Did you accidentally export a JSX literal instead of a component?") : R = typeof _, console.error(
           "React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",
           R,
           Z
         );
       if (Fe.call(L, "key")) {
-        Z = l(d);
+        Z = l(_);
         var Pe = Object.keys(L).filter(function(se) {
           return se !== "key";
         });
@@ -380,36 +380,36 @@ React keys must be passed directly to JSX without using spread:
         for (var l9 in L)
           l9 !== "key" && (O[l9] = L[l9]);
       } else O = L;
-      return Z && _(
+      return Z && d(
         O,
-        typeof d == "function" ? d.displayName || d.name || "Unknown" : d
-      ), p(d, Z, W, ee, f(), O);
+        typeof _ == "function" ? _.displayName || _.name || "Unknown" : _
+      ), p(_, Z, W, ee, f(), O);
     }
-    function c(d, L) {
-      if (typeof d == "object" && d && d.$$typeof !== v0) {
-        if (a9(d))
-          for (var O = 0; O < d.length; O++) {
-            var R = d[O];
+    function c(_, L) {
+      if (typeof _ == "object" && _ && _.$$typeof !== v0) {
+        if (a9(_))
+          for (var O = 0; O < _.length; O++) {
+            var R = _[O];
             m(R) && w(R, L);
           }
-        else if (m(d))
-          d._store && (d._store.validated = 1);
-        else if (d === null || typeof d != "object" ? O = null : (O = G && d[G] || d["@@iterator"], O = typeof O == "function" ? O : null), typeof O == "function" && O !== d.entries && (O = O.call(d), O !== d))
-          for (; !(d = O.next()).done; )
-            m(d.value) && w(d.value, L);
+        else if (m(_))
+          _._store && (_._store.validated = 1);
+        else if (_ === null || typeof _ != "object" ? O = null : (O = G && _[G] || _["@@iterator"], O = typeof O == "function" ? O : null), typeof O == "function" && O !== _.entries && (O = O.call(_), O !== _))
+          for (; !(_ = O.next()).done; )
+            m(_.value) && w(_.value, L);
       }
     }
-    function m(d) {
-      return typeof d == "object" && d !== null && d.$$typeof === M;
+    function m(_) {
+      return typeof _ == "object" && _ !== null && _.$$typeof === M;
     }
-    function w(d, L) {
-      if (d._store && !d._store.validated && d.key == null && (d._store.validated = 1, L = v(L), !Kt[L])) {
+    function w(_, L) {
+      if (_._store && !_._store.validated && _.key == null && (_._store.validated = 1, L = v(L), !Kt[L])) {
         Kt[L] = !0;
         var O = "";
-        d && d._owner != null && d._owner !== f() && (O = null, typeof d._owner.tag == "number" ? O = l(d._owner.type) : typeof d._owner.name == "string" && (O = d._owner.name), O = " It was passed a child from " + O + ".");
+        _ && _._owner != null && _._owner !== f() && (O = null, typeof _._owner.tag == "number" ? O = l(_._owner.type) : typeof _._owner.name == "string" && (O = _._owner.name), O = " It was passed a child from " + O + ".");
         var R = ve.getCurrentStack;
         ve.getCurrentStack = function() {
-          var ee = o(d.type);
+          var ee = o(_.type);
           return R && (ee += R() || ""), ee;
         }, console.error(
           'Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information.',
@@ -418,21 +418,21 @@ React keys must be passed directly to JSX without using spread:
         ), ve.getCurrentStack = R;
       }
     }
-    function v(d) {
+    function v(_) {
       var L = "", O = f();
       return O && (O = l(O.type)) && (L = `
 
-Check the render method of \`` + O + "`."), L || (d = l(d)) && (L = `
+Check the render method of \`` + O + "`."), L || (_ = l(_)) && (L = `
 
-Check the top-level render call using <` + d + ">."), L;
+Check the top-level render call using <` + _ + ">."), L;
     }
     var E = y0, M = Symbol.for("react.transitional.element"), y = Symbol.for("react.portal"), T = Symbol.for("react.fragment"), k = Symbol.for("react.strict_mode"), S = Symbol.for("react.profiler"), b = Symbol.for("react.consumer"), N = Symbol.for("react.context"), j = Symbol.for("react.forward_ref"), A = Symbol.for("react.suspense"), V = Symbol.for("react.suspense_list"), $ = Symbol.for("react.memo"), H = Symbol.for("react.lazy"), Y = Symbol.for("react.offscreen"), G = Symbol.iterator, ce = Symbol.for("react.client.reference"), ve = E.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, Fe = Object.prototype.hasOwnProperty, de = Object.assign, Ze = Symbol.for("react.client.reference"), a9 = Array.isArray, ne = 0, Me, Bt, Ht, Yt, Ut, $t, Gt;
     r.__reactDisabledLog = !0;
     var et, Xt, tt = !1, rt = new (typeof WeakMap == "function" ? WeakMap : Map)(), v0 = Symbol.for("react.client.reference"), qt, Jt = {}, Qt = {}, Kt = {};
-    y9.Fragment = T, y9.jsx = function(d, L, O, R, ee) {
-      return g(d, L, O, !1, R, ee);
-    }, y9.jsxs = function(d, L, O, R, ee) {
-      return g(d, L, O, !0, R, ee);
+    y9.Fragment = T, y9.jsx = function(_, L, O, R, ee) {
+      return g(_, L, O, !1, R, ee);
+    }, y9.jsxs = function(_, L, O, R, ee) {
+      return g(_, L, O, !0, R, ee);
     };
   }()), y9;
 }
@@ -441,7 +441,7 @@ function k0() {
   return r1 || (r1 = 1, process.env.NODE_ENV === "production" ? D9.exports = b0() : D9.exports = T0()), D9.exports;
 }
 var x = k0();
-const Qr = ({
+const Kr = ({
   children: l,
   mode: e = "warning",
   pulseAnimation: t = !0
@@ -451,7 +451,7 @@ const Qr = ({
     className: `glowedBorder ${e === "warning" ? "text-evaTextWarning text-shadow-warning border-evaTextWarning" : "text-evaTextDanger text-shadow-danger border-evaTextDanger"}  ${e} label`,
     children: l
   }
-) }), Kr = ({ barsCount: l, currentBarIndex: e }) => {
+) }), ei = ({ barsCount: l, currentBarIndex: e }) => {
   function t() {
     const r = [];
     for (let i = 0; i < l; i++)
@@ -478,12 +478,12 @@ const Qr = ({
     /* @__PURE__ */ x.jsx("div", { className: "h-[105px] flex flex-row overflow-hidden gap-[3px]", children: t() }),
     /* @__PURE__ */ x.jsx("div", { className: "h-[15px]" })
   ] });
-}, ei = ({ unitNumber: l, subjectName: e }) => /* @__PURE__ */ x.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
+}, ti = ({ unitNumber: l, subjectName: e }) => /* @__PURE__ */ x.jsxs("div", { className: "grid grid-rows-3 p-2 h-[135px] w-auto text-evaTextWarning text-shadow-warning text-center bg-red-600 bg-opacity-20 border-2 border-evaTextDanger glowedBorder", children: [
   /* @__PURE__ */ x.jsx("div", { className: "text-xl font-[400] label", children: "Subject" }),
   /* @__PURE__ */ x.jsx("div", { className: "text-2xl font-[600] label", children: l }),
   /* @__PURE__ */ x.jsx("div", { className: "text-xl font-[400] label", children: e })
-] }), S0 = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 80", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { clipPath: "url(#clip0_2004_472)" }, /* @__PURE__ */ h.createElement("path", { className: "scanner", d: "M0 0 H463", opacity: 0, stroke: "#3ee73e", strokeWidth: 2, fill: "#3ee73e" }), /* @__PURE__ */ h.createElement("path", { d: "M43.3464 45.3351V42.717C43.3464 41.6847 42.4622 40.8448 41.3754 40.8448C40.2886 40.8448 39.4044 41.6847 39.4044 42.717V45.0808C39.4044 47.9293 38.2996 50.6642 36.2933 52.7815L33.5271 55.7009C33.2947 55.9462 33.3156 56.324 33.5739 56.5448C33.832 56.7656 34.2297 56.7456 34.4622 56.5004L37.2284 53.581C39.4429 51.2438 40.6625 48.2251 40.6625 45.0808V42.717C40.6625 42.3436 40.9823 42.0398 41.3754 42.0398C41.7685 42.0398 42.0883 42.3436 42.0883 42.717V45.3351C42.0883 48.8405 40.7211 52.1995 38.2385 54.7934L35.5421 57.6106C35.3084 57.8547 35.3274 58.2327 35.5844 58.4547C35.705 58.5588 35.8564 58.61 36.0073 58.61C36.1784 58.61 36.3489 58.5442 36.473 58.4145L39.1693 55.5972C41.8629 52.7829 43.3464 49.1384 43.3464 45.3351Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M46.0303 42.7169C46.0303 40.2789 43.9421 38.2955 41.3754 38.2955C38.8087 38.2955 36.7205 40.2789 36.7205 42.7169V45.0807C36.7205 47.2985 35.8603 49.4277 34.2984 51.0761L32.3318 53.1516C32.0994 53.3969 32.1204 53.7747 32.3786 53.9955C32.6369 54.2162 33.0345 54.1962 33.267 53.951L35.2335 51.8755C37.0037 50.0073 37.9787 47.5942 37.9787 45.0807V42.7169C37.9787 40.9378 39.5024 39.4905 41.3755 39.4905C43.2485 39.4905 44.7723 40.9378 44.7723 42.7169V45.335C44.7723 49.4759 43.1573 53.444 40.2245 56.5081L37.9495 58.8852C37.7157 59.1293 37.7347 59.5073 37.9917 59.7293C38.1123 59.8334 38.2637 59.8846 38.4146 59.8846C38.5857 59.8846 38.7562 59.8187 38.8803 59.689L41.1554 57.3119C44.299 54.0274 46.0303 49.7739 46.0303 45.335V42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.7142 42.717C48.7142 38.8733 45.422 35.7463 41.3754 35.7463C37.3287 35.7463 34.0366 38.8733 34.0366 42.717V45.0808C34.0366 46.6677 33.4211 48.1913 32.3034 49.3708L30.5327 51.2396C30.3003 51.4849 30.3212 51.8626 30.5795 52.0835C30.8376 52.3042 31.2354 52.2841 31.4679 52.039L33.2386 50.1702C34.5645 48.7709 35.2947 46.9634 35.2947 45.0808V42.717C35.2947 39.5322 38.0224 36.9413 41.3754 36.9413C44.7283 36.9413 47.4561 39.5322 47.4561 42.717V45.3351C47.4561 50.1116 45.5931 54.6887 42.2103 58.223L41.5807 58.8808C41.347 59.125 41.366 59.5029 41.6231 59.7249C41.7436 59.8289 41.8951 59.8802 42.0459 59.8802C42.217 59.8802 42.3875 59.8143 42.5116 59.6847L43.1411 59.0268C46.7349 55.272 48.7141 50.4096 48.7141 45.3351V42.717H48.7142Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M31.3527 42.7169C31.3527 43.047 31.6344 43.3144 31.9818 43.3144C32.3292 43.3144 32.6108 43.047 32.6108 42.7169C32.6108 40.705 33.3798 38.7615 34.7763 37.2444C36.1598 35.7414 38.0585 34.7585 40.1228 34.4768C40.4667 34.4298 40.7054 34.127 40.656 33.8004C40.6066 33.4738 40.2874 33.2474 39.9439 33.294C37.5821 33.6163 35.4104 34.7399 33.8291 36.4579C32.2322 38.1928 31.3527 40.4157 31.3527 42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M32.6107 45.0808C32.6107 44.7508 32.3291 44.4833 31.9817 44.4833C31.6343 44.4833 31.3526 44.7508 31.3526 45.0808C31.3526 46.037 30.9818 46.9548 30.3085 47.6654L28.7335 49.3277C28.5011 49.5729 28.5221 49.9507 28.7803 50.1715C28.9006 50.2743 29.0509 50.3249 29.2009 50.3249C29.373 50.3249 29.5445 50.2581 29.6687 50.1271L31.2437 48.4648C32.1252 47.5344 32.6107 46.3327 32.6107 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M50.1634 50.4144C49.8272 50.3312 49.4836 50.522 49.3956 50.8411C49.1633 51.6839 48.8745 52.5217 48.5367 53.3313C48.4087 53.6381 48.5668 53.9853 48.8898 54.1068C48.9659 54.1354 49.0442 54.149 49.1214 54.149C49.3717 54.149 49.6085 54.006 49.7064 53.7714C50.0628 52.917 50.3676 52.033 50.6127 51.1436C50.7006 50.8245 50.4994 50.4979 50.1634 50.4144Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.0696 35.6373C47.8112 35.4165 47.4134 35.4368 47.1812 35.6821C46.949 35.9275 46.9701 36.3053 47.2284 36.5259C49.0787 38.1058 50.1399 40.3623 50.1399 42.7169V45.335C50.1399 46.3287 50.0677 47.33 49.9254 48.3112C49.878 48.6381 50.1186 48.9396 50.4627 48.9846C50.4918 48.9884 50.5207 48.9903 50.5493 48.9903C50.8587 48.9903 51.1283 48.7734 51.1717 48.4742C51.3218 47.4391 51.3979 46.3829 51.3979 45.3349V42.7169C51.398 40.0239 50.1848 37.4434 48.0696 35.6373Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M45.1289 35.1947C45.2162 35.2342 45.3082 35.2529 45.3989 35.2529C45.634 35.2529 45.8595 35.1271 45.9673 34.9121C46.1167 34.6142 45.9834 34.2576 45.6698 34.1158C44.7635 33.7059 43.8002 33.4294 42.8067 33.2939C42.4624 33.2473 42.1441 33.4738 42.0947 33.8003C42.0453 34.1269 42.284 34.4298 42.6278 34.4767C43.4957 34.5952 44.3372 34.8367 45.1289 35.1947Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M41.3754 30.6478C41.1401 30.6478 40.9021 30.654 40.6678 30.6662C40.3209 30.6844 40.0552 30.9663 40.0743 31.2957C40.0935 31.6252 40.3899 31.8789 40.7371 31.8593C40.9484 31.8482 41.1631 31.8427 41.3754 31.8427C47.6881 31.8427 52.8239 36.7208 52.8239 42.7169V45.335C52.8239 45.665 53.1055 45.9324 53.4529 45.9324C53.8003 45.9324 54.082 45.665 54.082 45.335V42.7169C54.082 36.062 48.3818 30.6478 41.3754 30.6478Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M34.4976 33.8896C34.6214 33.8896 34.7467 33.8548 34.8561 33.7826C35.9027 33.0913 37.052 32.5753 38.2725 32.2484C38.6069 32.1588 38.8015 31.8287 38.7073 31.5112C38.613 31.1936 38.2653 31.009 37.9311 31.0982C36.5757 31.4611 35.2995 32.0342 34.1379 32.8013C33.8527 32.9898 33.7822 33.3621 33.9806 33.633C34.1028 33.8001 34.2985 33.8896 34.4976 33.8896Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M29.9269 45.0808V42.717C29.9269 39.9375 31.0351 37.2904 33.0474 35.2631C33.2856 35.023 33.274 34.645 33.0212 34.4185C32.7684 34.1921 32.3703 34.2034 32.132 34.4434C29.8987 36.6932 28.6688 39.6316 28.6688 42.717V45.0808C28.6688 45.406 28.5427 45.7182 28.3137 45.9599L27.5381 46.7784C27.3056 47.0237 27.3266 47.4015 27.5849 47.6222C27.705 47.7251 27.8555 47.7757 28.0055 47.7757C28.1776 47.7757 28.349 47.709 28.4732 47.5779L29.2489 46.7594C29.6861 46.2978 29.9269 45.7017 29.9269 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M55.9669 38.0648C55.277 36.1174 54.1805 34.358 52.708 32.8355C52.4729 32.5925 52.075 32.5764 51.8192 32.7997C51.5634 33.023 51.5465 33.4009 51.7815 33.644C53.1341 35.0424 54.1412 36.658 54.7746 38.4459C54.863 38.6955 55.108 38.853 55.3706 38.853C55.4372 38.853 55.5048 38.8428 55.5714 38.8216C55.9005 38.7163 56.0777 38.3775 55.9669 38.0648Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M46.3465 28.881C46.018 28.7742 45.6602 28.9406 45.5477 29.2529C45.4352 29.5651 45.6105 29.9048 45.9392 30.0115C47.3263 30.4623 48.6286 31.1154 49.8099 31.9528C49.9229 32.0329 50.0548 32.0715 50.1857 32.0715C50.3774 32.0715 50.5668 31.9885 50.6903 31.8313C50.8982 31.5669 50.8408 31.1924 50.5624 30.9951C49.2761 30.0834 47.8576 29.372 46.3465 28.881Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M31.6014 33.0304C34.2475 30.6207 37.7186 29.2935 41.3754 29.2935C42.0544 29.2935 42.7372 29.34 43.4047 29.4314C43.7489 29.4791 44.0676 29.252 44.1172 28.9254C44.1669 28.5988 43.9284 28.2959 43.5846 28.2487C42.8576 28.1492 42.1143 28.0986 41.3754 28.0986C37.3925 28.0986 33.6122 29.5438 30.7308 32.1679C27.8583 34.7839 26.1785 38.2945 26.0006 42.053C25.985 42.3827 26.2538 42.662 26.6007 42.6767C26.6104 42.6772 26.62 42.6773 26.6295 42.6773C26.9639 42.6773 27.2423 42.4272 27.2575 42.1067C27.4206 38.6563 28.9633 35.433 31.6014 33.0304Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M41.3753 25.5493C39.9686 25.5493 38.5669 25.7041 37.2091 26.0096C36.871 26.0856 36.6619 26.4076 36.7419 26.7286C36.822 27.0497 37.161 27.2483 37.499 27.1723C38.762 26.8883 40.0661 26.7442 41.3753 26.7442C45.988 26.7442 50.2936 28.4898 53.499 31.6591C53.6226 31.7813 53.7875 31.8428 53.9528 31.8428C54.1095 31.8428 54.2665 31.7875 54.3885 31.6762C54.639 31.4475 54.6471 31.0693 54.4063 30.8314C52.7362 29.18 50.7744 27.881 48.5754 26.9705C46.2978 26.0274 43.8753 25.5493 41.3753 25.5493Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M27.2456 32.9902C27.3607 33.0758 27.4973 33.1173 27.633 33.1173C27.8198 33.1173 28.0046 33.0387 28.1287 32.8882C29.9214 30.7132 32.2816 29.0072 34.9539 27.9544C35.2748 27.828 35.4271 27.4784 35.294 27.1736C35.1609 26.8688 34.7927 26.724 34.472 26.8506C31.6001 27.9819 29.0641 29.8149 27.1381 32.1514C26.9239 32.4113 26.9721 32.7868 27.2456 32.9902Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M32.6532 26.085C32.745 26.085 32.8382 26.0659 32.9262 26.0254C35.5747 24.8108 38.4174 24.195 41.3753 24.195C42.9167 24.195 44.4519 24.3672 45.938 24.7069C46.2756 24.7838 46.6155 24.5866 46.6967 24.2658C46.778 23.945 46.5701 23.6223 46.2323 23.5451C44.6499 23.1834 43.0158 23 41.3753 23C38.2264 23 35.1997 23.6558 32.3793 24.9493C32.0665 25.0928 31.9353 25.45 32.0863 25.7472C32.1948 25.9606 32.4194 26.085 32.6532 26.085Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.5671 25.5001C49.2156 25.7454 49.8575 26.0274 50.4749 26.3382C50.5687 26.3855 50.6695 26.4079 50.7688 26.4079C50.9943 26.4079 51.2123 26.2925 51.3252 26.09C51.4878 25.7985 51.3709 25.4369 51.0639 25.2823C50.4066 24.9515 49.7231 24.6512 49.0325 24.39C48.7097 24.2679 48.3439 24.4175 48.2154 24.7239C48.0869 25.0305 48.2444 25.3781 48.5671 25.5001Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-top", d: "M40.8143 11.61429L34 5H47.6286L40.8143 11.61429Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-right", d: "M66 40.7945L70 34L70 47.5891L66 40.7945Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-right-top", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 18.2286L70.4849 5L70.4849 5L67 5L57 5L57 8.30714L67 8.30714L67 18.2286L70.4849 18.2286Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-right-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 71.9214L70.4849 62L67.1137 62L67.1137 71.9214L57 71.9214L57 75.2286L67.1137 75.2286L67.1137 75.2286L70.4849 75.2286L70.4849 75.2286L70.4849 71.9214Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-left-top", fillRule: "evenodd", clipRule: "evenodd", d: "M10 8.30715V18.2286H13.37123L13.37123 8.30715H23.4849V5H13.37123V5L10 5V5V8.30715Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-left-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M13.37125 75.2286L23.4849 75.2286L23.4849 71.9214L13.37125 71.9214L13.37125 62L10 62L10 71.9214L10 71.9214L10 75.2286L10 75.2286L13.37125 75.2286Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-left", d: "M14 40.7946L10 47.5891L10 34L14 40.7946Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-bot", d: "M40.815 69L47.63 75.6143L34 75.6143L40.815 69Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("text", { className: "text font-[RobotoCondensed]", x: 22, y: 15, opacity: 0, fontWeight: 600, fontSize: 5, textAnchor: "left", fill: "#3ee73e" }, `\r
-            ACCESS GRANTED\r
+] }), S0 = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 80", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { clipPath: "url(#clip0_2004_472)" }, /* @__PURE__ */ h.createElement("path", { className: "scanner", d: "M0 0 H463", opacity: 0, stroke: "#3ee73e", strokeWidth: 2, fill: "#3ee73e" }), /* @__PURE__ */ h.createElement("path", { d: "M43.3464 45.3351V42.717C43.3464 41.6847 42.4622 40.8448 41.3754 40.8448C40.2886 40.8448 39.4044 41.6847 39.4044 42.717V45.0808C39.4044 47.9293 38.2996 50.6642 36.2933 52.7815L33.5271 55.7009C33.2947 55.9462 33.3156 56.324 33.5739 56.5448C33.832 56.7656 34.2297 56.7456 34.4622 56.5004L37.2284 53.581C39.4429 51.2438 40.6625 48.2251 40.6625 45.0808V42.717C40.6625 42.3436 40.9823 42.0398 41.3754 42.0398C41.7685 42.0398 42.0883 42.3436 42.0883 42.717V45.3351C42.0883 48.8405 40.7211 52.1995 38.2385 54.7934L35.5421 57.6106C35.3084 57.8547 35.3274 58.2327 35.5844 58.4547C35.705 58.5588 35.8564 58.61 36.0073 58.61C36.1784 58.61 36.3489 58.5442 36.473 58.4145L39.1693 55.5972C41.8629 52.7829 43.3464 49.1384 43.3464 45.3351Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M46.0303 42.7169C46.0303 40.2789 43.9421 38.2955 41.3754 38.2955C38.8087 38.2955 36.7205 40.2789 36.7205 42.7169V45.0807C36.7205 47.2985 35.8603 49.4277 34.2984 51.0761L32.3318 53.1516C32.0994 53.3969 32.1204 53.7747 32.3786 53.9955C32.6369 54.2162 33.0345 54.1962 33.267 53.951L35.2335 51.8755C37.0037 50.0073 37.9787 47.5942 37.9787 45.0807V42.7169C37.9787 40.9378 39.5024 39.4905 41.3755 39.4905C43.2485 39.4905 44.7723 40.9378 44.7723 42.7169V45.335C44.7723 49.4759 43.1573 53.444 40.2245 56.5081L37.9495 58.8852C37.7157 59.1293 37.7347 59.5073 37.9917 59.7293C38.1123 59.8334 38.2637 59.8846 38.4146 59.8846C38.5857 59.8846 38.7562 59.8187 38.8803 59.689L41.1554 57.3119C44.299 54.0274 46.0303 49.7739 46.0303 45.335V42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.7142 42.717C48.7142 38.8733 45.422 35.7463 41.3754 35.7463C37.3287 35.7463 34.0366 38.8733 34.0366 42.717V45.0808C34.0366 46.6677 33.4211 48.1913 32.3034 49.3708L30.5327 51.2396C30.3003 51.4849 30.3212 51.8626 30.5795 52.0835C30.8376 52.3042 31.2354 52.2841 31.4679 52.039L33.2386 50.1702C34.5645 48.7709 35.2947 46.9634 35.2947 45.0808V42.717C35.2947 39.5322 38.0224 36.9413 41.3754 36.9413C44.7283 36.9413 47.4561 39.5322 47.4561 42.717V45.3351C47.4561 50.1116 45.5931 54.6887 42.2103 58.223L41.5807 58.8808C41.347 59.125 41.366 59.5029 41.6231 59.7249C41.7436 59.8289 41.8951 59.8802 42.0459 59.8802C42.217 59.8802 42.3875 59.8143 42.5116 59.6847L43.1411 59.0268C46.7349 55.272 48.7141 50.4096 48.7141 45.3351V42.717H48.7142Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M31.3527 42.7169C31.3527 43.047 31.6344 43.3144 31.9818 43.3144C32.3292 43.3144 32.6108 43.047 32.6108 42.7169C32.6108 40.705 33.3798 38.7615 34.7763 37.2444C36.1598 35.7414 38.0585 34.7585 40.1228 34.4768C40.4667 34.4298 40.7054 34.127 40.656 33.8004C40.6066 33.4738 40.2874 33.2474 39.9439 33.294C37.5821 33.6163 35.4104 34.7399 33.8291 36.4579C32.2322 38.1928 31.3527 40.4157 31.3527 42.7169Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M32.6107 45.0808C32.6107 44.7508 32.3291 44.4833 31.9817 44.4833C31.6343 44.4833 31.3526 44.7508 31.3526 45.0808C31.3526 46.037 30.9818 46.9548 30.3085 47.6654L28.7335 49.3277C28.5011 49.5729 28.5221 49.9507 28.7803 50.1715C28.9006 50.2743 29.0509 50.3249 29.2009 50.3249C29.373 50.3249 29.5445 50.2581 29.6687 50.1271L31.2437 48.4648C32.1252 47.5344 32.6107 46.3327 32.6107 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M50.1634 50.4144C49.8272 50.3312 49.4836 50.522 49.3956 50.8411C49.1633 51.6839 48.8745 52.5217 48.5367 53.3313C48.4087 53.6381 48.5668 53.9853 48.8898 54.1068C48.9659 54.1354 49.0442 54.149 49.1214 54.149C49.3717 54.149 49.6085 54.006 49.7064 53.7714C50.0628 52.917 50.3676 52.033 50.6127 51.1436C50.7006 50.8245 50.4994 50.4979 50.1634 50.4144Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.0696 35.6373C47.8112 35.4165 47.4134 35.4368 47.1812 35.6821C46.949 35.9275 46.9701 36.3053 47.2284 36.5259C49.0787 38.1058 50.1399 40.3623 50.1399 42.7169V45.335C50.1399 46.3287 50.0677 47.33 49.9254 48.3112C49.878 48.6381 50.1186 48.9396 50.4627 48.9846C50.4918 48.9884 50.5207 48.9903 50.5493 48.9903C50.8587 48.9903 51.1283 48.7734 51.1717 48.4742C51.3218 47.4391 51.3979 46.3829 51.3979 45.3349V42.7169C51.398 40.0239 50.1848 37.4434 48.0696 35.6373Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M45.1289 35.1947C45.2162 35.2342 45.3082 35.2529 45.3989 35.2529C45.634 35.2529 45.8595 35.1271 45.9673 34.9121C46.1167 34.6142 45.9834 34.2576 45.6698 34.1158C44.7635 33.7059 43.8002 33.4294 42.8067 33.2939C42.4624 33.2473 42.1441 33.4738 42.0947 33.8003C42.0453 34.1269 42.284 34.4298 42.6278 34.4767C43.4957 34.5952 44.3372 34.8367 45.1289 35.1947Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M41.3754 30.6478C41.1401 30.6478 40.9021 30.654 40.6678 30.6662C40.3209 30.6844 40.0552 30.9663 40.0743 31.2957C40.0935 31.6252 40.3899 31.8789 40.7371 31.8593C40.9484 31.8482 41.1631 31.8427 41.3754 31.8427C47.6881 31.8427 52.8239 36.7208 52.8239 42.7169V45.335C52.8239 45.665 53.1055 45.9324 53.4529 45.9324C53.8003 45.9324 54.082 45.665 54.082 45.335V42.7169C54.082 36.062 48.3818 30.6478 41.3754 30.6478Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M34.4976 33.8896C34.6214 33.8896 34.7467 33.8548 34.8561 33.7826C35.9027 33.0913 37.052 32.5753 38.2725 32.2484C38.6069 32.1588 38.8015 31.8287 38.7073 31.5112C38.613 31.1936 38.2653 31.009 37.9311 31.0982C36.5757 31.4611 35.2995 32.0342 34.1379 32.8013C33.8527 32.9898 33.7822 33.3621 33.9806 33.633C34.1028 33.8001 34.2985 33.8896 34.4976 33.8896Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M29.9269 45.0808V42.717C29.9269 39.9375 31.0351 37.2904 33.0474 35.2631C33.2856 35.023 33.274 34.645 33.0212 34.4185C32.7684 34.1921 32.3703 34.2034 32.132 34.4434C29.8987 36.6932 28.6688 39.6316 28.6688 42.717V45.0808C28.6688 45.406 28.5427 45.7182 28.3137 45.9599L27.5381 46.7784C27.3056 47.0237 27.3266 47.4015 27.5849 47.6222C27.705 47.7251 27.8555 47.7757 28.0055 47.7757C28.1776 47.7757 28.349 47.709 28.4732 47.5779L29.2489 46.7594C29.6861 46.2978 29.9269 45.7017 29.9269 45.0808Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M55.9669 38.0648C55.277 36.1174 54.1805 34.358 52.708 32.8355C52.4729 32.5925 52.075 32.5764 51.8192 32.7997C51.5634 33.023 51.5465 33.4009 51.7815 33.644C53.1341 35.0424 54.1412 36.658 54.7746 38.4459C54.863 38.6955 55.108 38.853 55.3706 38.853C55.4372 38.853 55.5048 38.8428 55.5714 38.8216C55.9005 38.7163 56.0777 38.3775 55.9669 38.0648Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M46.3465 28.881C46.018 28.7742 45.6602 28.9406 45.5477 29.2529C45.4352 29.5651 45.6105 29.9048 45.9392 30.0115C47.3263 30.4623 48.6286 31.1154 49.8099 31.9528C49.9229 32.0329 50.0548 32.0715 50.1857 32.0715C50.3774 32.0715 50.5668 31.9885 50.6903 31.8313C50.8982 31.5669 50.8408 31.1924 50.5624 30.9951C49.2761 30.0834 47.8576 29.372 46.3465 28.881Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M31.6014 33.0304C34.2475 30.6207 37.7186 29.2935 41.3754 29.2935C42.0544 29.2935 42.7372 29.34 43.4047 29.4314C43.7489 29.4791 44.0676 29.252 44.1172 28.9254C44.1669 28.5988 43.9284 28.2959 43.5846 28.2487C42.8576 28.1492 42.1143 28.0986 41.3754 28.0986C37.3925 28.0986 33.6122 29.5438 30.7308 32.1679C27.8583 34.7839 26.1785 38.2945 26.0006 42.053C25.985 42.3827 26.2538 42.662 26.6007 42.6767C26.6104 42.6772 26.62 42.6773 26.6295 42.6773C26.9639 42.6773 27.2423 42.4272 27.2575 42.1067C27.4206 38.6563 28.9633 35.433 31.6014 33.0304Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M41.3753 25.5493C39.9686 25.5493 38.5669 25.7041 37.2091 26.0096C36.871 26.0856 36.6619 26.4076 36.7419 26.7286C36.822 27.0497 37.161 27.2483 37.499 27.1723C38.762 26.8883 40.0661 26.7442 41.3753 26.7442C45.988 26.7442 50.2936 28.4898 53.499 31.6591C53.6226 31.7813 53.7875 31.8428 53.9528 31.8428C54.1095 31.8428 54.2665 31.7875 54.3885 31.6762C54.639 31.4475 54.6471 31.0693 54.4063 30.8314C52.7362 29.18 50.7744 27.881 48.5754 26.9705C46.2978 26.0274 43.8753 25.5493 41.3753 25.5493Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M27.2456 32.9902C27.3607 33.0758 27.4973 33.1173 27.633 33.1173C27.8198 33.1173 28.0046 33.0387 28.1287 32.8882C29.9214 30.7132 32.2816 29.0072 34.9539 27.9544C35.2748 27.828 35.4271 27.4784 35.294 27.1736C35.1609 26.8688 34.7927 26.724 34.472 26.8506C31.6001 27.9819 29.0641 29.8149 27.1381 32.1514C26.9239 32.4113 26.9721 32.7868 27.2456 32.9902Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M32.6532 26.085C32.745 26.085 32.8382 26.0659 32.9262 26.0254C35.5747 24.8108 38.4174 24.195 41.3753 24.195C42.9167 24.195 44.4519 24.3672 45.938 24.7069C46.2756 24.7838 46.6155 24.5866 46.6967 24.2658C46.778 23.945 46.5701 23.6223 46.2323 23.5451C44.6499 23.1834 43.0158 23 41.3753 23C38.2264 23 35.1997 23.6558 32.3793 24.9493C32.0665 25.0928 31.9353 25.45 32.0863 25.7472C32.1948 25.9606 32.4194 26.085 32.6532 26.085Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { d: "M48.5671 25.5001C49.2156 25.7454 49.8575 26.0274 50.4749 26.3382C50.5687 26.3855 50.6695 26.4079 50.7688 26.4079C50.9943 26.4079 51.2123 26.2925 51.3252 26.09C51.4878 25.7985 51.3709 25.4369 51.0639 25.2823C50.4066 24.9515 49.7231 24.6512 49.0325 24.39C48.7097 24.2679 48.3439 24.4175 48.2154 24.7239C48.0869 25.0305 48.2444 25.3781 48.5671 25.5001Z", fill: "none", className: "stroke-fng", stroke: "currentColor", strokeWidth: 1 }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-top", d: "M40.8143 11.61429L34 5H47.6286L40.8143 11.61429Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-right", d: "M66 40.7945L70 34L70 47.5891L66 40.7945Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-right-top", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 18.2286L70.4849 5L70.4849 5L67 5L57 5L57 8.30714L67 8.30714L67 18.2286L70.4849 18.2286Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-right-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M70.4849 71.9214L70.4849 62L67.1137 62L67.1137 71.9214L57 71.9214L57 75.2286L67.1137 75.2286L67.1137 75.2286L70.4849 75.2286L70.4849 75.2286L70.4849 71.9214Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-left-top", fillRule: "evenodd", clipRule: "evenodd", d: "M10 8.30715V18.2286H13.37123L13.37123 8.30715H23.4849V5H13.37123V5L10 5V5V8.30715Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "corner-left-bot", fillRule: "evenodd", clipRule: "evenodd", d: "M13.37125 75.2286L23.4849 75.2286L23.4849 71.9214L13.37125 71.9214L13.37125 62L10 62L10 71.9214L10 71.9214L10 75.2286L10 75.2286L13.37125 75.2286Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-left", d: "M14 40.7946L10 47.5891L10 34L14 40.7946Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("path", { className: "edge-triangle-bot", d: "M40.815 69L47.63 75.6143L34 75.6143L40.815 69Z", fill: "currentColor" }), /* @__PURE__ */ h.createElement("text", { className: "text font-[RobotoCondensed]", x: 22, y: 15, opacity: 0, fontWeight: 600, fontSize: 5, textAnchor: "left", fill: "#3ee73e" }, `
+            ACCESS GRANTED
         `)), /* @__PURE__ */ h.createElement("defs", null, /* @__PURE__ */ h.createElement("clipPath", { id: "clip0_2004_472" }, /* @__PURE__ */ h.createElement("rect", { width: 80, height: 80, fill: "white" }))));
 function Ae(l) {
   if (l === void 0)
@@ -680,11 +680,11 @@ var ge = {
   var t = e.data;
   return t === "isFromStart" || t === "isStart";
 }, I0 = function(e, t, r, i) {
-  var n = e.ratio, s = t < 0 || !t && (!e._start && W0(e) && !(!e._initted && pt(e)) || (e._ts < 0 || e._dp._ts < 0) && !pt(e)) ? 0 : 1, a = e._rDelay, o = 0, f, u, _;
+  var n = e.ratio, s = t < 0 || !t && (!e._start && W0(e) && !(!e._initted && pt(e)) || (e._ts < 0 || e._dp._ts < 0) && !pt(e)) ? 0 : 1, a = e._rDelay, o = 0, f, u, d;
   if (a && e._repeat && (o = V9(0, e._tDur, t), u = p9(o, a), e._yoyo && u & 1 && (s = 1 - s), u !== p9(e._tTime, a) && (n = 1 - s, e.vars.repeatRefresh && e._initted && e.invalidate())), s !== n || K || i || e._zTime === re || !t && e._zTime) {
     if (!e._initted && F1(e, t, i, r, o))
       return;
-    for (_ = e._zTime, e._zTime = t || (r ? re : 0), r || (r = t && !_), e.ratio = s, e._from && (s = 1 - s), e._time = 0, e._tTime = o, f = e._pt; f; )
+    for (d = e._zTime, e._zTime = t || (r ? re : 0), r || (r = t && !d), e.ratio = s, e._from && (s = 1 - s), e._time = 0, e._tTime = o, f = e._pt; f; )
       f.r(s, f.d), f = f._next;
     t < 0 && Ct(e, t, r, !0), e._onUpdate && !r && me(e, "onUpdate"), o && e._repeat && !r && e.parent && me(e, "onRepeat"), (t >= e._tDur || t < 0) && e.ratio === s && (s && Ue(e, 1), !r && !K && (me(e, s ? "onComplete" : "onReverseComplete", !0), e._prom && e._prom()));
   } else e._zTime || (e._zTime = t);
@@ -755,12 +755,12 @@ var ge = {
     return e;
   var t = Oe(e) ? e : {
     each: e
-  }, r = r9(t.ease), i = t.from || 0, n = parseFloat(t.base) || 0, s = {}, a = i > 0 && i < 1, o = isNaN(i) || a, f = t.axis, u = i, _ = i;
-  return Q(i) ? u = _ = {
+  }, r = r9(t.ease), i = t.from || 0, n = parseFloat(t.base) || 0, s = {}, a = i > 0 && i < 1, o = isNaN(i) || a, f = t.axis, u = i, d = i;
+  return Q(i) ? u = d = {
     center: 0.5,
     edges: 0.5,
     end: 1
-  }[i] || 0 : !a && o && (u = i[0], _ = i[1]), function(C, p, g) {
+  }[i] || 0 : !a && o && (u = i[0], d = i[1]), function(C, p, g) {
     var c = (g || t).length, m = s[c], w, v, E, M, y, T, k, S, b;
     if (!m) {
       if (b = t.grid === "auto" ? 0 : (t.grid || [1, Se])[1], !b) {
@@ -768,7 +768,7 @@ var ge = {
           ;
         b < c && b--;
       }
-      for (m = s[c] = [], w = o ? Math.min(b, c) * u - 0.5 : i % b, v = b === Se ? 0 : o ? c * _ / b - 0.5 : i / b | 0, k = 0, S = Se, T = 0; T < c; T++)
+      for (m = s[c] = [], w = o ? Math.min(b, c) * u - 0.5 : i % b, v = b === Se ? 0 : o ? c * d / b - 0.5 : i / b | 0, k = 0, S = Se, T = 0; T < c; T++)
         E = T % b - w, M = v - (T / b | 0), m[T] = y = f ? Math.abs(f === "y" ? M : E) : E1(E * E + M * M), y > k && (k = y), y < S && (S = y);
       i === "random" && W1(m), m.max = k - S, m.min = S, m.v = c = (parseFloat(t.amount) || parseFloat(t.each) * (b > c ? c - 1 : f ? f === "y" ? c / b : b : Math.max(b, c / b)) || 0) * (i === "edges" ? -1 : 1), m.b = c < 0 ? n - c : n, m.u = te(t.amount || t.each) || 0, r = r && c < 0 ? Q1(r) : r;
     }
@@ -785,8 +785,8 @@ var ge = {
   return !r && Oe(e) && (i = r = e.radius || Se, e.values ? (e = Ee(e.values), (n = !je(e[0])) && (i *= i)) : e = xt(e.increment)), Ge(t, r ? U(e) ? function(s) {
     return n = e(s), Math.abs(n - s) <= i ? n : s;
   } : function(s) {
-    for (var a = parseFloat(n ? s.x : s), o = parseFloat(n ? s.y : 0), f = Se, u = 0, _ = e.length, C, p; _--; )
-      n ? (C = e[_].x - a, p = e[_].y - o, C = C * C + p * p) : C = Math.abs(e[_] - a), C < f && (f = C, u = _);
+    for (var a = parseFloat(n ? s.x : s), o = parseFloat(n ? s.y : 0), f = Se, u = 0, d = e.length, C, p; d--; )
+      n ? (C = e[d].x - a, p = e[d].y - o, C = C * C + p * p) : C = Math.abs(e[d] - a), C < f && (f = C, u = d);
     return u = !i || f <= i ? e[u] : s, n || u === s || je(s) ? u : u + te(s);
   } : xt(e));
 }, H1 = function(e, t, r, i) {
@@ -835,7 +835,7 @@ var ge = {
     return (1 - p) * e + p * t;
   };
   if (!n) {
-    var s = Q(e), a = {}, o, f, u, _, C;
+    var s = Q(e), a = {}, o, f, u, d, C;
     if (r === !0 && (i = 1) && (r = null), s)
       e = {
         p: e
@@ -843,10 +843,10 @@ var ge = {
         p: t
       };
     else if (ie(e) && !ie(t)) {
-      for (u = [], _ = e.length, C = _ - 2, f = 1; f < _; f++)
+      for (u = [], d = e.length, C = d - 2, f = 1; f < d; f++)
         u.push(l(e[f - 1], e[f]));
-      _--, n = function(g) {
-        g *= _;
+      d--, n = function(g) {
+        g *= d;
         var c = Math.min(C, ~~g);
         return u[c](g - c);
       }, r = t;
@@ -921,7 +921,7 @@ var ge = {
 }, st = function(e, t, r) {
   return e += e < 0 ? 1 : e > 1 ? -1 : 0, (e * 6 < 1 ? t + (r - t) * e * 6 : e < 0.5 ? r : e * 3 < 2 ? t + (r - t) * (2 / 3 - e) * 6 : t) * F + 0.5 | 0;
 }, X1 = function(e, t, r) {
-  var i = e ? je(e) ? [e >> 16, e >> 8 & F, e & F] : 0 : b9.black, n, s, a, o, f, u, _, C, p, g;
+  var i = e ? je(e) ? [e >> 16, e >> 8 & F, e & F] : 0 : b9.black, n, s, a, o, f, u, d, C, p, g;
   if (!i) {
     if (e.substr(-1) === "," && (e = e.substr(0, e.length - 1)), b9[e])
       i = b9[e];
@@ -938,7 +938,7 @@ var ge = {
       i = e.match(ct) || b9.transparent;
     i = i.map(Number);
   }
-  return t && !g && (n = i[0] / F, s = i[1] / F, a = i[2] / F, _ = Math.max(n, s, a), C = Math.min(n, s, a), u = (_ + C) / 2, _ === C ? o = f = 0 : (p = _ - C, f = u > 0.5 ? p / (2 - _ - C) : p / (_ + C), o = _ === n ? (s - a) / p + (s < a ? 6 : 0) : _ === s ? (a - n) / p + 2 : (n - s) / p + 4, o *= 60), i[0] = ~~(o + 0.5), i[1] = ~~(f * 100 + 0.5), i[2] = ~~(u * 100 + 0.5)), r && i.length < 4 && (i[3] = 1), i;
+  return t && !g && (n = i[0] / F, s = i[1] / F, a = i[2] / F, d = Math.max(n, s, a), C = Math.min(n, s, a), u = (d + C) / 2, d === C ? o = f = 0 : (p = d - C, f = u > 0.5 ? p / (2 - d - C) : p / (d + C), o = d === n ? (s - a) / p + (s < a ? 6 : 0) : d === s ? (a - n) / p + 2 : (n - s) / p + 4, o *= 60), i[0] = ~~(o + 0.5), i[1] = ~~(f * 100 + 0.5), i[2] = ~~(u * 100 + 0.5)), r && i.length < 4 && (i[3] = 1), i;
 }, q1 = function(e) {
   var t = [], r = [], i = -1;
   return e.split(Ye).forEach(function(n) {
@@ -946,18 +946,18 @@ var ge = {
     t.push.apply(t, s), r.push(i += s.length + 1);
   }), t.c = r, t;
 }, o1 = function(e, t, r) {
-  var i = "", n = (e + i).match(Ye), s = t ? "hsla(" : "rgba(", a = 0, o, f, u, _;
+  var i = "", n = (e + i).match(Ye), s = t ? "hsla(" : "rgba(", a = 0, o, f, u, d;
   if (!n)
     return e;
   if (n = n.map(function(C) {
     return (C = X1(C, t, 1)) && s + (t ? C[0] + "," + C[1] + "%," + C[2] + "%," + C[3] : C.join(",")) + ")";
   }), r && (u = q1(e), o = r.c, o.join(i) !== u.c.join(i)))
-    for (f = e.replace(Ye, "1").split(f9), _ = f.length - 1; a < _; a++)
+    for (f = e.replace(Ye, "1").split(f9), d = f.length - 1; a < d; a++)
       i += f[a] + (~o.indexOf(a) ? n.shift() || s + "0,0,0,0)" : (u.length ? u : n.length ? n : r).shift());
   if (!f)
-    for (f = e.split(Ye), _ = f.length - 1; a < _; a++)
+    for (f = e.split(Ye), d = f.length - 1; a < d; a++)
       i += f[a] + n[a];
-  return i + f[_];
+  return i + f[d];
 }, Ye = function() {
   var l = "(?:\\b(?:(?:rgb|rgba|hsl|hsla)\\(.+?\\))|\\B#(?:[0-9a-f]{3,4}){1,2}\\b", e;
   for (e in b9)
@@ -968,13 +968,13 @@ var ge = {
   if (Ye.lastIndex = 0, Ye.test(t))
     return r = K0.test(t), e[1] = o1(e[1], r), e[0] = o1(e[0], r, q1(e[1])), !0;
 }, P9, pe = function() {
-  var l = Date.now, e = 500, t = 33, r = l(), i = r, n = 1e3 / 240, s = n, a = [], o, f, u, _, C, p, g = function c(m) {
+  var l = Date.now, e = 500, t = 33, r = l(), i = r, n = 1e3 / 240, s = n, a = [], o, f, u, d, C, p, g = function c(m) {
     var w = l() - i, v = m === !0, E, M, y, T;
-    if ((w > e || w < 0) && (r += w - t), i += w, y = i - r, E = y - s, (E > 0 || v) && (T = ++_.frame, C = y - _.time * 1e3, _.time = y = y / 1e3, s += E + (E >= n ? 4 : n - E), M = 1), v || (o = f(c)), M)
+    if ((w > e || w < 0) && (r += w - t), i += w, y = i - r, E = y - s, (E > 0 || v) && (T = ++d.frame, C = y - d.time * 1e3, d.time = y = y / 1e3, s += E + (E >= n ? 4 : n - E), M = 1), v || (o = f(c)), M)
       for (p = 0; p < a.length; p++)
         a[p](y, C, T, m);
   };
-  return _ = {
+  return d = {
     time: 0,
     frame: 0,
     tick: function() {
@@ -984,8 +984,8 @@ var ge = {
       return C / (1e3 / (m || 60));
     },
     wake: function() {
-      S1 && (!dt && St() && (be = dt = window, Lt = be.document || {}, xe.gsap = he, (be.gsapVersions || (be.gsapVersions = [])).push(he.version), L1(B9 || be.GreenSockGlobals || !be.gsap && be || {}), $1.forEach(G1)), u = typeof requestAnimationFrame < "u" && requestAnimationFrame, o && _.sleep(), f = u || function(m) {
-        return setTimeout(m, s - _.time * 1e3 + 1 | 0);
+      S1 && (!dt && St() && (be = dt = window, Lt = be.document || {}, xe.gsap = he, (be.gsapVersions || (be.gsapVersions = [])).push(he.version), L1(B9 || be.GreenSockGlobals || !be.gsap && be || {}), $1.forEach(G1)), u = typeof requestAnimationFrame < "u" && requestAnimationFrame, o && d.sleep(), f = u || function(m) {
+        return setTimeout(m, s - d.time * 1e3 + 1 | 0);
       }, P9 = 1, g(2));
     },
     sleep: function() {
@@ -995,19 +995,19 @@ var ge = {
       e = m || 1 / 0, t = Math.min(w || 33, e);
     },
     fps: function(m) {
-      n = 1e3 / (m || 240), s = _.time * 1e3 + n;
+      n = 1e3 / (m || 240), s = d.time * 1e3 + n;
     },
     add: function(m, w, v) {
       var E = w ? function(M, y, T, k) {
-        m(M, y, T, k), _.remove(E);
+        m(M, y, T, k), d.remove(E);
       } : m;
-      return _.remove(m), a[v ? "unshift" : "push"](E), g9(), E;
+      return d.remove(m), a[v ? "unshift" : "push"](E), g9(), E;
     },
     remove: function(m, w) {
       ~(w = a.indexOf(m)) && a.splice(w, 1) && p >= w && p--;
     },
     _listeners: a
-  }, _;
+  }, d;
 }(), g9 = function() {
   return !P9 && pe.wake();
 }, P = {}, er = /^[\d.\-M][\d.\-,\s]/, tr = /["']/g, rr = function(e) {
@@ -1261,12 +1261,12 @@ var ae = /* @__PURE__ */ function(l) {
     return s.duration = n, s.stagger = s.stagger || a, s.onComplete = f, s.onCompleteParams = u, s.parent = this, new q(i, s, ye(this, o)), this;
   }, t.staggerFrom = function(i, n, s, a, o, f, u) {
     return s.runBackwards = 1, T9(s).immediateRender = le(s.immediateRender), this.staggerTo(i, n, s, a, o, f, u);
-  }, t.staggerFromTo = function(i, n, s, a, o, f, u, _) {
-    return a.startAt = s, T9(a).immediateRender = le(a.immediateRender), this.staggerTo(i, n, a, o, f, u, _);
+  }, t.staggerFromTo = function(i, n, s, a, o, f, u, d) {
+    return a.startAt = s, T9(a).immediateRender = le(a.immediateRender), this.staggerTo(i, n, a, o, f, u, d);
   }, t.render = function(i, n, s) {
-    var a = this._time, o = this._dirty ? this.totalDuration() : this._tDur, f = this._dur, u = i <= 0 ? 0 : J(i), _ = this._zTime < 0 != i < 0 && (this._initted || !f), C, p, g, c, m, w, v, E, M, y, T, k;
-    if (this !== I && u > o && i >= 0 && (u = o), u !== this._tTime || s || _) {
-      if (a !== this._time && f && (u += this._time - a, i += this._time - a), C = u, M = this._start, E = this._ts, w = !E, _ && (f || (a = this._zTime), (i || !n) && (this._zTime = i)), this._repeat) {
+    var a = this._time, o = this._dirty ? this.totalDuration() : this._tDur, f = this._dur, u = i <= 0 ? 0 : J(i), d = this._zTime < 0 != i < 0 && (this._initted || !f), C, p, g, c, m, w, v, E, M, y, T, k;
+    if (this !== I && u > o && i >= 0 && (u = o), u !== this._tTime || s || d) {
+      if (a !== this._time && f && (u += this._time - a, i += this._time - a), C = u, M = this._start, E = this._ts, w = !E, d && (f || (a = this._zTime), (i || !n) && (this._zTime = i)), this._repeat) {
         if (T = this._yoyo, m = f + this._rDelay, this._repeat < -1 && i < 0)
           return this.totalTime(m * 100 + i, n, s);
         if (C = J(u % m), u === o ? (c = this._repeat, C = f) : (y = J(u / m), c = ~~y, c && c === y && (C = f, c--), C > f && (C = f)), y = p9(this._tTime, m), !a && this._tTime && y !== c && this._tTime - y * m - this._dur <= 0 && (y = c), T && c & 1 && (C = f - C, k = 1), c !== y && !this._lock) {
@@ -1360,7 +1360,7 @@ var ae = /* @__PURE__ */ function(l) {
     return s;
   }, t.tweenTo = function(i, n) {
     n = n || {};
-    var s = this, a = ye(s, i), o = n, f = o.startAt, u = o.onStart, _ = o.onStartParams, C = o.immediateRender, p, g = q.to(s, we({
+    var s = this, a = ye(s, i), o = n, f = o.startAt, u = o.onStart, d = o.onStartParams, C = o.immediateRender, p, g = q.to(s, we({
       ease: n.ease || "none",
       lazy: !1,
       immediateRender: !1,
@@ -1372,7 +1372,7 @@ var ae = /* @__PURE__ */ function(l) {
           var m = n.duration || Math.abs((a - (f && "time" in f ? f.time : s._time)) / s.timeScale());
           g._dur !== m && m9(g, m, 0, 1).render(g._time, !0, !0), p = 1;
         }
-        u && u.apply(g, _ || []);
+        u && u.apply(g, d || []);
       }
     }, n));
     return C ? g.render(0) : g;
@@ -1409,12 +1409,12 @@ var ae = /* @__PURE__ */ function(l) {
       s = n._next, this.remove(n), n = s;
     return this._dp && (this._time = this._tTime = this._pTime = 0), i && (this.labels = {}), t9(this);
   }, t.totalDuration = function(i) {
-    var n = 0, s = this, a = s._last, o = Se, f, u, _;
+    var n = 0, s = this, a = s._last, o = Se, f, u, d;
     if (arguments.length)
       return s.timeScale((s._repeat < 0 ? s.duration() : s.totalDuration()) / (s.reversed() ? -i : i));
     if (s._dirty) {
-      for (_ = s.parent; a; )
-        f = a._prev, a._dirty && a.totalDuration(), u = a._start, u > o && s._sort && a._ts && !s._lock ? (s._lock = 1, Te(s, a, u - a._delay, 1)._lock = 0) : o = u, u < 0 && a._ts && (n -= u, (!_ && !s._dp || _ && _.smoothChildTiming) && (s._start += u / s._ts, s._time -= u, s._tTime -= u), s.shiftChildren(-u, !1, -1 / 0), o = 0), a._end > n && a._ts && (n = a._end), a = f;
+      for (d = s.parent; a; )
+        f = a._prev, a._dirty && a.totalDuration(), u = a._start, u > o && s._sort && a._ts && !s._lock ? (s._lock = 1, Te(s, a, u - a._delay, 1)._lock = 0) : o = u, u < 0 && a._ts && (n -= u, (!d && !s._dp || d && d.smoothChildTiming) && (s._start += u / s._ts, s._time -= u, s._tTime -= u), s.shiftChildren(-u, !1, -1 / 0), o = 0), a._end > n && a._ts && (n = a._end), a = f;
       m9(s, s === I && s._time > n ? s._time : n, 1, 1), s._dirty = 0;
     }
     return s._tDur;
@@ -1436,9 +1436,9 @@ we(ae.prototype, {
   _forcing: 0
 });
 var sr = function(e, t, r, i, n, s, a) {
-  var o = new fe(this._pt, e, t, 0, 1, l0, null, n), f = 0, u = 0, _, C, p, g, c, m, w, v;
-  for (o.b = r, o.e = i, r += "", i += "", (w = ~i.indexOf("random(")) && (i = Z9(i)), s && (v = [r, i], s(v, e, t), r = v[0], i = v[1]), C = r.match(it) || []; _ = it.exec(i); )
-    g = _[0], c = i.substring(f, _.index), p ? p = (p + 1) % 5 : c.substr(-5) === "rgba(" && (p = 1), g !== C[u++] && (m = parseFloat(C[u - 1]) || 0, o._pt = {
+  var o = new fe(this._pt, e, t, 0, 1, l0, null, n), f = 0, u = 0, d, C, p, g, c, m, w, v;
+  for (o.b = r, o.e = i, r += "", i += "", (w = ~i.indexOf("random(")) && (i = Z9(i)), s && (v = [r, i], s(v, e, t), r = v[0], i = v[1]), C = r.match(it) || []; d = it.exec(i); )
+    g = d[0], c = i.substring(f, d.index), p ? p = (p + 1) % 5 : c.substr(-5) === "rgba(" && (p = 1), g !== C[u++] && (m = parseFloat(C[u - 1]) || 0, o._pt = {
       _next: o._pt,
       p: c || u === 1 ? c : ",",
       //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
@@ -1449,9 +1449,9 @@ var sr = function(e, t, r, i, n, s, a) {
   return o.c = f < i.length ? i.substring(f, i.length) : "", o.fp = a, (T1.test(i) || w) && (o.e = 0), this._pt = o, o;
 }, Rt = function(e, t, r, i, n, s, a, o, f, u) {
   U(i) && (i = i(n || 0, e, s));
-  var _ = e[t], C = r !== "get" ? r : U(_) ? f ? e[t.indexOf("set") || !U(e["get" + t.substr(3)]) ? t : "get" + t.substr(3)](f) : e[t]() : _, p = U(_) ? f ? ur : s0 : Vt, g;
+  var d = e[t], C = r !== "get" ? r : U(d) ? f ? e[t.indexOf("set") || !U(e["get" + t.substr(3)]) ? t : "get" + t.substr(3)](f) : e[t]() : d, p = U(d) ? f ? ur : s0 : Vt, g;
   if (Q(i) && (~i.indexOf("random(") && (i = Z9(i)), i.charAt(1) === "=" && (g = h9(C, i) + (te(C) || 0), (g || g === 0) && (i = g))), !u || C !== i || wt)
-    return !isNaN(C * i) && i !== "" ? (g = new fe(this._pt, e, t, +C || 0, i - (C || 0), typeof _ == "boolean" ? cr : a0, 0, p), f && (g.fp = f), a && g.modifier(a, this, e), this._pt = g) : (!_ && !(t in e) && Ot(t, i), sr.call(this, e, t, C, i, p, o || ge.stringFilter, f));
+    return !isNaN(C * i) && i !== "" ? (g = new fe(this._pt, e, t, +C || 0, i - (C || 0), typeof d == "boolean" ? cr : a0, 0, p), f && (g.fp = f), a && g.modifier(a, this, e), this._pt = g) : (!d && !(t in e) && Ot(t, i), sr.call(this, e, t, C, i, p, o || ge.stringFilter, f));
 }, ar = function(e, t, r, i, n) {
   if (U(e) && (e = S9(e, n, t, r, i)), !Oe(e) || e.style && e.nodeType || ie(e) || M1(e))
     return Q(e) ? S9(e, n, t, r, i) : e;
@@ -1466,8 +1466,8 @@ var sr = function(e, t, r, i, n, s, a) {
       f[a._props[u]] = o;
   return a;
 }, We, wt, At = function l(e, t, r) {
-  var i = e.vars, n = i.ease, s = i.startAt, a = i.immediateRender, o = i.lazy, f = i.onUpdate, u = i.runBackwards, _ = i.yoyoEase, C = i.keyframes, p = i.autoRevert, g = e._dur, c = e._startAt, m = e._targets, w = e.parent, v = w && w.data === "nested" ? w.vars.targets : m, E = e._overwrite === "auto" && !Tt, M = e.timeline, y, T, k, S, b, N, j, A, V, $, H, Y, G;
-  if (M && (!C || !n) && (n = "none"), e._ease = r9(n, _9.ease), e._yEase = _ ? Q1(r9(_ === !0 ? n : _, _9.ease)) : 0, _ && e._yoyo && !e._repeat && (_ = e._yEase, e._yEase = e._ease, e._ease = _), e._from = !M && !!i.runBackwards, !M || C && !i.stagger) {
+  var i = e.vars, n = i.ease, s = i.startAt, a = i.immediateRender, o = i.lazy, f = i.onUpdate, u = i.runBackwards, d = i.yoyoEase, C = i.keyframes, p = i.autoRevert, g = e._dur, c = e._startAt, m = e._targets, w = e.parent, v = w && w.data === "nested" ? w.vars.targets : m, E = e._overwrite === "auto" && !Tt, M = e.timeline, y, T, k, S, b, N, j, A, V, $, H, Y, G;
+  if (M && (!C || !n) && (n = "none"), e._ease = r9(n, _9.ease), e._yEase = d ? Q1(r9(d === !0 ? n : d, _9.ease)) : 0, d && e._yoyo && !e._repeat && (d = e._yEase, e._yEase = e._ease, e._ease = d), e._from = !M && !!i.runBackwards, !M || C && !i.stagger) {
     if (A = m[0] ? e9(m[0]).harness : 0, Y = A && i[A.prop], y = Y9(i, Zt), c && (c._zTime < 0 && c.progress(1), t < 0 && u && a && !p ? c.render(-1, !0) : c.revert(u && g ? z9 : R0), c._lazy = 0), s) {
       if (Ue(e._startAt = q.set(m, we({
         data: "isStart",
@@ -1513,7 +1513,7 @@ var sr = function(e, t, r, i, n, s, a) {
   }
   e._onUpdate = f, e._initted = (!e._op || e._pt) && !G, C && t <= 0 && M.render(Se, !0, !0);
 }, lr = function(e, t, r, i, n, s, a, o) {
-  var f = (e._pt && e._ptCache || (e._ptCache = {}))[t], u, _, C, p;
+  var f = (e._pt && e._ptCache || (e._ptCache = {}))[t], u, d, C, p;
   if (!f)
     for (f = e._ptCache[t] = [], C = e._ptLookup, p = e._targets.length; p--; ) {
       if (u = C[p][t], u && u.d && u.d._pt)
@@ -1524,7 +1524,7 @@ var sr = function(e, t, r, i, n, s, a) {
       f.push(u);
     }
   for (p = f.length; p--; )
-    _ = f[p], u = _._pt || _, u.s = (i || i === 0) && !n ? i : u.s + (i || 0) + s * u.c, u.c = r - u.s, _.e && (_.e = X(r) + te(_.e)), _.b && (_.b = u.s + te(_.b));
+    d = f[p], u = d._pt || d, u.s = (i || i === 0) && !n ? i : u.s + (i || 0) + s * u.c, u.c = r - u.s, d.e && (d.e = X(r) + te(d.e)), d.b && (d.b = u.s + te(d.b));
 }, or = function(e, t) {
   var r = e[0] ? e9(e[0]).harness : 0, i = r && r.aliases, n, s, a, o;
   if (!i)
@@ -1563,7 +1563,7 @@ var q = /* @__PURE__ */ function(l) {
   function e(r, i, n, s) {
     var a;
     typeof i == "number" && (n.duration = i, i = n, n = null), a = l.call(this, s ? i : T9(i)) || this;
-    var o = a.vars, f = o.duration, u = o.delay, _ = o.immediateRender, C = o.stagger, p = o.overwrite, g = o.keyframes, c = o.defaults, m = o.scrollTrigger, w = o.yoyoEase, v = i.parent || I, E = (ie(r) || M1(r) ? je(r[0]) : "length" in i) ? [r] : Ee(r), M, y, T, k, S, b, N, j;
+    var o = a.vars, f = o.duration, u = o.delay, d = o.immediateRender, C = o.stagger, p = o.overwrite, g = o.keyframes, c = o.defaults, m = o.scrollTrigger, w = o.yoyoEase, v = i.parent || I, E = (ie(r) || M1(r) ? je(r[0]) : "length" in i) ? [r] : Ee(r), M, y, T, k, S, b, N, j;
     if (a._targets = E.length ? Nt(E) : L9("GSAP target " + r + " not found. https://gsap.com", !ge.nullTargetWarn) || [], a._ptLookup = [], a._overwrite = p, g || C || F9(f) || F9(u)) {
       if (i = a.vars, M = a.timeline = new ae({
         data: "nested",
@@ -1605,34 +1605,34 @@ var q = /* @__PURE__ */ function(l) {
       f || a.duration(f = M.duration());
     } else
       a.timeline = 0;
-    return p === !0 && !Tt && (We = Ae(a), I.killTweensOf(E), We = 0), Te(v, Ae(a), n), i.reversed && a.reverse(), i.paused && a.paused(!0), (_ || !f && !g && a._start === J(v._time) && le(_) && z0(Ae(a)) && v.data !== "nested") && (a._tTime = -1e-8, a.render(Math.max(0, -u) || 0)), m && D1(Ae(a), m), a;
+    return p === !0 && !Tt && (We = Ae(a), I.killTweensOf(E), We = 0), Te(v, Ae(a), n), i.reversed && a.reverse(), i.paused && a.paused(!0), (d || !f && !g && a._start === J(v._time) && le(d) && z0(Ae(a)) && v.data !== "nested") && (a._tTime = -1e-8, a.render(Math.max(0, -u) || 0)), m && D1(Ae(a), m), a;
   }
   var t = e.prototype;
   return t.render = function(i, n, s) {
-    var a = this._time, o = this._tDur, f = this._dur, u = i < 0, _ = i > o - re && !u ? o : i < re ? 0 : i, C, p, g, c, m, w, v, E, M;
+    var a = this._time, o = this._tDur, f = this._dur, u = i < 0, d = i > o - re && !u ? o : i < re ? 0 : i, C, p, g, c, m, w, v, E, M;
     if (!f)
       I0(this, i, n, s);
-    else if (_ !== this._tTime || !i || s || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== u || this._lazy) {
-      if (C = _, E = this.timeline, this._repeat) {
+    else if (d !== this._tTime || !i || s || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== u || this._lazy) {
+      if (C = d, E = this.timeline, this._repeat) {
         if (c = f + this._rDelay, this._repeat < -1 && u)
           return this.totalTime(c * 100 + i, n, s);
-        if (C = J(_ % c), _ === o ? (g = this._repeat, C = f) : (m = J(_ / c), g = ~~m, g && g === m ? (C = f, g--) : C > f && (C = f)), w = this._yoyo && g & 1, w && (M = this._yEase, C = f - C), m = p9(this._tTime, c), C === a && !s && this._initted && g === m)
-          return this._tTime = _, this;
+        if (C = J(d % c), d === o ? (g = this._repeat, C = f) : (m = J(d / c), g = ~~m, g && g === m ? (C = f, g--) : C > f && (C = f)), w = this._yoyo && g & 1, w && (M = this._yEase, C = f - C), m = p9(this._tTime, c), C === a && !s && this._initted && g === m)
+          return this._tTime = d, this;
         g !== m && (E && this._yEase && K1(E, w), this.vars.repeatRefresh && !w && !this._lock && C !== c && this._initted && (this._lock = s = 1, this.render(J(c * g), !0).invalidate()._lock = 0));
       }
       if (!this._initted) {
-        if (F1(this, u ? i : C, s, n, _))
+        if (F1(this, u ? i : C, s, n, d))
           return this._tTime = 0, this;
         if (a !== this._time && !(s && this.vars.repeatRefresh && g !== m))
           return this;
         if (f !== this._dur)
           return this.render(i, n, s);
       }
-      if (this._tTime = _, this._time = C, !this._act && this._ts && (this._act = 1, this._lazy = 0), this.ratio = v = (M || this._ease)(C / f), this._from && (this.ratio = v = 1 - v), C && !a && !n && !g && (me(this, "onStart"), this._tTime !== _))
+      if (this._tTime = d, this._time = C, !this._act && this._ts && (this._act = 1, this._lazy = 0), this.ratio = v = (M || this._ease)(C / f), this._from && (this.ratio = v = 1 - v), C && !a && !n && !g && (me(this, "onStart"), this._tTime !== d))
         return this;
       for (p = this._pt; p; )
         p.r(v, p.d), p = p._next;
-      E && E.render(i < 0 ? i : E._dur * E._ease(C / this._dur), n, s) || this._startAt && (this._zTime = i), this._onUpdate && !n && (u && Ct(this, i, n, s), me(this, "onUpdate")), this._repeat && g !== m && this.vars.onRepeat && !n && this.parent && me(this, "onRepeat"), (_ === this._tDur || !_) && this._tTime === _ && (u && !this._onUpdate && Ct(this, i, !0, !0), (i || !f) && (_ === this._tDur && this._ts > 0 || !_ && this._ts < 0) && Ue(this, 1), !n && !(u && !a) && (_ || a || w) && (me(this, _ === o ? "onComplete" : "onReverseComplete", !0), this._prom && !(_ < o && this.timeScale() > 0) && this._prom()));
+      E && E.render(i < 0 ? i : E._dur * E._ease(C / this._dur), n, s) || this._startAt && (this._zTime = i), this._onUpdate && !n && (u && Ct(this, i, n, s), me(this, "onUpdate")), this._repeat && g !== m && this.vars.onRepeat && !n && this.parent && me(this, "onRepeat"), (d === this._tDur || !d) && this._tTime === d && (u && !this._onUpdate && Ct(this, i, !0, !0), (i || !f) && (d === this._tDur && this._ts > 0 || !d && this._ts < 0) && Ue(this, 1), !n && !(u && !a) && (d || a || w) && (me(this, d === o ? "onComplete" : "onReverseComplete", !0), this._prom && !(d < o && this.timeScale() > 0) && this._prom()));
     }
     return this;
   }, t.targets = function() {
@@ -1650,14 +1650,14 @@ var q = /* @__PURE__ */ function(l) {
       var s = this.timeline.totalDuration();
       return this.timeline.killTweensOf(i, n, We && We.vars.overwrite !== !0)._first || M9(this), this.parent && s !== this.timeline.totalDuration() && m9(this, this._dur * this.timeline._tDur / s, 0, 1), this;
     }
-    var a = this._targets, o = i ? Ee(i) : a, f = this._ptLookup, u = this._pt, _, C, p, g, c, m, w;
+    var a = this._targets, o = i ? Ee(i) : a, f = this._ptLookup, u = this._pt, d, C, p, g, c, m, w;
     if ((!n || n === "all") && D0(a, o))
       return n === "all" && (this._pt = 0), M9(this);
-    for (_ = this._op = this._op || [], n !== "all" && (Q(n) && (c = {}, oe(n, function(v) {
+    for (d = this._op = this._op || [], n !== "all" && (Q(n) && (c = {}, oe(n, function(v) {
       return c[v] = 1;
     }), n = c), n = or(a, n)), w = a.length; w--; )
       if (~o.indexOf(a[w])) {
-        C = f[w], n === "all" ? (_[w] = n, g = C, p = {}) : (p = _[w] = _[w] || {}, g = n);
+        C = f[w], n === "all" ? (d[w] = n, g = C, p = {}) : (p = d[w] = d[w] || {}, g = n);
         for (c in g)
           m = C && C[c], m && ((!("kill" in m.d) || m.d.kill(c) === !0) && J9(this, m, "_pt"), delete C[c]), p !== "all" && (p[c] = 1);
       }
@@ -1790,8 +1790,8 @@ var i9 = [], I9 = {}, pr = [], f1 = 0, mr = 0, ot = function(e) {
   return e.add = function(r, i, n) {
     U(r) && (n = i, i = r, r = U);
     var s = this, a = function() {
-      var f = z, u = s.selector, _;
-      return f && f !== s && f.data.push(s), n && (s.selector = gt(n)), z = s, _ = i.apply(s, arguments), U(_) && s._r.push(_), z = f, s.selector = u, s.isReverted = !1, _;
+      var f = z, u = s.selector, d;
+      return f && f !== s && f.data.push(s), n && (s.selector = gt(n)), z = s, d = i.apply(s, arguments), U(d) && s._r.push(d), z = f, s.selector = u, s.isReverted = !1, d;
     };
     return s.last = a, r === U ? a(s, function(o) {
       return s.add(null, o);
@@ -1818,8 +1818,8 @@ var i9 = [], I9 = {}, pr = [], f1 = 0, mr = 0, ot = function(e) {
           g: u._dur || u._delay || u._sat && !u._sat.vars.immediateRender ? u.globalTime(0) : -1 / 0,
           t: u
         };
-      }).sort(function(u, _) {
-        return _.g - u.g || -1 / 0;
+      }).sort(function(u, d) {
+        return d.g - u.g || -1 / 0;
       }).forEach(function(u) {
         return u.t.revert(r);
       }), o = n.data.length; o--; )
@@ -1848,8 +1848,8 @@ var i9 = [], I9 = {}, pr = [], f1 = 0, mr = 0, ot = function(e) {
     z && !s.selector && (s.selector = z.selector), this.contexts.push(s), i = s.add("onMatch", i), s.queries = r;
     for (f in r)
       f === "all" ? u = 1 : (o = be.matchMedia(r[f]), o && (i9.indexOf(s) < 0 && i9.push(s), (a[f] = o.matches) && (u = 1), o.addListener ? o.addListener(vt) : o.addEventListener("change", vt)));
-    return u && i(s, function(_) {
-      return s.add(null, _);
+    return u && i(s, function(d) {
+      return s.add(null, d);
     }), this;
   }, e.revert = function(r) {
     this.kill(r || {});
@@ -1885,14 +1885,14 @@ var i9 = [], I9 = {}, pr = [], f1 = 0, mr = 0, ot = function(e) {
         return he.quickSetter(u, t, r);
       }), n = i.length;
       return function(u) {
-        for (var _ = n; _--; )
-          i[_](u);
+        for (var d = n; d--; )
+          i[d](u);
       };
     }
     e = e[0] || {};
     var s = Ce[t], a = e9(e), o = a.harness && (a.harness.aliases || {})[t] || t, f = s ? function(u) {
-      var _ = new s();
-      u9._pt = 0, _.init(e, r ? u + r : u, u9, 0, [e]), _.render(1, _), u9._pt && Dt(1, u9);
+      var d = new s();
+      u9._pt = 0, d.init(e, r ? u + r : u, u9, 0, [e]), d.render(1, d), u9._pt && Dt(1, u9);
     } : a.set(e, o);
     return s ? f : function(u) {
       return f(e, o, r ? u + r : u, a, 1);
@@ -2219,19 +2219,19 @@ var u1, Ie, c9, Ft, Ke, h1, zt, vr = function() {
   grid: 1,
   flex: 1
 }, $e = function l(e, t, r, i) {
-  var n = parseFloat(r) || 0, s = (r + "").trim().substr((n + "").length) || "px", a = Ke.style, o = yr.test(t), f = e.tagName.toLowerCase() === "svg", u = (f ? "client" : "offset") + (o ? "Width" : "Height"), _ = 100, C = i === "px", p = i === "%", g, c, m, w;
+  var n = parseFloat(r) || 0, s = (r + "").trim().substr((n + "").length) || "px", a = Ke.style, o = yr.test(t), f = e.tagName.toLowerCase() === "svg", u = (f ? "client" : "offset") + (o ? "Width" : "Height"), d = 100, C = i === "px", p = i === "%", g, c, m, w;
   if (i === s || !n || p1[i] || p1[s])
     return n;
   if (s !== "px" && !C && (n = l(e, t, r, "px")), w = e.getCTM && p0(e), (p || s === "%") && (De[t] || ~t.indexOf("adius")))
-    return g = w ? e.getBBox()[o ? "width" : "height"] : e[u], X(p ? n / g * _ : n / 100 * g);
-  if (a[o ? "width" : "height"] = _ + (C ? s : i), c = i !== "rem" && ~t.indexOf("adius") || i === "em" && e.appendChild && !f ? e : e.parentNode, w && (c = (e.ownerSVGElement || {}).parentNode), (!c || c === Ie || !c.appendChild) && (c = Ie.body), m = c._gsap, m && p && m.width && o && m.time === pe.time && !m.uncache)
-    return X(n / m.width * _);
+    return g = w ? e.getBBox()[o ? "width" : "height"] : e[u], X(p ? n / g * d : n / 100 * g);
+  if (a[o ? "width" : "height"] = d + (C ? s : i), c = i !== "rem" && ~t.indexOf("adius") || i === "em" && e.appendChild && !f ? e : e.parentNode, w && (c = (e.ownerSVGElement || {}).parentNode), (!c || c === Ie || !c.appendChild) && (c = Ie.body), m = c._gsap, m && p && m.width && o && m.time === pe.time && !m.uncache)
+    return X(n / m.width * d);
   if (p && (t === "height" || t === "width")) {
     var v = e.style[t];
-    e.style[t] = _ + i, g = e[u], v ? e.style[t] = v : n9(e, t);
+    e.style[t] = d + i, g = e[u], v ? e.style[t] = v : n9(e, t);
   } else
     (p || s === "%") && !Ar[Le(c, "display")] && (a.position = Le(e, "position")), c === e && (a.position = "static"), c.appendChild(Ke), g = Ke[u], c.removeChild(Ke), a.position = "absolute";
-  return o && p && (m = e9(c), m.time = pe.time, m.width = c[u]), X(C ? g * n / _ : g && n ? _ / g * n : 0);
+  return o && p && (m = e9(c), m.time = pe.time, m.width = c[u]), X(C ? g * n / d : g && n ? d / g * n : 0);
 }, Ve = function(e, t, r, i) {
   var n;
   return Ft || Mt(), t in ke && t !== "transform" && (t = ke[t], ~t.indexOf(",") && (t = t.split(",")[0])), De[t] && t !== "transform" ? (n = A9(e, i), n = t !== "transformOrigin" ? n[t] : n.svg ? n.origin : X9(Le(e, ue)) + " " + n.zOrigin + "px") : (n = e.style[t], (!n || n === "auto" || i || ~(n + "").indexOf("calc(")) && (n = G9[t] && G9[t](e, t, r) || Le(e, t) || P1(e, t) || (t === "opacity" ? 1 : 0))), r && !~(n + "").trim().indexOf(" ") ? $e(e, t, n, r) + r : n;
@@ -2240,10 +2240,10 @@ var u1, Ie, c9, Ft, Ke, h1, zt, vr = function() {
     var n = x9(t, e, 1), s = n && Le(e, n, 1);
     s && s !== r ? (t = n, r = s) : t === "borderColor" && (r = Le(e, "borderTopColor"));
   }
-  var a = new fe(this._pt, e.style, t, 0, 1, l0), o = 0, f = 0, u, _, C, p, g, c, m, w, v, E, M, y;
+  var a = new fe(this._pt, e.style, t, 0, 1, l0), o = 0, f = 0, u, d, C, p, g, c, m, w, v, E, M, y;
   if (a.b = r, a.e = i, r += "", i += "", i === "auto" && (c = e.style[t], e.style[t] = i, i = Le(e, t) || i, c ? e.style[t] = c : n9(e, t)), u = [r, i], J1(u), r = u[0], i = u[1], C = r.match(f9) || [], y = i.match(f9) || [], y.length) {
-    for (; _ = f9.exec(i); )
-      m = _[0], v = i.substring(o, _.index), g ? g = (g + 1) % 5 : (v.substr(-5) === "rgba(" || v.substr(-5) === "hsla(") && (g = 1), m !== (c = C[f++] || "") && (p = parseFloat(c) || 0, M = c.substr((p + "").length), m.charAt(1) === "=" && (m = h9(p, m) + M), w = parseFloat(m), E = m.substr((w + "").length), o = f9.lastIndex - E.length, E || (E = E || ge.units[t] || M, o === i.length && (i += E, a.e += E)), M !== E && (p = $e(e, t, c, E) || 0), a._pt = {
+    for (; d = f9.exec(i); )
+      m = d[0], v = i.substring(o, d.index), g ? g = (g + 1) % 5 : (v.substr(-5) === "rgba(" || v.substr(-5) === "hsla(") && (g = 1), m !== (c = C[f++] || "") && (p = parseFloat(c) || 0, M = c.substr((p + "").length), m.charAt(1) === "=" && (m = h9(p, m) + M), w = parseFloat(m), E = m.substr((w + "").length), o = f9.lastIndex - E.length, E || (E = E || ge.units[t] || M, o === i.length && (i += E, a.e += E)), M !== E && (p = $e(e, t, c, E) || 0), a._pt = {
         _next: a._pt,
         p: v || f === 1 ? v : ",",
         //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
@@ -2353,14 +2353,14 @@ var u1, Ie, c9, Ft, Ke, h1, zt, vr = function() {
   var r = e._gsap || e9(e), i = e.style, n = g1(e), s, a, o, f;
   return r.svg && e.getAttribute("transform") ? (o = e.transform.baseVal.consolidate().matrix, n = [o.a, o.b, o.c, o.d, o.e, o.f], n.join(",") === "1,0,0,1,0,0" ? R9 : n) : (n === R9 && !e.offsetParent && e !== c9 && !r.svg && (o = i.display, i.display = "block", s = e.parentNode, (!s || !e.offsetParent && !e.getBoundingClientRect().width) && (f = 1, a = e.nextElementSibling, c9.appendChild(e)), n = g1(e), o ? i.display = o : n9(e, "display"), f && (a ? s.insertBefore(e, a) : s ? s.appendChild(e) : c9.removeChild(e))), t && n.length > 6 ? [n[0], n[1], n[4], n[5], n[12], n[13]] : n);
 }, bt = function(e, t, r, i, n, s) {
-  var a = e._gsap, o = n || It(e, !0), f = a.xOrigin || 0, u = a.yOrigin || 0, _ = a.xOffset || 0, C = a.yOffset || 0, p = o[0], g = o[1], c = o[2], m = o[3], w = o[4], v = o[5], E = t.split(" "), M = parseFloat(E[0]) || 0, y = parseFloat(E[1]) || 0, T, k, S, b;
-  r ? o !== R9 && (k = p * m - g * c) && (S = M * (m / k) + y * (-c / k) + (c * v - m * w) / k, b = M * (-g / k) + y * (p / k) - (p * v - g * w) / k, M = S, y = b) : (T = C0(e), M = T.x + (~E[0].indexOf("%") ? M / 100 * T.width : M), y = T.y + (~(E[1] || E[0]).indexOf("%") ? y / 100 * T.height : y)), i || i !== !1 && a.smooth ? (w = M - f, v = y - u, a.xOffset = _ + (w * p + v * c) - w, a.yOffset = C + (w * g + v * m) - v) : a.xOffset = a.yOffset = 0, a.xOrigin = M, a.yOrigin = y, a.smooth = !!i, a.origin = t, a.originIsAbsolute = !!r, e.style[ue] = "0px 0px", s && (Be(s, a, "xOrigin", f, M), Be(s, a, "yOrigin", u, y), Be(s, a, "xOffset", _, a.xOffset), Be(s, a, "yOffset", C, a.yOffset)), e.setAttribute("data-svg-origin", M + " " + y);
+  var a = e._gsap, o = n || It(e, !0), f = a.xOrigin || 0, u = a.yOrigin || 0, d = a.xOffset || 0, C = a.yOffset || 0, p = o[0], g = o[1], c = o[2], m = o[3], w = o[4], v = o[5], E = t.split(" "), M = parseFloat(E[0]) || 0, y = parseFloat(E[1]) || 0, T, k, S, b;
+  r ? o !== R9 && (k = p * m - g * c) && (S = M * (m / k) + y * (-c / k) + (c * v - m * w) / k, b = M * (-g / k) + y * (p / k) - (p * v - g * w) / k, M = S, y = b) : (T = C0(e), M = T.x + (~E[0].indexOf("%") ? M / 100 * T.width : M), y = T.y + (~(E[1] || E[0]).indexOf("%") ? y / 100 * T.height : y)), i || i !== !1 && a.smooth ? (w = M - f, v = y - u, a.xOffset = d + (w * p + v * c) - w, a.yOffset = C + (w * g + v * m) - v) : a.xOffset = a.yOffset = 0, a.xOrigin = M, a.yOrigin = y, a.smooth = !!i, a.origin = t, a.originIsAbsolute = !!r, e.style[ue] = "0px 0px", s && (Be(s, a, "xOrigin", f, M), Be(s, a, "yOrigin", u, y), Be(s, a, "xOffset", d, a.xOffset), Be(s, a, "yOffset", C, a.yOffset)), e.setAttribute("data-svg-origin", M + " " + y);
 }, A9 = function(e, t) {
   var r = e._gsap || new t0(e);
   if ("x" in r && !t && !r.uncache)
     return r;
-  var i = e.style, n = r.scaleX < 0, s = "px", a = "deg", o = getComputedStyle(e), f = Le(e, ue) || "0", u, _, C, p, g, c, m, w, v, E, M, y, T, k, S, b, N, j, A, V, $, H, Y, G, ce, ve, Fe, de, Ze, a9, ne, Me;
-  return u = _ = C = c = m = w = v = E = M = 0, p = g = 1, r.svg = !!(e.getCTM && p0(e)), o.translate && ((o.translate !== "none" || o.scale !== "none" || o.rotate !== "none") && (i[B] = (o.translate !== "none" ? "translate3d(" + (o.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + (o.rotate !== "none" ? "rotate(" + o.rotate + ") " : "") + (o.scale !== "none" ? "scale(" + o.scale.split(" ").join(",") + ") " : "") + (o[B] !== "none" ? o[B] : "")), i.scale = i.rotate = i.translate = "none"), k = It(e, r.svg), r.svg && (r.uncache ? (ce = e.getBBox(), f = r.xOrigin - ce.x + "px " + (r.yOrigin - ce.y) + "px", G = "") : G = !t && e.getAttribute("data-svg-origin"), bt(e, G || f, !!G || r.originIsAbsolute, r.smooth !== !1, k)), y = r.xOrigin || 0, T = r.yOrigin || 0, k !== R9 && (j = k[0], A = k[1], V = k[2], $ = k[3], u = H = k[4], _ = Y = k[5], k.length === 6 ? (p = Math.sqrt(j * j + A * A), g = Math.sqrt($ * $ + V * V), c = j || A ? o9(A, j) * Qe : 0, v = V || $ ? o9(V, $) * Qe + c : 0, v && (g *= Math.abs(Math.cos(v * d9))), r.svg && (u -= y - (y * j + T * V), _ -= T - (y * A + T * $))) : (Me = k[6], a9 = k[7], Fe = k[8], de = k[9], Ze = k[10], ne = k[11], u = k[12], _ = k[13], C = k[14], S = o9(Me, Ze), m = S * Qe, S && (b = Math.cos(-S), N = Math.sin(-S), G = H * b + Fe * N, ce = Y * b + de * N, ve = Me * b + Ze * N, Fe = H * -N + Fe * b, de = Y * -N + de * b, Ze = Me * -N + Ze * b, ne = a9 * -N + ne * b, H = G, Y = ce, Me = ve), S = o9(-V, Ze), w = S * Qe, S && (b = Math.cos(-S), N = Math.sin(-S), G = j * b - Fe * N, ce = A * b - de * N, ve = V * b - Ze * N, ne = $ * N + ne * b, j = G, A = ce, V = ve), S = o9(A, j), c = S * Qe, S && (b = Math.cos(S), N = Math.sin(S), G = j * b + A * N, ce = H * b + Y * N, A = A * b - j * N, Y = Y * b - H * N, j = G, H = ce), m && Math.abs(m) + Math.abs(c) > 359.9 && (m = c = 0, w = 180 - w), p = X(Math.sqrt(j * j + A * A + V * V)), g = X(Math.sqrt(Y * Y + Me * Me)), S = o9(H, Y), v = Math.abs(S) > 2e-4 ? S * Qe : 0, M = ne ? 1 / (ne < 0 ? -ne : ne) : 0), r.svg && (G = e.getAttribute("transform"), r.forceCSS = e.setAttribute("transform", "") || !g0(Le(e, B)), G && e.setAttribute("transform", G))), Math.abs(v) > 90 && Math.abs(v) < 270 && (n ? (p *= -1, v += c <= 0 ? 180 : -180, c += c <= 0 ? 180 : -180) : (g *= -1, v += v <= 0 ? 180 : -180)), t = t || r.uncache, r.x = u - ((r.xPercent = u && (!t && r.xPercent || (Math.round(e.offsetWidth / 2) === Math.round(-u) ? -50 : 0))) ? e.offsetWidth * r.xPercent / 100 : 0) + s, r.y = _ - ((r.yPercent = _ && (!t && r.yPercent || (Math.round(e.offsetHeight / 2) === Math.round(-_) ? -50 : 0))) ? e.offsetHeight * r.yPercent / 100 : 0) + s, r.z = C + s, r.scaleX = X(p), r.scaleY = X(g), r.rotation = X(c) + a, r.rotationX = X(m) + a, r.rotationY = X(w) + a, r.skewX = v + a, r.skewY = E + a, r.transformPerspective = M + s, (r.zOrigin = parseFloat(f.split(" ")[2]) || !t && r.zOrigin || 0) && (i[ue] = X9(f)), r.xOffset = r.yOffset = 0, r.force3D = ge.force3D, r.renderTransform = r.svg ? zr : _0 ? x0 : Fr, r.uncache = 0, r;
+  var i = e.style, n = r.scaleX < 0, s = "px", a = "deg", o = getComputedStyle(e), f = Le(e, ue) || "0", u, d, C, p, g, c, m, w, v, E, M, y, T, k, S, b, N, j, A, V, $, H, Y, G, ce, ve, Fe, de, Ze, a9, ne, Me;
+  return u = d = C = c = m = w = v = E = M = 0, p = g = 1, r.svg = !!(e.getCTM && p0(e)), o.translate && ((o.translate !== "none" || o.scale !== "none" || o.rotate !== "none") && (i[B] = (o.translate !== "none" ? "translate3d(" + (o.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + (o.rotate !== "none" ? "rotate(" + o.rotate + ") " : "") + (o.scale !== "none" ? "scale(" + o.scale.split(" ").join(",") + ") " : "") + (o[B] !== "none" ? o[B] : "")), i.scale = i.rotate = i.translate = "none"), k = It(e, r.svg), r.svg && (r.uncache ? (ce = e.getBBox(), f = r.xOrigin - ce.x + "px " + (r.yOrigin - ce.y) + "px", G = "") : G = !t && e.getAttribute("data-svg-origin"), bt(e, G || f, !!G || r.originIsAbsolute, r.smooth !== !1, k)), y = r.xOrigin || 0, T = r.yOrigin || 0, k !== R9 && (j = k[0], A = k[1], V = k[2], $ = k[3], u = H = k[4], d = Y = k[5], k.length === 6 ? (p = Math.sqrt(j * j + A * A), g = Math.sqrt($ * $ + V * V), c = j || A ? o9(A, j) * Qe : 0, v = V || $ ? o9(V, $) * Qe + c : 0, v && (g *= Math.abs(Math.cos(v * d9))), r.svg && (u -= y - (y * j + T * V), d -= T - (y * A + T * $))) : (Me = k[6], a9 = k[7], Fe = k[8], de = k[9], Ze = k[10], ne = k[11], u = k[12], d = k[13], C = k[14], S = o9(Me, Ze), m = S * Qe, S && (b = Math.cos(-S), N = Math.sin(-S), G = H * b + Fe * N, ce = Y * b + de * N, ve = Me * b + Ze * N, Fe = H * -N + Fe * b, de = Y * -N + de * b, Ze = Me * -N + Ze * b, ne = a9 * -N + ne * b, H = G, Y = ce, Me = ve), S = o9(-V, Ze), w = S * Qe, S && (b = Math.cos(-S), N = Math.sin(-S), G = j * b - Fe * N, ce = A * b - de * N, ve = V * b - Ze * N, ne = $ * N + ne * b, j = G, A = ce, V = ve), S = o9(A, j), c = S * Qe, S && (b = Math.cos(S), N = Math.sin(S), G = j * b + A * N, ce = H * b + Y * N, A = A * b - j * N, Y = Y * b - H * N, j = G, H = ce), m && Math.abs(m) + Math.abs(c) > 359.9 && (m = c = 0, w = 180 - w), p = X(Math.sqrt(j * j + A * A + V * V)), g = X(Math.sqrt(Y * Y + Me * Me)), S = o9(H, Y), v = Math.abs(S) > 2e-4 ? S * Qe : 0, M = ne ? 1 / (ne < 0 ? -ne : ne) : 0), r.svg && (G = e.getAttribute("transform"), r.forceCSS = e.setAttribute("transform", "") || !g0(Le(e, B)), G && e.setAttribute("transform", G))), Math.abs(v) > 90 && Math.abs(v) < 270 && (n ? (p *= -1, v += c <= 0 ? 180 : -180, c += c <= 0 ? 180 : -180) : (g *= -1, v += v <= 0 ? 180 : -180)), t = t || r.uncache, r.x = u - ((r.xPercent = u && (!t && r.xPercent || (Math.round(e.offsetWidth / 2) === Math.round(-u) ? -50 : 0))) ? e.offsetWidth * r.xPercent / 100 : 0) + s, r.y = d - ((r.yPercent = d && (!t && r.yPercent || (Math.round(e.offsetHeight / 2) === Math.round(-d) ? -50 : 0))) ? e.offsetHeight * r.yPercent / 100 : 0) + s, r.z = C + s, r.scaleX = X(p), r.scaleY = X(g), r.rotation = X(c) + a, r.rotationX = X(m) + a, r.rotationY = X(w) + a, r.skewX = v + a, r.skewY = E + a, r.transformPerspective = M + s, (r.zOrigin = parseFloat(f.split(" ")[2]) || !t && r.zOrigin || 0) && (i[ue] = X9(f)), r.xOffset = r.yOffset = 0, r.force3D = ge.force3D, r.renderTransform = r.svg ? zr : _0 ? x0 : Fr, r.uncache = 0, r;
 }, X9 = function(e) {
   return (e = e.split(" "))[0] + " " + e[1];
 }, ut = function(e, t, r) {
@@ -2369,34 +2369,34 @@ var u1, Ie, c9, Ft, Ke, h1, zt, vr = function() {
 }, Fr = function(e, t) {
   t.z = "0px", t.rotationY = t.rotationX = "0deg", t.force3D = 0, x0(e, t);
 }, qe = "0deg", E9 = "0px", Je = ") ", x0 = function(e, t) {
-  var r = t || this, i = r.xPercent, n = r.yPercent, s = r.x, a = r.y, o = r.z, f = r.rotation, u = r.rotationY, _ = r.rotationX, C = r.skewX, p = r.skewY, g = r.scaleX, c = r.scaleY, m = r.transformPerspective, w = r.force3D, v = r.target, E = r.zOrigin, M = "", y = w === "auto" && e && e !== 1 || w === !0;
-  if (E && (_ !== qe || u !== qe)) {
+  var r = t || this, i = r.xPercent, n = r.yPercent, s = r.x, a = r.y, o = r.z, f = r.rotation, u = r.rotationY, d = r.rotationX, C = r.skewX, p = r.skewY, g = r.scaleX, c = r.scaleY, m = r.transformPerspective, w = r.force3D, v = r.target, E = r.zOrigin, M = "", y = w === "auto" && e && e !== 1 || w === !0;
+  if (E && (d !== qe || u !== qe)) {
     var T = parseFloat(u) * d9, k = Math.sin(T), S = Math.cos(T), b;
-    T = parseFloat(_) * d9, b = Math.cos(T), s = ut(v, s, k * b * -E), a = ut(v, a, -Math.sin(T) * -E), o = ut(v, o, S * b * -E + E);
+    T = parseFloat(d) * d9, b = Math.cos(T), s = ut(v, s, k * b * -E), a = ut(v, a, -Math.sin(T) * -E), o = ut(v, o, S * b * -E + E);
   }
-  m !== E9 && (M += "perspective(" + m + Je), (i || n) && (M += "translate(" + i + "%, " + n + "%) "), (y || s !== E9 || a !== E9 || o !== E9) && (M += o !== E9 || y ? "translate3d(" + s + ", " + a + ", " + o + ") " : "translate(" + s + ", " + a + Je), f !== qe && (M += "rotate(" + f + Je), u !== qe && (M += "rotateY(" + u + Je), _ !== qe && (M += "rotateX(" + _ + Je), (C !== qe || p !== qe) && (M += "skew(" + C + ", " + p + Je), (g !== 1 || c !== 1) && (M += "scale(" + g + ", " + c + Je), v.style[B] = M || "translate(0, 0)";
+  m !== E9 && (M += "perspective(" + m + Je), (i || n) && (M += "translate(" + i + "%, " + n + "%) "), (y || s !== E9 || a !== E9 || o !== E9) && (M += o !== E9 || y ? "translate3d(" + s + ", " + a + ", " + o + ") " : "translate(" + s + ", " + a + Je), f !== qe && (M += "rotate(" + f + Je), u !== qe && (M += "rotateY(" + u + Je), d !== qe && (M += "rotateX(" + d + Je), (C !== qe || p !== qe) && (M += "skew(" + C + ", " + p + Je), (g !== 1 || c !== 1) && (M += "scale(" + g + ", " + c + Je), v.style[B] = M || "translate(0, 0)";
 }, zr = function(e, t) {
-  var r = t || this, i = r.xPercent, n = r.yPercent, s = r.x, a = r.y, o = r.rotation, f = r.skewX, u = r.skewY, _ = r.scaleX, C = r.scaleY, p = r.target, g = r.xOrigin, c = r.yOrigin, m = r.xOffset, w = r.yOffset, v = r.forceCSS, E = parseFloat(s), M = parseFloat(a), y, T, k, S, b;
-  o = parseFloat(o), f = parseFloat(f), u = parseFloat(u), u && (u = parseFloat(u), f += u, o += u), o || f ? (o *= d9, f *= d9, y = Math.cos(o) * _, T = Math.sin(o) * _, k = Math.sin(o - f) * -C, S = Math.cos(o - f) * C, f && (u *= d9, b = Math.tan(f - u), b = Math.sqrt(1 + b * b), k *= b, S *= b, u && (b = Math.tan(u), b = Math.sqrt(1 + b * b), y *= b, T *= b)), y = X(y), T = X(T), k = X(k), S = X(S)) : (y = _, S = C, T = k = 0), (E && !~(s + "").indexOf("px") || M && !~(a + "").indexOf("px")) && (E = $e(p, "x", s, "px"), M = $e(p, "y", a, "px")), (g || c || m || w) && (E = X(E + g - (g * y + c * k) + m), M = X(M + c - (g * T + c * S) + w)), (i || n) && (b = p.getBBox(), E = X(E + i / 100 * b.width), M = X(M + n / 100 * b.height)), b = "matrix(" + y + "," + T + "," + k + "," + S + "," + E + "," + M + ")", p.setAttribute("transform", b), v && (p.style[B] = b);
+  var r = t || this, i = r.xPercent, n = r.yPercent, s = r.x, a = r.y, o = r.rotation, f = r.skewX, u = r.skewY, d = r.scaleX, C = r.scaleY, p = r.target, g = r.xOrigin, c = r.yOrigin, m = r.xOffset, w = r.yOffset, v = r.forceCSS, E = parseFloat(s), M = parseFloat(a), y, T, k, S, b;
+  o = parseFloat(o), f = parseFloat(f), u = parseFloat(u), u && (u = parseFloat(u), f += u, o += u), o || f ? (o *= d9, f *= d9, y = Math.cos(o) * d, T = Math.sin(o) * d, k = Math.sin(o - f) * -C, S = Math.cos(o - f) * C, f && (u *= d9, b = Math.tan(f - u), b = Math.sqrt(1 + b * b), k *= b, S *= b, u && (b = Math.tan(u), b = Math.sqrt(1 + b * b), y *= b, T *= b)), y = X(y), T = X(T), k = X(k), S = X(S)) : (y = d, S = C, T = k = 0), (E && !~(s + "").indexOf("px") || M && !~(a + "").indexOf("px")) && (E = $e(p, "x", s, "px"), M = $e(p, "y", a, "px")), (g || c || m || w) && (E = X(E + g - (g * y + c * k) + m), M = X(M + c - (g * T + c * S) + w)), (i || n) && (b = p.getBBox(), E = X(E + i / 100 * b.width), M = X(M + n / 100 * b.height)), b = "matrix(" + y + "," + T + "," + k + "," + S + "," + E + "," + M + ")", p.setAttribute("transform", b), v && (p.style[B] = b);
 }, Wr = function(e, t, r, i, n) {
-  var s = 360, a = Q(n), o = parseFloat(n) * (a && ~n.indexOf("rad") ? Qe : 1), f = o - i, u = i + f + "deg", _, C;
-  return a && (_ = n.split("_")[1], _ === "short" && (f %= s, f !== f % (s / 2) && (f += f < 0 ? s : -360)), _ === "cw" && f < 0 ? f = (f + s * c1) % s - ~~(f / s) * s : _ === "ccw" && f > 0 && (f = (f - s * c1) % s - ~~(f / s) * s)), e._pt = C = new fe(e._pt, t, r, i, f, Mr), C.e = u, C.u = "deg", e._props.push(r), C;
+  var s = 360, a = Q(n), o = parseFloat(n) * (a && ~n.indexOf("rad") ? Qe : 1), f = o - i, u = i + f + "deg", d, C;
+  return a && (d = n.split("_")[1], d === "short" && (f %= s, f !== f % (s / 2) && (f += f < 0 ? s : -360)), d === "cw" && f < 0 ? f = (f + s * c1) % s - ~~(f / s) * s : d === "ccw" && f > 0 && (f = (f - s * c1) % s - ~~(f / s) * s)), e._pt = C = new fe(e._pt, t, r, i, f, Mr), C.e = u, C.u = "deg", e._props.push(r), C;
 }, x1 = function(e, t) {
   for (var r in t)
     e[r] = t[r];
   return e;
 }, Ir = function(e, t, r) {
-  var i = x1({}, r._gsap), n = "perspective,force3D,transformOrigin,svgOrigin", s = r.style, a, o, f, u, _, C, p, g;
+  var i = x1({}, r._gsap), n = "perspective,force3D,transformOrigin,svgOrigin", s = r.style, a, o, f, u, d, C, p, g;
   i.svg ? (f = r.getAttribute("transform"), r.setAttribute("transform", ""), s[B] = t, a = A9(r, 1), n9(r, B), r.setAttribute("transform", f)) : (f = getComputedStyle(r)[B], s[B] = t, a = A9(r, 1), s[B] = f);
   for (o in De)
-    f = i[o], u = a[o], f !== u && n.indexOf(o) < 0 && (p = te(f), g = te(u), _ = p !== g ? $e(r, o, f, g) : parseFloat(f), C = parseFloat(u), e._pt = new fe(e._pt, a, o, _, C - _, yt), e._pt.u = g || 0, e._props.push(o));
+    f = i[o], u = a[o], f !== u && n.indexOf(o) < 0 && (p = te(f), g = te(u), d = p !== g ? $e(r, o, f, g) : parseFloat(f), C = parseFloat(u), e._pt = new fe(e._pt, a, o, d, C - d, yt), e._pt.u = g || 0, e._props.push(o));
   x1(a, i);
 };
 oe("padding,margin,Width,Radius", function(l, e) {
   var t = "Top", r = "Right", i = "Bottom", n = "Left", s = (e < 3 ? [t, r, i, n] : [t + n, t + r, i + r, i + n]).map(function(a) {
     return e < 2 ? l + a : "border" + a + l;
   });
-  G9[e > 1 ? "border" + l : l] = function(a, o, f, u, _) {
+  G9[e > 1 ? "border" + l : l] = function(a, o, f, u, d) {
     var C, p;
     if (arguments.length < 4)
       return C = s.map(function(g) {
@@ -2404,7 +2404,7 @@ oe("padding,margin,Width,Radius", function(l, e) {
       }), p = C.join(" "), p.split(C[0]).length === 5 ? C[0] : p;
     C = (u + "").split(" "), p = {}, s.forEach(function(g, c) {
       return p[g] = C[c] = C[c] || C[(c - 1) / 2 | 0];
-    }), a.init(o, p, _);
+    }), a.init(o, p, d);
   };
 });
 var w0 = {
@@ -2414,7 +2414,7 @@ var w0 = {
     return e.style && e.nodeType;
   },
   init: function(e, t, r, i, n) {
-    var s = this._props, a = e.style, o = r.vars.startAt, f, u, _, C, p, g, c, m, w, v, E, M, y, T, k, S;
+    var s = this._props, a = e.style, o = r.vars.startAt, f, u, d, C, p, g, c, m, w, v, E, M, y, T, k, S;
     Ft || Mt(), this.styles = this.styles || d0(e), S = this.styles.props, this.tween = r;
     for (c in t)
       if (c !== "autoRound" && (u = t[c], !(Ce[c] && r0(c, t, r, i, e, n)))) {
@@ -2423,9 +2423,9 @@ var w0 = {
         else if (c.substr(0, 2) === "--")
           f = (getComputedStyle(e).getPropertyValue(c) + "").trim(), u += "", Ye.lastIndex = 0, Ye.test(f) || (m = te(f), w = te(u)), w ? m !== w && (f = $e(e, c, f, w) + w) : m && (u += m), this.add(a, "setProperty", f, u, i, n, 0, 0, c), s.push(c), S.push(c, 0, a[c]);
         else if (p !== "undefined") {
-          if (o && c in o ? (f = typeof o[c] == "function" ? o[c].call(r, i, e, n) : o[c], Q(f) && ~f.indexOf("random(") && (f = Z9(f)), te(f + "") || f === "auto" || (f += ge.units[c] || te(Ve(e, c)) || ""), (f + "").charAt(1) === "=" && (f = Ve(e, c))) : f = Ve(e, c), C = parseFloat(f), v = p === "string" && u.charAt(1) === "=" && u.substr(0, 2), v && (u = u.substr(2)), _ = parseFloat(u), c in ke && (c === "autoAlpha" && (C === 1 && Ve(e, "visibility") === "hidden" && _ && (C = 0), S.push("visibility", 0, a.visibility), Be(this, a, "visibility", C ? "inherit" : "hidden", _ ? "inherit" : "hidden", !_)), c !== "scale" && c !== "transform" && (c = ke[c], ~c.indexOf(",") && (c = c.split(",")[0]))), E = c in De, E) {
+          if (o && c in o ? (f = typeof o[c] == "function" ? o[c].call(r, i, e, n) : o[c], Q(f) && ~f.indexOf("random(") && (f = Z9(f)), te(f + "") || f === "auto" || (f += ge.units[c] || te(Ve(e, c)) || ""), (f + "").charAt(1) === "=" && (f = Ve(e, c))) : f = Ve(e, c), C = parseFloat(f), v = p === "string" && u.charAt(1) === "=" && u.substr(0, 2), v && (u = u.substr(2)), d = parseFloat(u), c in ke && (c === "autoAlpha" && (C === 1 && Ve(e, "visibility") === "hidden" && d && (C = 0), S.push("visibility", 0, a.visibility), Be(this, a, "visibility", C ? "inherit" : "hidden", d ? "inherit" : "hidden", !d)), c !== "scale" && c !== "transform" && (c = ke[c], ~c.indexOf(",") && (c = c.split(",")[0]))), E = c in De, E) {
             if (this.styles.save(c), M || (y = e._gsap, y.renderTransform && !t.parseTransform || A9(e, t.parseTransform), T = t.smoothOrigin !== !1 && y.smooth, M = this._pt = new fe(this._pt, a, B, 0, 1, y.renderTransform, y, 0, -1), M.dep = 1), c === "scale")
-              this._pt = new fe(this._pt, y, "scaleY", y.scaleY, (v ? h9(y.scaleY, v + _) : _) - y.scaleY || 0, yt), this._pt.u = 0, s.push("scaleY", c), c += "X";
+              this._pt = new fe(this._pt, y, "scaleY", y.scaleY, (v ? h9(y.scaleY, v + d) : d) - y.scaleY || 0, yt), this._pt.u = 0, s.push("scaleY", c), c += "X";
             else if (c === "transformOrigin") {
               S.push(ue, 0, a[ue]), u = jr(u), y.svg ? bt(e, u, 0, T, 0, this) : (w = parseFloat(u.split(" ")[2]) || 0, w !== y.zOrigin && Be(this, y, "zOrigin", y.zOrigin, w), Be(this, a, c, X9(f), X9(u)));
               continue;
@@ -2446,8 +2446,8 @@ var w0 = {
               continue;
             }
           } else c in a || (c = x9(c) || c);
-          if (E || (_ || _ === 0) && (C || C === 0) && !Er.test(u) && c in a)
-            m = (f + "").substr((C + "").length), _ || (_ = 0), w = te(u) || (c in ge.units ? ge.units[c] : m), m !== w && (C = $e(e, c, f, w)), this._pt = new fe(this._pt, E ? y : a, c, C, (v ? h9(C, v + _) : _) - C, !E && (w === "px" || c === "zIndex") && t.autoRound !== !1 ? Tr : yt), this._pt.u = w || 0, m !== w && w !== "%" && (this._pt.b = f, this._pt.r = br);
+          if (E || (d || d === 0) && (C || C === 0) && !Er.test(u) && c in a)
+            m = (f + "").substr((C + "").length), d || (d = 0), w = te(u) || (c in ge.units ? ge.units[c] : m), m !== w && (C = $e(e, c, f, w)), this._pt = new fe(this._pt, E ? y : a, c, C, (v ? h9(C, v + d) : d) - C, !E && (w === "px" || c === "zIndex") && t.autoRound !== !1 ? Tr : yt), this._pt.u = w || 0, m !== w && w !== "%" && (this._pt.b = f, this._pt.r = br);
           else if (c in a)
             Vr.call(this, e, c, f, v ? v + u : u);
           else if (c in e)
@@ -2498,7 +2498,7 @@ oe("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,perspective
 he.registerPlugin(w0);
 var D = he.registerPlugin(w0) || he;
 D.core.Tween;
-const ti = ({
+const ri = ({
   width: l,
   height: e,
   onClick: t,
@@ -2523,7 +2523,7 @@ const ti = ({
     if (o.current.isActive() || f.current.reversed() || f.current.isActive() || f.current.rawTime() < 0)
       return;
     const m = D.utils.selector(a.current), w = m(".stroke-fng");
-    C(w), _(m), o.current.play();
+    C(w), d(m), o.current.play();
   };
   q9(() => {
     const m = D.utils.selector(a.current), w = m(".stroke-fng");
@@ -2573,7 +2573,7 @@ const ti = ({
       ease: "power2.out"
     }).from(w, { scale: 0, duration: 0.5, ease: "power2.out" });
   }, []);
-  const _ = (m) => (o.current.clear(), o.current.to(m(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(m(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(m(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(m(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(m(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(m(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(m(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(m(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(m("text"), {
+  const d = (m) => (o.current.clear(), o.current.to(m(".corner-left-bot"), { x: -10, y: 5, duration: 0.05 }).to(m(".edge-triangle-left"), { x: -10, duration: 0.05 }).to(m(".corner-left-top"), { x: -10, y: -5, duration: 0.05 }).to(m(".edge-triangle-top"), { y: -5, duration: 0.05 }).to(m(".corner-right-top"), { x: 10, y: -5, duration: 0.05 }).to(m(".edge-triangle-right"), { x: 10, duration: 0.05 }).to(m(".corner-right-bot"), { x: 10, y: 5, duration: 0.05 }).to(m(".edge-triangle-bot"), { y: 5, duration: 0.05 }).to(m("text"), {
     opacity: 1,
     duration: 1,
     ease: "power1.in"
@@ -2697,7 +2697,7 @@ const ti = ({
       ]
     }
   );
-}, ri = ({ options: l, width: e = "w-full" }) => /* @__PURE__ */ x.jsx("div", { className: `flex flex-col gap-2 ${e}`, children: l.map((t, r) => /* @__PURE__ */ M0(Yr, { ...t, key: r, sciFiCode: r })) }), w1 = () => /* @__PURE__ */ x.jsxs("div", { className: "w-[150px] h-[50px] flex flex-row align-top gap-[2px]", children: [
+}, ii = ({ options: l, width: e = "w-full" }) => /* @__PURE__ */ x.jsx("div", { className: `flex flex-col gap-2 ${e}`, children: l.map((t, r) => /* @__PURE__ */ M0(Yr, { ...t, key: r, sciFiCode: r })) }), w1 = () => /* @__PURE__ */ x.jsxs("div", { className: "w-[150px] h-[50px] flex flex-row align-top gap-[2px]", children: [
   /* @__PURE__ */ x.jsxs("div", { className: "flex flex-col gap-1", children: [
     /* @__PURE__ */ x.jsx("div", { className: "h-full w-[4px] artifact-border" }),
     /* @__PURE__ */ x.jsx("div", { className: "h-1/6 artifact-border" })
@@ -2710,7 +2710,7 @@ const ti = ({
   /* @__PURE__ */ x.jsx("div", { className: "h-1/4 w-[4px] artifact-border self-end" }),
   /* @__PURE__ */ x.jsx("div", { className: "h-[4px] w-[7px] artifact-border self-end rounded-none glowedGray bg-white ml-5" }),
   /* @__PURE__ */ x.jsx("div", { className: "h-[4px] w-[7px] artifact-border self-end rounded-none glowedGray bg-white ml-5" })
-] }), ii = ({ children: l }) => /* @__PURE__ */ x.jsxs("div", { className: "relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ", children: [
+] }), ni = ({ children: l }) => /* @__PURE__ */ x.jsxs("div", { className: "relative flex flex-col min-h-screen bg-gray-100 dark:bg-darkGrayBg theme-text font-[RobotoCondensed] ", children: [
   /* @__PURE__ */ x.jsxs("div", { className: "sticky top-0 bg-gray-100 dark:bg-darkGrayBg w-full shadow-md z-10 flex gap-2 items-center border-b-evaTextDanger glowed-border-b", children: [
     /* @__PURE__ */ x.jsx("div", { className: "ml-2 mt-2 hidden md:block z-10", children: /* @__PURE__ */ x.jsx(Br, { tilesPerRowCount: 2, rowsCount: 2 }) }),
     /* @__PURE__ */ x.jsx(
@@ -2725,7 +2725,7 @@ const ti = ({
   /* @__PURE__ */ x.jsx("div", { className: "fixed bottom-3 left-3", children: /* @__PURE__ */ x.jsx(w1, {}) }),
   /* @__PURE__ */ x.jsx("div", { className: "fixed bottom-3 right-3 [transform:rotateY(180deg)]", children: /* @__PURE__ */ x.jsx(w1, {}) }),
   /* @__PURE__ */ x.jsx("div", { className: "flex-1 overflow-y-auto flex items-center justify-center text-center px-4 pt-8 pb-8", children: /* @__PURE__ */ x.jsx("div", { className: "content mx-auto max-w-screen-md text-2xl md:text-1xl font-bold", children: /* @__PURE__ */ x.jsx("div", { className: "content", children: l }) }) })
-] }), ni = ({
+] }), si = ({
   headBlockChildren: l,
   width: e,
   height: t,
@@ -2759,14 +2759,14 @@ const ti = ({
       "data-augmented-ui": "br-clip border"
     }
   )
-] }), si = ({
+] }), ai = ({
   children: l,
   primaryColour: e = "#CFFF55",
   secondaryColour: t = "#909090",
   width: r = "220px",
   height: i = "150px"
 }) => {
-  const n = _e(D.timeline({ paused: !0 })), s = _e(null), a = _e(null), o = _e(null), f = _e(null), u = _e(null), _ = _e(null);
+  const n = _e(D.timeline({ paused: !0 })), s = _e(null), a = _e(null), o = _e(null), f = _e(null), u = _e(null), d = _e(null);
   return q9(() => {
     if (!s.current || !a.current || !o.current) return;
     const C = o.current.getTotalLength(), p = a.current.getTotalLength();
@@ -2807,7 +2807,7 @@ const ti = ({
       // Start with scaleX 0
       { scaleX: 1, duration: 1, ease: "power3.out" }
       // End with scaleX 1
-    ).to(_.current, {
+    ).to(d.current, {
       opacity: 1
     }).to(f.current, {
       opacity: 0.45,
@@ -2838,7 +2838,7 @@ const ti = ({
         /* @__PURE__ */ x.jsx(
           "text",
           {
-            ref: _,
+            ref: d,
             className: "text font-[Oxanium]",
             fontWeight: 600,
             fontSize: "8",
@@ -2856,7 +2856,7 @@ const ti = ({
           {
             className: "animate-pulse",
             d: "M1.52616 21.3872H0V22.9385H1.52616V21.3872Z",
-            fill: e
+            fill: "#CFFF55"
           }
         ),
         /* @__PURE__ */ x.jsx("g", { opacity: "0.65", children: /* @__PURE__ */ x.jsx(
@@ -2890,7 +2890,7 @@ const ti = ({
             ref: u,
             opacity: "0.45",
             d: "M120.988 25.2749H109.356V27.1859H120.988V25.2749Z",
-            fill: e
+            fill: "#CFFF55"
           }
         ),
         /* @__PURE__ */ x.jsx(
@@ -2927,7 +2927,34 @@ const ti = ({
       ]
     }
   ) });
-}, Ur = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 931 128", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { opacity: 0.5 }, /* @__PURE__ */ h.createElement("path", { d: "M930.1 127.5H0.900146V0.5H930.1V127.5ZM1.20044 127.2H929.8V0.800003H1.20044V127.2Z", fill: "white" })), /* @__PURE__ */ h.createElement("path", { d: "M920.6 118H10.3V10H920.6V118ZM12.0002 116.4H918.9V11.6H12.0002V116.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("defs", null, /* @__PURE__ */ h.createElement("mask", { id: "loading-mask" }, /* @__PURE__ */ h.createElement("rect", { id: "mask-rect", x: -931, y: 0, width: 931, height: 128, fill: "white" }))), /* @__PURE__ */ h.createElement("rect", { x: 0, y: 0, width: 931, height: 128 }), /* @__PURE__ */ h.createElement("g", { id: "loading-content", mask: "url(#loading-mask)" }, /* @__PURE__ */ h.createElement("g", { opacity: 0.6768 }, /* @__PURE__ */ h.createElement("path", { d: "M908.8 106.2H866.6L782.1 21.7998H824.3L908.8 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.5157 }, /* @__PURE__ */ h.createElement("path", { d: "M824.3 106.2H782.1L697.7 21.7998H739.9L824.3 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7193 }, /* @__PURE__ */ h.createElement("path", { d: "M739.9 106.2H697.7L613.2 21.7998H655.4L739.9 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7284 }, /* @__PURE__ */ h.createElement("path", { d: "M655.4 106.2H613.2L528.8 21.7998H571L655.4 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.1551 }, /* @__PURE__ */ h.createElement("path", { d: "M571 106.2H528.8L444.3 21.7998H486.6L571 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.9513 }, /* @__PURE__ */ h.createElement("path", { d: "M486.6 106.2H444.3L359.9 21.7998H402.1L486.6 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.82 }, /* @__PURE__ */ h.createElement("path", { d: "M402.1 106.2H359.9L275.4 21.7998H317.7L402.1 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.2836 }, /* @__PURE__ */ h.createElement("path", { d: "M317.7 106.2H275.4L191 21.7998H233.2L317.7 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.702 }, /* @__PURE__ */ h.createElement("path", { d: "M233.2 106.2H191L106.6 21.7998H148.8L233.2 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.587 }, /* @__PURE__ */ h.createElement("path", { d: "M148.8 106.2H106.6L22.1003 21.7998H64.3L148.8 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.4373 }, /* @__PURE__ */ h.createElement("path", { d: "M908.8 63.9998L866.6 21.7998H908.8V63.9998Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7504 }, /* @__PURE__ */ h.createElement("path", { d: "M22.1003 106.2H64.3L22.1003 64V106.2Z", fill: "#DD1920" })))), $r = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 700 88", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { opacity: 0.75 }, /* @__PURE__ */ h.createElement("path", { d: "M1906 82.1003C1905.8 82.1003 1905.7 82.0004 1905.7 81.8004V6.20032C1905.7 6.00032 1905.8 5.90039 1906 5.90039C1906.2 5.90039 1906.3 6.00032 1906.3 6.20032V81.8004C1906.3 82.0004 1906.2 82.1003 1906 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 82.1003C1846.4 82.1003 1846.3 82.0004 1846.3 81.8004V6.20032C1846.3 6.00032 1846.4 5.90039 1846.6 5.90039C1846.8 5.90039 1846.9 6.00032 1846.9 6.20032V81.8004C1846.9 82.0004 1846.8 82.1003 1846.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1787.2 82.1003C1787 82.1003 1786.9 82.0004 1786.9 81.8004V6.20032C1786.9 6.00032 1787 5.90039 1787.2 5.90039C1787.4 5.90039 1787.5 6.00032 1787.5 6.20032V81.8004C1787.6 82.0004 1787.4 82.1003 1787.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 82.1003C1727.7 82.1003 1727.6 82.0004 1727.6 81.8004V6.20032C1727.6 6.00032 1727.7 5.90039 1727.9 5.90039C1728.1 5.90039 1728.2 6.00032 1728.2 6.20032V81.8004C1728.2 82.0004 1728.1 82.1003 1727.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 82.1003C1668.3 82.1003 1668.2 82.0004 1668.2 81.8004V6.20032C1668.2 6.00032 1668.3 5.90039 1668.5 5.90039C1668.7 5.90039 1668.8 6.00032 1668.8 6.20032V81.8004C1668.8 82.0004 1668.7 82.1003 1668.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 82.1003C1608.9 82.1003 1608.8 82.0004 1608.8 81.8004V6.20032C1608.8 6.00032 1608.9 5.90039 1609.1 5.90039C1609.3 5.90039 1609.4 6.00032 1609.4 6.20032V81.8004C1609.4 82.0004 1609.3 82.1003 1609.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1549.7 82.1003C1549.5 82.1003 1549.4 82.0004 1549.4 81.8004V6.20032C1549.4 6.00032 1549.5 5.90039 1549.7 5.90039C1549.9 5.90039 1550 6.00032 1550 6.20032V81.8004C1550.1 82.0004 1549.9 82.1003 1549.7 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 82.1003C1490.2 82.1003 1490.1 82.0004 1490.1 81.8004V6.20032C1490.1 6.00032 1490.2 5.90039 1490.4 5.90039C1490.6 5.90039 1490.7 6.00032 1490.7 6.20032V81.8004C1490.7 82.0004 1490.6 82.1003 1490.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 82.1003C1430.8 82.1003 1430.7 82.0004 1430.7 81.8004V6.20032C1430.7 6.00032 1430.8 5.90039 1431 5.90039C1431.2 5.90039 1431.3 6.00032 1431.3 6.20032V81.8004C1431.3 82.0004 1431.2 82.1003 1431 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 82.1003C1371.4 82.1003 1371.3 82.0004 1371.3 81.8004V6.20032C1371.3 6.00032 1371.4 5.90039 1371.6 5.90039C1371.8 5.90039 1371.9 6.00032 1371.9 6.20032V81.8004C1371.9 82.0004 1371.8 82.1003 1371.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.2 82.1003C1312 82.1003 1311.9 82.0004 1311.9 81.8004V6.20032C1311.9 6.00032 1312 5.90039 1312.2 5.90039C1312.4 5.90039 1312.5 6.00032 1312.5 6.20032V81.8004C1312.6 82.0004 1312.4 82.1003 1312.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 82.1003C1252.7 82.1003 1252.6 82.0004 1252.6 81.8004V6.20032C1252.6 6.00032 1252.7 5.90039 1252.9 5.90039C1253.1 5.90039 1253.2 6.00032 1253.2 6.20032V81.8004C1253.2 82.0004 1253.1 82.1003 1252.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 82.1003C1193.3 82.1003 1193.2 82.0004 1193.2 81.8004V6.20032C1193.2 6.00032 1193.3 5.90039 1193.5 5.90039C1193.7 5.90039 1193.8 6.00032 1193.8 6.20032V81.8004C1193.8 82.0004 1193.7 82.1003 1193.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 82.1003C1133.9 82.1003 1133.8 82.0004 1133.8 81.8004V6.20032C1133.8 6.00032 1133.9 5.90039 1134.1 5.90039C1134.3 5.90039 1134.4 6.00032 1134.4 6.20032V81.8004C1134.4 82.0004 1134.3 82.1003 1134.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 82.1003C1074.6 82.1003 1074.5 82.0004 1074.5 81.8004V6.20032C1074.5 6.00032 1074.6 5.90039 1074.8 5.90039C1075 5.90039 1075.1 6.00032 1075.1 6.20032V81.8004C1075.1 82.0004 1074.9 82.1003 1074.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 82.1003C1015.2 82.1003 1015.1 82.0004 1015.1 81.8004V6.20032C1015.1 6.00032 1015.2 5.90039 1015.4 5.90039C1015.6 5.90039 1015.7 6.00032 1015.7 6.20032V81.8004C1015.7 82.0004 1015.6 82.1003 1015.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 82.1003C955.8 82.1003 955.7 82.0004 955.7 81.8004V6.20032C955.7 6.00032 955.8 5.90039 956 5.90039C956.2 5.90039 956.3 6.00032 956.3 6.20032V81.8004C956.3 82.0004 956.2 82.1003 956 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 82.1003C896.4 82.1003 896.3 82.0004 896.3 81.8004V6.20032C896.3 6.00032 896.4 5.90039 896.6 5.90039C896.8 5.90039 896.9 6.00032 896.9 6.20032V81.8004C896.9 82.0004 896.8 82.1003 896.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.2 82.1003C837 82.1003 836.9 82.0004 836.9 81.8004V6.20032C836.9 6.00032 837 5.90039 837.2 5.90039C837.4 5.90039 837.5 6.00032 837.5 6.20032V81.8004C837.6 82.0004 837.4 82.1003 837.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 82.1003C777.7 82.1003 777.6 82.0004 777.6 81.8004V6.20032C777.6 6.00032 777.7 5.90039 777.9 5.90039C778.1 5.90039 778.2 6.00032 778.2 6.20032V81.8004C778.2 82.0004 778.1 82.1003 777.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 82.1003C718.3 82.1003 718.2 82.0004 718.2 81.8004V6.20032C718.2 6.00032 718.3 5.90039 718.5 5.90039C718.7 5.90039 718.8 6.00032 718.8 6.20032V81.8004C718.8 82.0004 718.7 82.1003 718.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 82.1003C658.9 82.1003 658.8 82.0004 658.8 81.8004V6.20032C658.8 6.00032 658.9 5.90039 659.1 5.90039C659.3 5.90039 659.4 6.00032 659.4 6.20032V81.8004C659.4 82.0004 659.3 82.1003 659.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 82.1003C599.6 82.1003 599.5 82.0004 599.5 81.8004V6.20032C599.5 6.00032 599.6 5.90039 599.8 5.90039C600 5.90039 600.1 6.00032 600.1 6.20032V81.8004C600.1 82.0004 599.9 82.1003 599.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 82.1003C540.2 82.1003 540.1 82.0004 540.1 81.8004V6.20032C540.1 6.00032 540.2 5.90039 540.4 5.90039C540.6 5.90039 540.7 6.00032 540.7 6.20032V81.8004C540.7 82.0004 540.6 82.1003 540.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 82.1003C480.8 82.1003 480.7 82.0004 480.7 81.8004V6.20032C480.7 6.00032 480.8 5.90039 481 5.90039C481.2 5.90039 481.3 6.00032 481.3 6.20032V81.8004C481.3 82.0004 481.2 82.1003 481 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 82.1003C421.4 82.1003 421.3 82.0004 421.3 81.8004V6.20032C421.3 6.00032 421.4 5.90039 421.6 5.90039C421.8 5.90039 421.9 6.00032 421.9 6.20032V81.8004C421.9 82.0004 421.8 82.1003 421.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.2 82.1003C362 82.1003 361.9 82.0004 361.9 81.8004V6.20032C361.9 6.00032 362 5.90039 362.2 5.90039C362.4 5.90039 362.5 6.00032 362.5 6.20032V81.8004C362.6 82.0004 362.4 82.1003 362.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 82.1003C302.7 82.1003 302.6 82.0004 302.6 81.8004V6.20032C302.6 6.00032 302.7 5.90039 302.9 5.90039C303.1 5.90039 303.2 6.00032 303.2 6.20032V81.8004C303.2 82.0004 303.1 82.1003 302.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 82.1003C243.3 82.1003 243.2 82.0004 243.2 81.8004V6.20032C243.2 6.00032 243.3 5.90039 243.5 5.90039C243.7 5.90039 243.8 6.00032 243.8 6.20032V81.8004C243.8 82.0004 243.7 82.1003 243.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 82.1003C183.9 82.1003 183.8 82.0004 183.8 81.8004V6.20032C183.8 6.00032 183.9 5.90039 184.1 5.90039C184.3 5.90039 184.4 6.00032 184.4 6.20032V81.8004C184.4 82.0004 184.3 82.1003 184.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.8 82.1003C124.6 82.1003 124.5 82.0004 124.5 81.8004V6.20032C124.5 6.00032 124.6 5.90039 124.8 5.90039C125 5.90039 125.1 6.00032 125.1 6.20032V81.8004C125.1 82.0004 124.9 82.1003 124.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 82.1003C65.1999 82.1003 65.1001 82.0004 65.1001 81.8004V6.20032C65.1001 6.00032 65.1999 5.90039 65.3999 5.90039C65.5999 5.90039 65.7 6.00032 65.7 6.20032V81.8004C65.7 82.0004 65.5999 82.1003 65.3999 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M6 82.1003C5.8 82.1003 5.69995 82.0004 5.69995 81.8004V6.20032C5.69995 6.00032 5.8 5.90039 6 5.90039C6.2 5.90039 6.30005 6.00032 6.30005 6.20032V81.8004C6.30005 82.0004 6.2 82.1003 6 82.1003Z", fill: "white" })), /* @__PURE__ */ h.createElement("g", { id: "solar-graph" }, /* @__PURE__ */ h.createElement("path", { d: "M35.7001 22.9001C33.9001 22.9001 32.1001 22.0001 31.0001 20.5001C29.2001 17.9001 29.9 14.4001 32.4 12.6001C35 10.8001 38.5002 11.4001 40.3002 14.0001C42.1002 16.6001 41.5 20.1001 38.9 21.9001C38.9 21.9001 38.9002 21.9001 38.8002 21.9001C37.9002 22.6001 36.8001 22.9001 35.7001 22.9001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M5.99994 49.6996C4.59994 49.6996 3.29989 49.1996 2.19989 48.1996C-0.100106 46.0996 -0.300008 42.4996 1.79999 40.1996C1.89999 40.0996 2.00004 39.9997 2.10004 39.8997C4.30004 37.6997 7.90004 37.7997 10.1 39.9997C12.3 42.1997 12.3 45.7997 10.1 47.9997C8.90004 49.0997 7.49994 49.6996 5.99994 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 11.9C62.2999 11.9 59.7 9.39995 59.7 6.19995C59.7 2.99995 62.1999 0.5 65.3999 0.5C68.5999 0.5 71.1001 2.99995 71.1001 6.19995C71.1001 9.39995 68.4999 11.9 65.3999 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M35.6999 22.9001C33.9999 22.9001 32.2999 22.1001 31.1999 20.6001C29.2999 18.1001 29.8 14.5001 32.3 12.7001C32.3 12.7001 32.3999 12.6001 32.4999 12.6001C34.9999 10.8001 38.5998 11.4001 40.3998 13.9001C42.1998 16.4001 41.6 19.9002 39.1 21.8002C38 22.6002 36.7999 22.9001 35.6999 22.9001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M95.1002 22.8999C94.0002 22.8999 92.8 22.5999 91.9 21.8999C89.4 20.0999 88.7 16.6999 90.4 14.0999C92.1 11.4999 95.7001 10.7999 98.3001 12.4999C98.4001 12.5999 98.5002 12.5999 98.6002 12.6999C101.1 14.5999 101.6 18.0999 99.7 20.5999C98.5 22.1999 96.8002 22.8999 95.1002 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 11.9C62.2999 11.9 59.7 9.39995 59.7 6.19995C59.7 2.99995 62.1999 0.5 65.3999 0.5C68.5999 0.5 71.1001 2.99995 71.1001 6.19995C71.1001 9.39995 68.4999 11.9 65.3999 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.7 49.6996C123.3 49.6996 121.8 49.0996 120.7 47.9996C118.5 45.7996 118.5 42.1996 120.7 39.9996C122.9 37.7996 126.5 37.7996 128.7 39.9996C130.9 42.1996 130.9 45.7996 128.7 47.9996C127.6 49.0996 126.2 49.6996 124.7 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M95.1001 23C93.9001 23 92.8001 22.6 91.8001 21.9C91.7001 21.9 91.7001 21.8 91.6001 21.8C89.1001 19.9 88.7001 16.3 90.6001 13.8C92.5001 11.4 95.8999 10.8999 98.3999 12.6999C98.4999 12.6999 98.5001 12.8 98.6001 12.8C101.1 14.7 101.5 18.3 99.6001 20.8C98.4001 22.2 96.8001 23 95.1001 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M154.4 76.3997C153.3 76.3997 152.1 76.0997 151.2 75.3997L157.7 66.0996C160.3 67.8996 160.9 71.3996 159.1 73.9996C158 75.5996 156.2 76.3997 154.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.8 49.6999C123.3 49.6999 121.8 49.1 120.7 47.9L120.6 47.8C118.5 45.5 118.7 41.9 121 39.8C123.3 37.7 126.8 37.8999 128.9 40.0999L129 40.1999C131.1 42.4999 130.9 46.0999 128.6 48.1999C127.5 49.1999 126.1 49.6999 124.8 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 87.4996C181 87.4996 178.4 84.9997 178.4 81.7997C178.4 78.5997 180.9 76.0996 184.1 76.0996C187.3 76.0996 189.8 78.5997 189.8 81.7997C189.8 84.9997 187.3 87.4996 184.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M154.5 76.3997C153.4 76.3997 152.3 76.0997 151.4 75.3997C151.3 75.2997 151.2 75.2996 151.1 75.1996C148.6 73.2996 148.1 69.7997 150 67.2997C151.9 64.7997 155.3 64.2996 157.8 66.0996C160.3 67.8996 160.9 71.2997 159.2 73.8997C158.1 75.4997 156.3 76.3997 154.5 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M213.8 76.4C212 76.4 210.2 75.5 209.1 73.9C207.4 71.3 208.1 67.8999 210.6 66.0999C213.1 64.3999 216.5 64.9 218.4 67.3C220.3 69.8 219.8 73.3999 217.3 75.1999C217.2 75.2999 217.1 75.3 217 75.4C216 76.1 214.9 76.4 213.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 87.4996C181 87.4996 178.4 84.9997 178.4 81.7997C178.4 78.5997 180.9 76.0996 184.1 76.0996C187.3 76.0996 189.8 78.5997 189.8 81.7997C189.8 84.9997 187.3 87.4996 184.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 49.6996C242.1 49.6996 240.8 49.1996 239.7 48.1996C237.4 46.0996 237.2 42.4996 239.3 40.1996C239.4 40.0996 239.5 39.9997 239.6 39.8997C241.8 37.6997 245.4 37.7997 247.6 39.9997C249.8 42.1997 249.8 45.7997 247.6 47.9997C246.4 49.0997 245 49.6996 243.5 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M213.8 76.3994C212.1 76.3994 210.4 75.5994 209.3 74.1994C207.4 71.6994 207.8 68.1994 210.3 66.1994C210.4 66.1994 210.4 66.0994 210.5 66.0994C213 64.2994 216.4 64.7994 218.3 67.1994C220.2 69.6994 219.8 73.1994 217.3 75.1994C217.2 75.1994 217.2 75.2995 217.1 75.2995C216.1 75.9995 215 76.3994 213.8 76.3994Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M273.2 23.0004C271.5 23.0004 269.8 22.2004 268.7 20.8004C266.8 18.3004 267.2 14.8004 269.7 12.8004C269.8 12.7004 269.9 12.6003 270 12.6003C272.6 10.9003 276.1 11.5004 277.8 14.0004C279.6 16.6004 279 20.1004 276.4 21.9004C275.4 22.6004 274.3 23.0004 273.2 23.0004Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 49.6999C242.1 49.6999 240.8 49.1999 239.7 48.1999C237.4 46.0999 237.2 42.4999 239.3 40.1999L239.4 40.0999C241.5 37.8999 245 37.7 247.3 39.8C249.6 41.9 249.8 45.5 247.7 47.8L247.6 47.9C246.5 49.1 245 49.6999 243.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 11.9C299.8 11.9 297.2 9.39995 297.2 6.19995C297.2 2.99995 299.7 0.5 302.9 0.5C306.1 0.5 308.6 2.99995 308.6 6.19995C308.6 9.39995 306 11.9 302.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M273.2 22.8999C271.6 22.8999 269.9 22.2 268.8 20.8C266.8 18.4 267.2 14.8 269.6 12.8C269.7 12.7 269.9 12.5999 270.1 12.4999C272.7 10.7999 276.2 11.4999 278 14.0999C279.7 16.5999 279.1 20.1 276.6 21.8C275.5 22.6 274.4 22.8999 273.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M332.6 22.8999C331.5 22.8999 330.3 22.5999 329.4 21.8999C326.9 20.0999 326.2 16.6999 327.9 14.0999C329.6 11.4999 333.2 10.7999 335.8 12.4999C335.9 12.5999 336 12.5999 336.1 12.6999C338.6 14.5999 339.1 18.0999 337.2 20.5999C336 22.1999 334.3 22.8999 332.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 11.9C299.8 11.9 297.2 9.39995 297.2 6.19995C297.2 2.99995 299.7 0.5 302.9 0.5C306.1 0.5 308.6 2.99995 308.6 6.19995C308.6 9.39995 306 11.9 302.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.3 49.6998C360.9 49.6998 359.4 49.1999 358.3 48.0999C358.2 47.9999 358.1 47.8999 358 47.7999C355.9 45.4999 356.1 41.8999 358.4 39.7999C360.7 37.7999 364.1 37.8999 366.2 39.9999C368.4 42.1999 368.4 45.7999 366.2 47.9999C365.2 49.0999 363.7 49.6998 362.3 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M332.6 23C331.4 23 330.3 22.6 329.3 21.9C329.2 21.9 329.2 21.8 329.1 21.8C326.6 19.9 326.2 16.3 328.1 13.8C330 11.4 333.4 10.8999 335.9 12.6999C336 12.6999 336 12.8 336.1 12.8C338.6 14.7 339 18.3 337.1 20.8C335.9 22.2 334.3 23 332.6 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M391.9 76.4004C390.7 76.4004 389.6 76.0004 388.6 75.3004C388.5 75.3004 388.5 75.2003 388.4 75.2003C385.9 73.3003 385.5 69.7003 387.4 67.2003C389.3 64.8003 392.7 64.3004 395.2 66.1004C395.3 66.1004 395.3 66.2003 395.4 66.2003C397.9 68.1003 398.3 71.7003 396.4 74.2003C395.3 75.6003 393.6 76.4004 391.9 76.4004Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.3 49.6999C360.8 49.6999 359.3 49.1 358.2 47.9L358.1 47.8C356 45.5 356.2 41.9 358.5 39.8C360.8 37.7 364.3 37.8999 366.4 40.0999L366.5 40.1999C368.6 42.4999 368.4 46.0999 366.1 48.1999C365 49.1999 363.6 49.6999 362.3 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 87.4996C418.5 87.4996 415.9 84.9997 415.9 81.7997C415.9 78.5997 418.4 76.0996 421.6 76.0996C424.8 76.0996 427.3 78.5997 427.3 81.7997C427.3 84.9997 424.8 87.4996 421.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M392 76.3997C390.9 76.3997 389.8 76.0997 388.9 75.3997C388.8 75.2997 388.7 75.2996 388.6 75.1996C386.1 73.2996 385.6 69.7997 387.5 67.2997C389.3 64.7997 392.8 64.2996 395.3 66.0996C397.8 67.8996 398.5 71.2997 396.8 73.8997C395.6 75.4997 393.8 76.3997 392 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M451.3 76.4C449.5 76.4 447.7 75.5 446.6 73.9C444.9 71.4 445.5 67.8999 448 66.1999C450.4 64.3999 453.8 64.8999 455.7 67.1999C457.7 69.5999 457.3 73.1999 454.9 75.1999C454.8 75.2999 454.6 75.3999 454.4 75.4999C453.5 76.0999 452.4 76.4 451.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 87.4996C418.5 87.4996 415.9 84.9997 415.9 81.7997C415.9 78.5997 418.4 76.0996 421.6 76.0996C424.8 76.0996 427.3 78.5997 427.3 81.7997C427.3 84.9997 424.8 87.4996 421.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 49.6999C479.6 49.6999 478.3 49.1999 477.2 48.1999C474.9 46.0999 474.7 42.4999 476.8 40.1999L476.9 40.0999C479 37.8999 482.5 37.7 484.8 39.8C487.1 41.9 487.3 45.5 485.2 47.8L485.1 47.9C484 49.1 482.5 49.6999 481 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M451.3 76.4C449.5 76.4 447.8 75.5999 446.7 73.9999C444.9 71.3999 445.5 67.8999 448.1 66.0999C450.6 64.3999 454 64.9 455.8 67.3C457.7 69.8 457.3 73.3 454.8 75.3C454.7 75.4 454.6 75.4999 454.5 75.4999C453.5 76.0999 452.4 76.4 451.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M510.7 23C509 23 507.3 22.2 506.2 20.8C504.3 18.3 504.7 14.8 507.2 12.8C507.3 12.8 507.3 12.6999 507.4 12.6999C509.9 10.8999 513.3 11.4 515.2 13.8C517.1 16.3 516.7 19.8 514.2 21.8C514.1 21.8 514.1 21.9 514 21.9C513 22.6 511.8 23 510.7 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 49.6998C479.5 49.6998 478.1 49.0998 477 47.9998C474.8 45.7998 474.8 42.1998 477 39.9998C479.1 37.8998 482.6 37.6999 484.8 39.7999C487.1 41.8999 487.3 45.4999 485.2 47.7999C485.1 47.8999 485 47.9998 484.9 48.0998C483.8 49.0998 482.4 49.6998 481 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 11.9C537.3 11.9 534.7 9.39995 534.7 6.19995C534.7 2.99995 537.2 0.5 540.4 0.5C543.6 0.5 546.1 2.99995 546.1 6.19995C546.1 9.39995 543.5 11.9 540.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M510.7 22.8999C509 22.8999 507.3 22.0999 506.2 20.5999C504.3 18.0999 504.8 14.4999 507.3 12.6999C507.4 12.5999 507.5 12.5999 507.6 12.4999C510.2 10.7999 513.7 11.4999 515.5 14.0999C517.2 16.6999 516.5 20.0999 514 21.8999C513 22.5999 511.8 22.8999 510.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M570.1 22.9003C569 22.9003 567.8 22.6003 566.8 21.8003C564.3 20.0003 563.7 16.6003 565.4 14.0003C567.1 11.4003 570.7 10.7003 573.3 12.4003C573.4 12.5003 573.5 12.5003 573.6 12.6003C576.1 14.5003 576.6 18.0003 574.7 20.5003C573.5 22.2003 571.8 22.9003 570.1 22.9003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 11.9C537.3 11.9 534.7 9.39995 534.7 6.19995C534.7 2.99995 537.2 0.5 540.4 0.5C543.6 0.5 546.1 2.99995 546.1 6.19995C546.1 9.39995 543.5 11.9 540.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 49.6999C598.3 49.6999 596.8 49.1 595.7 47.9L595.6 47.8C593.5 45.5 593.7 41.9 596 39.8C598.3 37.7 601.8 37.8999 603.9 40.0999L604 40.1999C606.1 42.4999 605.9 46.0999 603.6 48.1999C602.5 49.1999 601.1 49.6999 599.8 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M570.1 22.9998C569 22.9998 567.8 22.6998 566.8 21.9998C564.2 20.1998 563.6 16.6998 565.4 14.0998C567.2 11.5998 570.7 10.8998 573.2 12.6998C573.3 12.7998 573.4 12.7999 573.5 12.8999C576 14.7999 576.4 18.3999 574.5 20.8999C573.4 22.1999 571.8 22.9998 570.1 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M629.4 76.3994C628.2 76.3994 627.1 75.9995 626.1 75.2995C626 75.2995 626 75.1994 625.9 75.1994C623.4 73.2994 623 69.6994 624.9 67.1994C626.8 64.7994 630.2 64.2994 632.7 66.0994C632.8 66.0994 632.8 66.1994 632.9 66.1994C635.4 68.0994 635.8 71.6994 633.9 74.1994C632.8 75.5994 631.1 76.3994 629.4 76.3994Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 49.6996C598.4 49.6996 596.9 49.0996 595.8 47.9996C593.6 45.7996 593.6 42.1996 595.8 39.9996C598 37.7996 601.6 37.7996 603.8 39.9996C606 42.1996 606 45.7996 603.8 47.9996C602.7 49.0996 601.2 49.6996 599.8 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 87.4996C656 87.4996 653.4 84.9997 653.4 81.7997C653.4 78.5997 655.9 76.0996 659.1 76.0996C662.3 76.0996 664.8 78.5997 664.8 81.7997C664.8 84.9997 662.3 87.4996 659.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M629.5 76.3997C628.4 76.3997 627.3 76.0997 626.4 75.3997C626.3 75.2997 626.2 75.2996 626.1 75.1996C623.6 73.2996 623.1 69.7997 625 67.2997C626.8 64.7997 630.3 64.2996 632.8 66.0996C635.3 67.8996 636 71.2997 634.3 73.8997C633.1 75.4997 631.3 76.3997 629.5 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M688.8 76.3997C687 76.3997 685.3 75.5996 684.2 73.9996C682.4 71.4996 683 67.9996 685.5 66.0996C688 64.2996 691.5 64.7997 693.3 67.2997C695.2 69.7997 694.7 73.3996 692.2 75.1996C692.2 75.1996 692.1 75.2997 692 75.2997C691.1 76.0997 689.9 76.3997 688.8 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 87.4996C656 87.4996 653.4 84.9997 653.4 81.7997C653.4 78.5997 655.9 76.0996 659.1 76.0996C662.3 76.0996 664.8 78.5997 664.8 81.7997C664.8 84.9997 662.3 87.4996 659.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 49.6998C717 49.6998 715.6 49.0998 714.5 47.9998C712.3 45.7998 712.3 42.1998 714.5 39.9998C716.6 37.8998 720.1 37.6999 722.3 39.7999C724.6 41.8999 724.8 45.4999 722.7 47.7999C722.6 47.8999 722.5 47.9998 722.4 48.0998C721.3 49.1998 719.9 49.6998 718.5 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M688.8 76.4001C687 76.4001 685.2 75.5001 684.1 74.0001C682.3 71.4001 683 67.9001 685.5 66.1001C688.1 64.3001 691.6 64.9001 693.4 67.5001C695.2 70.1001 694.6 73.6001 692 75.4001C692 75.4001 692 75.4001 691.9 75.4001C691 76.1001 689.9 76.4001 688.8 76.4001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M748.2 23.0005C746.4 23.0005 744.7 22.2005 743.6 20.6005C741.8 18.0005 742.4 14.5005 745 12.7005C747.5 11.0005 750.9 11.5006 752.7 13.9006C754.6 16.4006 754.2 19.9006 751.7 21.9006C751.6 22.0006 751.5 22.1005 751.4 22.1005C750.4 22.6005 749.3 23.0005 748.2 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 49.7005C717 49.7005 715.6 49.1006 714.5 48.0006C712.3 45.8006 712.3 42.2006 714.5 40.0006C716.7 37.8006 720.3 37.8006 722.5 40.0006C724.7 42.2006 724.7 45.8006 722.5 48.0006C721.4 49.1006 720 49.7005 718.5 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 11.9C774.8 11.9 772.2 9.39995 772.2 6.19995C772.2 2.99995 774.7 0.5 777.9 0.5C781.1 0.5 783.6 2.99995 783.6 6.19995C783.6 9.39995 781 11.9 777.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M748.2 22.8999C746.5 22.8999 744.8 22.0999 743.7 20.5999C741.8 18.0999 742.3 14.4999 744.8 12.6999C744.9 12.5999 745 12.5999 745.1 12.4999C747.7 10.7999 751.2 11.4999 753 14.0999C754.7 16.6999 754 20.0999 751.5 21.8999C750.5 22.5999 749.3 22.8999 748.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M807.6 22.8999C806.5 22.8999 805.3 22.5999 804.4 21.8999C801.9 20.0999 801.2 16.6999 802.9 14.0999C804.6 11.4999 808.2 10.7999 810.8 12.4999C810.9 12.5999 811 12.5999 811.1 12.6999C813.6 14.5999 814.1 18.0999 812.2 20.5999C811 22.1999 809.3 22.8999 807.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 11.9C774.8 11.9 772.2 9.39995 772.2 6.19995C772.2 2.99995 774.7 0.5 777.9 0.5C781.1 0.5 783.6 2.99995 783.6 6.19995C783.6 9.39995 781 11.9 777.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.3 49.7005C835.8 49.7005 834.4 49.1006 833.3 48.0006C831.1 45.8006 831.1 42.2006 833.3 40.0006C835.5 37.8006 839.1 37.8006 841.3 40.0006C841.4 40.1006 841.5 40.2005 841.5 40.2005C843.6 42.5005 843.4 46.1005 841.1 48.2005C840 49.2005 838.6 49.7005 837.3 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M807.6 23.0002C806.5 23.0002 805.3 22.7002 804.4 22.0002L810.9 12.7002C813.5 14.5002 814.1 18.0002 812.3 20.6002C811.1 22.1002 809.4 23.0002 807.6 23.0002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M866.9 76.3992C865.8 76.3992 864.6 76.0992 863.6 75.3992C861 73.5992 860.4 70.0992 862.2 67.4992C864 64.9992 867.5 64.2992 870 66.0992C870.1 66.1992 870.2 66.1993 870.3 66.2993C872.8 68.1993 873.2 71.7993 871.3 74.2993C870.3 75.5993 868.6 76.3992 866.9 76.3992Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.3 49.6996C835.9 49.6996 834.4 49.0996 833.3 47.9996C831.1 45.7996 831.1 42.1996 833.3 39.9996C835.5 37.7996 839.1 37.7996 841.3 39.9996C843.5 42.1996 843.5 45.7996 841.3 47.9996C840.2 49.0996 838.7 49.6996 837.3 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 87.4996C893.5 87.4996 890.9 84.9997 890.9 81.7997C890.9 78.5997 893.4 76.0996 896.6 76.0996C899.8 76.0996 902.3 78.5997 902.3 81.7997C902.3 84.9997 899.8 87.4996 896.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M867 76.3997C865.9 76.3997 864.8 76.0997 863.9 75.3997C863.8 75.2997 863.7 75.2996 863.6 75.1996C861.1 73.2996 860.6 69.7997 862.5 67.2997C864.3 64.7997 867.8 64.2996 870.3 66.0996C872.8 67.8996 873.5 71.2997 871.8 73.8997C870.6 75.4997 868.8 76.3997 867 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M926.3 76.4C924.5 76.4 922.7 75.5 921.6 73.9C919.9 71.3 920.6 67.8999 923.1 66.0999C925.6 64.3999 929 64.9 930.9 67.3C932.8 69.8 932.3 73.3999 929.8 75.1999C929.7 75.2999 929.6 75.3 929.5 75.4C928.5 76.1 927.4 76.4 926.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 87.4996C893.5 87.4996 890.9 84.9997 890.9 81.7997C890.9 78.5997 893.4 76.0996 896.6 76.0996C899.8 76.0996 902.3 78.5997 902.3 81.7997C902.3 84.9997 899.8 87.4996 896.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 49.6996C954.5 49.6996 953.1 49.0996 952 47.9996C949.8 45.7996 949.8 42.1996 952 39.9996C954.2 37.7996 957.8 37.7996 960 39.9996C962.2 42.1996 962.2 45.7996 960 47.9996C958.9 49.0996 957.4 49.6996 956 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M926.3 76.3991C924.5 76.3991 922.7 75.4991 921.6 73.9991C919.8 71.3991 920.5 67.8991 923 66.0991C925.6 64.2991 929.1 64.8991 930.9 67.4991C932.7 70.0991 932.1 73.5991 929.5 75.3991C929.5 75.3991 929.5 75.3991 929.4 75.3991C928.5 76.0991 927.4 76.3991 926.3 76.3991Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M985.7 23.0005C983.9 23.0005 982.2 22.2005 981.1 20.6005C979.3 18.1005 979.9 14.6006 982.4 12.8006C984.7 11.1006 988.1 11.4005 990 13.6005C992.1 16.0005 991.8 19.5005 989.5 21.6005C989.3 21.7005 989.1 21.9005 989 22.0005C987.9 22.6005 986.8 23.0005 985.7 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 49.7005C954.5 49.7005 953.1 49.1006 952 48.0006C949.8 45.8006 949.8 42.2006 952 40.0006C954.2 37.8006 957.8 37.8006 960 40.0006C962.2 42.2006 962.2 45.8006 960 48.0006C958.9 49.1006 957.5 49.7005 956 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 11.9C1012.3 11.9 1009.7 9.39995 1009.7 6.19995C1009.7 2.99995 1012.2 0.5 1015.4 0.5C1018.6 0.5 1021.1 2.99995 1021.1 6.19995C1021.1 9.39995 1018.5 11.9 1015.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M985.7 22.8999C984 22.8999 982.3 22.0999 981.2 20.5999C979.3 18.0999 979.8 14.4999 982.3 12.6999C982.4 12.5999 982.5 12.5999 982.6 12.4999C985.2 10.7999 988.7 11.4999 990.5 14.0999C992.2 16.6999 991.5 20.0999 989 21.8999C988 22.5999 986.8 22.8999 985.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1045.1 22.8999C1044 22.8999 1042.8 22.5999 1041.9 21.8999C1039.4 20.0999 1038.7 16.6999 1040.4 14.0999C1042.1 11.4999 1045.7 10.7999 1048.3 12.4999C1048.4 12.5999 1048.5 12.5999 1048.6 12.6999C1051.1 14.5999 1051.6 18.0999 1049.7 20.5999C1048.5 22.1999 1046.8 22.8999 1045.1 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 11.9C1012.3 11.9 1009.7 9.39995 1009.7 6.19995C1009.7 2.99995 1012.2 0.5 1015.4 0.5C1018.6 0.5 1021.1 2.99995 1021.1 6.19995C1021.1 9.39995 1018.5 11.9 1015.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 49.7C1073.1 49.7 1071.5 49 1070.4 47.6L1074.8 44L1078.8 40C1078.9 40.1 1079.1 40.3 1079.2 40.5C1081.2 42.9 1080.8 46.5 1078.3 48.5C1077.2 49.3 1076 49.7 1074.8 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1045.1 23.0001C1044 23.0001 1042.9 22.7001 1041.9 22.0001C1041.9 22.0001 1041.8 22.0001 1041.8 21.9001C1039.2 20.1001 1038.6 16.6001 1040.4 14.0001C1042.2 11.5001 1045.6 10.8001 1048.2 12.5001C1048.2 12.5001 1048.3 12.5001 1048.3 12.6001C1050.9 14.4001 1051.5 17.9001 1049.7 20.5001C1048.6 22.1001 1046.9 23.0001 1045.1 23.0001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1104.4 76.3992C1103.2 76.3992 1102 75.9993 1101 75.2993C1098.5 73.4993 1097.9 69.9992 1099.7 67.4992C1101.5 64.9992 1105 64.2992 1107.5 66.0992C1107.7 66.1992 1107.9 66.3992 1108 66.4992C1110.4 68.5992 1110.6 72.0992 1108.5 74.4992C1107.6 75.6992 1106 76.3992 1104.4 76.3992Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 49.6996C1073.4 49.6996 1072 49.1996 1070.9 48.0996L1070.8 47.9996C1068.6 45.7996 1068.6 42.1996 1070.8 39.9996C1073 37.7996 1076.5 37.7996 1078.8 39.8996C1078.8 39.8996 1078.9 39.8996 1078.9 39.9996C1081.1 42.1996 1081.1 45.7996 1078.9 47.9996C1077.7 49.0996 1076.2 49.6996 1074.8 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 87.4996C1131 87.4996 1128.4 84.9997 1128.4 81.7997C1128.4 78.5997 1130.9 76.0996 1134.1 76.0996C1137.3 76.0996 1139.8 78.5997 1139.8 81.7997C1139.8 84.9997 1137.3 87.4996 1134.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1104.4 76.3997C1103.3 76.3997 1102.2 76.0997 1101.3 75.3997C1101.2 75.2997 1101.1 75.2996 1101 75.1996C1098.5 73.2996 1098 69.7997 1099.9 67.2997C1101.7 64.7997 1105.2 64.2996 1107.7 66.0996C1110.2 67.8996 1110.9 71.2997 1109.2 73.8997C1108.1 75.4997 1106.3 76.3997 1104.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1163.8 76.4C1162 76.4 1160.2 75.5 1159.1 73.9C1157.4 71.3 1158.1 67.8999 1160.6 66.0999C1163.1 64.3999 1166.5 64.9 1168.4 67.3C1170.3 69.8 1169.8 73.3999 1167.3 75.1999C1167.2 75.2999 1167.1 75.3 1167 75.4C1166 76.1 1164.9 76.4 1163.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 87.4996C1131 87.4996 1128.4 84.9997 1128.4 81.7997C1128.4 78.5997 1130.9 76.0996 1134.1 76.0996C1137.3 76.0996 1139.8 78.5997 1139.8 81.7997C1139.8 84.9997 1137.3 87.4996 1134.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 49.6999C1192 49.6999 1190.6 49.0999 1189.5 47.9999C1187.3 45.7999 1187.3 42.2999 1189.4 40.0999C1191.4 37.9999 1194.7 37.6999 1197.1 39.5999C1199.5 41.5999 1199.9 45.0999 1198 47.5999C1197.9 47.7999 1197.7 47.9999 1197.5 48.0999C1196.3 49.0999 1194.9 49.6999 1193.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1163.8 76.4001C1162 76.4001 1160.3 75.6001 1159.2 74.0001C1157.4 71.4001 1158 67.9001 1160.6 66.1001C1160.6 66.1001 1160.7 66.1001 1160.7 66.0001C1163.3 64.3001 1166.7 64.9001 1168.5 67.5001C1170.3 70.1001 1169.7 73.6001 1167.1 75.4001C1167.1 75.4001 1167 75.4001 1167 75.5001C1166 76.1001 1164.9 76.4001 1163.8 76.4001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1223.2 23.0005C1221.4 23.0005 1219.7 22.2005 1218.6 20.6005C1216.8 18.1005 1217.4 14.6006 1219.9 12.8006C1222.2 11.1006 1225.6 11.4005 1227.5 13.6005C1229.6 16.0005 1229.3 19.5005 1227 21.6005C1226.8 21.7005 1226.6 21.9005 1226.5 22.0005C1225.4 22.6005 1224.3 23.0005 1223.2 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 49.7006C1192 49.7006 1190.6 49.1006 1189.5 48.0006C1187.3 45.8006 1187.3 42.2006 1189.5 40.0006C1189.5 40.0006 1189.5 40.0007 1189.6 39.9007C1191.8 37.7007 1195.4 37.8006 1197.6 40.0006C1199.8 42.2006 1199.8 45.8006 1197.6 48.0006C1197.6 48.0006 1197.6 48.0006 1197.5 48.1006C1196.4 49.1006 1194.9 49.7006 1193.5 49.7006Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 11.9C1249.8 11.9 1247.2 9.39995 1247.2 6.19995C1247.2 2.99995 1249.7 0.5 1252.9 0.5C1256.1 0.5 1258.6 2.99995 1258.6 6.19995C1258.6 9.39995 1256 11.9 1252.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1223.2 22.8999C1221.5 22.8999 1219.8 22.0999 1218.7 20.5999C1216.8 18.0999 1217.3 14.4999 1219.8 12.6999C1219.9 12.5999 1220 12.5999 1220.1 12.4999C1222.7 10.7999 1226.2 11.4999 1228 14.0999C1229.7 16.6999 1229 20.0999 1226.5 21.8999C1225.5 22.5999 1224.3 22.8999 1223.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1282.6 22.8999C1281.5 22.8999 1280.3 22.5999 1279.4 21.8999C1276.9 20.0999 1276.2 16.6999 1277.9 14.0999C1279.6 11.4999 1283.2 10.7999 1285.8 12.4999C1285.9 12.5999 1286 12.5999 1286.1 12.6999C1288.6 14.5999 1289.1 18.0999 1287.2 20.5999C1286 22.1999 1284.3 22.8999 1282.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 11.9C1249.8 11.9 1247.2 9.39995 1247.2 6.19995C1247.2 2.99995 1249.7 0.5 1252.9 0.5C1256.1 0.5 1258.6 2.99995 1258.6 6.19995C1258.6 9.39995 1256 11.9 1252.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.3 49.7C1310.6 49.7 1309 49 1307.9 47.6L1312.3 44L1316.3 40C1316.4 40.1 1316.6 40.3 1316.7 40.5C1318.7 42.9 1318.3 46.5 1315.8 48.5C1314.7 49.3 1313.5 49.7 1312.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1282.6 22.9998C1281.4 22.9998 1280.2 22.5999 1279.2 21.8999C1276.7 20.0999 1276.1 16.5998 1277.9 14.0998C1279.7 11.5998 1283.2 10.8998 1285.7 12.6998C1285.9 12.7998 1286.1 12.9998 1286.2 13.0998C1288.6 15.1998 1288.8 18.6998 1286.7 21.0998C1285.7 22.2998 1284.2 22.9998 1282.6 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1341.9 76.4002C1340.7 76.4002 1339.5 76.0002 1338.5 75.3002C1336 73.5002 1335.4 70.0002 1337.2 67.5002C1339 65.0002 1342.5 64.3002 1345 66.1002C1345.2 66.2002 1345.4 66.4002 1345.5 66.5002C1347.9 68.6002 1348.1 72.1002 1346 74.5002C1345.1 75.7002 1343.5 76.4002 1341.9 76.4002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.3 49.7C1310.6 49.7 1309 49 1307.9 47.6L1312.3 44L1316.3 40C1316.4 40.1 1316.6 40.3 1316.7 40.5C1318.7 42.9 1318.3 46.5 1315.8 48.5C1314.8 49.3 1313.5 49.7 1312.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 87.4996C1368.5 87.4996 1365.9 84.9997 1365.9 81.7997C1365.9 78.5997 1368.4 76.0996 1371.6 76.0996C1374.8 76.0996 1377.3 78.5997 1377.3 81.7997C1377.3 84.9997 1374.8 87.4996 1371.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1341.9 76.3997C1340.8 76.3997 1339.7 76.0997 1338.8 75.3997C1338.7 75.2997 1338.6 75.2996 1338.5 75.1996C1336 73.2996 1335.5 69.7997 1337.4 67.2997C1339.2 64.7997 1342.7 64.2996 1345.2 66.0996C1347.7 67.8996 1348.4 71.2997 1346.7 73.8997C1345.6 75.4997 1343.8 76.3997 1341.9 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1401.3 76.4C1399.5 76.4 1397.7 75.5 1396.6 73.9C1394.9 71.3 1395.6 67.8999 1398.1 66.0999C1400.6 64.3999 1404 64.9 1405.9 67.3C1407.8 69.8 1407.3 73.3999 1404.8 75.1999C1404.7 75.2999 1404.6 75.3 1404.5 75.4C1403.5 76.1 1402.4 76.4 1401.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 87.4996C1368.5 87.4996 1365.9 84.9997 1365.9 81.7997C1365.9 78.5997 1368.4 76.0996 1371.6 76.0996C1374.8 76.0996 1377.3 78.5997 1377.3 81.7997C1377.3 84.9997 1374.8 87.4996 1371.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 49.6998C1429.8 49.6998 1428.5 49.2998 1427.5 48.4998C1425.1 46.4998 1424.7 42.9998 1426.6 40.4998C1426.7 40.3998 1426.8 40.2998 1426.9 40.1998C1428.9 37.9998 1432.3 37.7998 1434.6 39.5998C1437 41.5998 1437.4 45.0998 1435.5 47.5998C1435.4 47.6998 1435.3 47.7998 1435.2 47.8998C1434 49.0998 1432.5 49.6998 1431 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1401.3 76.4C1399.5 76.4 1397.8 75.6 1396.7 74C1394.9 71.5 1395.5 67.9999 1398 66.1999C1400.3 64.4999 1403.7 64.8 1405.6 67C1407.7 69.4 1407.4 72.9 1405.1 75C1404.9 75.1 1404.7 75.3 1404.6 75.4C1403.5 76.1 1402.4 76.4 1401.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1460.7 22.9996C1459.1 22.9996 1457.6 22.2996 1456.4 21.0996C1454.3 18.6996 1454.6 15.1996 1456.9 13.0996C1457 12.9996 1457.1 12.8996 1457.2 12.7996C1459.5 10.9996 1462.9 11.3996 1464.9 13.5996C1467 15.9996 1466.7 19.4996 1464.4 21.5996C1464.3 21.6996 1464.2 21.7996 1464.1 21.8996C1463.1 22.5996 1461.9 22.9996 1460.7 22.9996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 49.6999C1429.5 49.6999 1428.1 49.0999 1427 47.9999C1424.8 45.7999 1424.8 42.2999 1426.9 40.0999C1428.9 37.9999 1432.2 37.6999 1434.6 39.5999C1437 41.5999 1437.4 45.0999 1435.5 47.5999C1435.4 47.7999 1435.2 47.9999 1435 48.0999C1433.9 49.0999 1432.4 49.6999 1431 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 11.9C1487.3 11.9 1484.7 9.39995 1484.7 6.19995C1484.7 2.99995 1487.2 0.5 1490.4 0.5C1493.6 0.5 1496.1 2.99995 1496.1 6.19995C1496.1 9.39995 1493.5 11.9 1490.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1460.7 22.8999C1459 22.8999 1457.3 22.0999 1456.2 20.5999C1454.3 18.0999 1454.8 14.4999 1457.3 12.6999C1457.4 12.5999 1457.5 12.5999 1457.6 12.4999C1460.2 10.7999 1463.7 11.4999 1465.5 14.0999C1467.2 16.6999 1466.5 20.0999 1464 21.8999C1463 22.5999 1461.8 22.8999 1460.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1520.1 22.8999C1519 22.8999 1517.8 22.5999 1516.9 21.8999C1514.4 20.0999 1513.7 16.6999 1515.4 14.0999C1517.1 11.4999 1520.7 10.7999 1523.3 12.4999C1523.4 12.5999 1523.5 12.5999 1523.6 12.6999C1526.1 14.5999 1526.6 18.0999 1524.7 20.5999C1523.5 22.1999 1521.8 22.8999 1520.1 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 11.9C1487.3 11.9 1484.7 9.39995 1484.7 6.19995C1484.7 2.99995 1487.2 0.5 1490.4 0.5C1493.6 0.5 1496.1 2.99995 1496.1 6.19995C1496.1 9.39995 1493.5 11.9 1490.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1545.8 48.0997C1545.6 47.8997 1545.5 47.7997 1545.3 47.5997C1543.3 45.1997 1543.7 41.5997 1546.2 39.5997C1548.6 37.5997 1552.2 37.9998 1554.2 40.4998L1549.8 44.0997L1545.8 48.0997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1520.1 22.9998C1518.9 22.9998 1517.7 22.5999 1516.7 21.8999C1514.2 20.0999 1513.6 16.5998 1515.4 14.0998C1517.2 11.5998 1520.7 10.8998 1523.2 12.6998C1523.4 12.7998 1523.6 12.9998 1523.7 13.0998C1526.1 15.1998 1526.3 18.6998 1524.2 21.0998C1523.2 22.2998 1521.7 22.9998 1520.1 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1579.4 76.4C1578.3 76.4 1577.2 76.1 1576.2 75.4C1576 75.3 1575.8 75.1 1575.7 75C1573.3 72.9 1573.1 69.4 1575.2 67C1577.2 64.8 1580.5 64.4 1582.8 66.2C1585.3 68 1585.9 71.5 1584.1 74C1583 75.6 1581.2 76.4 1579.4 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1549.8 49.7C1548.1 49.7 1546.5 49 1545.4 47.6L1549.8 44L1553.8 40C1553.9 40.1 1554.1 40.3 1554.2 40.5C1556.2 42.9 1555.8 46.5 1553.3 48.5C1552.3 49.3 1551 49.7 1549.8 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 87.4996C1606 87.4996 1603.4 84.9997 1603.4 81.7997C1603.4 78.5997 1605.9 76.0996 1609.1 76.0996C1612.3 76.0996 1614.8 78.5997 1614.8 81.7997C1614.8 84.9997 1612.3 87.4996 1609.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1579.4 76.3997C1578.3 76.3997 1577.2 76.0997 1576.3 75.3997C1576.2 75.2997 1576.1 75.2996 1576 75.1996C1573.5 73.2996 1573 69.7997 1574.9 67.2997C1576.7 64.7997 1580.2 64.2996 1582.7 66.0996C1585.2 67.8996 1585.9 71.2997 1584.2 73.8997C1583.1 75.4997 1581.3 76.3997 1579.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1638.8 76.4C1637 76.4 1635.2 75.5 1634.1 73.9C1632.4 71.3 1633.1 67.8999 1635.6 66.0999C1638.1 64.3999 1641.5 64.9 1643.4 67.3C1645.3 69.8 1644.8 73.3999 1642.3 75.1999C1642.2 75.2999 1642.1 75.3 1642 75.4C1641 76.1 1639.9 76.4 1638.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 87.4996C1606 87.4996 1603.4 84.9997 1603.4 81.7997C1603.4 78.5997 1605.9 76.0996 1609.1 76.0996C1612.3 76.0996 1614.8 78.5997 1614.8 81.7997C1614.8 84.9997 1612.3 87.4996 1609.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 49.7002C1667.3 49.7002 1666 49.3003 1665 48.5003C1662.6 46.5003 1662.2 43.0003 1664.1 40.5003C1664.2 40.3003 1664.4 40.1003 1664.6 40.0003C1666.8 37.8003 1670.4 37.9003 1672.6 40.1003C1674.8 42.3003 1674.8 45.8003 1672.7 48.0003C1671.5 49.1003 1670 49.7002 1668.5 49.7002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1638.8 76.4C1637 76.4 1635.3 75.6 1634.2 74C1632.4 71.5 1633 67.9999 1635.5 66.1999C1637.8 64.4999 1641.2 64.8 1643.1 67C1645.2 69.4 1644.9 72.9 1642.6 75C1642.4 75.1 1642.2 75.3 1642.1 75.4C1641 76.1 1639.9 76.4 1638.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1698.2 22.9998C1696.6 22.9998 1695.1 22.2998 1693.9 21.0998C1691.8 18.6998 1692.1 15.1998 1694.4 13.0998C1694.6 12.9998 1694.8 12.7998 1694.9 12.6998C1697.5 10.8998 1701 11.5998 1702.7 14.0998C1704.5 16.5998 1703.9 20.0999 1701.4 21.8999C1700.5 22.5999 1699.4 22.9998 1698.2 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 49.6999C1667 49.6999 1665.6 49.0999 1664.5 47.9999C1662.3 45.7999 1662.3 42.2999 1664.4 40.0999C1666.4 37.9999 1669.7 37.6999 1672.1 39.5999C1674.5 41.5999 1674.9 45.0999 1673 47.5999C1672.9 47.7999 1672.7 47.9999 1672.5 48.0999C1671.4 49.0999 1669.9 49.6999 1668.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 11.9C1724.8 11.9 1722.2 9.39995 1722.2 6.19995C1722.2 2.99995 1724.7 0.5 1727.9 0.5C1731.1 0.5 1733.6 2.99995 1733.6 6.19995C1733.6 9.39995 1731 11.9 1727.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1698.2 22.8999C1696.5 22.8999 1694.8 22.0999 1693.7 20.5999C1691.8 18.0999 1692.3 14.4999 1694.8 12.6999C1694.9 12.5999 1695 12.5999 1695.1 12.4999C1697.7 10.7999 1701.2 11.4999 1703 14.0999C1704.7 16.6999 1704 20.0999 1701.5 21.8999C1700.5 22.5999 1699.3 22.8999 1698.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1757.6 22.8999C1756.5 22.8999 1755.3 22.5999 1754.4 21.8999C1751.9 20.0999 1751.2 16.6999 1752.9 14.0999C1754.6 11.4999 1758.2 10.7999 1760.8 12.4999C1760.9 12.5999 1761 12.5999 1761.1 12.6999C1763.6 14.5999 1764.1 18.0999 1762.2 20.5999C1761 22.1999 1759.3 22.8999 1757.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 11.9C1724.8 11.9 1722.2 9.39995 1722.2 6.19995C1722.2 2.99995 1724.7 0.5 1727.9 0.5C1731.1 0.5 1733.6 2.99995 1733.6 6.19995C1733.6 9.39995 1731 11.9 1727.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1783.3 48.0997C1783.1 47.8997 1783 47.7997 1782.8 47.5997C1780.8 45.1997 1781.2 41.5997 1783.7 39.5997C1786.1 37.5997 1789.7 37.9998 1791.7 40.4998L1787.3 44.0997L1783.3 48.0997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1757.6 22.9998C1756.4 22.9998 1755.2 22.5999 1754.2 21.8999C1751.7 20.0999 1751.1 16.5998 1752.9 14.0998C1754.7 11.5998 1758.2 10.8998 1760.7 12.6998C1760.9 12.7998 1761.1 12.9998 1761.2 13.0998C1763.6 15.1998 1763.8 18.6998 1761.7 21.0998C1760.7 22.2998 1759.2 22.9998 1757.6 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1816.9 76.4C1815.8 76.4 1814.7 76.1 1813.7 75.4C1813.5 75.3 1813.3 75.1 1813.2 75C1810.8 72.9 1810.6 69.4 1812.7 67C1814.7 64.8 1818 64.4 1820.3 66.2C1822.8 68 1823.4 71.5 1821.6 74C1820.5 75.6 1818.7 76.4 1816.9 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1787.3 49.7C1785.6 49.7 1784 49 1782.9 47.6L1787.3 44L1791.3 40C1791.4 40.1 1791.6 40.3 1791.7 40.5C1793.7 42.9 1793.3 46.5 1790.8 48.5C1789.8 49.3 1788.5 49.7 1787.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 87.4996C1843.5 87.4996 1840.9 84.9997 1840.9 81.7997C1840.9 78.5997 1843.4 76.0996 1846.6 76.0996C1849.8 76.0996 1852.3 78.5997 1852.3 81.7997C1852.3 84.9997 1849.8 87.4996 1846.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1816.9 76.3997C1815.8 76.3997 1814.7 76.0997 1813.8 75.3997C1813.7 75.2997 1813.6 75.2996 1813.5 75.1996C1811 73.2996 1810.5 69.7997 1812.4 67.2997C1814.2 64.7997 1817.7 64.2996 1820.2 66.0996C1822.7 67.8996 1823.4 71.2997 1821.7 73.8997C1820.6 75.4997 1818.8 76.3997 1816.9 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1876.3 76.4C1874.5 76.4 1872.7 75.5 1871.6 73.9C1869.9 71.3 1870.6 67.8999 1873.1 66.0999C1875.6 64.3999 1879 64.9 1880.9 67.3C1882.8 69.8 1882.3 73.3999 1879.8 75.1999C1879.7 75.2999 1879.6 75.3 1879.5 75.4C1878.5 76.1 1877.4 76.4 1876.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 87.4996C1843.5 87.4996 1840.9 84.9997 1840.9 81.7997C1840.9 78.5997 1843.4 76.0996 1846.6 76.0996C1849.8 76.0996 1852.3 78.5997 1852.3 81.7997C1852.3 84.9997 1849.8 87.4996 1846.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1906 49.7002C1904.8 49.7002 1903.5 49.3003 1902.5 48.5003C1900.1 46.5003 1899.7 43.0003 1901.6 40.5003C1901.7 40.3003 1901.9 40.1003 1902.1 40.0003C1904.3 37.8003 1907.9 37.9003 1910.1 40.1003C1912.3 42.3003 1912.3 45.8003 1910.2 48.0003C1909 49.1003 1907.5 49.7002 1906 49.7002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1876.3 76.4C1874.5 76.4 1872.8 75.6 1871.7 74C1869.9 71.5 1870.5 67.9999 1873 66.1999C1875.3 64.4999 1878.7 64.8 1880.6 67C1882.7 69.4 1882.4 72.9 1880.1 75C1879.9 75.1 1879.7 75.3 1879.6 75.4C1878.5 76.1 1877.4 76.4 1876.3 76.4Z", fill: "white" }))), Gr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-auto", viewBox: "0 0 9 58", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("path", { d: "M1.5 33.6703V3.3297L7.5 0.758269V36.2417L1.5 33.6703Z", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 38L8 41", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 42L8 45", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 46L8 49", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 50L8 53", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 54L8 57", stroke: "#FA0" })), Xr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 199 9", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { clipPath: "url(#clip0_7_435)" }, /* @__PURE__ */ h.createElement("path", { d: "M155.972 1.53072L160.58 8.00772L1.17693 8.00772L7.04054 1.53196L8.67103 3.42271L8.82062 3.59617H9.04968L153.55 3.59617H153.746L153.89 3.46273L155.972 1.53072Z", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M31.5497 1.93656L20.0497 1.93656L10.5497 1.93656L9.04968 0.00386047L154.05 0.00386047L152.05 1.93656L43.0497 1.93656L31.5497 1.93656Z", fill: "#Fa0" })), /* @__PURE__ */ h.createElement("defs", null, /* @__PURE__ */ h.createElement("clipPath", { id: "clip0_7_435" }, /* @__PURE__ */ h.createElement("rect", { width: 9, height: 161, fill: "white", transform: "matrix(0 1 -1 0 161.525 0)" })))), qr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 9", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("path", { d: "M5.87329 1.02452L0.904968 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M11.8416 1.02452L6.87329 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M17.8099 1.02452L12.8416 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M23.7783 1.02452L18.8099 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M29.7466 1.02452L24.7783 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M35.7149 1.02452L30.7466 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M41.6832 1.02452L36.7149 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M47.6516 1.02452L42.6832 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M53.6199 1.02452L48.6515 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M59.5882 1.02452L54.6199 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M65.5565 1.02452L60.5882 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M71.5248 1.02452L66.5565 7.97547", stroke: "#FA0", strokeWidth: 1.5 })), Re = ({ children: l, label: e, limit: t, textSize: r }) => {
+}, Ur = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 931 128", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { opacity: 0.5 }, /* @__PURE__ */ h.createElement("path", { d: "M930.1 127.5H0.900146V0.5H930.1V127.5ZM1.20044 127.2H929.8V0.800003H1.20044V127.2Z", fill: "white" })), /* @__PURE__ */ h.createElement("path", { d: "M920.6 118H10.3V10H920.6V118ZM12.0002 116.4H918.9V11.6H12.0002V116.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("defs", null, /* @__PURE__ */ h.createElement("mask", { id: "loading-mask" }, /* @__PURE__ */ h.createElement("rect", { id: "mask-rect", x: -931, y: 0, width: 931, height: 128, fill: "white" }))), /* @__PURE__ */ h.createElement("rect", { x: 0, y: 0, width: 931, height: 128 }), /* @__PURE__ */ h.createElement("g", { id: "loading-content", mask: "url(#loading-mask)" }, /* @__PURE__ */ h.createElement("g", { opacity: 0.6768 }, /* @__PURE__ */ h.createElement("path", { d: "M908.8 106.2H866.6L782.1 21.7998H824.3L908.8 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.5157 }, /* @__PURE__ */ h.createElement("path", { d: "M824.3 106.2H782.1L697.7 21.7998H739.9L824.3 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7193 }, /* @__PURE__ */ h.createElement("path", { d: "M739.9 106.2H697.7L613.2 21.7998H655.4L739.9 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7284 }, /* @__PURE__ */ h.createElement("path", { d: "M655.4 106.2H613.2L528.8 21.7998H571L655.4 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.1551 }, /* @__PURE__ */ h.createElement("path", { d: "M571 106.2H528.8L444.3 21.7998H486.6L571 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.9513 }, /* @__PURE__ */ h.createElement("path", { d: "M486.6 106.2H444.3L359.9 21.7998H402.1L486.6 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.82 }, /* @__PURE__ */ h.createElement("path", { d: "M402.1 106.2H359.9L275.4 21.7998H317.7L402.1 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.2836 }, /* @__PURE__ */ h.createElement("path", { d: "M317.7 106.2H275.4L191 21.7998H233.2L317.7 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.702 }, /* @__PURE__ */ h.createElement("path", { d: "M233.2 106.2H191L106.6 21.7998H148.8L233.2 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.587 }, /* @__PURE__ */ h.createElement("path", { d: "M148.8 106.2H106.6L22.1003 21.7998H64.3L148.8 106.2Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.4373 }, /* @__PURE__ */ h.createElement("path", { d: "M908.8 63.9998L866.6 21.7998H908.8V63.9998Z", fill: "#DD1920" })), /* @__PURE__ */ h.createElement("g", { opacity: 0.7504 }, /* @__PURE__ */ h.createElement("path", { d: "M22.1003 106.2H64.3L22.1003 64V106.2Z", fill: "#DD1920" })))), $r = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 700 88", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { opacity: 0.75 }, /* @__PURE__ */ h.createElement("path", { d: "M1906 82.1003C1905.8 82.1003 1905.7 82.0004 1905.7 81.8004V6.20032C1905.7 6.00032 1905.8 5.90039 1906 5.90039C1906.2 5.90039 1906.3 6.00032 1906.3 6.20032V81.8004C1906.3 82.0004 1906.2 82.1003 1906 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 82.1003C1846.4 82.1003 1846.3 82.0004 1846.3 81.8004V6.20032C1846.3 6.00032 1846.4 5.90039 1846.6 5.90039C1846.8 5.90039 1846.9 6.00032 1846.9 6.20032V81.8004C1846.9 82.0004 1846.8 82.1003 1846.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1787.2 82.1003C1787 82.1003 1786.9 82.0004 1786.9 81.8004V6.20032C1786.9 6.00032 1787 5.90039 1787.2 5.90039C1787.4 5.90039 1787.5 6.00032 1787.5 6.20032V81.8004C1787.6 82.0004 1787.4 82.1003 1787.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 82.1003C1727.7 82.1003 1727.6 82.0004 1727.6 81.8004V6.20032C1727.6 6.00032 1727.7 5.90039 1727.9 5.90039C1728.1 5.90039 1728.2 6.00032 1728.2 6.20032V81.8004C1728.2 82.0004 1728.1 82.1003 1727.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 82.1003C1668.3 82.1003 1668.2 82.0004 1668.2 81.8004V6.20032C1668.2 6.00032 1668.3 5.90039 1668.5 5.90039C1668.7 5.90039 1668.8 6.00032 1668.8 6.20032V81.8004C1668.8 82.0004 1668.7 82.1003 1668.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 82.1003C1608.9 82.1003 1608.8 82.0004 1608.8 81.8004V6.20032C1608.8 6.00032 1608.9 5.90039 1609.1 5.90039C1609.3 5.90039 1609.4 6.00032 1609.4 6.20032V81.8004C1609.4 82.0004 1609.3 82.1003 1609.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1549.7 82.1003C1549.5 82.1003 1549.4 82.0004 1549.4 81.8004V6.20032C1549.4 6.00032 1549.5 5.90039 1549.7 5.90039C1549.9 5.90039 1550 6.00032 1550 6.20032V81.8004C1550.1 82.0004 1549.9 82.1003 1549.7 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 82.1003C1490.2 82.1003 1490.1 82.0004 1490.1 81.8004V6.20032C1490.1 6.00032 1490.2 5.90039 1490.4 5.90039C1490.6 5.90039 1490.7 6.00032 1490.7 6.20032V81.8004C1490.7 82.0004 1490.6 82.1003 1490.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 82.1003C1430.8 82.1003 1430.7 82.0004 1430.7 81.8004V6.20032C1430.7 6.00032 1430.8 5.90039 1431 5.90039C1431.2 5.90039 1431.3 6.00032 1431.3 6.20032V81.8004C1431.3 82.0004 1431.2 82.1003 1431 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 82.1003C1371.4 82.1003 1371.3 82.0004 1371.3 81.8004V6.20032C1371.3 6.00032 1371.4 5.90039 1371.6 5.90039C1371.8 5.90039 1371.9 6.00032 1371.9 6.20032V81.8004C1371.9 82.0004 1371.8 82.1003 1371.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.2 82.1003C1312 82.1003 1311.9 82.0004 1311.9 81.8004V6.20032C1311.9 6.00032 1312 5.90039 1312.2 5.90039C1312.4 5.90039 1312.5 6.00032 1312.5 6.20032V81.8004C1312.6 82.0004 1312.4 82.1003 1312.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 82.1003C1252.7 82.1003 1252.6 82.0004 1252.6 81.8004V6.20032C1252.6 6.00032 1252.7 5.90039 1252.9 5.90039C1253.1 5.90039 1253.2 6.00032 1253.2 6.20032V81.8004C1253.2 82.0004 1253.1 82.1003 1252.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 82.1003C1193.3 82.1003 1193.2 82.0004 1193.2 81.8004V6.20032C1193.2 6.00032 1193.3 5.90039 1193.5 5.90039C1193.7 5.90039 1193.8 6.00032 1193.8 6.20032V81.8004C1193.8 82.0004 1193.7 82.1003 1193.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 82.1003C1133.9 82.1003 1133.8 82.0004 1133.8 81.8004V6.20032C1133.8 6.00032 1133.9 5.90039 1134.1 5.90039C1134.3 5.90039 1134.4 6.00032 1134.4 6.20032V81.8004C1134.4 82.0004 1134.3 82.1003 1134.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 82.1003C1074.6 82.1003 1074.5 82.0004 1074.5 81.8004V6.20032C1074.5 6.00032 1074.6 5.90039 1074.8 5.90039C1075 5.90039 1075.1 6.00032 1075.1 6.20032V81.8004C1075.1 82.0004 1074.9 82.1003 1074.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 82.1003C1015.2 82.1003 1015.1 82.0004 1015.1 81.8004V6.20032C1015.1 6.00032 1015.2 5.90039 1015.4 5.90039C1015.6 5.90039 1015.7 6.00032 1015.7 6.20032V81.8004C1015.7 82.0004 1015.6 82.1003 1015.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 82.1003C955.8 82.1003 955.7 82.0004 955.7 81.8004V6.20032C955.7 6.00032 955.8 5.90039 956 5.90039C956.2 5.90039 956.3 6.00032 956.3 6.20032V81.8004C956.3 82.0004 956.2 82.1003 956 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 82.1003C896.4 82.1003 896.3 82.0004 896.3 81.8004V6.20032C896.3 6.00032 896.4 5.90039 896.6 5.90039C896.8 5.90039 896.9 6.00032 896.9 6.20032V81.8004C896.9 82.0004 896.8 82.1003 896.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.2 82.1003C837 82.1003 836.9 82.0004 836.9 81.8004V6.20032C836.9 6.00032 837 5.90039 837.2 5.90039C837.4 5.90039 837.5 6.00032 837.5 6.20032V81.8004C837.6 82.0004 837.4 82.1003 837.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 82.1003C777.7 82.1003 777.6 82.0004 777.6 81.8004V6.20032C777.6 6.00032 777.7 5.90039 777.9 5.90039C778.1 5.90039 778.2 6.00032 778.2 6.20032V81.8004C778.2 82.0004 778.1 82.1003 777.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 82.1003C718.3 82.1003 718.2 82.0004 718.2 81.8004V6.20032C718.2 6.00032 718.3 5.90039 718.5 5.90039C718.7 5.90039 718.8 6.00032 718.8 6.20032V81.8004C718.8 82.0004 718.7 82.1003 718.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 82.1003C658.9 82.1003 658.8 82.0004 658.8 81.8004V6.20032C658.8 6.00032 658.9 5.90039 659.1 5.90039C659.3 5.90039 659.4 6.00032 659.4 6.20032V81.8004C659.4 82.0004 659.3 82.1003 659.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 82.1003C599.6 82.1003 599.5 82.0004 599.5 81.8004V6.20032C599.5 6.00032 599.6 5.90039 599.8 5.90039C600 5.90039 600.1 6.00032 600.1 6.20032V81.8004C600.1 82.0004 599.9 82.1003 599.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 82.1003C540.2 82.1003 540.1 82.0004 540.1 81.8004V6.20032C540.1 6.00032 540.2 5.90039 540.4 5.90039C540.6 5.90039 540.7 6.00032 540.7 6.20032V81.8004C540.7 82.0004 540.6 82.1003 540.4 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 82.1003C480.8 82.1003 480.7 82.0004 480.7 81.8004V6.20032C480.7 6.00032 480.8 5.90039 481 5.90039C481.2 5.90039 481.3 6.00032 481.3 6.20032V81.8004C481.3 82.0004 481.2 82.1003 481 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 82.1003C421.4 82.1003 421.3 82.0004 421.3 81.8004V6.20032C421.3 6.00032 421.4 5.90039 421.6 5.90039C421.8 5.90039 421.9 6.00032 421.9 6.20032V81.8004C421.9 82.0004 421.8 82.1003 421.6 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.2 82.1003C362 82.1003 361.9 82.0004 361.9 81.8004V6.20032C361.9 6.00032 362 5.90039 362.2 5.90039C362.4 5.90039 362.5 6.00032 362.5 6.20032V81.8004C362.6 82.0004 362.4 82.1003 362.2 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 82.1003C302.7 82.1003 302.6 82.0004 302.6 81.8004V6.20032C302.6 6.00032 302.7 5.90039 302.9 5.90039C303.1 5.90039 303.2 6.00032 303.2 6.20032V81.8004C303.2 82.0004 303.1 82.1003 302.9 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 82.1003C243.3 82.1003 243.2 82.0004 243.2 81.8004V6.20032C243.2 6.00032 243.3 5.90039 243.5 5.90039C243.7 5.90039 243.8 6.00032 243.8 6.20032V81.8004C243.8 82.0004 243.7 82.1003 243.5 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 82.1003C183.9 82.1003 183.8 82.0004 183.8 81.8004V6.20032C183.8 6.00032 183.9 5.90039 184.1 5.90039C184.3 5.90039 184.4 6.00032 184.4 6.20032V81.8004C184.4 82.0004 184.3 82.1003 184.1 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.8 82.1003C124.6 82.1003 124.5 82.0004 124.5 81.8004V6.20032C124.5 6.00032 124.6 5.90039 124.8 5.90039C125 5.90039 125.1 6.00032 125.1 6.20032V81.8004C125.1 82.0004 124.9 82.1003 124.8 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 82.1003C65.1999 82.1003 65.1001 82.0004 65.1001 81.8004V6.20032C65.1001 6.00032 65.1999 5.90039 65.3999 5.90039C65.5999 5.90039 65.7 6.00032 65.7 6.20032V81.8004C65.7 82.0004 65.5999 82.1003 65.3999 82.1003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M6 82.1003C5.8 82.1003 5.69995 82.0004 5.69995 81.8004V6.20032C5.69995 6.00032 5.8 5.90039 6 5.90039C6.2 5.90039 6.30005 6.00032 6.30005 6.20032V81.8004C6.30005 82.0004 6.2 82.1003 6 82.1003Z", fill: "white" })), /* @__PURE__ */ h.createElement("g", { id: "solar-graph" }, /* @__PURE__ */ h.createElement("path", { d: "M35.7001 22.9001C33.9001 22.9001 32.1001 22.0001 31.0001 20.5001C29.2001 17.9001 29.9 14.4001 32.4 12.6001C35 10.8001 38.5002 11.4001 40.3002 14.0001C42.1002 16.6001 41.5 20.1001 38.9 21.9001C38.9 21.9001 38.9002 21.9001 38.8002 21.9001C37.9002 22.6001 36.8001 22.9001 35.7001 22.9001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M5.99994 49.6996C4.59994 49.6996 3.29989 49.1996 2.19989 48.1996C-0.100106 46.0996 -0.300008 42.4996 1.79999 40.1996C1.89999 40.0996 2.00004 39.9997 2.10004 39.8997C4.30004 37.6997 7.90004 37.7997 10.1 39.9997C12.3 42.1997 12.3 45.7997 10.1 47.9997C8.90004 49.0997 7.49994 49.6996 5.99994 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 11.9C62.2999 11.9 59.7 9.39995 59.7 6.19995C59.7 2.99995 62.1999 0.5 65.3999 0.5C68.5999 0.5 71.1001 2.99995 71.1001 6.19995C71.1001 9.39995 68.4999 11.9 65.3999 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M35.6999 22.9001C33.9999 22.9001 32.2999 22.1001 31.1999 20.6001C29.2999 18.1001 29.8 14.5001 32.3 12.7001C32.3 12.7001 32.3999 12.6001 32.4999 12.6001C34.9999 10.8001 38.5998 11.4001 40.3998 13.9001C42.1998 16.4001 41.6 19.9002 39.1 21.8002C38 22.6002 36.7999 22.9001 35.6999 22.9001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M95.1002 22.8999C94.0002 22.8999 92.8 22.5999 91.9 21.8999C89.4 20.0999 88.7 16.6999 90.4 14.0999C92.1 11.4999 95.7001 10.7999 98.3001 12.4999C98.4001 12.5999 98.5002 12.5999 98.6002 12.6999C101.1 14.5999 101.6 18.0999 99.7 20.5999C98.5 22.1999 96.8002 22.8999 95.1002 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M65.3999 11.9C62.2999 11.9 59.7 9.39995 59.7 6.19995C59.7 2.99995 62.1999 0.5 65.3999 0.5C68.5999 0.5 71.1001 2.99995 71.1001 6.19995C71.1001 9.39995 68.4999 11.9 65.3999 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.7 49.6996C123.3 49.6996 121.8 49.0996 120.7 47.9996C118.5 45.7996 118.5 42.1996 120.7 39.9996C122.9 37.7996 126.5 37.7996 128.7 39.9996C130.9 42.1996 130.9 45.7996 128.7 47.9996C127.6 49.0996 126.2 49.6996 124.7 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M95.1001 23C93.9001 23 92.8001 22.6 91.8001 21.9C91.7001 21.9 91.7001 21.8 91.6001 21.8C89.1001 19.9 88.7001 16.3 90.6001 13.8C92.5001 11.4 95.8999 10.8999 98.3999 12.6999C98.4999 12.6999 98.5001 12.8 98.6001 12.8C101.1 14.7 101.5 18.3 99.6001 20.8C98.4001 22.2 96.8001 23 95.1001 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M154.4 76.3997C153.3 76.3997 152.1 76.0997 151.2 75.3997L157.7 66.0996C160.3 67.8996 160.9 71.3996 159.1 73.9996C158 75.5996 156.2 76.3997 154.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M124.8 49.6999C123.3 49.6999 121.8 49.1 120.7 47.9L120.6 47.8C118.5 45.5 118.7 41.9 121 39.8C123.3 37.7 126.8 37.8999 128.9 40.0999L129 40.1999C131.1 42.4999 130.9 46.0999 128.6 48.1999C127.5 49.1999 126.1 49.6999 124.8 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 87.4996C181 87.4996 178.4 84.9997 178.4 81.7997C178.4 78.5997 180.9 76.0996 184.1 76.0996C187.3 76.0996 189.8 78.5997 189.8 81.7997C189.8 84.9997 187.3 87.4996 184.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M154.5 76.3997C153.4 76.3997 152.3 76.0997 151.4 75.3997C151.3 75.2997 151.2 75.2996 151.1 75.1996C148.6 73.2996 148.1 69.7997 150 67.2997C151.9 64.7997 155.3 64.2996 157.8 66.0996C160.3 67.8996 160.9 71.2997 159.2 73.8997C158.1 75.4997 156.3 76.3997 154.5 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M213.8 76.4C212 76.4 210.2 75.5 209.1 73.9C207.4 71.3 208.1 67.8999 210.6 66.0999C213.1 64.3999 216.5 64.9 218.4 67.3C220.3 69.8 219.8 73.3999 217.3 75.1999C217.2 75.2999 217.1 75.3 217 75.4C216 76.1 214.9 76.4 213.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M184.1 87.4996C181 87.4996 178.4 84.9997 178.4 81.7997C178.4 78.5997 180.9 76.0996 184.1 76.0996C187.3 76.0996 189.8 78.5997 189.8 81.7997C189.8 84.9997 187.3 87.4996 184.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 49.6996C242.1 49.6996 240.8 49.1996 239.7 48.1996C237.4 46.0996 237.2 42.4996 239.3 40.1996C239.4 40.0996 239.5 39.9997 239.6 39.8997C241.8 37.6997 245.4 37.7997 247.6 39.9997C249.8 42.1997 249.8 45.7997 247.6 47.9997C246.4 49.0997 245 49.6996 243.5 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M213.8 76.3994C212.1 76.3994 210.4 75.5994 209.3 74.1994C207.4 71.6994 207.8 68.1994 210.3 66.1994C210.4 66.1994 210.4 66.0994 210.5 66.0994C213 64.2994 216.4 64.7994 218.3 67.1994C220.2 69.6994 219.8 73.1994 217.3 75.1994C217.2 75.1994 217.2 75.2995 217.1 75.2995C216.1 75.9995 215 76.3994 213.8 76.3994Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M273.2 23.0004C271.5 23.0004 269.8 22.2004 268.7 20.8004C266.8 18.3004 267.2 14.8004 269.7 12.8004C269.8 12.7004 269.9 12.6003 270 12.6003C272.6 10.9003 276.1 11.5004 277.8 14.0004C279.6 16.6004 279 20.1004 276.4 21.9004C275.4 22.6004 274.3 23.0004 273.2 23.0004Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M243.5 49.6999C242.1 49.6999 240.8 49.1999 239.7 48.1999C237.4 46.0999 237.2 42.4999 239.3 40.1999L239.4 40.0999C241.5 37.8999 245 37.7 247.3 39.8C249.6 41.9 249.8 45.5 247.7 47.8L247.6 47.9C246.5 49.1 245 49.6999 243.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 11.9C299.8 11.9 297.2 9.39995 297.2 6.19995C297.2 2.99995 299.7 0.5 302.9 0.5C306.1 0.5 308.6 2.99995 308.6 6.19995C308.6 9.39995 306 11.9 302.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M273.2 22.8999C271.6 22.8999 269.9 22.2 268.8 20.8C266.8 18.4 267.2 14.8 269.6 12.8C269.7 12.7 269.9 12.5999 270.1 12.4999C272.7 10.7999 276.2 11.4999 278 14.0999C279.7 16.5999 279.1 20.1 276.6 21.8C275.5 22.6 274.4 22.8999 273.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M332.6 22.8999C331.5 22.8999 330.3 22.5999 329.4 21.8999C326.9 20.0999 326.2 16.6999 327.9 14.0999C329.6 11.4999 333.2 10.7999 335.8 12.4999C335.9 12.5999 336 12.5999 336.1 12.6999C338.6 14.5999 339.1 18.0999 337.2 20.5999C336 22.1999 334.3 22.8999 332.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M302.9 11.9C299.8 11.9 297.2 9.39995 297.2 6.19995C297.2 2.99995 299.7 0.5 302.9 0.5C306.1 0.5 308.6 2.99995 308.6 6.19995C308.6 9.39995 306 11.9 302.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.3 49.6998C360.9 49.6998 359.4 49.1999 358.3 48.0999C358.2 47.9999 358.1 47.8999 358 47.7999C355.9 45.4999 356.1 41.8999 358.4 39.7999C360.7 37.7999 364.1 37.8999 366.2 39.9999C368.4 42.1999 368.4 45.7999 366.2 47.9999C365.2 49.0999 363.7 49.6998 362.3 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M332.6 23C331.4 23 330.3 22.6 329.3 21.9C329.2 21.9 329.2 21.8 329.1 21.8C326.6 19.9 326.2 16.3 328.1 13.8C330 11.4 333.4 10.8999 335.9 12.6999C336 12.6999 336 12.8 336.1 12.8C338.6 14.7 339 18.3 337.1 20.8C335.9 22.2 334.3 23 332.6 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M391.9 76.4004C390.7 76.4004 389.6 76.0004 388.6 75.3004C388.5 75.3004 388.5 75.2003 388.4 75.2003C385.9 73.3003 385.5 69.7003 387.4 67.2003C389.3 64.8003 392.7 64.3004 395.2 66.1004C395.3 66.1004 395.3 66.2003 395.4 66.2003C397.9 68.1003 398.3 71.7003 396.4 74.2003C395.3 75.6003 393.6 76.4004 391.9 76.4004Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M362.3 49.6999C360.8 49.6999 359.3 49.1 358.2 47.9L358.1 47.8C356 45.5 356.2 41.9 358.5 39.8C360.8 37.7 364.3 37.8999 366.4 40.0999L366.5 40.1999C368.6 42.4999 368.4 46.0999 366.1 48.1999C365 49.1999 363.6 49.6999 362.3 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 87.4996C418.5 87.4996 415.9 84.9997 415.9 81.7997C415.9 78.5997 418.4 76.0996 421.6 76.0996C424.8 76.0996 427.3 78.5997 427.3 81.7997C427.3 84.9997 424.8 87.4996 421.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M392 76.3997C390.9 76.3997 389.8 76.0997 388.9 75.3997C388.8 75.2997 388.7 75.2996 388.6 75.1996C386.1 73.2996 385.6 69.7997 387.5 67.2997C389.3 64.7997 392.8 64.2996 395.3 66.0996C397.8 67.8996 398.5 71.2997 396.8 73.8997C395.6 75.4997 393.8 76.3997 392 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M451.3 76.4C449.5 76.4 447.7 75.5 446.6 73.9C444.9 71.4 445.5 67.8999 448 66.1999C450.4 64.3999 453.8 64.8999 455.7 67.1999C457.7 69.5999 457.3 73.1999 454.9 75.1999C454.8 75.2999 454.6 75.3999 454.4 75.4999C453.5 76.0999 452.4 76.4 451.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M421.6 87.4996C418.5 87.4996 415.9 84.9997 415.9 81.7997C415.9 78.5997 418.4 76.0996 421.6 76.0996C424.8 76.0996 427.3 78.5997 427.3 81.7997C427.3 84.9997 424.8 87.4996 421.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 49.6999C479.6 49.6999 478.3 49.1999 477.2 48.1999C474.9 46.0999 474.7 42.4999 476.8 40.1999L476.9 40.0999C479 37.8999 482.5 37.7 484.8 39.8C487.1 41.9 487.3 45.5 485.2 47.8L485.1 47.9C484 49.1 482.5 49.6999 481 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M451.3 76.4C449.5 76.4 447.8 75.5999 446.7 73.9999C444.9 71.3999 445.5 67.8999 448.1 66.0999C450.6 64.3999 454 64.9 455.8 67.3C457.7 69.8 457.3 73.3 454.8 75.3C454.7 75.4 454.6 75.4999 454.5 75.4999C453.5 76.0999 452.4 76.4 451.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M510.7 23C509 23 507.3 22.2 506.2 20.8C504.3 18.3 504.7 14.8 507.2 12.8C507.3 12.8 507.3 12.6999 507.4 12.6999C509.9 10.8999 513.3 11.4 515.2 13.8C517.1 16.3 516.7 19.8 514.2 21.8C514.1 21.8 514.1 21.9 514 21.9C513 22.6 511.8 23 510.7 23Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M481 49.6998C479.5 49.6998 478.1 49.0998 477 47.9998C474.8 45.7998 474.8 42.1998 477 39.9998C479.1 37.8998 482.6 37.6999 484.8 39.7999C487.1 41.8999 487.3 45.4999 485.2 47.7999C485.1 47.8999 485 47.9998 484.9 48.0998C483.8 49.0998 482.4 49.6998 481 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 11.9C537.3 11.9 534.7 9.39995 534.7 6.19995C534.7 2.99995 537.2 0.5 540.4 0.5C543.6 0.5 546.1 2.99995 546.1 6.19995C546.1 9.39995 543.5 11.9 540.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M510.7 22.8999C509 22.8999 507.3 22.0999 506.2 20.5999C504.3 18.0999 504.8 14.4999 507.3 12.6999C507.4 12.5999 507.5 12.5999 507.6 12.4999C510.2 10.7999 513.7 11.4999 515.5 14.0999C517.2 16.6999 516.5 20.0999 514 21.8999C513 22.5999 511.8 22.8999 510.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M570.1 22.9003C569 22.9003 567.8 22.6003 566.8 21.8003C564.3 20.0003 563.7 16.6003 565.4 14.0003C567.1 11.4003 570.7 10.7003 573.3 12.4003C573.4 12.5003 573.5 12.5003 573.6 12.6003C576.1 14.5003 576.6 18.0003 574.7 20.5003C573.5 22.2003 571.8 22.9003 570.1 22.9003Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M540.4 11.9C537.3 11.9 534.7 9.39995 534.7 6.19995C534.7 2.99995 537.2 0.5 540.4 0.5C543.6 0.5 546.1 2.99995 546.1 6.19995C546.1 9.39995 543.5 11.9 540.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 49.6999C598.3 49.6999 596.8 49.1 595.7 47.9L595.6 47.8C593.5 45.5 593.7 41.9 596 39.8C598.3 37.7 601.8 37.8999 603.9 40.0999L604 40.1999C606.1 42.4999 605.9 46.0999 603.6 48.1999C602.5 49.1999 601.1 49.6999 599.8 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M570.1 22.9998C569 22.9998 567.8 22.6998 566.8 21.9998C564.2 20.1998 563.6 16.6998 565.4 14.0998C567.2 11.5998 570.7 10.8998 573.2 12.6998C573.3 12.7998 573.4 12.7999 573.5 12.8999C576 14.7999 576.4 18.3999 574.5 20.8999C573.4 22.1999 571.8 22.9998 570.1 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M629.4 76.3994C628.2 76.3994 627.1 75.9995 626.1 75.2995C626 75.2995 626 75.1994 625.9 75.1994C623.4 73.2994 623 69.6994 624.9 67.1994C626.8 64.7994 630.2 64.2994 632.7 66.0994C632.8 66.0994 632.8 66.1994 632.9 66.1994C635.4 68.0994 635.8 71.6994 633.9 74.1994C632.8 75.5994 631.1 76.3994 629.4 76.3994Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M599.8 49.6996C598.4 49.6996 596.9 49.0996 595.8 47.9996C593.6 45.7996 593.6 42.1996 595.8 39.9996C598 37.7996 601.6 37.7996 603.8 39.9996C606 42.1996 606 45.7996 603.8 47.9996C602.7 49.0996 601.2 49.6996 599.8 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 87.4996C656 87.4996 653.4 84.9997 653.4 81.7997C653.4 78.5997 655.9 76.0996 659.1 76.0996C662.3 76.0996 664.8 78.5997 664.8 81.7997C664.8 84.9997 662.3 87.4996 659.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M629.5 76.3997C628.4 76.3997 627.3 76.0997 626.4 75.3997C626.3 75.2997 626.2 75.2996 626.1 75.1996C623.6 73.2996 623.1 69.7997 625 67.2997C626.8 64.7997 630.3 64.2996 632.8 66.0996C635.3 67.8996 636 71.2997 634.3 73.8997C633.1 75.4997 631.3 76.3997 629.5 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M688.8 76.3997C687 76.3997 685.3 75.5996 684.2 73.9996C682.4 71.4996 683 67.9996 685.5 66.0996C688 64.2996 691.5 64.7997 693.3 67.2997C695.2 69.7997 694.7 73.3996 692.2 75.1996C692.2 75.1996 692.1 75.2997 692 75.2997C691.1 76.0997 689.9 76.3997 688.8 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M659.1 87.4996C656 87.4996 653.4 84.9997 653.4 81.7997C653.4 78.5997 655.9 76.0996 659.1 76.0996C662.3 76.0996 664.8 78.5997 664.8 81.7997C664.8 84.9997 662.3 87.4996 659.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 49.6998C717 49.6998 715.6 49.0998 714.5 47.9998C712.3 45.7998 712.3 42.1998 714.5 39.9998C716.6 37.8998 720.1 37.6999 722.3 39.7999C724.6 41.8999 724.8 45.4999 722.7 47.7999C722.6 47.8999 722.5 47.9998 722.4 48.0998C721.3 49.1998 719.9 49.6998 718.5 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M688.8 76.4001C687 76.4001 685.2 75.5001 684.1 74.0001C682.3 71.4001 683 67.9001 685.5 66.1001C688.1 64.3001 691.6 64.9001 693.4 67.5001C695.2 70.1001 694.6 73.6001 692 75.4001C692 75.4001 692 75.4001 691.9 75.4001C691 76.1001 689.9 76.4001 688.8 76.4001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M748.2 23.0005C746.4 23.0005 744.7 22.2005 743.6 20.6005C741.8 18.0005 742.4 14.5005 745 12.7005C747.5 11.0005 750.9 11.5006 752.7 13.9006C754.6 16.4006 754.2 19.9006 751.7 21.9006C751.6 22.0006 751.5 22.1005 751.4 22.1005C750.4 22.6005 749.3 23.0005 748.2 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M718.5 49.7005C717 49.7005 715.6 49.1006 714.5 48.0006C712.3 45.8006 712.3 42.2006 714.5 40.0006C716.7 37.8006 720.3 37.8006 722.5 40.0006C724.7 42.2006 724.7 45.8006 722.5 48.0006C721.4 49.1006 720 49.7005 718.5 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 11.9C774.8 11.9 772.2 9.39995 772.2 6.19995C772.2 2.99995 774.7 0.5 777.9 0.5C781.1 0.5 783.6 2.99995 783.6 6.19995C783.6 9.39995 781 11.9 777.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M748.2 22.8999C746.5 22.8999 744.8 22.0999 743.7 20.5999C741.8 18.0999 742.3 14.4999 744.8 12.6999C744.9 12.5999 745 12.5999 745.1 12.4999C747.7 10.7999 751.2 11.4999 753 14.0999C754.7 16.6999 754 20.0999 751.5 21.8999C750.5 22.5999 749.3 22.8999 748.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M807.6 22.8999C806.5 22.8999 805.3 22.5999 804.4 21.8999C801.9 20.0999 801.2 16.6999 802.9 14.0999C804.6 11.4999 808.2 10.7999 810.8 12.4999C810.9 12.5999 811 12.5999 811.1 12.6999C813.6 14.5999 814.1 18.0999 812.2 20.5999C811 22.1999 809.3 22.8999 807.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M777.9 11.9C774.8 11.9 772.2 9.39995 772.2 6.19995C772.2 2.99995 774.7 0.5 777.9 0.5C781.1 0.5 783.6 2.99995 783.6 6.19995C783.6 9.39995 781 11.9 777.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.3 49.7005C835.8 49.7005 834.4 49.1006 833.3 48.0006C831.1 45.8006 831.1 42.2006 833.3 40.0006C835.5 37.8006 839.1 37.8006 841.3 40.0006C841.4 40.1006 841.5 40.2005 841.5 40.2005C843.6 42.5005 843.4 46.1005 841.1 48.2005C840 49.2005 838.6 49.7005 837.3 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M807.6 23.0002C806.5 23.0002 805.3 22.7002 804.4 22.0002L810.9 12.7002C813.5 14.5002 814.1 18.0002 812.3 20.6002C811.1 22.1002 809.4 23.0002 807.6 23.0002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M866.9 76.3992C865.8 76.3992 864.6 76.0992 863.6 75.3992C861 73.5992 860.4 70.0992 862.2 67.4992C864 64.9992 867.5 64.2992 870 66.0992C870.1 66.1992 870.2 66.1993 870.3 66.2993C872.8 68.1993 873.2 71.7993 871.3 74.2993C870.3 75.5993 868.6 76.3992 866.9 76.3992Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M837.3 49.6996C835.9 49.6996 834.4 49.0996 833.3 47.9996C831.1 45.7996 831.1 42.1996 833.3 39.9996C835.5 37.7996 839.1 37.7996 841.3 39.9996C843.5 42.1996 843.5 45.7996 841.3 47.9996C840.2 49.0996 838.7 49.6996 837.3 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 87.4996C893.5 87.4996 890.9 84.9997 890.9 81.7997C890.9 78.5997 893.4 76.0996 896.6 76.0996C899.8 76.0996 902.3 78.5997 902.3 81.7997C902.3 84.9997 899.8 87.4996 896.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M867 76.3997C865.9 76.3997 864.8 76.0997 863.9 75.3997C863.8 75.2997 863.7 75.2996 863.6 75.1996C861.1 73.2996 860.6 69.7997 862.5 67.2997C864.3 64.7997 867.8 64.2996 870.3 66.0996C872.8 67.8996 873.5 71.2997 871.8 73.8997C870.6 75.4997 868.8 76.3997 867 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M926.3 76.4C924.5 76.4 922.7 75.5 921.6 73.9C919.9 71.3 920.6 67.8999 923.1 66.0999C925.6 64.3999 929 64.9 930.9 67.3C932.8 69.8 932.3 73.3999 929.8 75.1999C929.7 75.2999 929.6 75.3 929.5 75.4C928.5 76.1 927.4 76.4 926.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M896.6 87.4996C893.5 87.4996 890.9 84.9997 890.9 81.7997C890.9 78.5997 893.4 76.0996 896.6 76.0996C899.8 76.0996 902.3 78.5997 902.3 81.7997C902.3 84.9997 899.8 87.4996 896.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 49.6996C954.5 49.6996 953.1 49.0996 952 47.9996C949.8 45.7996 949.8 42.1996 952 39.9996C954.2 37.7996 957.8 37.7996 960 39.9996C962.2 42.1996 962.2 45.7996 960 47.9996C958.9 49.0996 957.4 49.6996 956 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M926.3 76.3991C924.5 76.3991 922.7 75.4991 921.6 73.9991C919.8 71.3991 920.5 67.8991 923 66.0991C925.6 64.2991 929.1 64.8991 930.9 67.4991C932.7 70.0991 932.1 73.5991 929.5 75.3991C929.5 75.3991 929.5 75.3991 929.4 75.3991C928.5 76.0991 927.4 76.3991 926.3 76.3991Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M985.7 23.0005C983.9 23.0005 982.2 22.2005 981.1 20.6005C979.3 18.1005 979.9 14.6006 982.4 12.8006C984.7 11.1006 988.1 11.4005 990 13.6005C992.1 16.0005 991.8 19.5005 989.5 21.6005C989.3 21.7005 989.1 21.9005 989 22.0005C987.9 22.6005 986.8 23.0005 985.7 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M956 49.7005C954.5 49.7005 953.1 49.1006 952 48.0006C949.8 45.8006 949.8 42.2006 952 40.0006C954.2 37.8006 957.8 37.8006 960 40.0006C962.2 42.2006 962.2 45.8006 960 48.0006C958.9 49.1006 957.5 49.7005 956 49.7005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 11.9C1012.3 11.9 1009.7 9.39995 1009.7 6.19995C1009.7 2.99995 1012.2 0.5 1015.4 0.5C1018.6 0.5 1021.1 2.99995 1021.1 6.19995C1021.1 9.39995 1018.5 11.9 1015.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M985.7 22.8999C984 22.8999 982.3 22.0999 981.2 20.5999C979.3 18.0999 979.8 14.4999 982.3 12.6999C982.4 12.5999 982.5 12.5999 982.6 12.4999C985.2 10.7999 988.7 11.4999 990.5 14.0999C992.2 16.6999 991.5 20.0999 989 21.8999C988 22.5999 986.8 22.8999 985.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1045.1 22.8999C1044 22.8999 1042.8 22.5999 1041.9 21.8999C1039.4 20.0999 1038.7 16.6999 1040.4 14.0999C1042.1 11.4999 1045.7 10.7999 1048.3 12.4999C1048.4 12.5999 1048.5 12.5999 1048.6 12.6999C1051.1 14.5999 1051.6 18.0999 1049.7 20.5999C1048.5 22.1999 1046.8 22.8999 1045.1 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1015.4 11.9C1012.3 11.9 1009.7 9.39995 1009.7 6.19995C1009.7 2.99995 1012.2 0.5 1015.4 0.5C1018.6 0.5 1021.1 2.99995 1021.1 6.19995C1021.1 9.39995 1018.5 11.9 1015.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 49.7C1073.1 49.7 1071.5 49 1070.4 47.6L1074.8 44L1078.8 40C1078.9 40.1 1079.1 40.3 1079.2 40.5C1081.2 42.9 1080.8 46.5 1078.3 48.5C1077.2 49.3 1076 49.7 1074.8 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1045.1 23.0001C1044 23.0001 1042.9 22.7001 1041.9 22.0001C1041.9 22.0001 1041.8 22.0001 1041.8 21.9001C1039.2 20.1001 1038.6 16.6001 1040.4 14.0001C1042.2 11.5001 1045.6 10.8001 1048.2 12.5001C1048.2 12.5001 1048.3 12.5001 1048.3 12.6001C1050.9 14.4001 1051.5 17.9001 1049.7 20.5001C1048.6 22.1001 1046.9 23.0001 1045.1 23.0001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1104.4 76.3992C1103.2 76.3992 1102 75.9993 1101 75.2993C1098.5 73.4993 1097.9 69.9992 1099.7 67.4992C1101.5 64.9992 1105 64.2992 1107.5 66.0992C1107.7 66.1992 1107.9 66.3992 1108 66.4992C1110.4 68.5992 1110.6 72.0992 1108.5 74.4992C1107.6 75.6992 1106 76.3992 1104.4 76.3992Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1074.8 49.6996C1073.4 49.6996 1072 49.1996 1070.9 48.0996L1070.8 47.9996C1068.6 45.7996 1068.6 42.1996 1070.8 39.9996C1073 37.7996 1076.5 37.7996 1078.8 39.8996C1078.8 39.8996 1078.9 39.8996 1078.9 39.9996C1081.1 42.1996 1081.1 45.7996 1078.9 47.9996C1077.7 49.0996 1076.2 49.6996 1074.8 49.6996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 87.4996C1131 87.4996 1128.4 84.9997 1128.4 81.7997C1128.4 78.5997 1130.9 76.0996 1134.1 76.0996C1137.3 76.0996 1139.8 78.5997 1139.8 81.7997C1139.8 84.9997 1137.3 87.4996 1134.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1104.4 76.3997C1103.3 76.3997 1102.2 76.0997 1101.3 75.3997C1101.2 75.2997 1101.1 75.2996 1101 75.1996C1098.5 73.2996 1098 69.7997 1099.9 67.2997C1101.7 64.7997 1105.2 64.2996 1107.7 66.0996C1110.2 67.8996 1110.9 71.2997 1109.2 73.8997C1108.1 75.4997 1106.3 76.3997 1104.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1163.8 76.4C1162 76.4 1160.2 75.5 1159.1 73.9C1157.4 71.3 1158.1 67.8999 1160.6 66.0999C1163.1 64.3999 1166.5 64.9 1168.4 67.3C1170.3 69.8 1169.8 73.3999 1167.3 75.1999C1167.2 75.2999 1167.1 75.3 1167 75.4C1166 76.1 1164.9 76.4 1163.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1134.1 87.4996C1131 87.4996 1128.4 84.9997 1128.4 81.7997C1128.4 78.5997 1130.9 76.0996 1134.1 76.0996C1137.3 76.0996 1139.8 78.5997 1139.8 81.7997C1139.8 84.9997 1137.3 87.4996 1134.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 49.6999C1192 49.6999 1190.6 49.0999 1189.5 47.9999C1187.3 45.7999 1187.3 42.2999 1189.4 40.0999C1191.4 37.9999 1194.7 37.6999 1197.1 39.5999C1199.5 41.5999 1199.9 45.0999 1198 47.5999C1197.9 47.7999 1197.7 47.9999 1197.5 48.0999C1196.3 49.0999 1194.9 49.6999 1193.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1163.8 76.4001C1162 76.4001 1160.3 75.6001 1159.2 74.0001C1157.4 71.4001 1158 67.9001 1160.6 66.1001C1160.6 66.1001 1160.7 66.1001 1160.7 66.0001C1163.3 64.3001 1166.7 64.9001 1168.5 67.5001C1170.3 70.1001 1169.7 73.6001 1167.1 75.4001C1167.1 75.4001 1167 75.4001 1167 75.5001C1166 76.1001 1164.9 76.4001 1163.8 76.4001Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1223.2 23.0005C1221.4 23.0005 1219.7 22.2005 1218.6 20.6005C1216.8 18.1005 1217.4 14.6006 1219.9 12.8006C1222.2 11.1006 1225.6 11.4005 1227.5 13.6005C1229.6 16.0005 1229.3 19.5005 1227 21.6005C1226.8 21.7005 1226.6 21.9005 1226.5 22.0005C1225.4 22.6005 1224.3 23.0005 1223.2 23.0005Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1193.5 49.7006C1192 49.7006 1190.6 49.1006 1189.5 48.0006C1187.3 45.8006 1187.3 42.2006 1189.5 40.0006C1189.5 40.0006 1189.5 40.0007 1189.6 39.9007C1191.8 37.7007 1195.4 37.8006 1197.6 40.0006C1199.8 42.2006 1199.8 45.8006 1197.6 48.0006C1197.6 48.0006 1197.6 48.0006 1197.5 48.1006C1196.4 49.1006 1194.9 49.7006 1193.5 49.7006Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 11.9C1249.8 11.9 1247.2 9.39995 1247.2 6.19995C1247.2 2.99995 1249.7 0.5 1252.9 0.5C1256.1 0.5 1258.6 2.99995 1258.6 6.19995C1258.6 9.39995 1256 11.9 1252.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1223.2 22.8999C1221.5 22.8999 1219.8 22.0999 1218.7 20.5999C1216.8 18.0999 1217.3 14.4999 1219.8 12.6999C1219.9 12.5999 1220 12.5999 1220.1 12.4999C1222.7 10.7999 1226.2 11.4999 1228 14.0999C1229.7 16.6999 1229 20.0999 1226.5 21.8999C1225.5 22.5999 1224.3 22.8999 1223.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1282.6 22.8999C1281.5 22.8999 1280.3 22.5999 1279.4 21.8999C1276.9 20.0999 1276.2 16.6999 1277.9 14.0999C1279.6 11.4999 1283.2 10.7999 1285.8 12.4999C1285.9 12.5999 1286 12.5999 1286.1 12.6999C1288.6 14.5999 1289.1 18.0999 1287.2 20.5999C1286 22.1999 1284.3 22.8999 1282.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1252.9 11.9C1249.8 11.9 1247.2 9.39995 1247.2 6.19995C1247.2 2.99995 1249.7 0.5 1252.9 0.5C1256.1 0.5 1258.6 2.99995 1258.6 6.19995C1258.6 9.39995 1256 11.9 1252.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.3 49.7C1310.6 49.7 1309 49 1307.9 47.6L1312.3 44L1316.3 40C1316.4 40.1 1316.6 40.3 1316.7 40.5C1318.7 42.9 1318.3 46.5 1315.8 48.5C1314.7 49.3 1313.5 49.7 1312.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1282.6 22.9998C1281.4 22.9998 1280.2 22.5999 1279.2 21.8999C1276.7 20.0999 1276.1 16.5998 1277.9 14.0998C1279.7 11.5998 1283.2 10.8998 1285.7 12.6998C1285.9 12.7998 1286.1 12.9998 1286.2 13.0998C1288.6 15.1998 1288.8 18.6998 1286.7 21.0998C1285.7 22.2998 1284.2 22.9998 1282.6 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1341.9 76.4002C1340.7 76.4002 1339.5 76.0002 1338.5 75.3002C1336 73.5002 1335.4 70.0002 1337.2 67.5002C1339 65.0002 1342.5 64.3002 1345 66.1002C1345.2 66.2002 1345.4 66.4002 1345.5 66.5002C1347.9 68.6002 1348.1 72.1002 1346 74.5002C1345.1 75.7002 1343.5 76.4002 1341.9 76.4002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1312.3 49.7C1310.6 49.7 1309 49 1307.9 47.6L1312.3 44L1316.3 40C1316.4 40.1 1316.6 40.3 1316.7 40.5C1318.7 42.9 1318.3 46.5 1315.8 48.5C1314.8 49.3 1313.5 49.7 1312.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 87.4996C1368.5 87.4996 1365.9 84.9997 1365.9 81.7997C1365.9 78.5997 1368.4 76.0996 1371.6 76.0996C1374.8 76.0996 1377.3 78.5997 1377.3 81.7997C1377.3 84.9997 1374.8 87.4996 1371.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1341.9 76.3997C1340.8 76.3997 1339.7 76.0997 1338.8 75.3997C1338.7 75.2997 1338.6 75.2996 1338.5 75.1996C1336 73.2996 1335.5 69.7997 1337.4 67.2997C1339.2 64.7997 1342.7 64.2996 1345.2 66.0996C1347.7 67.8996 1348.4 71.2997 1346.7 73.8997C1345.6 75.4997 1343.8 76.3997 1341.9 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1401.3 76.4C1399.5 76.4 1397.7 75.5 1396.6 73.9C1394.9 71.3 1395.6 67.8999 1398.1 66.0999C1400.6 64.3999 1404 64.9 1405.9 67.3C1407.8 69.8 1407.3 73.3999 1404.8 75.1999C1404.7 75.2999 1404.6 75.3 1404.5 75.4C1403.5 76.1 1402.4 76.4 1401.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1371.6 87.4996C1368.5 87.4996 1365.9 84.9997 1365.9 81.7997C1365.9 78.5997 1368.4 76.0996 1371.6 76.0996C1374.8 76.0996 1377.3 78.5997 1377.3 81.7997C1377.3 84.9997 1374.8 87.4996 1371.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 49.6998C1429.8 49.6998 1428.5 49.2998 1427.5 48.4998C1425.1 46.4998 1424.7 42.9998 1426.6 40.4998C1426.7 40.3998 1426.8 40.2998 1426.9 40.1998C1428.9 37.9998 1432.3 37.7998 1434.6 39.5998C1437 41.5998 1437.4 45.0998 1435.5 47.5998C1435.4 47.6998 1435.3 47.7998 1435.2 47.8998C1434 49.0998 1432.5 49.6998 1431 49.6998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1401.3 76.4C1399.5 76.4 1397.8 75.6 1396.7 74C1394.9 71.5 1395.5 67.9999 1398 66.1999C1400.3 64.4999 1403.7 64.8 1405.6 67C1407.7 69.4 1407.4 72.9 1405.1 75C1404.9 75.1 1404.7 75.3 1404.6 75.4C1403.5 76.1 1402.4 76.4 1401.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1460.7 22.9996C1459.1 22.9996 1457.6 22.2996 1456.4 21.0996C1454.3 18.6996 1454.6 15.1996 1456.9 13.0996C1457 12.9996 1457.1 12.8996 1457.2 12.7996C1459.5 10.9996 1462.9 11.3996 1464.9 13.5996C1467 15.9996 1466.7 19.4996 1464.4 21.5996C1464.3 21.6996 1464.2 21.7996 1464.1 21.8996C1463.1 22.5996 1461.9 22.9996 1460.7 22.9996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1431 49.6999C1429.5 49.6999 1428.1 49.0999 1427 47.9999C1424.8 45.7999 1424.8 42.2999 1426.9 40.0999C1428.9 37.9999 1432.2 37.6999 1434.6 39.5999C1437 41.5999 1437.4 45.0999 1435.5 47.5999C1435.4 47.7999 1435.2 47.9999 1435 48.0999C1433.9 49.0999 1432.4 49.6999 1431 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 11.9C1487.3 11.9 1484.7 9.39995 1484.7 6.19995C1484.7 2.99995 1487.2 0.5 1490.4 0.5C1493.6 0.5 1496.1 2.99995 1496.1 6.19995C1496.1 9.39995 1493.5 11.9 1490.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1460.7 22.8999C1459 22.8999 1457.3 22.0999 1456.2 20.5999C1454.3 18.0999 1454.8 14.4999 1457.3 12.6999C1457.4 12.5999 1457.5 12.5999 1457.6 12.4999C1460.2 10.7999 1463.7 11.4999 1465.5 14.0999C1467.2 16.6999 1466.5 20.0999 1464 21.8999C1463 22.5999 1461.8 22.8999 1460.7 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1520.1 22.8999C1519 22.8999 1517.8 22.5999 1516.9 21.8999C1514.4 20.0999 1513.7 16.6999 1515.4 14.0999C1517.1 11.4999 1520.7 10.7999 1523.3 12.4999C1523.4 12.5999 1523.5 12.5999 1523.6 12.6999C1526.1 14.5999 1526.6 18.0999 1524.7 20.5999C1523.5 22.1999 1521.8 22.8999 1520.1 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1490.4 11.9C1487.3 11.9 1484.7 9.39995 1484.7 6.19995C1484.7 2.99995 1487.2 0.5 1490.4 0.5C1493.6 0.5 1496.1 2.99995 1496.1 6.19995C1496.1 9.39995 1493.5 11.9 1490.4 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1545.8 48.0997C1545.6 47.8997 1545.5 47.7997 1545.3 47.5997C1543.3 45.1997 1543.7 41.5997 1546.2 39.5997C1548.6 37.5997 1552.2 37.9998 1554.2 40.4998L1549.8 44.0997L1545.8 48.0997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1520.1 22.9998C1518.9 22.9998 1517.7 22.5999 1516.7 21.8999C1514.2 20.0999 1513.6 16.5998 1515.4 14.0998C1517.2 11.5998 1520.7 10.8998 1523.2 12.6998C1523.4 12.7998 1523.6 12.9998 1523.7 13.0998C1526.1 15.1998 1526.3 18.6998 1524.2 21.0998C1523.2 22.2998 1521.7 22.9998 1520.1 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1579.4 76.4C1578.3 76.4 1577.2 76.1 1576.2 75.4C1576 75.3 1575.8 75.1 1575.7 75C1573.3 72.9 1573.1 69.4 1575.2 67C1577.2 64.8 1580.5 64.4 1582.8 66.2C1585.3 68 1585.9 71.5 1584.1 74C1583 75.6 1581.2 76.4 1579.4 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1549.8 49.7C1548.1 49.7 1546.5 49 1545.4 47.6L1549.8 44L1553.8 40C1553.9 40.1 1554.1 40.3 1554.2 40.5C1556.2 42.9 1555.8 46.5 1553.3 48.5C1552.3 49.3 1551 49.7 1549.8 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 87.4996C1606 87.4996 1603.4 84.9997 1603.4 81.7997C1603.4 78.5997 1605.9 76.0996 1609.1 76.0996C1612.3 76.0996 1614.8 78.5997 1614.8 81.7997C1614.8 84.9997 1612.3 87.4996 1609.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1579.4 76.3997C1578.3 76.3997 1577.2 76.0997 1576.3 75.3997C1576.2 75.2997 1576.1 75.2996 1576 75.1996C1573.5 73.2996 1573 69.7997 1574.9 67.2997C1576.7 64.7997 1580.2 64.2996 1582.7 66.0996C1585.2 67.8996 1585.9 71.2997 1584.2 73.8997C1583.1 75.4997 1581.3 76.3997 1579.4 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1638.8 76.4C1637 76.4 1635.2 75.5 1634.1 73.9C1632.4 71.3 1633.1 67.8999 1635.6 66.0999C1638.1 64.3999 1641.5 64.9 1643.4 67.3C1645.3 69.8 1644.8 73.3999 1642.3 75.1999C1642.2 75.2999 1642.1 75.3 1642 75.4C1641 76.1 1639.9 76.4 1638.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1609.1 87.4996C1606 87.4996 1603.4 84.9997 1603.4 81.7997C1603.4 78.5997 1605.9 76.0996 1609.1 76.0996C1612.3 76.0996 1614.8 78.5997 1614.8 81.7997C1614.8 84.9997 1612.3 87.4996 1609.1 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 49.7002C1667.3 49.7002 1666 49.3003 1665 48.5003C1662.6 46.5003 1662.2 43.0003 1664.1 40.5003C1664.2 40.3003 1664.4 40.1003 1664.6 40.0003C1666.8 37.8003 1670.4 37.9003 1672.6 40.1003C1674.8 42.3003 1674.8 45.8003 1672.7 48.0003C1671.5 49.1003 1670 49.7002 1668.5 49.7002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1638.8 76.4C1637 76.4 1635.3 75.6 1634.2 74C1632.4 71.5 1633 67.9999 1635.5 66.1999C1637.8 64.4999 1641.2 64.8 1643.1 67C1645.2 69.4 1644.9 72.9 1642.6 75C1642.4 75.1 1642.2 75.3 1642.1 75.4C1641 76.1 1639.9 76.4 1638.8 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1698.2 22.9998C1696.6 22.9998 1695.1 22.2998 1693.9 21.0998C1691.8 18.6998 1692.1 15.1998 1694.4 13.0998C1694.6 12.9998 1694.8 12.7998 1694.9 12.6998C1697.5 10.8998 1701 11.5998 1702.7 14.0998C1704.5 16.5998 1703.9 20.0999 1701.4 21.8999C1700.5 22.5999 1699.4 22.9998 1698.2 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1668.5 49.6999C1667 49.6999 1665.6 49.0999 1664.5 47.9999C1662.3 45.7999 1662.3 42.2999 1664.4 40.0999C1666.4 37.9999 1669.7 37.6999 1672.1 39.5999C1674.5 41.5999 1674.9 45.0999 1673 47.5999C1672.9 47.7999 1672.7 47.9999 1672.5 48.0999C1671.4 49.0999 1669.9 49.6999 1668.5 49.6999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 11.9C1724.8 11.9 1722.2 9.39995 1722.2 6.19995C1722.2 2.99995 1724.7 0.5 1727.9 0.5C1731.1 0.5 1733.6 2.99995 1733.6 6.19995C1733.6 9.39995 1731 11.9 1727.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1698.2 22.8999C1696.5 22.8999 1694.8 22.0999 1693.7 20.5999C1691.8 18.0999 1692.3 14.4999 1694.8 12.6999C1694.9 12.5999 1695 12.5999 1695.1 12.4999C1697.7 10.7999 1701.2 11.4999 1703 14.0999C1704.7 16.6999 1704 20.0999 1701.5 21.8999C1700.5 22.5999 1699.3 22.8999 1698.2 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1757.6 22.8999C1756.5 22.8999 1755.3 22.5999 1754.4 21.8999C1751.9 20.0999 1751.2 16.6999 1752.9 14.0999C1754.6 11.4999 1758.2 10.7999 1760.8 12.4999C1760.9 12.5999 1761 12.5999 1761.1 12.6999C1763.6 14.5999 1764.1 18.0999 1762.2 20.5999C1761 22.1999 1759.3 22.8999 1757.6 22.8999Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1727.9 11.9C1724.8 11.9 1722.2 9.39995 1722.2 6.19995C1722.2 2.99995 1724.7 0.5 1727.9 0.5C1731.1 0.5 1733.6 2.99995 1733.6 6.19995C1733.6 9.39995 1731 11.9 1727.9 11.9Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1783.3 48.0997C1783.1 47.8997 1783 47.7997 1782.8 47.5997C1780.8 45.1997 1781.2 41.5997 1783.7 39.5997C1786.1 37.5997 1789.7 37.9998 1791.7 40.4998L1787.3 44.0997L1783.3 48.0997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1757.6 22.9998C1756.4 22.9998 1755.2 22.5999 1754.2 21.8999C1751.7 20.0999 1751.1 16.5998 1752.9 14.0998C1754.7 11.5998 1758.2 10.8998 1760.7 12.6998C1760.9 12.7998 1761.1 12.9998 1761.2 13.0998C1763.6 15.1998 1763.8 18.6998 1761.7 21.0998C1760.7 22.2998 1759.2 22.9998 1757.6 22.9998Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1816.9 76.4C1815.8 76.4 1814.7 76.1 1813.7 75.4C1813.5 75.3 1813.3 75.1 1813.2 75C1810.8 72.9 1810.6 69.4 1812.7 67C1814.7 64.8 1818 64.4 1820.3 66.2C1822.8 68 1823.4 71.5 1821.6 74C1820.5 75.6 1818.7 76.4 1816.9 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1787.3 49.7C1785.6 49.7 1784 49 1782.9 47.6L1787.3 44L1791.3 40C1791.4 40.1 1791.6 40.3 1791.7 40.5C1793.7 42.9 1793.3 46.5 1790.8 48.5C1789.8 49.3 1788.5 49.7 1787.3 49.7Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 87.4996C1843.5 87.4996 1840.9 84.9997 1840.9 81.7997C1840.9 78.5997 1843.4 76.0996 1846.6 76.0996C1849.8 76.0996 1852.3 78.5997 1852.3 81.7997C1852.3 84.9997 1849.8 87.4996 1846.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1816.9 76.3997C1815.8 76.3997 1814.7 76.0997 1813.8 75.3997C1813.7 75.2997 1813.6 75.2996 1813.5 75.1996C1811 73.2996 1810.5 69.7997 1812.4 67.2997C1814.2 64.7997 1817.7 64.2996 1820.2 66.0996C1822.7 67.8996 1823.4 71.2997 1821.7 73.8997C1820.6 75.4997 1818.8 76.3997 1816.9 76.3997Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1876.3 76.4C1874.5 76.4 1872.7 75.5 1871.6 73.9C1869.9 71.3 1870.6 67.8999 1873.1 66.0999C1875.6 64.3999 1879 64.9 1880.9 67.3C1882.8 69.8 1882.3 73.3999 1879.8 75.1999C1879.7 75.2999 1879.6 75.3 1879.5 75.4C1878.5 76.1 1877.4 76.4 1876.3 76.4Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1846.6 87.4996C1843.5 87.4996 1840.9 84.9997 1840.9 81.7997C1840.9 78.5997 1843.4 76.0996 1846.6 76.0996C1849.8 76.0996 1852.3 78.5997 1852.3 81.7997C1852.3 84.9997 1849.8 87.4996 1846.6 87.4996Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1906 49.7002C1904.8 49.7002 1903.5 49.3003 1902.5 48.5003C1900.1 46.5003 1899.7 43.0003 1901.6 40.5003C1901.7 40.3003 1901.9 40.1003 1902.1 40.0003C1904.3 37.8003 1907.9 37.9003 1910.1 40.1003C1912.3 42.3003 1912.3 45.8003 1910.2 48.0003C1909 49.1003 1907.5 49.7002 1906 49.7002Z", fill: "white" }), /* @__PURE__ */ h.createElement("path", { d: "M1876.3 76.4C1874.5 76.4 1872.8 75.6 1871.7 74C1869.9 71.5 1870.5 67.9999 1873 66.1999C1875.3 64.4999 1878.7 64.8 1880.6 67C1882.7 69.4 1882.4 72.9 1880.1 75C1879.9 75.1 1879.7 75.3 1879.6 75.4C1878.5 76.1 1877.4 76.4 1876.3 76.4Z", fill: "white" }))), Gr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-auto", viewBox: "0 0 9 58", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("path", { d: "M1.5 33.6703V3.3297L7.5 0.758269V36.2417L1.5 33.6703Z", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 38L8 41", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 42L8 45", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 46L8 49", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 50L8 53", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M1 54L8 57", stroke: "#FA0" })), Xr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 199 9", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("g", { clipPath: "url(#clip0_7_435)" }, /* @__PURE__ */ h.createElement("path", { d: "M155.972 1.53072L160.58 8.00772L1.17693 8.00772L7.04054 1.53196L8.67103 3.42271L8.82062 3.59617H9.04968L153.55 3.59617H153.746L153.89 3.46273L155.972 1.53072Z", stroke: "#FA0" }), /* @__PURE__ */ h.createElement("path", { d: "M31.5497 1.93656L20.0497 1.93656L10.5497 1.93656L9.04968 0.00386047L154.05 0.00386047L152.05 1.93656L43.0497 1.93656L31.5497 1.93656Z", fill: "#Fa0" })), /* @__PURE__ */ h.createElement("defs", null, /* @__PURE__ */ h.createElement("clipPath", { id: "clip0_7_435" }, /* @__PURE__ */ h.createElement("rect", { width: 9, height: 161, fill: "white", transform: "matrix(0 1 -1 0 161.525 0)" })))), qr = (l) => /* @__PURE__ */ h.createElement("svg", { className: "w-full h-full", viewBox: "0 0 80 9", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...l }, /* @__PURE__ */ h.createElement("path", { d: "M5.87329 1.02452L0.904968 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M11.8416 1.02452L6.87329 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M17.8099 1.02452L12.8416 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M23.7783 1.02452L18.8099 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M29.7466 1.02452L24.7783 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M35.7149 1.02452L30.7466 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M41.6832 1.02452L36.7149 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M47.6516 1.02452L42.6832 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M53.6199 1.02452L48.6515 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M59.5882 1.02452L54.6199 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M65.5565 1.02452L60.5882 7.97547", stroke: "#FA0", strokeWidth: 1.5 }), /* @__PURE__ */ h.createElement("path", { d: "M71.5248 1.02452L66.5565 7.97547", stroke: "#FA0", strokeWidth: 1.5 }));
+function Jr(l, e) {
+  if (!l.current) return;
+  let t = "x", r = "-100%";
+  switch (e) {
+    case "top":
+      t = "y", r = "-100%";
+      break;
+    case "bottom":
+      t = "y", r = "100%";
+      break;
+    case "right":
+      t = "x", r = "100%";
+      break;
+    case "left":
+    default:
+      t = "x", r = "-100%";
+      break;
+  }
+  D.from(l.current, {
+    [t]: r,
+    // Move from this coordinate
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out"
+  });
+}
+const Re = ({ children: l, label: e, limit: t, textSize: r }) => {
   const [i, n] = v1("0");
   return q9(() => {
     const s = setInterval(() => {
@@ -2952,22 +2979,17 @@ const ti = ({
       }
     )
   ] });
-}, ai = ({ width: l, height: e }) => {
-  const t = _e(null), r = _e(null), [i, n] = v1({ text: 12, header: 24, sidePx: 13 });
+}, li = ({ width: l, height: e, appear: t }) => {
+  const r = _e(null), i = _e(null), [n, s] = v1({ text: 12, header: 24, sidePx: 13 });
   return q9(() => {
-    const s = new ResizeObserver((a) => {
-      for (const o of a) {
-        const f = o.target.getBoundingClientRect().width;
-        let u;
-        f < 300 ? u = { text: 4, header: 10, sidePx: 13 } : f >= 300 && f < 600 ? u = { text: 5, header: 18, sidePx: 16 } : f >= 600 && f < 900 ? u = { text: 10, header: 32, sidePx: 25 } : u = { text: 12, header: 38, sidePx: 28 }, n(u);
+    const a = new ResizeObserver((o) => {
+      for (const f of o) {
+        const u = f.target.getBoundingClientRect().width;
+        let d;
+        u < 300 ? d = { text: 4, header: 10, sidePx: 13 } : u >= 300 && u < 600 ? d = { text: 8, header: 18, sidePx: 16 } : u >= 600 && u < 900 ? d = { text: 12, header: 32, sidePx: 25 } : d = { text: 14, header: 38, sidePx: 28 }, s(d);
       }
     });
-    return r.current && s.observe(r.current), r.current && D.from(r.current, {
-      x: "-100%",
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.out"
-    }), t.current && (D.to("#mask-rect", {
+    return i.current && a.observe(i.current), t && Jr(i, t), r.current && (D.to("#mask-rect", {
       x: 931,
       // Двигаем маску справа налево
       duration: 8,
@@ -2995,14 +3017,14 @@ const ti = ({
       repeat: -1,
       ease: "linear",
       modifiers: {
-        x: D.utils.unitize((a) => parseFloat(a) % 1300)
+        x: D.utils.unitize((o) => parseFloat(o) % 1300)
         // Keep x within range
       }
-    })), () => s.disconnect();
+    })), () => a.disconnect();
   }, []), /* @__PURE__ */ x.jsxs(
     "div",
     {
-      ref: r,
+      ref: i,
       style: { width: l, height: e },
       className: "font-[Oxanium] text-white flex gap-1 flex-row",
       children: [
@@ -3010,7 +3032,7 @@ const ti = ({
           "div",
           {
             className: "flex flex-col justify-center",
-            style: { minWidth: `${i.sidePx}px`, maxWidth: `${i.sidePx}px` },
+            style: { minWidth: `${n.sidePx}px`, maxWidth: `${n.sidePx}px` },
             children: /* @__PURE__ */ x.jsx(Gr, {})
           }
         ),
@@ -3021,42 +3043,42 @@ const ti = ({
           ] }),
           /* @__PURE__ */ x.jsxs("div", { className: "flex flex-row h-[70%] p-1 gap-1", children: [
             /* @__PURE__ */ x.jsxs("div", { className: "flex flex-col w-[50%]", children: [
-              /* @__PURE__ */ x.jsx("div", { style: { fontSize: `${i.header}px` }, children: "SOLAR ENERGY" }),
+              /* @__PURE__ */ x.jsx("div", { style: { fontSize: `${n.header}px` }, children: "SOLAR ENERGY" }),
               /* @__PURE__ */ x.jsx("div", { className: "h-1/2", children: /* @__PURE__ */ x.jsx($r, {}) })
             ] }),
             /* @__PURE__ */ x.jsxs("div", { className: "flex flex-row p-1 justify-between w-[50%]", children: [
               /* @__PURE__ */ x.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 50.5, label: "SPEC-" }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 100, label: "PV-CAP " }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 100, label: "SOL-CHR ", children: "%" })
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 50.5, label: "SPEC-" }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 100, label: "PV-CAP " }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 100, label: "SOL-CHR ", children: "%" })
               ] }),
               /* @__PURE__ */ x.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 9.8, label: "PHOTON-INT " }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 220, label: "VOLT-REG " }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 14.5, label: "AUX-ENG " })
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 9.8, label: "PHOTON-INT " }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 220, label: "VOLT-REG " }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 14.5, label: "AUX-ENG " })
               ] }),
               /* @__PURE__ */ x.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 99.8, label: "SYN-SAT " }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 99.9, label: "BATT-OPT ", children: "%" }),
-                /* @__PURE__ */ x.jsx(Re, { textSize: i.text, limit: 50.5, label: "ION-FREQ " })
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 99.8, label: "SYN-SAT " }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 99.9, label: "BATT-OPT ", children: "%" }),
+                /* @__PURE__ */ x.jsx(Re, { textSize: n.text, limit: 50.5, label: "ION-FREQ " })
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ x.jsx("div", { className: "mt-auto", children: /* @__PURE__ */ x.jsx(Ur, { ref: t }) })
+          /* @__PURE__ */ x.jsx("div", { className: "mt-auto", children: /* @__PURE__ */ x.jsx(Ur, { ref: r }) })
         ] })
       ]
     }
   );
 };
 export {
-  ti as ButtonFinger,
-  ni as Card,
-  si as CircleIndicator,
-  Qr as EvaBorderPanel,
-  ri as EvaOptionList,
-  Kr as EvaProgressBar,
+  ri as ButtonFinger,
+  si as Card,
+  ai as CircleIndicator,
+  Kr as EvaBorderPanel,
+  ii as EvaOptionList,
+  ei as EvaProgressBar,
   Br as EvaTilePanel,
-  ei as EvaUnitBox,
-  ii as GeometricLayout,
-  ai as LoadingBattery
+  ti as EvaUnitBox,
+  ni as GeometricLayout,
+  li as LoadingBattery
 };

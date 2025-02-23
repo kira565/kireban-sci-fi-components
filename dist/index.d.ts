@@ -94,6 +94,7 @@ export declare const LoadingBattery: React.FC<LoadingBatteryProps>;
 declare interface LoadingBatteryProps {
     width: string;
     height?: string;
+    appear?: 'top' | 'left' | 'bottom' | 'right';
 }
 
 export { }
