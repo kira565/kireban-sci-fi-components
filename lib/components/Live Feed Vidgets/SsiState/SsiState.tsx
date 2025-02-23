@@ -57,19 +57,37 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
       },
       ease: 'power1.inOut' // Smooth easing
     });
+
+    const artifacts = gsap.utils.toArray('.artifact');
+
+    gsap.to(artifacts, {
+      opacity: 0,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      stagger: {
+        each: 0.1,
+        from: 'random'
+      },
+      ease: 'bounce.inOut'
+    });
   }, []);
 
   return (
-    <div style={{ width, height }} className="border-[0.5px] border-evaTextWarning p-4">
+    <div
+      style={{ width, height }}
+      className="border-[0.5px] border-opacity-50 border-evaTextWarning pl-6 pr-1 pt-2 pb-2 dark:bg-black bg-transparent">
       <Globe ref={globeRef} />
     </div>
   );
 };
-//#010101
-//#090909
-//#0D0D0D
-//#050505
-//#070707
-//#0C0C0C
-//#0B0B0B
-//#0A0A0A
+
+//2
+//Latitude: 50.0°
+//Longitude: 155.0°
+//northwestern Pacific Ocean.
+
+//1
+// Here are the latitude and longitude coordinates for the red point (ISS position) on this screen:
+// Latitude: 45.0°
+// Longitude: 160.0°
