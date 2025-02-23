@@ -2,17 +2,24 @@ import { useEffect, useRef } from 'react';
 import Globe from '../../../assets/svg/modular_parts/GLOBE.svg?react';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { AppearDirection, appearFrom } from '../../../utils';
 
 export interface SsiStateProps {
   width?: string;
   height?: string;
+  appear?: AppearDirection;
 }
 
-export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
+export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => {
   const globeRef = useRef(null);
+  const panelRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(MotionPathPlugin);
+
+    if (appear) {
+      appearFrom(panelRef, appear);
+    }
 
     if (!globeRef.current) return;
     const selector = gsap.utils.selector(globeRef.current);
@@ -75,6 +82,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height }) => {
 
   return (
     <div
+      ref={panelRef}
       style={{ width, height }}
       className="border-[0.5px] border-opacity-50 border-evaTextWarning pl-6 pr-1 pt-2 pb-2 dark:bg-black bg-transparent">
       <Globe ref={globeRef} />

@@ -1,3 +1,5 @@
+declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
+
 export declare const ButtonFinger: React.FC<ButtonFingerProps>;
 
 declare interface ButtonFingerProps {
@@ -95,6 +97,14 @@ declare interface LoadingBatteryProps {
     width: string;
     height?: string;
     appear?: 'top' | 'left' | 'bottom' | 'right';
+}
+
+export declare const SsiState: React.FC<SsiStateProps>;
+
+declare interface SsiStateProps {
+    width?: string;
+    height?: string;
+    appear?: AppearDirection;
 }
 
 export { }

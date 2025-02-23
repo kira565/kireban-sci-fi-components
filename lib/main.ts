@@ -9,5 +9,6 @@ export { EvaTilePanel } from './components/EvaTilePanel/EvaTilePanel';
 export { EvaOptionList } from './components/EvaOptionList/EvaOptionList';
 export { GeometricLayout } from './components/GeometricLayout/GeometricLayout';
 export { Card } from './components/Card/Card';
-export { CircleIndicator } from './components/Live Feed Vidgets/CircleIndicator/CircleIndIcator';
-export { LoadingBattery } from './components/Live Feed Vidgets/LoadingBattery/LoadingBattery';
+export { CircleIndicator } from './components/LiveFeedVidgets/CircleIndicator/CircleIndIcator';
+export { LoadingBattery } from './components/LiveFeedVidgets/LoadingBattery/LoadingBattery';
+export { SsiState } from './components/LiveFeedVidgets/SsiState/SsiState';

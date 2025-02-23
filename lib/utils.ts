@@ -1,8 +1,8 @@
 import gsap from 'gsap';
-export function appearFrom(
-  ref: React.RefObject<HTMLElement | null>,
-  direction: 'top' | 'left' | 'bottom' | 'right'
-) {
+
+export type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
+
+export function appearFrom(ref: React.RefObject<HTMLElement | null>, direction: AppearDirection) {
   if (!ref.current) return;
 
   let coord: string = 'x';
