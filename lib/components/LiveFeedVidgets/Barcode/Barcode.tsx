@@ -2,12 +2,12 @@ import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 import { appearFrom } from '../../../utils';
 export interface BarcodeProps {
-  fill: string;
-  width: string;
+  fill?: string;
+  width?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
 }
 
-export const Barcode: React.FC<BarcodeProps> = ({ fill, width, appear }) => {
+export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear }) => {
   const pointsRef = useRef(null);
   const containerRef = useRef(null);
 

@@ -3657,7 +3657,7 @@ const X8 = ({ width: o, height: L, appear: e }) => {
       children: /* @__PURE__ */ k.jsx(r8, { ref: r })
     }
   );
-}, q8 = ({ fill: o, width: L, appear: e }) => {
+}, q8 = ({ fill: o = "#fa0", width: L, appear: e }) => {
   const r = r1(null), i = r1(null);
   return T2(() => {
     const n = O.utils.toArray("#points rect");
