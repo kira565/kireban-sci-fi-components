@@ -15,7 +15,6 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
   const panelRef = useRef(null);
 
   useEffect(() => {
-    console.log('SSI STATE RENDER');
     gsap.registerPlugin(MotionPathPlugin);
 
     if (appear) {

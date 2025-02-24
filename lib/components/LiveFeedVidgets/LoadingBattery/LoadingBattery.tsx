@@ -1,8 +1,5 @@
 import SolarChargeSvg from '../../../assets/svg/solar-charge.svg?react';
 import SolarGraph from '../../../assets/svg/graph.svg?react';
-import Border from '../../../assets/svg/modular_parts/border.svg?react';
-import BorderT1 from '../../../assets/svg/modular_parts/bordert1.svg?react';
-import BorderT2 from '../../../assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
 import { appearFrom } from '../../../utils';
@@ -56,22 +53,21 @@ export const Tile: React.FC<{
 export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, appear }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
-  const [scale, setScale] = useState({ text: 12, header: 24, sidePx: 13 });
+  const [scale, setScale] = useState({ text: 12, header: 24 });
 
   useEffect(() => {
-    console.log('BATTERY RENDER');
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
         let newScale;
-        if (containerWidth < 300) {
-          newScale = { text: 4, header: 10, sidePx: 13 }; // small
-        } else if (containerWidth >= 300 && containerWidth < 600) {
-          newScale = { text: 8, header: 18, sidePx: 16 }; // med
+        if (containerWidth < 350) {
+          newScale = { text: 5, header: 18 }; // small
+        } else if (containerWidth >= 350 && containerWidth < 600) {
+          newScale = { text: 7, header: 25 }; // med
         } else if (containerWidth >= 600 && containerWidth < 900) {
-          newScale = { text: 12, header: 32, sidePx: 25 }; // Large
+          newScale = { text: 12, header: 32 }; // Large
         } else {
-          newScale = { text: 14, header: 38, sidePx: 28 }; // ExtraLarge
+          newScale = { text: 14, header: 38 }; // ExtraLarge
         }
 
         setScale(newScale);
@@ -119,21 +115,8 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
     <div
       ref={panelRef}
       style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
-      className="font-[Oxanium] text-white flex gap-1 flex-row">
-      <div
-        className="flex flex-col justify-center"
-        style={{ minWidth: `${scale.sidePx}px`, maxWidth: `${scale.sidePx}px` }}>
-        <Border />
-      </div>
-      <div className="flex-col flex">
-        <div className="max-h-[10%] flex">
-          <div className="w-[30%]">
-            <BorderT2 />
-          </div>
-          <div className="w-[70%]">
-            <BorderT1 />
-          </div>
-        </div>
+      className="font-[Oxanium] text-white flex gap-1 flex-row dark:bg-black bg-transparent w-full border-[0.5px] border-opacity-50 border-evaTextWarning p-1">
+      <div className="flex-col flex w-full">
         <div className="flex flex-row h-[70%] p-1 gap-1">
           <div className="flex flex-col w-[50%]">
             <div style={{ fontSize: `${scale.header}px` }}>SOLAR ENERGY</div>
