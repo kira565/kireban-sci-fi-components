@@ -12,3 +12,4 @@ export { Card } from './components/Card/Card';
 export { CircleIndicator } from './components/LiveFeedVidgets/CircleIndicator/CircleIndIcator';
 export { LoadingBattery } from './components/LiveFeedVidgets/LoadingBattery/LoadingBattery';
 export { SsiState } from './components/LiveFeedVidgets/SsiState/SsiState';
+export { Barcode } from './components/LiveFeedVidgets/Barcode/Barcode';

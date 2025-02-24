@@ -1,5 +1,13 @@
 declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
 
+export declare const Barcode: React.FC<BarcodeProps>;
+
+declare interface BarcodeProps {
+    fill: string;
+    width: string;
+    appear?: 'top' | 'left' | 'bottom' | 'right';
+}
+
 export declare const ButtonFinger: React.FC<ButtonFingerProps>;
 
 declare interface ButtonFingerProps {
