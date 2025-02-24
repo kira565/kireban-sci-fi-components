@@ -28,10 +28,19 @@ export function appearFrom(ref: React.RefObject<HTMLElement | null>, direction: 
       break;
   }
 
-  gsap.from(ref.current, {
-    [coord]: coordVal, // Move from this coordinate
-    opacity: 0,
-    duration: 0.6,
-    ease: 'power3.out'
-  });
+  gsap.fromTo(
+    ref.current,
+    {
+      [coord]: coordVal, // Move from this coordinate
+      opacity: 0,
+      ease: 'power3.out',
+      visibility: 'visible'
+    },
+    {
+      [coord]: '0%',
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }
+  );
 }

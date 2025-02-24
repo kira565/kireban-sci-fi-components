@@ -118,7 +118,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
   return (
     <div
       ref={panelRef}
-      style={{ width, height }}
+      style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
       className="font-[Oxanium] text-white flex gap-1 flex-row">
       <div
         className="flex flex-col justify-center"

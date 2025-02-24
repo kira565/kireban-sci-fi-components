@@ -2946,13 +2946,22 @@ function h5(l, L) {
       e = "x", r = "-100%";
       break;
   }
-  O.from(l.current, {
-    [e]: r,
-    // Move from this coordinate
-    opacity: 0,
-    duration: 0.6,
-    ease: "power3.out"
-  });
+  O.fromTo(
+    l.current,
+    {
+      [e]: r,
+      // Move from this coordinate
+      opacity: 0,
+      ease: "power3.out",
+      visibility: "visible"
+    },
+    {
+      [e]: "0%",
+      opacity: 1,
+      duration: 0.6,
+      ease: "power3.out"
+    }
+  );
 }
 const F1 = ({ children: l, label: L, limit: e, textSize: r }) => {
   const [i, n] = h4("0");
@@ -3026,7 +3035,7 @@ const F1 = ({ children: l, label: L, limit: e, textSize: r }) => {
     "div",
     {
       ref: i,
-      style: { width: l, height: L },
+      style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
       className: "font-[Oxanium] text-white flex gap-1 flex-row",
       children: [
         /* @__PURE__ */ H.jsx(
@@ -3643,7 +3652,7 @@ const X8 = ({ width: l, height: L, appear: e }) => {
     "div",
     {
       ref: i,
-      style: { width: l, height: L },
+      style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
       className: "border-[0.5px] border-opacity-50 border-evaTextWarning pl-6 pr-1 pt-2 pb-2 dark:bg-black bg-transparent",
       children: /* @__PURE__ */ H.jsx(r8, { ref: r })
     }
