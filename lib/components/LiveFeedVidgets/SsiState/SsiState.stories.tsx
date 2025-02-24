@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: '20%',
+    width: '40%',
     appear: 'left'
   }
 };

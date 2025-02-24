@@ -2995,7 +2995,7 @@ const B1 = ({ children: l, label: L, limit: e, textSize: r }) => {
       for (const s of c) {
         const h = s.target.getBoundingClientRect().width;
         let C;
-        h < 350 ? C = { text: 5, header: 18 } : h >= 350 && h < 600 ? C = { text: 7, header: 25 } : h >= 600 && h < 900 ? C = { text: 12, header: 32 } : C = { text: 14, header: 38 }, a(C);
+        h < 300 ? C = { text: 3, header: 10 } : h >= 300 && h < 390 ? C = { text: 5, header: 18 } : h >= 390 && h < 640 ? C = { text: 7, header: 25 } : h >= 640 && h < 900 ? C = { text: 12, header: 32 } : C = { text: 14, header: 38 }, a(C);
       }
     });
     return i.current && o.observe(i.current), e && v3(i, e), r.current && (O.to("#mask-rect", {
@@ -3042,7 +3042,7 @@ const B1 = ({ children: l, label: L, limit: e, textSize: r }) => {
             /* @__PURE__ */ k.jsx("div", { style: { fontSize: `${n.header}px` }, children: "SOLAR ENERGY" }),
             /* @__PURE__ */ k.jsx("div", { className: "h-1/2", children: /* @__PURE__ */ k.jsx(K7, {}) })
           ] }),
-          /* @__PURE__ */ k.jsxs("div", { className: "flex flex-row p-1 justify-between w-[50%]", children: [
+          /* @__PURE__ */ k.jsxs("div", { className: "flex flex-row p-[1%] justify-between w-[50%]", children: [
             /* @__PURE__ */ k.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
               /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 50.5, label: "SPEC-" }),
               /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 100, label: "PV-CAP " }),
@@ -3638,7 +3638,7 @@ const Y8 = ({ width: l, height: L, appear: e }) => {
     {
       ref: i,
       style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
-      className: "border-[0.5px] border-opacity-50 border-evaTextWarning pl-6 pr-1 pt-2 pb-2 dark:bg-black bg-transparent",
+      className: "border-[0.5px] border-opacity-50 border-evaTextWarning pl-[2%] pr-1 pt-2 pb-2 dark:bg-black bg-transparent",
       children: /* @__PURE__ */ k.jsx(L8, { ref: r })
     }
   );

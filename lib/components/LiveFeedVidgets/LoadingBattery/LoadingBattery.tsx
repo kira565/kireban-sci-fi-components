@@ -60,11 +60,13 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
         let newScale;
-        if (containerWidth < 350) {
+        if (containerWidth < 300) {
+          newScale = { text: 3, header: 10 };
+        } else if (containerWidth >= 300 && containerWidth < 390) {
           newScale = { text: 5, header: 18 }; // small
-        } else if (containerWidth >= 350 && containerWidth < 600) {
+        } else if (containerWidth >= 390 && containerWidth < 640) {
           newScale = { text: 7, header: 25 }; // med
-        } else if (containerWidth >= 600 && containerWidth < 900) {
+        } else if (containerWidth >= 640 && containerWidth < 900) {
           newScale = { text: 12, header: 32 }; // Large
         } else {
           newScale = { text: 14, header: 38 }; // ExtraLarge
@@ -124,7 +126,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
               <SolarGraph />
             </div>
           </div>
-          <div className="flex flex-row p-1 justify-between w-[50%]">
+          <div className="flex flex-row p-[1%] justify-between w-[50%]">
             <div className="flex flex-col h-full justify-between w-1/3">
               <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
               <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
