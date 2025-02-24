@@ -2988,17 +2988,22 @@ const B1 = ({ children: l, label: L, limit: e, textSize: r }) => {
       }
     )
   ] });
-}, $8 = ({ width: l, height: L, appear: e }) => {
-  const r = r1(null), i = r1(null), [n, a] = d4({ text: 12, header: 24, showLabels: !0 });
+}, $8 = ({
+  width: l,
+  height: L,
+  appear: e,
+  chargingComplited: r
+}) => {
+  const i = r1(null), n = r1(null), [a, o] = d4({ text: 12, header: 24, showLabels: !0 });
   return T2(() => {
-    const o = new ResizeObserver((c) => {
-      for (const s of c) {
-        const h = s.target.getBoundingClientRect().width;
-        let C;
-        h < 170 ? C = { text: 2, header: 8, showLabels: !1 } : h >= 170 && h < 230 ? C = { text: 3, header: 8, showLabels: !0 } : h >= 230 && h < 390 ? C = { text: 5, header: 12, showLabels: !0 } : h >= 390 && h < 640 ? C = { text: 7, header: 18, showLabels: !0 } : h >= 640 && h < 900 ? C = { text: 12, header: 32, showLabels: !0 } : C = { text: 14, header: 38, showLabels: !0 }, a(C);
+    const c = new ResizeObserver((s) => {
+      for (const h of s) {
+        const C = h.target.getBoundingClientRect().width;
+        let f;
+        C < 170 ? f = { text: 2, header: 8, showLabels: !1 } : C >= 170 && C < 230 ? f = { text: 3, header: 8, showLabels: !0 } : C >= 230 && C < 390 ? f = { text: 5, header: 12, showLabels: !0 } : C >= 390 && C < 640 ? f = { text: 7, header: 18, showLabels: !0 } : C >= 640 && C < 900 ? f = { text: 12, header: 32, showLabels: !0 } : f = { text: 14, header: 38, showLabels: !0 }, o(f);
       }
     });
-    return i.current && o.observe(i.current), e && v3(i, e), r.current && (O.to("#mask-rect", {
+    return n.current && c.observe(n.current), e && v3(n, e), i.current && (O.to("#mask-rect", {
       x: 931,
       // Двигаем маску справа налево
       duration: 8,
@@ -3017,7 +3022,7 @@ const B1 = ({ children: l, label: L, limit: e, textSize: r }) => {
           // Возвращаем обратно
           ease: "sine.inOut"
           // Мягкое появление и исчезновение
-        });
+        }), r && r();
       }
     }), O.to("#solar-graph", {
       x: "-=1300",
@@ -3026,41 +3031,41 @@ const B1 = ({ children: l, label: L, limit: e, textSize: r }) => {
       repeat: -1,
       ease: "linear",
       modifiers: {
-        x: O.utils.unitize((c) => parseFloat(c) % 1300)
+        x: O.utils.unitize((s) => parseFloat(s) % 1300)
         // Keep x within range
       }
-    })), () => o.disconnect();
+    })), () => c.disconnect();
   }, [e]), /* @__PURE__ */ k.jsx(
     "div",
     {
-      ref: i,
+      ref: n,
       style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
       className: "font-[Oxanium] text-white flex gap-1 flex-row dark:bg-black bg-transparent w-full border-[0.5px] border-opacity-50 border-evaTextWarning p-1",
       children: /* @__PURE__ */ k.jsxs("div", { className: "flex-col flex w-full", children: [
         /* @__PURE__ */ k.jsxs("div", { className: "flex flex-row h-[70%] p-[2%] gap-1", children: [
           /* @__PURE__ */ k.jsxs("div", { className: "flex flex-col w-[100%]", children: [
-            /* @__PURE__ */ k.jsx("div", { style: { fontSize: `${n.header}px` }, children: "SOLAR ENERGY" }),
+            /* @__PURE__ */ k.jsx("div", { style: { fontSize: `${a.header}px` }, children: "SOLAR ENERGY" }),
             /* @__PURE__ */ k.jsx("div", { className: "h-1/2", children: /* @__PURE__ */ k.jsx(K7, {}) })
           ] }),
-          n.showLabels && /* @__PURE__ */ k.jsxs("div", { className: "flex flex-row p-[1%] justify-between w-[60%]", children: [
+          a.showLabels && /* @__PURE__ */ k.jsxs("div", { className: "flex flex-row p-[1%] justify-between w-[60%]", children: [
             /* @__PURE__ */ k.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 50.5, label: "SPEC-" }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 100, label: "PV-CAP " }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 100, label: "SOL-CHR ", children: "%" })
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 50.5, label: "SPEC-" }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 100, label: "PV-CAP " }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 100, label: "SOL-CHR ", children: "%" })
             ] }),
             /* @__PURE__ */ k.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 9.8, label: "PHOTON-INT " }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 220, label: "VOLT-REG " }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 14.5, label: "AUX-ENG " })
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 9.8, label: "PHOTON-INT " }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 220, label: "VOLT-REG " }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 14.5, label: "AUX-ENG " })
             ] }),
             /* @__PURE__ */ k.jsxs("div", { className: "flex flex-col h-full justify-between w-1/3", children: [
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 99.8, label: "SYN-SAT " }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 99.9, label: "BATT-OPT ", children: "%" }),
-              /* @__PURE__ */ k.jsx(B1, { textSize: n.text, limit: 50.5, label: "ION-FREQ " })
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 99.8, label: "SYN-SAT " }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 99.9, label: "BATT-OPT ", children: "%" }),
+              /* @__PURE__ */ k.jsx(B1, { textSize: a.text, limit: 50.5, label: "ION-FREQ " })
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ k.jsx("div", { className: "mt-auto", children: /* @__PURE__ */ k.jsx(J7, { ref: r }) })
+        /* @__PURE__ */ k.jsx("div", { className: "mt-auto", children: /* @__PURE__ */ k.jsx(J7, { ref: i }) })
       ] })
     }
   );

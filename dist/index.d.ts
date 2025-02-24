@@ -106,6 +106,7 @@ declare interface LoadingBatteryProps {
     width?: string;
     height?: string;
     appear?: 'top' | 'left' | 'bottom' | 'right';
+    chargingComplited?: () => void;
 }
 
 export declare const SsiState: React.FC<SsiStateProps>;

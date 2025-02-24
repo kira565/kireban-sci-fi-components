@@ -8,6 +8,7 @@ export interface LoadingBatteryProps {
   width?: string;
   height?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
+  chargingComplited?: () => void;
 }
 
 export const Tile: React.FC<{
@@ -50,7 +51,12 @@ export const Tile: React.FC<{
   );
 };
 
-export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, appear }) => {
+export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
+  width,
+  height,
+  appear,
+  chargingComplited
+}) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
   const [scale, setScale] = useState({ text: 12, header: 24, showLabels: true });
@@ -99,6 +105,9 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
             yoyo: true, // Возвращаем обратно
             ease: 'sine.inOut' // Мягкое появление и исчезновение
           });
+          if (chargingComplited) {
+            chargingComplited();
+          }
         }
       });
 
