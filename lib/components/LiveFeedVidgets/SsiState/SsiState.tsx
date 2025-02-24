@@ -84,8 +84,10 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
     <div
       ref={panelRef}
       style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
-      className="border-[0.5px] border-opacity-50 border-evaTextWarning pl-[2%] pr-1 pt-2 pb-2 dark:bg-black bg-transparent">
-      <Globe ref={globeRef} />
+      className="border-[0.5px] border-opacity-50 border-evaTextWarning pr-1 pt-2 pb-2 dark:bg-black bg-transparent">
+      <div className="ml-[8%]">
+        <Globe ref={globeRef} />
+      </div>
     </div>
   );
 };

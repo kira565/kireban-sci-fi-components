@@ -53,23 +53,25 @@ export const Tile: React.FC<{
 export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, appear }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
-  const [scale, setScale] = useState({ text: 12, header: 24 });
+  const [scale, setScale] = useState({ text: 12, header: 24, showLabels: true });
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
         let newScale;
-        if (containerWidth < 300) {
-          newScale = { text: 3, header: 10 };
-        } else if (containerWidth >= 300 && containerWidth < 390) {
-          newScale = { text: 5, header: 18 }; // small
+        if (containerWidth < 170) {
+          newScale = { text: 2, header: 8, showLabels: false };
+        } else if (containerWidth >= 170 && containerWidth < 230) {
+          newScale = { text: 3, header: 8, showLabels: true };
+        } else if (containerWidth >= 230 && containerWidth < 390) {
+          newScale = { text: 5, header: 12, showLabels: true }; // small
         } else if (containerWidth >= 390 && containerWidth < 640) {
-          newScale = { text: 7, header: 25 }; // med
+          newScale = { text: 7, header: 18, showLabels: true }; // med
         } else if (containerWidth >= 640 && containerWidth < 900) {
-          newScale = { text: 12, header: 32 }; // Large
+          newScale = { text: 12, header: 32, showLabels: true }; // Large
         } else {
-          newScale = { text: 14, header: 38 }; // ExtraLarge
+          newScale = { text: 14, header: 38, showLabels: true }; // ExtraLarge
         }
 
         setScale(newScale);
@@ -119,34 +121,36 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
       style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
       className="font-[Oxanium] text-white flex gap-1 flex-row dark:bg-black bg-transparent w-full border-[0.5px] border-opacity-50 border-evaTextWarning p-1">
       <div className="flex-col flex w-full">
-        <div className="flex flex-row h-[70%] p-1 gap-1">
-          <div className="flex flex-col w-[50%]">
+        <div className="flex flex-row h-[70%] p-[2%] gap-1">
+          <div className="flex flex-col w-[100%]">
             <div style={{ fontSize: `${scale.header}px` }}>SOLAR ENERGY</div>
             <div className="h-1/2">
               <SolarGraph />
             </div>
           </div>
-          <div className="flex flex-row p-[1%] justify-between w-[50%]">
-            <div className="flex flex-col h-full justify-between w-1/3">
-              <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
-              <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
-              <Tile textSize={scale.text} limit={100} label="SOL-CHR ">
-                %
-              </Tile>
+          {scale.showLabels && (
+            <div className="flex flex-row p-[1%] justify-between w-[60%]">
+              <div className="flex flex-col h-full justify-between w-1/3">
+                <Tile textSize={scale.text} limit={50.5} label="SPEC-"></Tile>
+                <Tile textSize={scale.text} limit={100} label="PV-CAP "></Tile>
+                <Tile textSize={scale.text} limit={100} label="SOL-CHR ">
+                  %
+                </Tile>
+              </div>
+              <div className="flex flex-col h-full justify-between w-1/3">
+                <Tile textSize={scale.text} limit={9.8} label="PHOTON-INT "></Tile>
+                <Tile textSize={scale.text} limit={220} label="VOLT-REG "></Tile>
+                <Tile textSize={scale.text} limit={14.5} label="AUX-ENG "></Tile>
+              </div>
+              <div className="flex flex-col h-full justify-between w-1/3">
+                <Tile textSize={scale.text} limit={99.8} label="SYN-SAT "></Tile>
+                <Tile textSize={scale.text} limit={99.9} label="BATT-OPT ">
+                  %
+                </Tile>
+                <Tile textSize={scale.text} limit={50.5} label="ION-FREQ "></Tile>
+              </div>
             </div>
-            <div className="flex flex-col h-full justify-between w-1/3">
-              <Tile textSize={scale.text} limit={9.8} label="PHOTON-INT "></Tile>
-              <Tile textSize={scale.text} limit={220} label="VOLT-REG "></Tile>
-              <Tile textSize={scale.text} limit={14.5} label="AUX-ENG "></Tile>
-            </div>
-            <div className="flex flex-col h-full justify-between w-1/3">
-              <Tile textSize={scale.text} limit={99.8} label="SYN-SAT "></Tile>
-              <Tile textSize={scale.text} limit={99.9} label="BATT-OPT ">
-                %
-              </Tile>
-              <Tile textSize={scale.text} limit={50.5} label="ION-FREQ "></Tile>
-            </div>
-          </div>
+          )}
         </div>
         <div className="mt-auto">
           <SolarChargeSvg ref={loadingBarRef}></SolarChargeSvg>
