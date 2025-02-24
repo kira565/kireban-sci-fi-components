@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { appearFrom } from '../../../utils';
 
 export interface LoadingBatteryProps {
-  width: string;
+  width?: string;
   height?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
 }
