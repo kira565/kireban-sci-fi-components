@@ -3657,11 +3657,11 @@ const X8 = ({ width: o, height: L, appear: e }) => {
       children: /* @__PURE__ */ k.jsx(r8, { ref: r })
     }
   );
-}, q8 = ({ fill: o = "#fa0", width: L, appear: e }) => {
-  const r = r1(null), i = r1(null);
+}, q8 = ({ fill: o = "#fa0", width: L, appear: e, opacity: r }) => {
+  const i = r1(null), n = r1(null);
   return T2(() => {
-    const n = O.utils.toArray("#points rect");
-    e && v3(i, e), O.to(n, {
+    const a = O.utils.toArray("#points rect");
+    e && v3(n, e), O.to(a, {
       opacity: 0,
       // Fade out
       duration: 0.2,
@@ -3682,7 +3682,7 @@ const X8 = ({ width: o, height: L, appear: e }) => {
   }, [e]), /* @__PURE__ */ k.jsx(
     "div",
     {
-      ref: i,
+      ref: n,
       style: {
         width: L
       },
@@ -3698,7 +3698,7 @@ const X8 = ({ width: o, height: L, appear: e }) => {
           version: "1.1",
           children: [
             /* @__PURE__ */ k.jsx("rect", { x: "0", y: "0", width: "422", height: "146" }),
-            /* @__PURE__ */ k.jsxs("g", { transform: "translate(10, 10)", fill: o, children: [
+            /* @__PURE__ */ k.jsxs("g", { transform: "translate(10, 10)", fill: o, opacity: r, children: [
               /* @__PURE__ */ k.jsx("rect", { x: "0", y: "0", width: "6", height: "100" }),
               /* @__PURE__ */ k.jsx("rect", { x: "9", y: "0", width: "3", height: "100" }),
               /* @__PURE__ */ k.jsx("rect", { x: "18", y: "0", width: "9", height: "100" }),
@@ -3740,7 +3740,7 @@ const X8 = ({ width: o, height: L, appear: e }) => {
                 "text",
                 {
                   className: "text font-[Oxanium]",
-                  "text-anchor": "middle",
+                  textAnchor: "middle",
                   x: "201",
                   y: "126",
                   fontSize: 18,
@@ -3748,7 +3748,7 @@ const X8 = ({ width: o, height: L, appear: e }) => {
                   children: "107105114971535453"
                 }
               ),
-              /* @__PURE__ */ k.jsxs("g", { ref: r, id: "points", transform: "translate(430, 0)", children: [
+              /* @__PURE__ */ k.jsxs("g", { ref: i, id: "points", transform: "translate(430, 0)", children: [
                 /* @__PURE__ */ k.jsx("rect", { x: "0", y: "0", width: "15", height: "15" }),
                 /* @__PURE__ */ k.jsx("rect", { x: "0", y: "30", width: "15", height: "15" }),
                 /* @__PURE__ */ k.jsx("rect", { x: "0", y: "60", width: "15", height: "15" }),

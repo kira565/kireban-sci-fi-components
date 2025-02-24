@@ -5,9 +5,10 @@ export interface BarcodeProps {
   fill?: string;
   width?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
+  opacity?: string;
 }
 
-export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear }) => {
+export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, opacity }) => {
   const pointsRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -47,7 +48,7 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear }
         version="1.1">
         <rect x="0" y="0" width="422" height="146"></rect>
 
-        <g transform="translate(10, 10)" fill={fill}>
+        <g transform="translate(10, 10)" fill={fill} opacity={opacity}>
           <rect x="0" y="0" width="6" height="100"></rect>
           <rect x="9" y="0" width="3" height="100"></rect>
           <rect x="18" y="0" width="9" height="100"></rect>
@@ -87,7 +88,7 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear }
           <rect x="396" y="0" width="6" height="100"></rect>
           <text
             className="text font-[Oxanium]"
-            text-anchor="middle"
+            textAnchor="middle"
             x="201"
             y="126"
             fontSize={18}

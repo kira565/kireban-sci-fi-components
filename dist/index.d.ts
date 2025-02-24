@@ -6,6 +6,7 @@ declare interface BarcodeProps {
     fill?: string;
     width?: string;
     appear?: 'top' | 'left' | 'bottom' | 'right';
+    opacity?: string;
 }
 
 export declare const ButtonFinger: React.FC<ButtonFingerProps>;
