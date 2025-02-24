@@ -59,6 +59,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
   const [scale, setScale] = useState({ text: 12, header: 24, sidePx: 13 });
 
   useEffect(() => {
+    console.log('BATTERY RENDER');
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
@@ -112,7 +113,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({ width, height, a
       });
     }
     return () => observer.disconnect();
-  }, []);
+  }, [appear]);
 
   return (
     <div
