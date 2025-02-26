@@ -95,7 +95,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
     if (loadingBarRef.current) {
       gsap.to('#mask-rect', {
         x: 931, // Двигаем маску справа налево
-        duration: 8, // Скорость анимации
+        duration: 5, // Скорость анимации
         ease: 'linear', // Плавное движение
         onComplete: () => {
           gsap.to('#loading-content', {
@@ -122,7 +122,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
       });
     }
     return () => observer.disconnect();
-  }, [appear]);
+  }, [appear, chargingComplited]);
 
   return (
     <div
