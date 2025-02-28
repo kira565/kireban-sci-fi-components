@@ -1,5 +1,6 @@
 'use client';
 import './index.css';
+import 'augmented-ui/augmented-ui.min.css';
 
 export { EvaBorderPanel } from './components/EvaBorderPanel/EvaBorderPanel';
 export { EvaProgressBar } from './components/EvaProgressBar/EvaProgressBar';
@@ -13,3 +14,4 @@ export { CircleIndicator } from './components/LiveFeedVidgets/CircleIndicator/Ci
 export { LoadingBattery } from './components/LiveFeedVidgets/LoadingBattery/LoadingBattery';
 export { SsiState } from './components/LiveFeedVidgets/SsiState/SsiState';
 export { Barcode } from './components/LiveFeedVidgets/Barcode/Barcode';
+export { AboutPanel } from './components/AboutPanel/AboutPanel';

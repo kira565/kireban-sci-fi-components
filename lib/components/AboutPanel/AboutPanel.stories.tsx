@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AboutPanel, AboutPanelProps } from './AboutPanel';
+import { AboutPanel } from '../../main';
+import { AboutPanelProps } from './AboutPanel';
 
 const meta = {
   title: 'Component AboutPanel story',
@@ -12,8 +13,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    headerText: 'ABOUT',
-    width: '50%',
+    headerText: 'SECTION NAME: ABOUT',
+    width: '100%',
     height: '100%'
   }
 };

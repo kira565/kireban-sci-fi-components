@@ -1,54 +1,49 @@
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import './AboutHeader.css';
+import DotSquare from '@assets/svg/icons/linesquare.svg?react';
+import { Barcode } from '@/main';
 
 export interface AboutHeaderProps {
   text?: string;
+  colorSchema?: string;
 }
 
-export const AboutHeader: React.FC<AboutHeaderProps> = ({ text }) => {
+export const AboutHeader: React.FC<AboutHeaderProps> = ({ text, colorSchema = '#fa0' }) => {
   const container = useRef(null);
   const textRef = useRef(null);
-  const pointsRef = useRef(null);
-
-  useEffect(() => {
-    gsap.to(container.current, {
-      background: '#fa0',
-      duration: 2
-    });
-  }, []);
 
   return (
-    <div className="d-flex">
-      <div ref={container} className="w-[1%] text-2xl font-bold flex items-center">
-        <span ref={textRef} className="opacity-0">
-          {text}
-        </span>
-        {/* <svg className="w-full h-full">
-          <g ref={pointsRef} id="points" transform="translate(430, 0)">
-            <rect x="0" y="0" width="15" height="15"></rect>
-            <rect x="0" y="30" width="15" height="15"></rect>
-            <rect x="0" y="60" width="15" height="15"></rect>
-            <rect x="0" y="90" width="15" height="15"></rect>
-
-            <rect x="15" y="15" width="15" height="15"></rect>
-            <rect x="15" y="45" width="15" height="15"></rect>
-            <rect x="15" y="75" width="15" height="15"></rect>
-
-            <rect x="30" y="0" width="15" height="15"></rect>
-            <rect x="30" y="30" width="15" height="15"></rect>
-            <rect x="30" y="60" width="15" height="15"></rect>
-            <rect x="30" y="90" width="15" height="15"></rect>
-
-            <rect x="45" y="15" width="15" height="15"></rect>
-            <rect x="45" y="45" width="15" height="15"></rect>
-            <rect x="45" y="75" width="15" height="15"></rect>
-
-            <rect x="60" y="0" width="15" height="15"></rect>
-            <rect x="60" y="30" width="15" height="15"></rect>
-            <rect x="60" y="60" width="15" height="15"></rect>
-            <rect x="60" y="90" width="15" height="15"></rect>
-          </g>
-        </svg> */}
+    <div className="flex h-[70px] relative">
+      <div
+        className="absolute flex justify-end items-end w-[100%] sm:w-[50%] h-[60px]"
+        style={{ height: '1.5rem' }}>
+        <span className="text-xs opacity-50 text-nowrap">CYBERCHECK 229 01223 12312</span>
+      </div>
+      <div
+        ref={container}
+        style={
+          {
+            '--aug-border-bg': colorSchema,
+            '--aug-tr-inset2': 'calc(100% - 70px)'
+          } as React.CSSProperties
+        }
+        className={`flex justify-start header-main h-[full] w-[100%] sm:w-[50%]`}
+        data-augmented-ui="tr-clip-x border">
+        <div className="h-[50px] w-[50px] flex items-center justify-center p-1 pl-2">
+          <div className="h-[35px] w-[35px]">
+            <DotSquare fill={colorSchema} />
+          </div>
+        </div>
+        <div
+          className="w-full mt-auto p-1 flex items-center justify-end"
+          style={{ height: 'calc(100% - 1.5rem)' }}>
+          <span ref={textRef} className="text-sm text-nowrap font-bold ml-2 mr-2">
+            {text}
+          </span>
+        </div>
+      </div>
+      <div className="h-full items-end hidden sm:flex">
+        <Barcode width="58%" />
       </div>
     </div>
   );

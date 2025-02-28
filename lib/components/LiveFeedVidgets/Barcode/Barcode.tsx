@@ -21,12 +21,14 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, 
 
     gsap.to(rects, {
       opacity: 0, // Fade out
-      duration: 0.2, // Animation duration
-      repeat: -1, // Infinite loop
-      yoyo: true, // Makes the animation go back and forth
+      duration: 0.05, // Animation duration
+      delay: gsap.utils.random(0, 1),
       stagger: {
         each: 0.1, // Delay between each rect animation
-        from: 'random' // Random order
+        from: 'random', // Random order
+        repeat: -1,
+        repeatDelay: gsap.utils.random(0, 0.5),
+        yoyo: true
       },
       ease: 'power1.inOut' // Smooth easing
     });

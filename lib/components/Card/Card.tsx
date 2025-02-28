@@ -1,4 +1,3 @@
-import 'augmented-ui';
 import './Card.css';
 
 export interface CardProps {

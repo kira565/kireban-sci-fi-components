@@ -29,6 +29,14 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'), // Output directory.
     emptyOutDir: true // Clear output directory before building.
   },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'lib'),
+      '@components': resolve(__dirname, 'lib/components'),
+      '@assets': resolve(__dirname, 'lib/assets'),
+      '@main': resolve(__dirname, 'lib/main.ts')
+    }
+  },
   plugins: [
     svgr({
       svgrOptions: {
