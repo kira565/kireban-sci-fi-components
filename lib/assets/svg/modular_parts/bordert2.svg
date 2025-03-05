@@ -1,14 +1,14 @@
-<svg class="w-full h-full" viewBox="0 0 80 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5.87329 1.02452L0.904968 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M11.8416 1.02452L6.87329 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M17.8099 1.02452L12.8416 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M23.7783 1.02452L18.8099 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M29.7466 1.02452L24.7783 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M35.7149 1.02452L30.7466 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M41.6832 1.02452L36.7149 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M47.6516 1.02452L42.6832 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M53.6199 1.02452L48.6515 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M59.5882 1.02452L54.6199 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M65.5565 1.02452L60.5882 7.97547" stroke="#FA0" stroke-width="1.5" />
-    <path d="M71.5248 1.02452L66.5565 7.97547" stroke="#FA0" stroke-width="1.5" />
+<svg id="bordert-2" class="w-full h-full" viewBox="0 0 80 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.87329 1.02452L0.904968 7.97547" stroke-width="1.5" />
+    <path d="M11.8416 1.02452L6.87329 7.97547" stroke-width="1.5" />
+    <path d="M17.8099 1.02452L12.8416 7.97547" stroke-width="1.5" />
+    <path d="M23.7783 1.02452L18.8099 7.97547" stroke-width="1.5" />
+    <path d="M29.7466 1.02452L24.7783 7.97547" stroke-width="1.5" />
+    <path d="M35.7149 1.02452L30.7466 7.97547" stroke-width="1.5" />
+    <path d="M41.6832 1.02452L36.7149 7.97547" stroke-width="1.5" />
+    <path d="M47.6516 1.02452L42.6832 7.97547" stroke-width="1.5" />
+    <path d="M53.6199 1.02452L48.6515 7.97547" stroke-width="1.5" />
+    <path d="M59.5882 1.02452L54.6199 7.97547" stroke-width="1.5" />
+    <path d="M65.5565 1.02452L60.5882 7.97547" stroke-width="1.5" />
+    <path d="M71.5248 1.02452L66.5565 7.97547" stroke-width="1.5" />
 </svg>

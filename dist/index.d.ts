@@ -1,4 +1,21 @@
+export declare const AboutHeader: React.FC<AboutHeaderProps>;
+
+declare interface AboutHeaderProps {
+    text?: string;
+    colorSchema?: string;
+    secondText?: string;
+}
+
 declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
+
+export declare const AvatarPanel: React.FC<AvatarPanelProps>;
+
+declare interface AvatarPanelProps {
+    imageSrc?: string;
+    colorSchema?: string;
+    appear?: 'top' | 'left' | 'bottom' | 'right';
+    image: React.ReactNode;
+}
 
 export declare const Barcode: React.FC<BarcodeProps>;
 

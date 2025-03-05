@@ -1,33 +1,39 @@
 import { useRef } from 'react';
 import './AboutHeader.css';
 import DotSquare from '@assets/svg/icons/linesquare.svg?react';
-import { Barcode } from '@/main';
 
 export interface AboutHeaderProps {
   text?: string;
   colorSchema?: string;
+  secondText?: string;
 }
 
-export const AboutHeader: React.FC<AboutHeaderProps> = ({ text, colorSchema = '#fa0' }) => {
+export const AboutHeader: React.FC<AboutHeaderProps> = ({
+  text,
+  colorSchema = '#fa0',
+  secondText
+}) => {
   const container = useRef(null);
   const textRef = useRef(null);
 
   return (
-    <div className="flex h-[70px] relative">
+    <div className="relative dark:text-white w-full h-full">
       <div
-        className="absolute flex justify-end items-end w-[100%] sm:w-[50%] h-[60px]"
+        className="absolute flex justify-end items-end w-full h-[60px]"
         style={{ height: '1.5rem' }}>
-        <span className="text-xs opacity-50 text-nowrap">CYBERCHECK 229 01223 12312</span>
+        <span className="text-xs opacity-50 text-nowrap">{secondText}</span>
       </div>
       <div
         ref={container}
         style={
           {
             '--aug-border-bg': colorSchema,
-            '--aug-tr-inset2': 'calc(100% - 70px)'
+            '--aug-tr-inset2': 'calc(100% - 70px)',
+            '--aug-border-all': '0.8px',
+            '--aug-tr': '1.5rem'
           } as React.CSSProperties
         }
-        className={`flex justify-start header-main h-[full] w-[100%] sm:w-[50%]`}
+        className={`flex justify-start header-main h-full`}
         data-augmented-ui="tr-clip-x border">
         <div className="h-[50px] w-[50px] flex items-center justify-center p-1 pl-2">
           <div className="h-[35px] w-[35px]">
@@ -41,9 +47,6 @@ export const AboutHeader: React.FC<AboutHeaderProps> = ({ text, colorSchema = '#
             {text}
           </span>
         </div>
-      </div>
-      <div className="h-full items-end hidden sm:flex">
-        <Barcode width="58%" />
       </div>
     </div>
   );
