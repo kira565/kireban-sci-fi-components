@@ -15,6 +15,6 @@ export const Default: Story = {
     headerText: 'SECTION NAME: ABOUT',
     width: '100%',
     height: '100%',
-    children: <div className="mt-4">Hello, nice to meet you</div>
+    children: <div className="mt-4"></div>
   }
 };
