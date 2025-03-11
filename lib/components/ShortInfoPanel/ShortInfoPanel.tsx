@@ -1,43 +1,31 @@
+import useSciFiCode from '@/hooks/useSciFiCode';
+import EvaListOption from '../EvaOptionList/EvaListOptionComponent';
+
 export interface ShortInfoPanelProps {
   width?: string;
   height?: string;
   labelWidth?: string;
   colorSchema?: string;
+  code?: number;
 }
 
 export const ShortInfoPanel: React.FC<ShortInfoPanelProps> = ({
   width,
   colorSchema = '#fa0',
   labelWidth,
-  height
+  height,
+  code = 123
 }) => {
   return (
-    <div className="relative" style={{ width, height }}>
-      <div
-        data-augmented-ui="br-clip border"
-        className="absolute left-0 top-0"
-        style={
-          {
-            width: labelWidth,
-            '--aug-border-bg': colorSchema,
-            '--aug-border-all': '0.8px',
-            '--aug-br': '1.5rem'
-          } as React.CSSProperties
-        }>
-        a
+    <div className="text-black dark:text-white font-[Oxanium] flex gap-2" style={{ width, height }}>
+      <div className={`w-[13px] h-full bg-evaTextWarning trapezoid`}>
+        <div className="rotate-90 text-[0.67rem] text-nowrap font-semibold p-[0.25rem]">
+          {useSciFiCode(1)}
+        </div>
       </div>
-      <div
-        className="h-[100%]"
-        data-augmented-ui="tl-clip-x border"
-        style={
-          {
-            '--aug-border-bg': colorSchema,
-            '--aug-tl-inset1': labelWidth,
-            '--aug-border-all': '0.8px',
-            '--aug-tl-inset': '1.5rem'
-          } as React.CSSProperties
-        }>
-        a
+      <div className="flex flex-col justify-between ml-[1.5rem]">
+        <div className="text-2xl font-semibold">NAME</div>
+        <div>KIRILL KAGDIN</div>
       </div>
     </div>
   );

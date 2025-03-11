@@ -31,6 +31,11 @@
     src: local('Oxanium-Regular'), url('./assets/fonts/Oxanium-Regular.ttf');
     font-weight: 400;
   }
+  @font-face {
+    font-family: 'Oxanium';
+    src: local('Oxanium-SemiBold'), url('./assets/fonts/Oxanium-SemiBold.ttf');
+    font-weight: 500;
+  }
 
   @font-face {
     font-family: 'Recharge';

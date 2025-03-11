@@ -12,5 +12,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: { width: '250px', height: '80px', labelWidth: '95px' }
+  args: { width: '250px', height: '55px', labelWidth: '95px' }
 };

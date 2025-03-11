@@ -26,28 +26,30 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
           : 'dark:text-white text-black font-[Oxanium] border-[0.5px] border-evaTextWarning p-1'
       }
       style={{ width, height }}>
-      <div className="flex h-[70px]">
-        <div className="w-full sm:w-[50%]">
-          <AboutHeader
-            text={headerText}
-            upperHeaderText={'STATION CREW PROFILE CODE ' + useSciFiCode(322)}
-            lowerHeaderText={'SCANING...'}
-            appear="left"
-          />
-        </div>
-        <div className="mt-auto hidden sm:inline-block">
-          <div className="w-[175px]">
-            <Barcode appear="top" />
+      <div className="flex justify-between">
+        <div className="left w-[100%] sm:w-[60%]">
+          <div className="flex">
+            <AboutHeader
+              text={headerText}
+              upperHeaderText={'STATION CREW PROFILE CODE ' + useSciFiCode(322)}
+              lowerHeaderText={'SCANING...'}
+              appear="left"
+            />
+            <div className="hidden md:inline-block mt-[1.25rem]">
+              <div className="w-[195px]">
+                <Barcode appear="top" />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="ml-auto hidden md:block">
+        <div className="right hidden sm:inline-block">
           <AvatarPanel
             appear="right"
             image={<img src={photo} width={'250px'} height={'250px'} alt="_avatar"></img>}
           />
         </div>
       </div>
-      {children}
+      <div>{children}</div>
     </div>
   );
 };
