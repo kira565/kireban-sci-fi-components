@@ -22,6 +22,10 @@ export default {
         hoveredElement: 'group-hover:bg-white group-hover:text-[rgb(15 23 42)]'
       },
       backgroundImage: {
+        crossGrid: "url('assets/svg/icons/svgbgelem.svg')",
+        backgroundSize: {
+          gridSize: '200px 250px' // SVG size + gap
+        },
         repeatLinearGrad:
           'repeating-linear-gradient(-45deg, var(--glow-color) calc(-1 * var(--glow-size)), var(--stripe-color) 0, var(--stripe-color), calc(var(--stripe-size) - var(--glow-size) / 2), var(--glow-color) calc(var(--stripe-size) + var(--glow-size) / 2), transparent calc(var(--stripe-size) + var(--glow-size) / 2), transparent calc(2 * var(--stripe-size)), var(--glow-color) calc(2 * var(--stripe-size) - var(--glow-size)))'
       },

@@ -1,9 +1,15 @@
+import { ReactNode } from 'react';
+
 export declare const AboutHeader: React.FC<AboutHeaderProps>;
 
 declare interface AboutHeaderProps {
     text?: string;
     colorSchema?: string;
-    secondText?: string;
+    upperHeaderText?: string;
+    lowerHeaderText?: string;
+    appear?: 'top' | 'left' | 'bottom' | 'right';
+    height?: string;
+    width?: string;
 }
 
 declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
@@ -42,19 +48,6 @@ declare interface ButtonFingerProps {
      */
     destroyCallback?: () => void;
     delayedAppearing?: number;
-}
-
-export declare const Card: React.FC<CardProps>;
-
-declare interface CardProps {
-    headBlockChildren: React.ReactNode[];
-    mainBlockChildren: React.ReactNode[];
-    height: string;
-    width: string;
-    borderColor: string;
-    textColor: string;
-    animated: boolean;
-    icon?: string;
 }
 
 export declare const CircleIndicator: React.FC<CircleIndicatorProps>;
@@ -124,6 +117,18 @@ declare interface LoadingBatteryProps {
     height?: string;
     appear?: 'top' | 'left' | 'bottom' | 'right';
     chargingComplited?: () => void;
+}
+
+export declare const ShortInfoPanel: React.FC<ShortInfoPanelProps>;
+
+declare interface ShortInfoPanelProps {
+    width?: string;
+    height?: string;
+    colorSchema?: string;
+    leftBlockContent?: ReactNode;
+    leftBlockWidth?: string;
+    children?: ReactNode;
+    code?: number;
 }
 
 export declare const SsiState: React.FC<SsiStateProps>;

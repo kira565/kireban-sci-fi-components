@@ -1,31 +1,36 @@
 import useSciFiCode from '@/hooks/useSciFiCode';
-import EvaListOption from '../EvaOptionList/EvaListOptionComponent';
+import { ReactNode } from 'react';
 
 export interface ShortInfoPanelProps {
   width?: string;
   height?: string;
-  labelWidth?: string;
   colorSchema?: string;
+  leftBlockContent?: ReactNode;
+  leftBlockWidth?: string;
+  children?: ReactNode;
   code?: number;
 }
 
 export const ShortInfoPanel: React.FC<ShortInfoPanelProps> = ({
   width,
   colorSchema = '#fa0',
-  labelWidth,
   height,
-  code = 123
+  leftBlockContent,
+  leftBlockWidth = '10px',
+  children,
+  code = 256
 }) => {
   return (
-    <div className="text-black dark:text-white font-[Oxanium] flex gap-2" style={{ width, height }}>
-      <div className={`w-[13px] h-full bg-evaTextWarning trapezoid`}>
-        <div className="rotate-90 text-[0.67rem] text-nowrap font-semibold p-[0.25rem]">
-          {useSciFiCode(1)}
-        </div>
+    <div
+      className="text-black dark:text-white font-[Oxanium] flex gap-2 border-r-[0.8px] pr-2"
+      style={{ width, height, borderColor: colorSchema }}>
+      <div className={`h-full bg-evaTextWarning trapezoid`} style={{ width: leftBlockWidth }}>
+        {leftBlockContent}
       </div>
-      <div className="flex flex-col justify-between ml-[1.5rem]">
-        <div className="text-2xl font-semibold">NAME</div>
-        <div>KIRILL KAGDIN</div>
+      {children}
+      <div className="flex gap-4 justify-between ml-auto">
+        <div className={`w-[7px] h-[3px] mt-auto bg-black dark:bg-white`}></div>
+        <div className="text-[0.4rem] mt-auto text-nowrap font-semibold">{useSciFiCode(code)}</div>
       </div>
     </div>
   );
