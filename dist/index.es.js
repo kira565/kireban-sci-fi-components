@@ -3617,24 +3617,28 @@ const U8 = ({ width: l, height: L, appear: e }) => {
   const i = Y(null), n = Y(null);
   return t2(() => {
     const a = S.utils.toArray("#points rect");
-    e && e9(n, e), S.to(a, {
+    e && e9(n, e);
+    const o = S.to(a, {
       opacity: 0,
       // Fade out
       duration: 0.05,
       // Animation duration
-      delay: S.utils.random(0, 1),
+      delay: S.utils.random(0, 0.5),
       stagger: {
         each: 0.1,
         // Delay between each rect animation
         from: "random",
         // Random order
         repeat: -1,
-        repeatDelay: S.utils.random(0, 0.5),
+        repeatDelay: S.utils.random(0.3, 0.8),
         yoyo: !0
       },
       ease: "power1.inOut"
       // Smooth easing
     });
+    return () => {
+      o.kill();
+    };
   }, [e]), /* @__PURE__ */ k.jsx(
     "div",
     {

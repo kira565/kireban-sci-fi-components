@@ -19,19 +19,23 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, 
       appearFrom(containerRef, appear);
     }
 
-    gsap.to(rects, {
+    const animation = gsap.to(rects, {
       opacity: 0, // Fade out
       duration: 0.05, // Animation duration
-      delay: gsap.utils.random(0, 1),
+      delay: gsap.utils.random(0, 0.5),
       stagger: {
         each: 0.1, // Delay between each rect animation
         from: 'random', // Random order
         repeat: -1,
-        repeatDelay: gsap.utils.random(0, 0.5),
+        repeatDelay: gsap.utils.random(0.3, 0.8),
         yoyo: true
       },
       ease: 'power1.inOut' // Smooth easing
     });
+
+    return () => {
+      animation.kill();
+    };
   }, [appear]);
 
   return (
