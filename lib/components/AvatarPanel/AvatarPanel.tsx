@@ -58,7 +58,7 @@ export const AvatarPanel: React.FC<AvatarPanelProps> = ({
 
     timeline.current.play();
 
-    const array = gsap.utils.toArray('#bordert-2 path');
+    const array = gsap.utils.toArray('#bordert-2 path', avatarContainer.current);
     gsap.fromTo(
       array,
       {

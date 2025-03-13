@@ -13,7 +13,7 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, 
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const rects = gsap.utils.toArray('#points rect'); // Select all rect elements inside #points
+    const rects = gsap.utils.toArray('#points rect', containerRef.current); // Select all rect elements inside #points
 
     if (appear) {
       appearFrom(containerRef, appear);

@@ -52,7 +52,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
       });
     }
 
-    const points = gsap.utils.toArray('#points > g');
+    const points = gsap.utils.toArray('#points > g', panelRef.current);
     gsap.to(points, {
       opacity: 0,
       duration: 0.2, // Animation duration
@@ -65,7 +65,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
       ease: 'power1.inOut' // Smooth easing
     });
 
-    const artifacts = gsap.utils.toArray('.artifact');
+    const artifacts = gsap.utils.toArray('.artifact', panelRef.current);
 
     gsap.to(artifacts, {
       opacity: 0,

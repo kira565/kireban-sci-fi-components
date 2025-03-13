@@ -3574,7 +3574,7 @@ const U8 = ({ width: l, height: L, appear: e }) => {
       ease: "easeInOut"
       // Smooth animation
     });
-    const s = S.utils.toArray("#points > g");
+    const s = S.utils.toArray("#points > g", i.current);
     S.to(s, {
       opacity: 0,
       duration: 0.2,
@@ -3592,7 +3592,7 @@ const U8 = ({ width: l, height: L, appear: e }) => {
       ease: "power1.inOut"
       // Smooth easing
     });
-    const h = S.utils.toArray(".artifact");
+    const h = S.utils.toArray(".artifact", i.current);
     S.to(h, {
       opacity: 0,
       duration: 2,
@@ -3616,7 +3616,7 @@ const U8 = ({ width: l, height: L, appear: e }) => {
 }, G8 = ({ fill: l = "#fa0", width: L, appear: e, opacity: r }) => {
   const i = Y(null), n = Y(null);
   return t2(() => {
-    const a = S.utils.toArray("#points rect");
+    const a = S.utils.toArray("#points rect", n.current);
     e && e9(n, e);
     const o = S.to(a, {
       opacity: 0,
@@ -3766,7 +3766,7 @@ const U8 = ({ width: l, height: L, appear: e }) => {
       },
       "<"
     ), c.current.play();
-    const s = S.utils.toArray("#bordert-2 path");
+    const s = S.utils.toArray("#bordert-2 path", r.current);
     S.fromTo(
       s,
       {
