@@ -2,13 +2,14 @@ import SolarChargeSvg from '../../../assets/svg/solar-charge.svg?react';
 import SolarGraph from '../../../assets/svg/graph.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
-import { appearFrom } from '../../../utils';
+import { appearFrom, dissApearTo } from '../../../utils';
 
 export interface LoadingBatteryProps {
   width?: string;
   height?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
-  chargingComplited?: () => void;
+  chargingCompleted?: () => void;
+  needHideAfterComplete?: boolean;
 }
 
 export const Tile: React.FC<{
@@ -55,13 +56,20 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
   width,
   height,
   appear,
-  chargingComplited
+  chargingCompleted,
+  needHideAfterComplete
 }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
   const [scale, setScale] = useState({ text: 12, header: 24, showLabels: true });
 
   useEffect(() => {
+    function hide(callback?: () => void) {
+      if (appear) {
+        dissApearTo(panelRef, appear, callback);
+      }
+    }
+
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const containerWidth = entry.target.getBoundingClientRect().width; // Read actual width in pixels
@@ -105,8 +113,13 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
             yoyo: true, // Возвращаем обратно
             ease: 'sine.inOut' // Мягкое появление и исчезновение
           });
-          if (chargingComplited) {
-            chargingComplited();
+
+          if (needHideAfterComplete) {
+            hide(chargingCompleted ? chargingCompleted : undefined);
+          } else {
+            if (chargingCompleted) {
+              chargingCompleted();
+            }
           }
         }
       });
@@ -122,7 +135,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
       });
     }
     return () => observer.disconnect();
-  }, [appear, chargingComplited]);
+  }, [appear, chargingCompleted, needHideAfterComplete]);
 
   return (
     <div

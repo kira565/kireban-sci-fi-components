@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import BorderT2 from '@assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
-import { appearFrom } from '@/utils';
+import { AppearDirection, appearFrom } from '@/utils';
 
 export interface AvatarPanelProps {
   imageSrc?: string;
   colorSchema?: string;
-  appear?: 'top' | 'left' | 'bottom' | 'right';
+  appear?: AppearDirection;
   image: React.ReactNode;
 }
 
@@ -73,7 +73,7 @@ export const AvatarPanel: React.FC<AvatarPanelProps> = ({
         }
       }
     );
-  }, []);
+  }, [appear]);
 
   return (
     <div

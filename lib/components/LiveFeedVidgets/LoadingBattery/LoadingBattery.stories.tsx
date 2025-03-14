@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { LoadingBattery, LoadingBatteryProps } from './LoadingBattery';
 
+import { useState } from 'react';
+
 const meta = {
   title: 'LoadingBattery Example',
   component: LoadingBattery
@@ -10,6 +12,25 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const Wrapper = (props: LoadingBatteryProps) => {
+  const [isMounted, setIsMounted] = useState(true);
+
+  return isMounted ? (
+    <LoadingBattery
+      {...props}
+      chargingCompleted={() => {
+        console.log('⚡ Battery charging completed! Unmounting story...');
+        setIsMounted(false); // ✅ This properly unmounts the component
+      }}
+    />
+  ) : null;
+};
+//TODO ANIMATION IS MISSING
 export const Default: Story = {
-  args: { width: '40%', appear: 'left' }
+  render: (args) => <Wrapper {...args} />, // ✅ Now properly returns the component
+  args: {
+    width: '40%',
+    appear: 'left',
+    needHideAfterComplete: true
+  }
 };

@@ -1,4 +1,5 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
+
 import './preview.css';
 import '../lib/index.css';
 // Decorator to toggle dark mode
@@ -21,6 +22,13 @@ const withTheme = (Story: StoryFn, context: StoryContext) => {
   return Story(args, context);
 };
 
+const withUnmount = (Story: StoryFn, context: StoryContext) => {
+  const { globals, args } = context;
+  const isMounted = globals['isMounted'];
+
+  return isMounted ? Story(args, context) : null; // Toggle story rendering
+};
+
 const preview: Preview = {
   parameters: {
     layout: 'centered',
@@ -31,8 +39,21 @@ const preview: Preview = {
       }
     }
   },
-  decorators: [withTheme],
+  decorators: [withTheme, withUnmount],
   globalTypes: {
+    isMounted: {
+      name: 'Unmount Story',
+      description: 'Toggle story mounting',
+      defaultValue: true,
+      toolbar: {
+        icon: 'eye', // Icon for toolbar
+        items: [
+          { value: true, title: 'Mounted ✅' },
+          { value: false, title: 'Unmounted ❌' }
+        ],
+        showName: true
+      }
+    },
     theme: {
       name: 'Theme',
       description: 'Global Theme For Components',
