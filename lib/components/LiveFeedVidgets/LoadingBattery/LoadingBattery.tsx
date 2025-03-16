@@ -8,6 +8,7 @@ export interface LoadingBatteryProps {
   width?: string;
   height?: string;
   appear?: 'top' | 'left' | 'bottom' | 'right';
+  chargingDurationSec?: number;
   chargingCompleted?: () => void;
   needHideAfterComplete?: boolean;
 }
@@ -57,7 +58,8 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
   height,
   appear,
   chargingCompleted,
-  needHideAfterComplete
+  needHideAfterComplete,
+  chargingDurationSec = 5
 }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
   const panelRef = useRef(null);
@@ -103,7 +105,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
     if (loadingBarRef.current) {
       gsap.to('#mask-rect', {
         x: 931, // Двигаем маску справа налево
-        duration: 5, // Скорость анимации
+        duration: chargingDurationSec, // Скорость анимации
         ease: 'linear', // Плавное движение
         onComplete: () => {
           gsap.to('#loading-content', {

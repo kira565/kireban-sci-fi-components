@@ -19,7 +19,7 @@ export declare const AvatarPanel: React.FC<AvatarPanelProps>;
 declare interface AvatarPanelProps {
     imageSrc?: string;
     colorSchema?: string;
-    appear?: 'top' | 'left' | 'bottom' | 'right';
+    appear?: AppearDirection;
     image: React.ReactNode;
 }
 
@@ -116,7 +116,9 @@ declare interface LoadingBatteryProps {
     width?: string;
     height?: string;
     appear?: 'top' | 'left' | 'bottom' | 'right';
-    chargingComplited?: () => void;
+    chargingDurationSec?: number;
+    chargingCompleted?: () => void;
+    needHideAfterComplete?: boolean;
 }
 
 export declare const ShortInfoPanel: React.FC<ShortInfoPanelProps>;

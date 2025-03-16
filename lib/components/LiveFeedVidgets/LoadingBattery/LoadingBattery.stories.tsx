@@ -25,7 +25,7 @@ const Wrapper = (props: LoadingBatteryProps) => {
     />
   ) : null;
 };
-//TODO ANIMATION IS MISSING
+
 export const Default: Story = {
   render: (args) => <Wrapper {...args} />, // ✅ Now properly returns the component
   args: {

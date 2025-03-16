@@ -33,7 +33,7 @@ export function dissApearTo(
       break;
   }
 
-  gsap.to(ref, {
+  gsap.to(ref.current, {
     [coord]: coordVal,
     opacity: 0,
     duration: 1,
