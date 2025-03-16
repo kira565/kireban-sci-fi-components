@@ -3985,7 +3985,7 @@ const G8 = ({ width: l, height: L, appear: e }) => {
     style: { width: l, height: e, borderColor: L },
     children: [
       /* @__PURE__ */ E.jsx("div", { className: "h-full bg-evaTextWarning trapezoid", style: { width: i }, children: r }),
-      /* @__PURE__ */ E.jsx("div", { className: "overflow-y-scroll custom-scrollbar", children: n }),
+      /* @__PURE__ */ E.jsx("div", { className: "overflow-y-scroll overflow-x-hidden custom-scrollbar", children: n }),
       /* @__PURE__ */ E.jsxs("div", { className: "flex gap-4 justify-between ml-auto", children: [
         /* @__PURE__ */ E.jsx("div", { className: "w-[7px] h-[3px] mt-auto bg-black dark:bg-white" }),
         /* @__PURE__ */ E.jsx("div", { className: "text-[0.4rem] mt-auto text-nowrap font-semibold", children: V3(a) })

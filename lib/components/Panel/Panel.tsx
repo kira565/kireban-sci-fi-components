@@ -27,7 +27,7 @@ export const Panel: React.FC<PanelProps> = ({
       <div className={`h-full bg-evaTextWarning trapezoid`} style={{ width: leftBlockWidth }}>
         {leftBlockContent}
       </div>
-      <div className="overflow-y-scroll custom-scrollbar">{children}</div>
+      <div className="overflow-y-scroll overflow-x-hidden custom-scrollbar">{children}</div>
       <div className="flex gap-4 justify-between ml-auto">
         <div className={`w-[7px] h-[3px] mt-auto bg-black dark:bg-white`}></div>
         <div className="text-[0.4rem] mt-auto text-nowrap font-semibold">{useSciFiCode(code)}</div>
