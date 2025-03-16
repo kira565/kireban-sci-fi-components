@@ -15,4 +15,4 @@ export { SsiState } from './components/LiveFeedVidgets/SsiState/SsiState';
 export { Barcode } from './components/LiveFeedVidgets/Barcode/Barcode';
 export { AvatarPanel } from './components/AvatarPanel/AvatarPanel';
 export { AboutHeader } from './components/AboutPanel/AboutHeader';
-export { ShortInfoPanel } from './components/ShortInfoPanel/ShortInfoPanel';
+export { Panel } from './components/Panel/Panel';

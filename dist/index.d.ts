@@ -121,9 +121,9 @@ declare interface LoadingBatteryProps {
     needHideAfterComplete?: boolean;
 }
 
-export declare const ShortInfoPanel: React.FC<ShortInfoPanelProps>;
+export declare const Panel: React.FC<PanelProps>;
 
-declare interface ShortInfoPanelProps {
+declare interface PanelProps {
     width?: string;
     height?: string;
     colorSchema?: string;

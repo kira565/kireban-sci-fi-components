@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { AboutHeader, AvatarPanel, Barcode, ShortInfoPanel } from '@/main';
+import { AboutHeader, AvatarPanel, Barcode, Panel } from '@/main';
 import photo from '@assets/kireban.png';
 import useSciFiCode from '@/hooks/useSciFiCode';
 import profile from '@assets/svg/icons/profile.svg';
@@ -47,7 +47,7 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
           </div>
           <div className="blocks grid grid-rows-2 grid-cols-2 gap-7 mt-7">
             <div>
-              <ShortInfoPanel
+              <Panel
                 height="55px"
                 code={23}
                 leftBlockContent={
@@ -64,10 +64,10 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
                     </div>
                   </div>
                 </div>
-              </ShortInfoPanel>
+              </Panel>
             </div>
             <div>
-              <ShortInfoPanel
+              <Panel
                 height="55px"
                 code={24}
                 leftBlockContent={
@@ -84,10 +84,10 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
                     </div>
                   </div>
                 </div>
-              </ShortInfoPanel>
+              </Panel>
             </div>
             <div>
-              <ShortInfoPanel
+              <Panel
                 height="55px"
                 code={25}
                 leftBlockContent={
@@ -104,10 +104,10 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
                     </div>
                   </div>
                 </div>
-              </ShortInfoPanel>
+              </Panel>
             </div>
             <div>
-              <ShortInfoPanel
+              <Panel
                 height="55px"
                 code={26}
                 leftBlockContent={
@@ -124,7 +124,7 @@ export const AboutPanel: React.FC<AboutPanelProps> = ({
                     </div>
                   </div>
                 </div>
-              </ShortInfoPanel>
+              </Panel>
             </div>
           </div>
         </div>
