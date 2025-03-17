@@ -1,20 +1,64 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Globe from '../../../assets/svg/modular_parts/GLOBE.svg?react';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { AppearDirection, appearFrom } from '../../../utils';
+import lat from '@assets/svg/icons/lat.svg';
+import lon from '@assets/svg/icons/lon.svg';
 
 export interface SsiStateProps {
   width?: string;
   height?: string;
   appear?: AppearDirection;
+  showCoordinates?: boolean;
 }
 
-export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => {
+export const SsiStateTile = ({
+  imgSrc,
+  text,
+  val,
+  finished
+}: {
+  imgSrc?: string;
+  text?: string;
+  val: string;
+  finished: boolean;
+}) => {
+  return (
+    <div className="flex flex-row w-full h-full items-center gap-1 text-xs">
+      {imgSrc ? (
+        <div className="w-[20%]">
+          <img src={imgSrc} alt="_tile_icon"></img>
+        </div>
+      ) : (
+        <div
+          className="w-[3%] h-full animate-pulse"
+          style={{ background: !finished ? '#fa0' : '#19DD4D' }}></div>
+      )}
+      {text && <div className="">{text}</div>}
+      <div className="overflow-hidden text-ellipsis text-nowrap">{val}</div>
+    </div>
+  );
+};
+
+export const SsiState: React.FC<SsiStateProps> = ({
+  width,
+  height,
+  appear,
+  showCoordinates = true
+}) => {
   const globeRef = useRef(null);
   const panelRef = useRef(null);
+  const [position, setPosition] = useState({
+    lon: 170,
+    lat: 10,
+    area: 'Pacific Ocean',
+    finished: false
+  });
 
   useEffect(() => {
+    const totalDuration = 90;
+
     gsap.registerPlugin(MotionPathPlugin);
 
     if (appear) {
@@ -28,7 +72,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
     if (!path || !station) return;
 
     gsap.to(station, {
-      duration: 90,
+      duration: totalDuration,
       ease: 'linear',
       motionPath: {
         path: path,
@@ -37,6 +81,17 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
         autoRotate: true,
         start: 0.7,
         end: 0.845
+      },
+      onUpdate: function () {
+        const elapsed = this.time();
+
+        if (elapsed >= 30 && elapsed < 31) {
+          setPosition({ lon: 150, lat: 20, area: 'Pacific Ocean', finished: false });
+        } else if (elapsed >= 60 && elapsed < 61) {
+          setPosition({ lon: 130, lat: 30, area: 'Near Japan EEZ', finished: false });
+        } else if (elapsed >= 90) {
+          setPosition({ lon: 140, lat: 35, area: 'Tokyo, Japan', finished: true });
+        }
       }
     });
 
@@ -84,8 +139,26 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
     <div
       ref={panelRef}
       style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
-      className="border-[0.5px] border-opacity-50 border-evaTextWarning pr-1 pt-2 pb-2 dark:bg-black bg-transparent">
-      <div className="ml-[8%]">
+      className="border-[0.5px] flex flex-col border-opacity-50 border-evaTextWarning p-2 dark:bg-black bg-transparent text-black dark:text-white font-[Oxanium]">
+      {showCoordinates && (
+        <div className="w-full grid grid-rows-2 grid-cols-2 h-[30%] gap-2 mb-[35px] p-2 border-b border-[0.5px] border-evaTextWarning border-opacity-50">
+          <SsiStateTile
+            imgSrc={lat}
+            finished={position.finished}
+            text="LAT:"
+            val={position.lat + '°N'}
+          />
+          <SsiStateTile
+            imgSrc={lon}
+            finished={position.finished}
+            text="LON:"
+            val={position.lon + '°W'}
+          />
+          <SsiStateTile text="AREA:" finished={position.finished} val={position.area} />
+          <SsiStateTile text="DEST:" finished={position.finished} val={'Tokyo, Japan'} />
+        </div>
+      )}
+      <div className="ml-[4%]">
         <Globe ref={globeRef} />
       </div>
     </div>
