@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: '200px',
+    width: '280px',
     height: '55px',
     leftBlockContent: (
       <div className="rotate-90 text-[0.47rem] text-nowrap font-semibold p-[0.2rem]">UE- 1 TTL</div>

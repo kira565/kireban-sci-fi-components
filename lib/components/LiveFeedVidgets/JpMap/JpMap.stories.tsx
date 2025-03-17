@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { JpMap, JpMapProps } from './JpMap';
+import { JpMapProps } from './JpMap';
+import { JpMap } from '@main';
 
 const meta = {
   title: 'Component JpMap story',

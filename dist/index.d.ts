@@ -110,6 +110,15 @@ declare interface GeometricLayoutProps {
     children: React.ReactNode[];
 }
 
+export declare const JpMap: React.FC<JpMapProps>;
+
+declare interface JpMapProps {
+    width?: string;
+    height?: string;
+    colorSchema?: string;
+    bgColor?: string;
+}
+
 export declare const LoadingBattery: React.FC<LoadingBatteryProps>;
 
 declare interface LoadingBatteryProps {
@@ -139,6 +148,7 @@ declare interface SsiStateProps {
     width?: string;
     height?: string;
     appear?: AppearDirection;
+    showCoordinates?: boolean;
 }
 
 export { }
