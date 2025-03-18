@@ -14,6 +14,8 @@ declare interface AboutHeaderProps {
 
 declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
 
+export declare function appearFrom(ref: React.RefObject<HTMLElement | null>, direction: AppearDirection): void;
+
 export declare const AvatarPanel: React.FC<AvatarPanelProps>;
 
 declare interface AvatarPanelProps {
@@ -72,13 +74,15 @@ declare interface EvaListOptionProps {
     title: string;
     clickHandler: () => void;
     sciFiCode: number;
-    isActive: boolean;
+    isActive?: boolean;
+    showMobileView?: boolean;
 }
 
 export declare const EvaOptionList: React.FC<EvaOptionListProps>;
 
 declare interface EvaOptionListProps {
     options: EvaListOptionProps[];
+    mobileView?: boolean;
     width?: string;
 }
 

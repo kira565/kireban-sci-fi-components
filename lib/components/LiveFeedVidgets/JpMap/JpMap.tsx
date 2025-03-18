@@ -68,7 +68,8 @@ export const JpMap: React.FC<JpMapProps> = ({ width, height, bgColor, appear }) 
         opacity: 1,
         duration: 0.5
       });
-  }, []);
+  }, [appear]);
+
   return (
     <div
       ref={containerRef}

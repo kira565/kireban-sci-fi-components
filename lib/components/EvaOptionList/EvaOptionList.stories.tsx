@@ -13,12 +13,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: 'w-[400px]',
+    width: '250px',
+    mobileView: true,
     options: [
-      { title: 'WELCOME', clickHandler: () => {}, isActive: true, sciFiCode: 0 },
-      { title: 'ABOUT', clickHandler: () => {}, isActive: false, sciFiCode: 1 },
-      { title: 'SKILLS', clickHandler: () => {}, isActive: false, sciFiCode: 2 },
-      { title: 'EXPERIENCE', clickHandler: () => {}, isActive: false, sciFiCode: 3 }
+      { title: 'ABOUT', clickHandler: () => {}, isActive: true, sciFiCode: 0 },
+      { title: 'SKILLS', clickHandler: () => {}, isActive: false, sciFiCode: 1 },
+      { title: 'EXPERIENCE', clickHandler: () => {}, isActive: false, sciFiCode: 2 },
+      { title: 'CONTACT', clickHandler: () => {}, isActive: false, sciFiCode: 3 }
     ]
   }
 };

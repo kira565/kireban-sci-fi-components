@@ -17,3 +17,4 @@ export { AvatarPanel } from './components/AvatarPanel/AvatarPanel';
 export { AboutHeader } from './components/AboutPanel/AboutHeader';
 export { Panel } from './components/Panel/Panel';
 export { JpMap } from './components/LiveFeedVidgets/JpMap/JpMap';
+export { appearFrom } from '@/utils';
