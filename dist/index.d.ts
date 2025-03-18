@@ -115,7 +115,6 @@ export declare const JpMap: React.FC<JpMapProps>;
 declare interface JpMapProps {
     width?: string;
     height?: string;
-    colorSchema?: string;
     bgColor?: string;
 }
 

@@ -35,8 +35,10 @@ export const SsiStateTile = ({
           className="w-[3%] h-full animate-pulse"
           style={{ background: !finished ? '#fa0' : '#19DD4D' }}></div>
       )}
-      {text && <div className="">{text}</div>}
-      <div className="overflow-hidden text-ellipsis text-nowrap">{val}</div>
+      <div className="flex flex-wrap">
+        {text && <div className="">{text}</div>}
+        <div className="overflow-hidden text-ellipsis text-nowrap">{val}</div>
+      </div>
     </div>
   );
 };

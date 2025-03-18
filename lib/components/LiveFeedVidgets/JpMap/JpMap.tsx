@@ -6,11 +6,10 @@ import Globe from '@assets/svg/icons/lat.svg?react';
 export interface JpMapProps {
   width?: string;
   height?: string;
-  colorSchema?: string;
   bgColor?: string;
 }
 
-export const JpMap: React.FC<JpMapProps> = ({ width, height, colorSchema = '#fa0', bgColor }) => {
+export const JpMap: React.FC<JpMapProps> = ({ width, height, bgColor }) => {
   const timeline = useRef<gsap.core.Timeline>(gsap.timeline());
   const mapRef = useRef(null); // Reference for SVG container
 
@@ -65,8 +64,8 @@ export const JpMap: React.FC<JpMapProps> = ({ width, height, colorSchema = '#fa0
   }, []);
   return (
     <div
-      style={{ width, height, borderColor: colorSchema, backgroundColor: bgColor }}
-      className="border-[0.5px] border-opacity-50 overflow-hidden bg-black relative text-black dark:text-white font-[Oxanium]">
+      style={{ width, height, backgroundColor: bgColor }}
+      className="border-[0.5px] border-evaTextWarning border-opacity-50 overflow-hidden bg-black relative text-black dark:text-white font-[Oxanium]">
       <JapanMap ref={mapRef} />
       <div className="absolute top-[2%] left-[2%] text-[0.6rem]">
         <div>REGION: EAST ASIA</div>
