@@ -116,6 +116,7 @@ declare interface JpMapProps {
     width?: string;
     height?: string;
     bgColor?: string;
+    appear?: AppearDirection;
 }
 
 export declare const LoadingBattery: React.FC<LoadingBatteryProps>;

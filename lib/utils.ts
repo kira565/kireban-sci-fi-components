@@ -79,7 +79,7 @@ export function appearFrom(ref: React.RefObject<HTMLElement | null>, direction: 
     {
       [coord]: '0%',
       opacity: 1,
-      duration: 1,
+      duration: 1.5,
       ease: 'power3.out'
     }
   );
