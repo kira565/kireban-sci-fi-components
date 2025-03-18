@@ -218,10 +218,10 @@ function A4() {
           "name",
           { value: "DetermineComponentFrameRoot" }
         );
-        var N = o1.DetermineComponentFrameRoot(), R1 = N[0], m2 = N[1];
-        if (R1 && m2) {
+        var N = o1.DetermineComponentFrameRoot(), R1 = N[0], k2 = N[1];
+        if (R1 && k2) {
           var C1 = R1.split(`
-`), i2 = m2.split(`
+`), i2 = k2.split(`
 `);
           for (N = J = 0; J < C1.length && !C1[J].includes(
             "DetermineComponentFrameRoot"
@@ -377,8 +377,8 @@ React keys must be passed directly to JSX without using spread:
       }
       if (N = null, V !== void 0 && (e(V), N = "" + V), h(b) && (e(b.key), N = "" + b.key), "key" in b) {
         V = {};
-        for (var m2 in b)
-          m2 !== "key" && (V[m2] = b[m2]);
+        for (var k2 in b)
+          k2 !== "key" && (V[k2] = b[k2]);
       } else V = b;
       return N && d(
         V,
@@ -509,7 +509,7 @@ var w1 = {
   units: {
     lineHeight: ""
   }
-}, v2 = {
+}, Z2 = {
   duration: 0.5,
   overwrite: !1,
   delay: 0
@@ -530,8 +530,8 @@ var w1 = {
 }, l9 = function(L) {
   return q(L) || r1(L);
 }, k3 = typeof ArrayBuffer == "function" && ArrayBuffer.isView || function() {
-}, c1 = Array.isArray, U9 = /(?:-?\.?\d|\.)+/gi, E3 = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g, _2 = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g, P9 = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi, _3 = /[+-]=-?[.\d]+/, g3 = /[^,'"\[\]\s]+/gi, z4 = /^[+\-=e\s\d]*\d+[.\d]*([a-z]*|%)\s*$/i, G, W1, J9, m0, x1 = {}, m9 = {}, M3, w3 = function(L) {
-  return (m9 = Z2(L, x1)) && E1;
+}, c1 = Array.isArray, U9 = /(?:-?\.?\d|\.)+/gi, E3 = /[-+=.]*\d+[.e\-+]*\d*[e\-+]*\d*/g, g2 = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g, P9 = /[-+=.]*\d+\.?\d*(?:e-|e\+)?\d*/gi, _3 = /[+-]=-?[.\d]+/, g3 = /[^,'"\[\]\s]+/gi, z4 = /^[+\-=e\s\d]*\d+[.\d]*([a-z]*|%)\s*$/i, G, W1, J9, m0, x1 = {}, m9 = {}, M3, w3 = function(L) {
+  return (m9 = b2(L, x1)) && E1;
 }, k0 = function(L, e) {
   return console.warn("Invalid property", L, "set to", e, "Missing plugin? gsap.registerPlugin()");
 }, U2 = function(L, e) {
@@ -569,7 +569,7 @@ var w1 = {
   return Math.round(L * 1e5) / 1e5 || 0;
 }, e1 = function(L) {
   return Math.round(L * 1e7) / 1e7 || 0;
-}, w2 = function(L, e) {
+}, x2 = function(L, e) {
   var r = e.charAt(0), i = parseFloat(e.substr(2));
   return L = parseFloat(L), r === "+" ? L + i : r === "-" ? L - i : r === "*" ? L * i : L / i;
 }, I4 = function(L, e) {
@@ -596,7 +596,7 @@ var w1 = {
     for (var i in r)
       i in e || i === "duration" && L || i === "ease" || (e[i] = r[i]);
   };
-}, Z2 = function(L, e) {
+}, b2 = function(L, e) {
   for (var r in e)
     L[r] = e[r];
   return L;
@@ -645,8 +645,8 @@ var w1 = {
 }, J4 = function o(L) {
   return !L || L._ts && o(L.parent);
 }, Y0 = function(L) {
-  return L._repeat ? b2(L._tTime, L = L.duration() + L._rDelay) * L : 0;
-}, b2 = function(L, e) {
+  return L._repeat ? V2(L._tTime, L = L.duration() + L._rDelay) * L : 0;
+}, V2 = function(L, e) {
   var r = Math.floor(L = e1(L / e));
   return L && r === L ? r - 1 : r;
 }, _9 = function(L, e) {
@@ -681,7 +681,7 @@ var w1 = {
   return e === "isFromStart" || e === "isStart";
 }, X4 = function(L, e, r, i) {
   var n = L.ratio, a = e < 0 || !e && (!L._start && G4(L) && !(!L._initted && q9(L)) || (L._ts < 0 || L._dp._ts < 0) && !q9(L)) ? 0 : 1, l = L._rDelay, c = 0, s, h, d;
-  if (l && L._repeat && (c = e9(0, L._tDur, e), h = b2(c, l), L._yoyo && h & 1 && (a = 1 - a), h !== b2(L._tTime, l) && (n = 1 - a, L.vars.repeatRefresh && L._initted && L.invalidate())), a !== n || i1 || i || L._zTime === s1 || !e && L._zTime) {
+  if (l && L._repeat && (c = e9(0, L._tDur, e), h = V2(c, l), L._yoyo && h & 1 && (a = 1 - a), h !== V2(L._tTime, l) && (n = 1 - a, L.vars.repeatRefresh && L._initted && L.invalidate())), a !== n || i1 || i || L._zTime === s1 || !e && L._zTime) {
     if (!L._initted && W3(L, e, i, r, c))
       return;
     for (d = L._zTime, L._zTime = e || (r ? s1 : 0), r || (r = e && !d), L.ratio = a, L._from && (a = 1 - a), L._time = 0, L._tTime = c, s = L._pt; s; )
@@ -702,11 +702,11 @@ var w1 = {
         return i;
       i = i._prev;
     }
-}, V2 = function(L, e, r, i) {
+}, j2 = function(L, e, r, i) {
   var n = L._repeat, a = e1(e) || 0, l = L._tTime / L._tDur;
   return l && !i && (L._time *= a / L._dur), L._dur = a, L._tDur = n ? n < 0 ? 1e10 : e1(a * (n + 1) + L._rDelay * n) : a, l > 0 && !i && V9(L, L._tTime = L._tDur * l), L.parent && b9(L), r || c2(L.parent, L), L;
 }, $0 = function(L) {
-  return L instanceof f1 ? c2(L) : V2(L, L._dur);
+  return L instanceof f1 ? c2(L) : j2(L, L._dur);
 }, K4 = {
   _start: 0,
   endTime: J2,
@@ -740,7 +740,7 @@ var w1 = {
     return r1(i) && !e || A3(i, 1) ? (n = r).push.apply(n, b1(i)) : r.push(i);
   }) || r;
 }, b1 = function(L, e, r) {
-  return $ && !e && $.selector ? $.selector(L) : r1(L) && !r && (J9 || !j2()) ? K9.call((e || m0).querySelectorAll(L), 0) : c1(L) ? L5(L, r) : A3(L) ? K9.call(L, 0) : L ? [L] : [];
+  return $ && !e && $.selector ? $.selector(L) : r1(L) && !r && (J9 || !T2()) ? K9.call((e || m0).querySelectorAll(L), 0) : c1(L) ? L5(L, r) : A3(L) ? K9.call(L, 0) : L ? [L] : [];
 }, Q9 = function(L) {
   return L = b1(L)[0] || U2("Invalid scope") || {}, function(e) {
     var r = L.current || L.nativeElement || L;
@@ -850,7 +850,7 @@ var w1 = {
         var C = Math.min(f, ~~p);
         return h[C](p - C);
       }, r = e;
-    } else i || (L = Z2(c1(L) ? [] : {}, L));
+    } else i || (L = b2(c1(L) ? [] : {}, L));
     if (!h) {
       for (c in e)
         M0.call(l, L, c, "get", e[c]);
@@ -871,7 +871,7 @@ var w1 = {
     return c = i[e + "Params"], s = i.callbackScope || L, r && Q1.length && k9(), l && ($ = l), h = c ? n.apply(s, c) : n.call(s), $ = a, h;
 }, D2 = function(L) {
   return e2(L), L.scrollTrigger && L.scrollTrigger.kill(!!i1), L.progress() < 1 && M1(L, "onInterrupt"), L;
-}, g2, z3 = [], B3 = function(L) {
+}, M2, z3 = [], B3 = function(L) {
   if (L)
     if (L = !L.name && L.default || L, p0() || L.headless) {
       var e = L.name, r = q(L), i = e && !r && L.init ? function() {
@@ -890,10 +890,10 @@ var w1 = {
         aliases: {},
         register: 0
       };
-      if (j2(), L !== i) {
+      if (T2(), L !== i) {
         if (_1[e])
           return;
-        y1(i, y1(E9(L, n), a)), Z2(i.prototype, Z2(n, E9(L, a))), _1[i.prop = e] = i, L.targetTest && (C9.push(i), E0[e] = 1), e = (e === "css" ? "CSS" : e.charAt(0).toUpperCase() + e.substr(1)) + "Plugin";
+        y1(i, y1(E9(L, n), a)), b2(i.prototype, b2(n, E9(L, a))), _1[i.prop = e] = i, L.targetTest && (C9.push(i), E0[e] = 1), e = (e === "css" ? "CSS" : e.charAt(0).toUpperCase() + e.substr(1)) + "Plugin";
       }
       x3(e, i), L.register && L.register(E1, i, m1);
     } else
@@ -942,7 +942,7 @@ var w1 = {
 }, I3 = function(L) {
   var e = [], r = [], i = -1;
   return L.split(L2).forEach(function(n) {
-    var a = n.match(_2) || [];
+    var a = n.match(g2) || [];
     e.push.apply(e, a), r.push(i += a.length + 1);
   }), e.c = r, e;
 }, J0 = function(L, e, r) {
@@ -952,7 +952,7 @@ var w1 = {
   if (n = n.map(function(f) {
     return (f = F3(f, e, 1)) && a + (e ? f[0] + "," + f[1] + "%," + f[2] + "%," + f[3] : f.join(",")) + ")";
   }), r && (h = I3(L), c = r.c, c.join(i) !== h.c.join(i)))
-    for (s = L.replace(L2, "1").split(_2), d = s.length - 1; l < d; l++)
+    for (s = L.replace(L2, "1").split(g2), d = s.length - 1; l < d; l++)
       i += s[l] + (~c.indexOf(l) ? n.shift() || a + "0,0,0,0)" : (h.length ? h : n.length ? n : r).shift());
   if (!s)
     for (s = L.split(L2), d = s.length - 1; l < d; l++)
@@ -1001,14 +1001,14 @@ var w1 = {
       var M = _ ? function(y, w, H, v) {
         k(y, w, H, v), d.remove(M);
       } : k;
-      return d.remove(k), l[g ? "unshift" : "push"](M), j2(), M;
+      return d.remove(k), l[g ? "unshift" : "push"](M), T2(), M;
     },
     remove: function(k, _) {
       ~(_ = l.indexOf(k)) && l.splice(_, 1) && u >= _ && u--;
     },
     _listeners: l
   }, d;
-}(), j2 = function() {
+}(), T2 = function() {
   return !X2 && g1.wake();
 }, S = {}, l5 = /^[\d.\-M][\d.\-,\s]/, s5 = /["']/g, c5 = function(L) {
   for (var e = {}, r = L.substr(1, L.length - 3).split(":"), i = r[0], n = 1, a = r.length, l, c, s; n < a; n++)
@@ -1110,7 +1110,7 @@ S.SteppedEase = S.steps = x1.SteppedEase = {
     };
   }
 };
-v2.ease = S["quad.out"];
+Z2.ease = S["quad.out"];
 p1("onComplete,onUpdate,onStart,onRepeat,onReverseComplete,onInterrupt", function(o) {
   return _0 += o + "," + o + "Params,";
 });
@@ -1118,7 +1118,7 @@ var G3 = function(L, e) {
   this.id = O4++, L._gsap = this, this.target = L, this.harness = e, this.get = e ? e.get : H3, this.set = e ? e.getSetter : y0;
 }, q2 = /* @__PURE__ */ function() {
   function o(e) {
-    this.vars = e, this._delay = +e.delay || 0, (this._repeat = e.repeat === 1 / 0 ? -2 : e.repeat || 0) && (this._rDelay = e.repeatDelay || 0, this._yoyo = !!e.yoyo || !!e.yoyoEase), this._ts = 1, V2(this, +e.duration, 1, 1), this.data = e.data, $ && (this._ctx = $, $.data.push(this)), X2 || g1.wake();
+    this.vars = e, this._delay = +e.delay || 0, (this._repeat = e.repeat === 1 / 0 ? -2 : e.repeat || 0) && (this._rDelay = e.repeatDelay || 0, this._yoyo = !!e.yoyo || !!e.yoyoEase), this._ts = 1, j2(this, +e.duration, 1, 1), this.data = e.data, $ && (this._ctx = $, $.data.push(this)), X2 || g1.wake();
   }
   var L = o.prototype;
   return L.delay = function(r) {
@@ -1126,9 +1126,9 @@ var G3 = function(L, e) {
   }, L.duration = function(r) {
     return arguments.length ? this.totalDuration(this._repeat > 0 ? r + (r + this._rDelay) * this._repeat : r) : this.totalDuration() && this._dur;
   }, L.totalDuration = function(r) {
-    return arguments.length ? (this._dirty = 0, V2(this, this._repeat < 0 ? r : (r - this._repeat * this._rDelay) / (this._repeat + 1))) : this._tDur;
+    return arguments.length ? (this._dirty = 0, j2(this, this._repeat < 0 ? r : (r - this._repeat * this._rDelay) / (this._repeat + 1))) : this._tDur;
   }, L.totalTime = function(r, i) {
-    if (j2(), !arguments.length)
+    if (T2(), !arguments.length)
       return this._tTime;
     var n = this._dp;
     if (n && n.smoothChildTiming && this._ts) {
@@ -1145,7 +1145,7 @@ var G3 = function(L, e) {
     return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - r : r) + Y0(this), i) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
   }, L.iteration = function(r, i) {
     var n = this.duration() + this._rDelay;
-    return arguments.length ? this.totalTime(this._time + (r - 1) * n, i) : this._repeat ? b2(this._tTime, n) + 1 : 1;
+    return arguments.length ? this.totalTime(this._time + (r - 1) * n, i) : this._repeat ? V2(this._tTime, n) + 1 : 1;
   }, L.timeScale = function(r, i) {
     if (!arguments.length)
       return this._rts === -1e-8 ? 0 : this._rts;
@@ -1154,7 +1154,7 @@ var G3 = function(L, e) {
     var n = this.parent && this._ts ? _9(this.parent._time, this) : this._tTime;
     return this._rts = +r || 0, this._ts = this._ps || r === -1e-8 ? 0 : this._rts, this.totalTime(e9(-Math.abs(this._delay), this._tDur, n), i !== !1), b9(this), U4(this);
   }, L.paused = function(r) {
-    return arguments.length ? (this._ps !== r && (this._ps = r, r ? (this._pTime = this._tTime || Math.max(-this._delay, this.rawTime()), this._ts = this._act = 0) : (j2(), this._ts = this._rts, this.totalTime(this.parent && !this.parent.smoothChildTiming ? this.rawTime() : this._tTime || this._pTime, this.progress() === 1 && Math.abs(this._zTime) !== s1 && (this._tTime -= s1)))), this) : this._ps;
+    return arguments.length ? (this._ps !== r && (this._ps = r, r ? (this._pTime = this._tTime || Math.max(-this._delay, this.rawTime()), this._ts = this._act = 0) : (T2(), this._ts = this._rts, this.totalTime(this.parent && !this.parent.smoothChildTiming ? this.rawTime() : this._tTime || this._pTime, this.progress() === 1 && Math.abs(this._zTime) !== s1 && (this._tTime -= s1)))), this) : this._ps;
   }, L.startTime = function(r) {
     if (arguments.length) {
       this._start = r;
@@ -1269,7 +1269,7 @@ var f1 = /* @__PURE__ */ function(o) {
       if (l !== this._time && s && (h += this._time - l, i += this._time - l), f = h, y = this._start, M = this._ts, _ = !M, d && (s || (l = this._zTime), (i || !n) && (this._zTime = i)), this._repeat) {
         if (H = this._yoyo, k = s + this._rDelay, this._repeat < -1 && i < 0)
           return this.totalTime(k * 100 + i, n, a);
-        if (f = e1(h % k), h === c ? (C = this._repeat, f = s) : (w = e1(h / k), C = ~~w, C && C === w && (f = s, C--), f > s && (f = s)), w = b2(this._tTime, k), !l && this._tTime && w !== C && this._tTime - w * k - this._dur <= 0 && (w = C), H && C & 1 && (f = s - f, v = 1), C !== w && !this._lock) {
+        if (f = e1(h % k), h === c ? (C = this._repeat, f = s) : (w = e1(h / k), C = ~~w, C && C === w && (f = s, C--), f > s && (f = s)), w = V2(this._tTime, k), !l && this._tTime && w !== C && this._tTime - w * k - this._dur <= 0 && (w = C), H && C & 1 && (f = s - f, v = 1), C !== w && !this._lock) {
           var Z = H && w & 1, x = Z === (H && C & 1);
           if (C < w && (Z = !Z), l = Z ? 0 : h % s ? s : h, this._lock = 1, this.render(l || (v ? 0 : e1(C * k)), n, !s)._lock = 0, this._tTime = h, !n && this.parent && M1(this, "onRepeat"), this.vars.repeatRefresh && !v && (this.invalidate()._lock = 1), l && l !== this._time || _ !== !this._ts || this.vars.onRepeat && !this.parent && !this._act)
             return this;
@@ -1370,7 +1370,7 @@ var f1 = /* @__PURE__ */ function(o) {
       onStart: function() {
         if (a.pause(), !u) {
           var k = n.duration || Math.abs((l - (s && "time" in s ? s.time : a._time)) / a.timeScale());
-          p._dur !== k && V2(p, k, 0, 1).render(p._time, !0, !0), u = 1;
+          p._dur !== k && j2(p, k, 0, 1).render(p._time, !0, !0), u = 1;
         }
         h && h.apply(p, d || []);
       }
@@ -1415,7 +1415,7 @@ var f1 = /* @__PURE__ */ function(o) {
     if (a._dirty) {
       for (d = a.parent; l; )
         s = l._prev, l._dirty && l.totalDuration(), h = l._start, h > c && a._sort && l._ts && !a._lock ? (a._lock = 1, A1(a, l, h - l._delay, 1)._lock = 0) : c = h, h < 0 && l._ts && (n -= h, (!d && !a._dp || d && d.smoothChildTiming) && (a._start += h / a._ts, a._time -= h, a._tTime -= h), a.shiftChildren(-h, !1, -1 / 0), c = 0), l._end > n && l._ts && (n = l._end), l = s;
-      V2(a, a === G && a._time > n ? a._time : n, 1, 1), a._dirty = 0;
+      j2(a, a === G && a._time > n ? a._time : n, 1, 1), a._dirty = 0;
     }
     return a._tDur;
   }, L.updateRoot = function(i) {
@@ -1443,14 +1443,14 @@ var C5 = function(L, e, r, i, n, a, l) {
       p: C || h === 1 ? C : ",",
       //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
       s: k,
-      c: p.charAt(1) === "=" ? w2(k, p) - k : parseFloat(p) - k,
+      c: p.charAt(1) === "=" ? x2(k, p) - k : parseFloat(p) - k,
       m: u && u < 4 ? Math.round : 0
     }, s = P9.lastIndex);
   return c.c = s < i.length ? i.substring(s, i.length) : "", c.fp = l, (_3.test(i) || _) && (c.e = 0), this._pt = c, c;
 }, M0 = function(L, e, r, i, n, a, l, c, s, h) {
   q(i) && (i = i(n || 0, L, a));
   var d = L[e], f = r !== "get" ? r : q(d) ? s ? L[e.indexOf("set") || !q(L["get" + e.substr(3)]) ? e : "get" + e.substr(3)](s) : L[e]() : d, u = q(d) ? s ? k5 : Q3 : x0, p;
-  if (r1(i) && (~i.indexOf("random(") && (i = G2(i)), i.charAt(1) === "=" && (p = w2(f, i) + (l1(f) || 0), (p || p === 0) && (i = p))), !h || f !== i || e0)
+  if (r1(i) && (~i.indexOf("random(") && (i = G2(i)), i.charAt(1) === "=" && (p = x2(f, i) + (l1(f) || 0), (p || p === 0) && (i = p))), !h || f !== i || e0)
     return !isNaN(f * i) && i !== "" ? (p = new m1(this._pt, L, e, +f || 0, i - (f || 0), typeof d == "boolean" ? _5 : L4, 0, u), s && (p.fp = s), l && p.modifier(l, this, L), this._pt = p) : (!d && !(e in L) && k0(e, i), C5.call(this, L, e, f, i, u, c || w1.stringFilter, s));
 }, f5 = function(L, e, r, i, n) {
   if (q(L) && (L = Y2(L, n, e, r, i)), !O1(L) || L.style && L.nodeType || c1(L) || k3(L))
@@ -1461,13 +1461,13 @@ var C5 = function(L, e, r, i, n, a, l) {
   return a;
 }, X3 = function(L, e, r, i, n, a) {
   var l, c, s, h;
-  if (_1[L] && (l = new _1[L]()).init(n, l.rawVars ? e[L] : f5(e[L], i, n, a, r), r, i, a) !== !1 && (r._pt = c = new m1(r._pt, n, L, 0, 1, l.render, l, 0, l.priority), r !== g2))
+  if (_1[L] && (l = new _1[L]()).init(n, l.rawVars ? e[L] : f5(e[L], i, n, a, r), r, i, a) !== !1 && (r._pt = c = new m1(r._pt, n, L, 0, 1, l.render, l, 0, l.priority), r !== M2))
     for (s = r._ptLookup[r._targets.indexOf(n)], h = l._props.length; h--; )
       s[l._props[h]] = c;
   return l;
 }, X1, e0, w0 = function o(L, e, r) {
   var i = L.vars, n = i.ease, a = i.startAt, l = i.immediateRender, c = i.lazy, s = i.onUpdate, h = i.runBackwards, d = i.yoyoEase, f = i.keyframes, u = i.autoRevert, p = L._dur, C = L._startAt, k = L._targets, _ = L.parent, g = _ && _.data === "nested" ? _.vars.targets : k, M = L._overwrite === "auto" && !f0, y = L.timeline, w, H, v, Z, x, j, W, P, A, B, O, D, I;
-  if (y && (!f || !n) && (n = "none"), L._ease = h2(n, v2.ease), L._yEase = d ? $3(h2(d === !0 ? n : d, v2.ease)) : 0, d && L._yoyo && !L._repeat && (d = L._yEase, L._yEase = L._ease, L._ease = d), L._from = !y && !!i.runBackwards, !y || f && !i.stagger) {
+  if (y && (!f || !n) && (n = "none"), L._ease = h2(n, Z2.ease), L._yEase = d ? $3(h2(d === !0 ? n : d, Z2.ease)) : 0, d && L._yoyo && !L._repeat && (d = L._yEase, L._yEase = L._ease, L._ease = d), L._from = !y && !!i.runBackwards, !y || f && !i.stagger) {
     if (P = k[0] ? s2(k[0]).harness : 0, D = P && i[P.prop], w = E9(i, E0), C && (C._zTime < 0 && C.progress(1), e < 0 && h && l && !u ? C.render(-1, !0) : C.revert(h && p ? d9 : B4), C._lazy = 0), a) {
       if (e2(L._startAt = L1.set(k, y1({
         data: "isStart",
@@ -1529,7 +1529,7 @@ var C5 = function(L, e, r, i, n, a, l) {
   var r = L[0] ? s2(L[0]).harness : 0, i = r && r.aliases, n, a, l, c;
   if (!i)
     return e;
-  n = Z2({}, e);
+  n = b2({}, e);
   for (a in i)
     if (a in n)
       for (c = i[a].split(","), l = c.length; l--; )
@@ -1574,7 +1574,7 @@ var L1 = /* @__PURE__ */ function(o) {
           for (Z in f)
             ~q3.indexOf(Z) && (W || (W = {}), W[Z] = f[Z]);
         for (w = 0; w < v; w++)
-          H = E9(i, K3), H.stagger = 0, _ && (H.yoyoEase = _), W && Z2(H, W), x = M[w], H.duration = +Y2(s, F1(l), w, x, M), H.delay = (+Y2(h, F1(l), w, x, M) || 0) - l._delay, !f && v === 1 && H.delay && (l._delay = h = H.delay, l._start += h, H.delay = 0), y.to(x, H, j ? j(w, x, M) : 0), y._ease = S.none;
+          H = E9(i, K3), H.stagger = 0, _ && (H.yoyoEase = _), W && b2(H, W), x = M[w], H.duration = +Y2(s, F1(l), w, x, M), H.delay = (+Y2(h, F1(l), w, x, M) || 0) - l._delay, !f && v === 1 && H.delay && (l._delay = h = H.delay, l._start += h, H.delay = 0), y.to(x, H, j ? j(w, x, M) : 0), y._ease = S.none;
         y.duration() ? s = h = 0 : l.timeline = 0;
       } else if (p) {
         F2(y1(y.vars.defaults, {
@@ -1616,7 +1616,7 @@ var L1 = /* @__PURE__ */ function(o) {
       if (f = d, M = this.timeline, this._repeat) {
         if (C = s + this._rDelay, this._repeat < -1 && h)
           return this.totalTime(C * 100 + i, n, a);
-        if (f = e1(d % C), d === c ? (p = this._repeat, f = s) : (k = e1(d / C), p = ~~k, p && p === k ? (f = s, p--) : f > s && (f = s)), _ = this._yoyo && p & 1, _ && (y = this._yEase, f = s - f), k = b2(this._tTime, C), f === l && !a && this._initted && p === k)
+        if (f = e1(d % C), d === c ? (p = this._repeat, f = s) : (k = e1(d / C), p = ~~k, p && p === k ? (f = s, p--) : f > s && (f = s)), _ = this._yoyo && p & 1, _ && (y = this._yEase, f = s - f), k = V2(this._tTime, C), f === l && !a && this._initted && p === k)
           return this._tTime = d, this;
         p !== k && (M && this._yEase && U3(M, _), this.vars.repeatRefresh && !_ && !this._lock && f !== C && this._initted && (this._lock = a = 1, this.render(e1(C * p), !0).invalidate()._lock = 0));
       }
@@ -1648,7 +1648,7 @@ var L1 = /* @__PURE__ */ function(o) {
       return this._lazy = this._pt = 0, this.parent ? D2(this) : this.scrollTrigger && this.scrollTrigger.kill(!!i1), this;
     if (this.timeline) {
       var a = this.timeline.totalDuration();
-      return this.timeline.killTweensOf(i, n, X1 && X1.vars.overwrite !== !0)._first || D2(this), this.parent && a !== this.timeline.totalDuration() && V2(this, this._dur * this.timeline._tDur / a, 0, 1), this;
+      return this.timeline.killTweensOf(i, n, X1 && X1.vars.overwrite !== !0)._first || D2(this), this.parent && a !== this.timeline.totalDuration() && j2(this, this._dur * this.timeline._tDur / a, 0, 1), this;
     }
     var l = this._targets, c = i ? b1(i) : l, s = this._ptLookup, h = this._pt, d, f, u, p, C, k, _;
     if ((!n || n === "all") && $4(l, c))
@@ -1760,7 +1760,7 @@ x1.TweenMax = x1.TweenLite = L1;
 x1.TimelineLite = x1.TimelineMax = f1;
 G = new f1({
   sortChildren: !1,
-  defaults: v2,
+  defaults: Z2,
   autoRemoveChildren: !0,
   id: "root",
   smoothChildTiming: !0
@@ -1892,7 +1892,7 @@ var d2 = [], f9 = {}, x5 = [], G0 = 0, y5 = 0, R9 = function(L) {
     L = L[0] || {};
     var a = _1[e], l = s2(L), c = l.harness && (l.harness.aliases || {})[e] || e, s = a ? function(h) {
       var d = new a();
-      g2._pt = 0, d.init(L, r ? h + r : h, g2, 0, [L]), d.render(1, d), g2._pt && H0(1, g2);
+      M2._pt = 0, d.init(L, r ? h + r : h, M2, 0, [L]), d.render(1, d), M2._pt && H0(1, M2);
     } : l.set(L, c);
     return a ? s : function(h) {
       return s(L, c, r ? h + r : h, l, 1);
@@ -1908,7 +1908,7 @@ var d2 = [], f9 = {}, x5 = [], G0 = 0, y5 = 0, R9 = function(L) {
     return G.getTweensOf(L, !0).length > 0;
   },
   defaults: function(L) {
-    return L && L.ease && (L.ease = h2(L.ease, v2.ease)), I0(v2, L || {});
+    return L && L.ease && (L.ease = h2(L.ease, Z2.ease)), I0(Z2, L || {});
   },
   config: function(L) {
     return I0(w1, L || {});
@@ -2008,7 +2008,7 @@ p1("to,from,fromTo,delayedCall,set,killTweensOf", function(o) {
   return g9[o] = L1[o];
 });
 g1.add(f1.updateRoot);
-g2 = g9.to({}, {
+M2 = g9.to({}, {
   duration: 0
 });
 var v5 = function(L, e) {
@@ -2061,7 +2061,7 @@ var v5 = function(L, e) {
 }, z9("roundProps", L0), z9("modifiers"), z9("snap", S3)) || g9;
 L1.version = f1.version = E1.version = "3.12.7";
 M3 = 1;
-p0() && j2();
+p0() && T2();
 S.Power0;
 S.Power1;
 S.Power2;
@@ -2089,9 +2089,9 @@ S.Circ;
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
+var X0, q1, y2, v0, l2, q0, Z0, b5 = function() {
   return typeof window < "u";
-}, J1 = {}, o2 = 180 / Math.PI, y2 = Math.PI / 180, k2 = Math.atan2, K0 = 1e8, b0 = /([A-Z])/g, V5 = /(left|right|width|margin|padding|x)/i, j5 = /[\s,\(]\S/, P1 = {
+}, J1 = {}, o2 = 180 / Math.PI, H2 = Math.PI / 180, E2 = Math.atan2, K0 = 1e8, b0 = /([A-Z])/g, V5 = /(left|right|width|margin|padding|x)/i, j5 = /[\s,\(]\S/, P1 = {
   autoAlpha: "opacity,visibility",
   scale: "scaleX,scaleY",
   alpha: "opacity"
@@ -2164,8 +2164,8 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
   return r && r.style ? r : q1.createElement(L);
 }, S1 = function o(L, e, r) {
   var i = getComputedStyle(L);
-  return i[e] || i.getPropertyValue(e.replace(b0, "-$1").toLowerCase()) || i.getPropertyValue(e) || !r && o(L, T2(e) || e, 1) || "";
-}, Q0 = "O,Moz,ms,Ms,Webkit".split(","), T2 = function(L, e, r) {
+  return i[e] || i.getPropertyValue(e.replace(b0, "-$1").toLowerCase()) || i.getPropertyValue(e) || !r && o(L, W2(e) || e, 1) || "";
+}, Q0 = "O,Moz,ms,Ms,Webkit".split(","), W2 = function(L, e, r) {
   var i = e || l2, n = i.style, a = 5;
   if (L in n && !r)
     return L;
@@ -2173,17 +2173,17 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
     ;
   return a < 0 ? null : (a === 3 ? "ms" : a >= 0 ? Q0[a] : "") + L;
 }, n0 = function() {
-  b5() && window.document && (X0 = window, q1 = X0.document, x2 = q1.documentElement, l2 = i0("div") || {
+  b5() && window.document && (X0 = window, q1 = X0.document, y2 = q1.documentElement, l2 = i0("div") || {
     style: {}
-  }, i0("div"), X = T2(X), k1 = X + "Origin", l2.style.cssText = "border-width:0;line-height:0;position:absolute;padding:0", l4 = !!T2("perspective"), Z0 = E1.core.reverting, v0 = 1);
+  }, i0("div"), X = W2(X), k1 = X + "Origin", l2.style.cssText = "border-width:0;line-height:0;position:absolute;padding:0", l4 = !!W2("perspective"), Z0 = E1.core.reverting, v0 = 1);
 }, L3 = function(L) {
   var e = L.ownerSVGElement, r = i0("svg", e && e.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), i = L.cloneNode(!0), n;
-  i.style.display = "block", r.appendChild(i), x2.appendChild(r);
+  i.style.display = "block", r.appendChild(i), y2.appendChild(r);
   try {
     n = i.getBBox();
   } catch {
   }
-  return r.removeChild(i), x2.removeChild(r), n;
+  return r.removeChild(i), y2.removeChild(r), n;
 }, e3 = function(L, e) {
   for (var r = e.length; r--; )
     if (L.hasAttribute(e[r]))
@@ -2237,13 +2237,13 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
   return v0 || n0(), e in P1 && e !== "transform" && (e = P1[e], ~e.indexOf(",") && (e = e.split(",")[0])), J1[e] && e !== "transform" ? (n = Q2(L, i), n = e !== "transformOrigin" ? n[e] : n.svg ? n.origin : w9(S1(L, k1)) + " " + n.zOrigin + "px") : (n = L.style[e], (!n || n === "auto" || i || ~(n + "").indexOf("calc(")) && (n = M9[e] && M9[e](L, e, r) || S1(L, e) || H3(L, e) || (e === "opacity" ? 1 : 0))), r && !~(n + "").trim().indexOf(" ") ? t2(L, e, n, r) + r : n;
 }, I5 = function(L, e, r, i) {
   if (!r || r === "none") {
-    var n = T2(e, L, 1), a = n && S1(L, n, 1);
+    var n = W2(e, L, 1), a = n && S1(L, n, 1);
     a && a !== r ? (e = n, r = a) : e === "borderColor" && (r = S1(L, "borderTopColor"));
   }
   var l = new m1(this._pt, L.style, e, 0, 1, e4), c = 0, s = 0, h, d, f, u, p, C, k, _, g, M, y, w;
-  if (l.b = r, l.e = i, r += "", i += "", i === "auto" && (C = L.style[e], L.style[e] = i, i = S1(L, e) || i, C ? L.style[e] = C : u2(L, e)), h = [r, i], Y3(h), r = h[0], i = h[1], f = r.match(_2) || [], w = i.match(_2) || [], w.length) {
-    for (; d = _2.exec(i); )
-      k = d[0], g = i.substring(c, d.index), p ? p = (p + 1) % 5 : (g.substr(-5) === "rgba(" || g.substr(-5) === "hsla(") && (p = 1), k !== (C = f[s++] || "") && (u = parseFloat(C) || 0, y = C.substr((u + "").length), k.charAt(1) === "=" && (k = w2(u, k) + y), _ = parseFloat(k), M = k.substr((_ + "").length), c = _2.lastIndex - M.length, M || (M = M || w1.units[e] || y, c === i.length && (i += M, l.e += M)), y !== M && (u = t2(L, e, C, M) || 0), l._pt = {
+  if (l.b = r, l.e = i, r += "", i += "", i === "auto" && (C = L.style[e], L.style[e] = i, i = S1(L, e) || i, C ? L.style[e] = C : u2(L, e)), h = [r, i], Y3(h), r = h[0], i = h[1], f = r.match(g2) || [], w = i.match(g2) || [], w.length) {
+    for (; d = g2.exec(i); )
+      k = d[0], g = i.substring(c, d.index), p ? p = (p + 1) % 5 : (g.substr(-5) === "rgba(" || g.substr(-5) === "hsla(") && (p = 1), k !== (C = f[s++] || "") && (u = parseFloat(C) || 0, y = C.substr((u + "").length), k.charAt(1) === "=" && (k = x2(u, k) + y), _ = parseFloat(k), M = k.substr((_ + "").length), c = g2.lastIndex - M.length, M || (M = M || w1.units[e] || y, c === i.length && (i += M, l.e += M)), y !== M && (u = t2(L, e, C, M) || 0), l._pt = {
         _next: l._pt,
         p: g || s === 1 ? g : ",",
         //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
@@ -2351,7 +2351,7 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
   return d4(e) ? K2 : e.substr(7).match(E3).map(K);
 }, V0 = function(L, e) {
   var r = L._gsap || s2(L), i = L.style, n = i3(L), a, l, c, s;
-  return r.svg && L.getAttribute("transform") ? (c = L.transform.baseVal.consolidate().matrix, n = [c.a, c.b, c.c, c.d, c.e, c.f], n.join(",") === "1,0,0,1,0,0" ? K2 : n) : (n === K2 && !L.offsetParent && L !== x2 && !r.svg && (c = i.display, i.display = "block", a = L.parentNode, (!a || !L.offsetParent && !L.getBoundingClientRect().width) && (s = 1, l = L.nextElementSibling, x2.appendChild(L)), n = i3(L), c ? i.display = c : u2(L, "display"), s && (l ? a.insertBefore(L, l) : a ? a.appendChild(L) : x2.removeChild(L))), e && n.length > 6 ? [n[0], n[1], n[4], n[5], n[12], n[13]] : n);
+  return r.svg && L.getAttribute("transform") ? (c = L.transform.baseVal.consolidate().matrix, n = [c.a, c.b, c.c, c.d, c.e, c.f], n.join(",") === "1,0,0,1,0,0" ? K2 : n) : (n === K2 && !L.offsetParent && L !== y2 && !r.svg && (c = i.display, i.display = "block", a = L.parentNode, (!a || !L.offsetParent && !L.getBoundingClientRect().width) && (s = 1, l = L.nextElementSibling, y2.appendChild(L)), n = i3(L), c ? i.display = c : u2(L, "display"), s && (l ? a.insertBefore(L, l) : a ? a.appendChild(L) : y2.removeChild(L))), e && n.length > 6 ? [n[0], n[1], n[4], n[5], n[12], n[13]] : n);
 }, a0 = function(L, e, r, i, n, a) {
   var l = L._gsap, c = n || V0(L, !0), s = l.xOrigin || 0, h = l.yOrigin || 0, d = l.xOffset || 0, f = l.yOffset || 0, u = c[0], p = c[1], C = c[2], k = c[3], _ = c[4], g = c[5], M = e.split(" "), y = parseFloat(M[0]) || 0, w = parseFloat(M[1]) || 0, H, v, Z, x;
   r ? c !== K2 && (v = u * k - p * C) && (Z = y * (k / v) + w * (-C / v) + (C * g - k * _) / v, x = y * (-p / v) + w * (u / v) - (u * g - p * _) / v, y = Z, w = x) : (H = s4(L), y = H.x + (~M[0].indexOf("%") ? y / 100 * H.width : y), w = H.y + (~(M[1] || M[0]).indexOf("%") ? w / 100 * H.height : w)), i || i !== !1 && l.smooth ? (_ = y - s, g = w - h, l.xOffset = d + (_ * u + g * C) - _, l.yOffset = f + (_ * p + g * k) - g) : l.xOffset = l.yOffset = 0, l.xOrigin = y, l.yOrigin = w, l.smooth = !!i, l.origin = e, l.originIsAbsolute = !!r, L.style[k1] = "0px 0px", a && (K1(a, l, "xOrigin", s, y), K1(a, l, "yOrigin", h, w), K1(a, l, "xOffset", d, l.xOffset), K1(a, l, "yOffset", f, l.yOffset)), L.setAttribute("data-svg-origin", y + " " + w);
@@ -2360,7 +2360,7 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
   if ("x" in r && !e && !r.uncache)
     return r;
   var i = L.style, n = r.scaleX < 0, a = "px", l = "deg", c = getComputedStyle(L), s = S1(L, k1) || "0", h, d, f, u, p, C, k, _, g, M, y, w, H, v, Z, x, j, W, P, A, B, O, D, I, t1, h1, j1, U, H1, n1, Q, d1;
-  return h = d = f = C = k = _ = g = M = y = 0, u = p = 1, r.svg = !!(L.getCTM && c4(L)), c.translate && ((c.translate !== "none" || c.scale !== "none" || c.rotate !== "none") && (i[X] = (c.translate !== "none" ? "translate3d(" + (c.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + (c.rotate !== "none" ? "rotate(" + c.rotate + ") " : "") + (c.scale !== "none" ? "scale(" + c.scale.split(" ").join(",") + ") " : "") + (c[X] !== "none" ? c[X] : "")), i.scale = i.rotate = i.translate = "none"), v = V0(L, r.svg), r.svg && (r.uncache ? (t1 = L.getBBox(), s = r.xOrigin - t1.x + "px " + (r.yOrigin - t1.y) + "px", I = "") : I = !e && L.getAttribute("data-svg-origin"), a0(L, I || s, !!I || r.originIsAbsolute, r.smooth !== !1, v)), w = r.xOrigin || 0, H = r.yOrigin || 0, v !== K2 && (W = v[0], P = v[1], A = v[2], B = v[3], h = O = v[4], d = D = v[5], v.length === 6 ? (u = Math.sqrt(W * W + P * P), p = Math.sqrt(B * B + A * A), C = W || P ? k2(P, W) * o2 : 0, g = A || B ? k2(A, B) * o2 + C : 0, g && (p *= Math.abs(Math.cos(g * y2))), r.svg && (h -= w - (w * W + H * A), d -= H - (w * P + H * B))) : (d1 = v[6], n1 = v[7], j1 = v[8], U = v[9], H1 = v[10], Q = v[11], h = v[12], d = v[13], f = v[14], Z = k2(d1, H1), k = Z * o2, Z && (x = Math.cos(-Z), j = Math.sin(-Z), I = O * x + j1 * j, t1 = D * x + U * j, h1 = d1 * x + H1 * j, j1 = O * -j + j1 * x, U = D * -j + U * x, H1 = d1 * -j + H1 * x, Q = n1 * -j + Q * x, O = I, D = t1, d1 = h1), Z = k2(-A, H1), _ = Z * o2, Z && (x = Math.cos(-Z), j = Math.sin(-Z), I = W * x - j1 * j, t1 = P * x - U * j, h1 = A * x - H1 * j, Q = B * j + Q * x, W = I, P = t1, A = h1), Z = k2(P, W), C = Z * o2, Z && (x = Math.cos(Z), j = Math.sin(Z), I = W * x + P * j, t1 = O * x + D * j, P = P * x - W * j, D = D * x - O * j, W = I, O = t1), k && Math.abs(k) + Math.abs(C) > 359.9 && (k = C = 0, _ = 180 - _), u = K(Math.sqrt(W * W + P * P + A * A)), p = K(Math.sqrt(D * D + d1 * d1)), Z = k2(O, D), g = Math.abs(Z) > 2e-4 ? Z * o2 : 0, y = Q ? 1 / (Q < 0 ? -Q : Q) : 0), r.svg && (I = L.getAttribute("transform"), r.forceCSS = L.setAttribute("transform", "") || !d4(S1(L, X)), I && L.setAttribute("transform", I))), Math.abs(g) > 90 && Math.abs(g) < 270 && (n ? (u *= -1, g += C <= 0 ? 180 : -180, C += C <= 0 ? 180 : -180) : (p *= -1, g += g <= 0 ? 180 : -180)), e = e || r.uncache, r.x = h - ((r.xPercent = h && (!e && r.xPercent || (Math.round(L.offsetWidth / 2) === Math.round(-h) ? -50 : 0))) ? L.offsetWidth * r.xPercent / 100 : 0) + a, r.y = d - ((r.yPercent = d && (!e && r.yPercent || (Math.round(L.offsetHeight / 2) === Math.round(-d) ? -50 : 0))) ? L.offsetHeight * r.yPercent / 100 : 0) + a, r.z = f + a, r.scaleX = K(u), r.scaleY = K(p), r.rotation = K(C) + l, r.rotationX = K(k) + l, r.rotationY = K(_) + l, r.skewX = g + l, r.skewY = M + l, r.transformPerspective = y + a, (r.zOrigin = parseFloat(s.split(" ")[2]) || !e && r.zOrigin || 0) && (i[k1] = w9(s)), r.xOffset = r.yOffset = 0, r.force3D = w1.force3D, r.renderTransform = r.svg ? J5 : l4 ? C4 : U5, r.uncache = 0, r;
+  return h = d = f = C = k = _ = g = M = y = 0, u = p = 1, r.svg = !!(L.getCTM && c4(L)), c.translate && ((c.translate !== "none" || c.scale !== "none" || c.rotate !== "none") && (i[X] = (c.translate !== "none" ? "translate3d(" + (c.translate + " 0 0").split(" ").slice(0, 3).join(", ") + ") " : "") + (c.rotate !== "none" ? "rotate(" + c.rotate + ") " : "") + (c.scale !== "none" ? "scale(" + c.scale.split(" ").join(",") + ") " : "") + (c[X] !== "none" ? c[X] : "")), i.scale = i.rotate = i.translate = "none"), v = V0(L, r.svg), r.svg && (r.uncache ? (t1 = L.getBBox(), s = r.xOrigin - t1.x + "px " + (r.yOrigin - t1.y) + "px", I = "") : I = !e && L.getAttribute("data-svg-origin"), a0(L, I || s, !!I || r.originIsAbsolute, r.smooth !== !1, v)), w = r.xOrigin || 0, H = r.yOrigin || 0, v !== K2 && (W = v[0], P = v[1], A = v[2], B = v[3], h = O = v[4], d = D = v[5], v.length === 6 ? (u = Math.sqrt(W * W + P * P), p = Math.sqrt(B * B + A * A), C = W || P ? E2(P, W) * o2 : 0, g = A || B ? E2(A, B) * o2 + C : 0, g && (p *= Math.abs(Math.cos(g * H2))), r.svg && (h -= w - (w * W + H * A), d -= H - (w * P + H * B))) : (d1 = v[6], n1 = v[7], j1 = v[8], U = v[9], H1 = v[10], Q = v[11], h = v[12], d = v[13], f = v[14], Z = E2(d1, H1), k = Z * o2, Z && (x = Math.cos(-Z), j = Math.sin(-Z), I = O * x + j1 * j, t1 = D * x + U * j, h1 = d1 * x + H1 * j, j1 = O * -j + j1 * x, U = D * -j + U * x, H1 = d1 * -j + H1 * x, Q = n1 * -j + Q * x, O = I, D = t1, d1 = h1), Z = E2(-A, H1), _ = Z * o2, Z && (x = Math.cos(-Z), j = Math.sin(-Z), I = W * x - j1 * j, t1 = P * x - U * j, h1 = A * x - H1 * j, Q = B * j + Q * x, W = I, P = t1, A = h1), Z = E2(P, W), C = Z * o2, Z && (x = Math.cos(Z), j = Math.sin(Z), I = W * x + P * j, t1 = O * x + D * j, P = P * x - W * j, D = D * x - O * j, W = I, O = t1), k && Math.abs(k) + Math.abs(C) > 359.9 && (k = C = 0, _ = 180 - _), u = K(Math.sqrt(W * W + P * P + A * A)), p = K(Math.sqrt(D * D + d1 * d1)), Z = E2(O, D), g = Math.abs(Z) > 2e-4 ? Z * o2 : 0, y = Q ? 1 / (Q < 0 ? -Q : Q) : 0), r.svg && (I = L.getAttribute("transform"), r.forceCSS = L.setAttribute("transform", "") || !d4(S1(L, X)), I && L.setAttribute("transform", I))), Math.abs(g) > 90 && Math.abs(g) < 270 && (n ? (u *= -1, g += C <= 0 ? 180 : -180, C += C <= 0 ? 180 : -180) : (p *= -1, g += g <= 0 ? 180 : -180)), e = e || r.uncache, r.x = h - ((r.xPercent = h && (!e && r.xPercent || (Math.round(L.offsetWidth / 2) === Math.round(-h) ? -50 : 0))) ? L.offsetWidth * r.xPercent / 100 : 0) + a, r.y = d - ((r.yPercent = d && (!e && r.yPercent || (Math.round(L.offsetHeight / 2) === Math.round(-d) ? -50 : 0))) ? L.offsetHeight * r.yPercent / 100 : 0) + a, r.z = f + a, r.scaleX = K(u), r.scaleY = K(p), r.rotation = K(C) + l, r.rotationX = K(k) + l, r.rotationY = K(_) + l, r.skewX = g + l, r.skewY = M + l, r.transformPerspective = y + a, (r.zOrigin = parseFloat(s.split(" ")[2]) || !e && r.zOrigin || 0) && (i[k1] = w9(s)), r.xOffset = r.yOffset = 0, r.force3D = w1.force3D, r.renderTransform = r.svg ? J5 : l4 ? C4 : U5, r.uncache = 0, r;
 }, w9 = function(L) {
   return (L = L.split(" "))[0] + " " + L[1];
 }, B9 = function(L, e, r) {
@@ -2371,13 +2371,13 @@ var X0, q1, x2, v0, l2, q0, Z0, b5 = function() {
 }, n2 = "0deg", S2 = "0px", a2 = ") ", C4 = function(L, e) {
   var r = e || this, i = r.xPercent, n = r.yPercent, a = r.x, l = r.y, c = r.z, s = r.rotation, h = r.rotationY, d = r.rotationX, f = r.skewX, u = r.skewY, p = r.scaleX, C = r.scaleY, k = r.transformPerspective, _ = r.force3D, g = r.target, M = r.zOrigin, y = "", w = _ === "auto" && L && L !== 1 || _ === !0;
   if (M && (d !== n2 || h !== n2)) {
-    var H = parseFloat(h) * y2, v = Math.sin(H), Z = Math.cos(H), x;
-    H = parseFloat(d) * y2, x = Math.cos(H), a = B9(g, a, v * x * -M), l = B9(g, l, -Math.sin(H) * -M), c = B9(g, c, Z * x * -M + M);
+    var H = parseFloat(h) * H2, v = Math.sin(H), Z = Math.cos(H), x;
+    H = parseFloat(d) * H2, x = Math.cos(H), a = B9(g, a, v * x * -M), l = B9(g, l, -Math.sin(H) * -M), c = B9(g, c, Z * x * -M + M);
   }
   k !== S2 && (y += "perspective(" + k + a2), (i || n) && (y += "translate(" + i + "%, " + n + "%) "), (w || a !== S2 || l !== S2 || c !== S2) && (y += c !== S2 || w ? "translate3d(" + a + ", " + l + ", " + c + ") " : "translate(" + a + ", " + l + a2), s !== n2 && (y += "rotate(" + s + a2), h !== n2 && (y += "rotateY(" + h + a2), d !== n2 && (y += "rotateX(" + d + a2), (f !== n2 || u !== n2) && (y += "skew(" + f + ", " + u + a2), (p !== 1 || C !== 1) && (y += "scale(" + p + ", " + C + a2), g.style[X] = y || "translate(0, 0)";
 }, J5 = function(L, e) {
   var r = e || this, i = r.xPercent, n = r.yPercent, a = r.x, l = r.y, c = r.rotation, s = r.skewX, h = r.skewY, d = r.scaleX, f = r.scaleY, u = r.target, p = r.xOrigin, C = r.yOrigin, k = r.xOffset, _ = r.yOffset, g = r.forceCSS, M = parseFloat(a), y = parseFloat(l), w, H, v, Z, x;
-  c = parseFloat(c), s = parseFloat(s), h = parseFloat(h), h && (h = parseFloat(h), s += h, c += h), c || s ? (c *= y2, s *= y2, w = Math.cos(c) * d, H = Math.sin(c) * d, v = Math.sin(c - s) * -f, Z = Math.cos(c - s) * f, s && (h *= y2, x = Math.tan(s - h), x = Math.sqrt(1 + x * x), v *= x, Z *= x, h && (x = Math.tan(h), x = Math.sqrt(1 + x * x), w *= x, H *= x)), w = K(w), H = K(H), v = K(v), Z = K(Z)) : (w = d, Z = f, H = v = 0), (M && !~(a + "").indexOf("px") || y && !~(l + "").indexOf("px")) && (M = t2(u, "x", a, "px"), y = t2(u, "y", l, "px")), (p || C || k || _) && (M = K(M + p - (p * w + C * v) + k), y = K(y + C - (p * H + C * Z) + _)), (i || n) && (x = u.getBBox(), M = K(M + i / 100 * x.width), y = K(y + n / 100 * x.height)), x = "matrix(" + w + "," + H + "," + v + "," + Z + "," + M + "," + y + ")", u.setAttribute("transform", x), g && (u.style[X] = x);
+  c = parseFloat(c), s = parseFloat(s), h = parseFloat(h), h && (h = parseFloat(h), s += h, c += h), c || s ? (c *= H2, s *= H2, w = Math.cos(c) * d, H = Math.sin(c) * d, v = Math.sin(c - s) * -f, Z = Math.cos(c - s) * f, s && (h *= H2, x = Math.tan(s - h), x = Math.sqrt(1 + x * x), v *= x, Z *= x, h && (x = Math.tan(h), x = Math.sqrt(1 + x * x), w *= x, H *= x)), w = K(w), H = K(H), v = K(v), Z = K(Z)) : (w = d, Z = f, H = v = 0), (M && !~(a + "").indexOf("px") || y && !~(l + "").indexOf("px")) && (M = t2(u, "x", a, "px"), y = t2(u, "y", l, "px")), (p || C || k || _) && (M = K(M + p - (p * w + C * v) + k), y = K(y + C - (p * H + C * Z) + _)), (i || n) && (x = u.getBBox(), M = K(M + i / 100 * x.width), y = K(y + n / 100 * x.height)), x = "matrix(" + w + "," + H + "," + v + "," + Z + "," + M + "," + y + ")", u.setAttribute("transform", x), g && (u.style[X] = x);
 }, G5 = function(L, e, r, i, n) {
   var a = 360, l = r1(n), c = parseFloat(n) * (l && ~n.indexOf("rad") ? o2 : 1), s = c - i, h = i + s + "deg", d, f;
   return l && (d = n.split("_")[1], d === "short" && (s %= a, s !== s % (a / 2) && (s += s < 0 ? a : -360)), d === "cw" && s < 0 ? s = (s + a * K0) % a - ~~(s / a) * a : d === "ccw" && s > 0 && (s = (s - a * K0) % a - ~~(s / a) * a)), L._pt = f = new m1(L._pt, e, r, i, s, T5), f.e = h, f.u = "deg", L._props.push(r), f;
@@ -2425,7 +2425,7 @@ var f4 = {
         else if (u !== "undefined") {
           if (c && C in c ? (s = typeof c[C] == "function" ? c[C].call(r, i, L, n) : c[C], r1(s) && ~s.indexOf("random(") && (s = G2(s)), l1(s + "") || s === "auto" || (s += w1.units[C] || l1(I1(L, C)) || ""), (s + "").charAt(1) === "=" && (s = I1(L, C))) : s = I1(L, C), f = parseFloat(s), g = u === "string" && h.charAt(1) === "=" && h.substr(0, 2), g && (h = h.substr(2)), d = parseFloat(h), C in P1 && (C === "autoAlpha" && (f === 1 && I1(L, "visibility") === "hidden" && d && (f = 0), Z.push("visibility", 0, l.visibility), K1(this, l, "visibility", f ? "inherit" : "hidden", d ? "inherit" : "hidden", !d)), C !== "scale" && C !== "transform" && (C = P1[C], ~C.indexOf(",") && (C = C.split(",")[0]))), M = C in J1, M) {
             if (this.styles.save(C), y || (w = L._gsap, w.renderTransform && !e.parseTransform || Q2(L, e.parseTransform), H = e.smoothOrigin !== !1 && w.smooth, y = this._pt = new m1(this._pt, l, X, 0, 1, w.renderTransform, w, 0, -1), y.dep = 1), C === "scale")
-              this._pt = new m1(this._pt, w, "scaleY", w.scaleY, (g ? w2(w.scaleY, g + d) : d) - w.scaleY || 0, r0), this._pt.u = 0, a.push("scaleY", C), C += "X";
+              this._pt = new m1(this._pt, w, "scaleY", w.scaleY, (g ? x2(w.scaleY, g + d) : d) - w.scaleY || 0, r0), this._pt.u = 0, a.push("scaleY", C), C += "X";
             else if (C === "transformOrigin") {
               Z.push(k1, 0, l[k1]), h = Y5(h), w.svg ? a0(L, h, 0, H, 0, this) : (_ = parseFloat(h.split(" ")[2]) || 0, _ !== w.zOrigin && K1(this, w, "zOrigin", w.zOrigin, _), K1(this, l, C, w9(s), w9(h)));
               continue;
@@ -2433,7 +2433,7 @@ var f4 = {
               a0(L, h, 1, H, 0, this);
               continue;
             } else if (C in h4) {
-              G5(this, w, C, f, g ? w2(f, g + h) : h);
+              G5(this, w, C, f, g ? x2(f, g + h) : h);
               continue;
             } else if (C === "smoothOrigin") {
               K1(this, w, "smooth", w.smooth, h);
@@ -2445,9 +2445,9 @@ var f4 = {
               X5(this, h, L);
               continue;
             }
-          } else C in l || (C = T2(C) || C);
+          } else C in l || (C = W2(C) || C);
           if (M || (d || d === 0) && (f || f === 0) && !j5.test(h) && C in l)
-            k = (s + "").substr((f + "").length), d || (d = 0), _ = l1(h) || (C in w1.units ? w1.units[C] : k), k !== _ && (f = t2(L, C, s, _)), this._pt = new m1(this._pt, M ? w : l, C, f, (g ? w2(f, g + d) : d) - f, !M && (_ === "px" || C === "zIndex") && e.autoRound !== !1 ? A5 : r0), this._pt.u = _ || 0, k !== _ && _ !== "%" && (this._pt.b = s, this._pt.r = W5);
+            k = (s + "").substr((f + "").length), d || (d = 0), _ = l1(h) || (C in w1.units ? w1.units[C] : k), k !== _ && (f = t2(L, C, s, _)), this._pt = new m1(this._pt, M ? w : l, C, f, (g ? x2(f, g + d) : d) - f, !M && (_ === "px" || C === "zIndex") && e.autoRound !== !1 ? A5 : r0), this._pt.u = _ || 0, k !== _ && _ !== "%" && (this._pt.b = s, this._pt.r = W5);
           else if (C in l)
             I5.call(this, L, C, s, g ? g + h : h);
           else if (C in L)
@@ -2479,7 +2479,7 @@ var f4 = {
     _getMatrix: V0
   }
 };
-E1.utils.checkPrefix = T2;
+E1.utils.checkPrefix = W2;
 E1.core.getStyleSaver = o4;
 (function(o, L, e, r) {
   var i = p1(o + "," + L + "," + e, function(n) {
@@ -2645,7 +2645,7 @@ const J7 = ({
   }
   return /* @__PURE__ */ m.jsx("div", { className: "piece rotateMethod", children: r() });
 };
-function W2(o) {
+function m2(o) {
   const L = Y(null);
   return D1(() => {
     if (!L.current || !o) return;
@@ -2758,7 +2758,7 @@ const j0 = (o) => j4(() => {
   mobileView: e,
   appear: r
 }) => {
-  const i = W2(r);
+  const i = m2(r);
   return /* @__PURE__ */ m.jsx("div", { ref: i, className: "flex flex-col gap-2", style: { width: L }, children: o.map((n, a) => /* @__PURE__ */ T4(
     Q5,
     {
@@ -2997,7 +2997,7 @@ const j0 = (o) => j4(() => {
   needHideAfterComplete: i,
   chargingDurationSec: n = 5
 }) => {
-  const a = Y(null), l = W2(e), [c, s] = C0({ text: 12, header: 24, showLabels: !0 });
+  const a = Y(null), l = m2(e), [c, s] = C0({ text: 12, header: 24, showLabels: !0 });
   return D1(() => {
     function h(f) {
       e && K5(l, e, f);
@@ -3436,7 +3436,7 @@ var $1, f2, T0, j9, B2, p9, H9, $2, T1 = "transform", c0 = T1 + "Origin", g4, M4
     return i.x = n * l + a * s + d || 0, i.y = n * c + a * h + f || 0, i;
   }, o;
 }();
-function H2(o, L, e, r) {
+function v2(o, L, e, r) {
   if (!o || !o.parentNode || ($1 || M4(o)).documentElement === o)
     return new L9();
   var i = x7(o), n = W0(o), a = n ? w4 : x4, l = V7(o, e), c = a[0].getBoundingClientRect(), s = a[1].getBoundingClientRect(), h = a[2].getBoundingClientRect(), d = l.parentNode, f = !r && v7(o), u = new L9((s.left - c.left) / 100, (s.top - c.top) / 100, (h.left - c.left) / 100, (h.top - c.top) / 100, c.left + (f ? 0 : H7()), c.top + (f ? 0 : y7()));
@@ -3454,13 +3454,13 @@ function H2(o, L, e, r) {
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
-var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,top,marginTop,yPercent".split(","), W7 = Math.PI / 180, Z1, y4, E2, h0, Y9, C3, A7 = function() {
+var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,top,marginTop,yPercent".split(","), W7 = Math.PI / 180, Z1, y4, _2, h0, Y9, C3, A7 = function() {
   return Z1 || typeof window < "u" && (Z1 = window.gsap) && Z1.registerPlugin && Z1;
 }, O2 = function(L, e, r, i) {
   for (var n = e.length, a = i === 2 ? 0 : i, l = 0; l < n; l++)
     L[a] = parseFloat(e[l][r]), i === 2 && (L[a + 1] = 0), a += 2;
   return L;
-}, M2 = function(L, e, r) {
+}, w2 = function(L, e, r) {
   return parseFloat(L._gsap.get(L, e, r || "px")) || 0;
 }, H4 = function(L) {
   var e = L[0], r = L[1], i;
@@ -3470,7 +3470,7 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
   if (l.type === "cubic")
     e = [e];
   else {
-    l.fromCurrent !== !1 && e.unshift(M2(r, i, c), n ? M2(r, n, s) : 0), l.relative && H4(e);
+    l.fromCurrent !== !1 && e.unshift(w2(r, i, c), n ? w2(r, n, s) : 0), l.relative && H4(e);
     var h = n ? s0 : w7;
     e = [h(e, l.curviness)];
   }
@@ -3478,7 +3478,7 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
 }, P7 = function(L) {
   return L;
 }, N7 = /[-+\.]*\d+\.?(?:e-|e\+)?\d*/g, u3 = function(L, e, r) {
-  var i = H2(L), n = 0, a = 0, l;
+  var i = v2(L), n = 0, a = 0, l;
   return (L.tagName + "").toLowerCase() === "svg" ? (l = L.viewBox.baseVal, l.width || (l = {
     width: +L.getAttribute("width"),
     height: +L.getAttribute("height")
@@ -3490,22 +3490,22 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
     y: i.f
   });
 }, d0 = function(L, e, r, i) {
-  var n = H2(L.parentNode, !0, !0), a = n.clone().multiply(H2(e)), l = u3(L, r, n), c = u3(e, i, n), s = c.x, h = c.y, d;
+  var n = v2(L.parentNode, !0, !0), a = n.clone().multiply(v2(e)), l = u3(L, r, n), c = u3(e, i, n), s = c.x, h = c.y, d;
   return a.e = a.f = 0, i === "auto" && e.getTotalLength && e.tagName.toLowerCase() === "path" && (d = e.getAttribute("d").match(N7) || [], d = a.apply({
     x: +d[0],
     y: +d[1]
   }), s += d.x, h += d.y), d && (d = a.apply(e.getBBox()), s -= d.x, h -= d.y), a.e = s - l.x, a.f = h - l.y, a;
 }, v4 = function(L, e, r) {
-  var i = r.align, n = r.matrix, a = r.offsetX, l = r.offsetY, c = r.alignOrigin, s = L[0][0], h = L[0][1], d = M2(e, "x"), f = M2(e, "y"), u, p, C;
+  var i = r.align, n = r.matrix, a = r.offsetX, l = r.offsetY, c = r.alignOrigin, s = L[0][0], h = L[0][1], d = w2(e, "x"), f = w2(e, "y"), u, p, C;
   return !L || !L.length ? u9("M0,0L0,0") : (i && (i === "self" || (u = h0(i)[0] || e) === e ? z2(L, 1, 0, 0, 1, d - s, f - h) : (c && c[2] !== !1 ? Z1.set(e, {
     transformOrigin: c[0] * 100 + "% " + c[1] * 100 + "%"
-  }) : c = [M2(e, "xPercent") / -100, M2(e, "yPercent") / -100], p = d0(e, u, c, "auto"), C = p.apply({
+  }) : c = [w2(e, "xPercent") / -100, w2(e, "yPercent") / -100], p = d0(e, u, c, "auto"), C = p.apply({
     x: s,
     y: h
   }), z2(L, p.a, p.b, p.c, p.d, d + p.e - (C.x - p.e), f + p.f - (C.y - p.f)))), n ? z2(L, n.a, n.b, n.c, n.d, n.e, n.f) : (a || l) && z2(L, 1, 0, 0, 1, a || 0, l || 0), L);
 }, v9 = function(L, e, r, i, n, a) {
   var l = e._gsap, c = l.harness, s = c && c.aliases && c.aliases[r], h = s && s.indexOf(",") < 0 ? s : r, d = L._pt = new y4(L._pt, e, h, 0, 0, P7, 0, l.set(e, h, L));
-  d.u = E2(l.get(e, h, a)) || 0, d.path = i, d.pp = n, L._props.push(h);
+  d.u = _2(l.get(e, h, a)) || 0, d.path = i, d.pp = n, L._props.push(h);
 }, S7 = function(L, e) {
   return function(r) {
     return L || e !== 1 ? E4(r, L, e) : r;
@@ -3514,7 +3514,7 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
   version: "3.12.7",
   name: "motionPath",
   register: function(L, e, r) {
-    Z1 = L, E2 = Z1.utils.getUnit, h0 = Z1.utils.toArray, Y9 = Z1.core.getStyleSaver, C3 = Z1.core.reverting || function() {
+    Z1 = L, _2 = Z1.utils.getUnit, h0 = Z1.utils.toArray, Y9 = Z1.core.getStyleSaver, C3 = Z1.core.reverting || function() {
     }, y4 = r;
   },
   init: function(L, e, r) {
@@ -3524,12 +3524,12 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
       path: e
     });
     var i = [], n = e, a = n.path, l = n.autoRotate, c = n.unitX, s = n.unitY, h = n.x, d = n.y, f = a[0], u = S7(e.start, "end" in e ? e.end : 1), p, C;
-    if (this.rawPaths = i, this.target = L, this.tween = r, this.styles = Y9 && Y9(L, "transform"), (this.rotate = l || l === 0) && (this.rOffset = parseFloat(l) || 0, this.radians = !!e.useRadians, this.rProp = e.rotation || "rotation", this.rSet = L._gsap.set(L, this.rProp, this), this.ru = E2(L._gsap.get(L, this.rProp)) || 0), Array.isArray(a) && !("closed" in a) && typeof f != "number") {
+    if (this.rawPaths = i, this.target = L, this.tween = r, this.styles = Y9 && Y9(L, "transform"), (this.rotate = l || l === 0) && (this.rOffset = parseFloat(l) || 0, this.radians = !!e.useRadians, this.rProp = e.rotation || "rotation", this.rSet = L._gsap.set(L, this.rProp, this), this.ru = _2(L._gsap.get(L, this.rProp)) || 0), Array.isArray(a) && !("closed" in a) && typeof f != "number") {
       for (C in f)
         !h && ~j7.indexOf(C) ? h = C : !d && ~T7.indexOf(C) && (d = C);
-      h && d ? i.push(f3(this, O2(O2([], a, h, 0), a, d, 1), L, h, d, u, e, c || E2(a[0][h]), s || E2(a[0][d]))) : h = d = 0;
+      h && d ? i.push(f3(this, O2(O2([], a, h, 0), a, d, 1), L, h, d, u, e, c || _2(a[0][h]), s || _2(a[0][d]))) : h = d = 0;
       for (C in f)
-        C !== h && C !== d && i.push(f3(this, O2([], a, C, 2), L, C, 0, u, e, E2(a[0][C])));
+        C !== h && C !== d && i.push(f3(this, O2([], a, C, 2), L, C, 0, u, e, _2(a[0][C])));
     } else
       p = u(v4(u9(e.path), L, e)), C2(p, e.resolution), i.push(p), v9(this, L, e.x || "x", p, "x", e.unitX || "px"), v9(this, L, e.y || "y", p, "y", e.unitY || "px");
     r.vars.immediateRender && this.render(r.progress(), this);
@@ -3554,7 +3554,7 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
   stringToRawPath: y9,
   rawPathToString: _4,
   transformRawPath: z2,
-  getGlobalMatrix: H2,
+  getGlobalMatrix: v2,
   getPositionOnPath: d3,
   cacheRawPathMeasurements: C2,
   convertToPath: function(L, e) {
@@ -3563,7 +3563,7 @@ var j7 = "x,translateX,left,marginLeft,xPercent".split(","), T7 = "y,translateY,
     });
   },
   convertCoordinates: function(L, e, r) {
-    var i = H2(e, !0, !0).multiply(H2(L));
+    var i = v2(e, !0, !0).multiply(v2(L));
     return r ? i.apply(r) : i;
   },
   getAlignMatrix: d0,
@@ -3604,7 +3604,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
   appear: e,
   showCoordinates: r = !0
 }) => {
-  const i = Y(null), n = Y(null), [a, l] = C0({
+  const i = Y(null), n = m2(e), [a, l] = C0({
     lon: 170,
     lat: 10,
     area: "Pacific Ocean",
@@ -3675,7 +3675,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
       },
       ease: "bounce.inOut"
     });
-  }, [e]), /* @__PURE__ */ m.jsxs(
+  }, []), /* @__PURE__ */ m.jsxs(
     "div",
     {
       ref: n,
@@ -3709,7 +3709,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     }
   );
 }, L8 = ({ fill: o = "#fa0", width: L, appear: e, opacity: r }) => {
-  const i = Y(null), n = W2(e);
+  const i = Y(null), n = m2(e);
   return D1(() => {
     const a = T.utils.toArray("#points rect", n.current), l = T.to(a, {
       opacity: 0,
@@ -3832,7 +3832,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
   colorSchema: L = "#fa0",
   appear: e
 }) => {
-  const r = W2(e), i = Y(null), n = Y(null), a = Y(null), l = Y(null), c = Y(T.timeline({ paused: !0, yoyo: !0, repeat: -1, repeatDelay: 2 }));
+  const r = m2(e), i = Y(null), n = Y(null), a = Y(null), l = Y(null), c = Y(T.timeline({ paused: !0, yoyo: !0, repeat: -1, repeatDelay: 2 }));
   return D1(() => {
     c.current.to([i.current, n.current, a.current], {
       duration: 1,
@@ -3967,7 +3967,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
   height: n = "110px",
   width: a
 }) => {
-  const l = W2(i), c = Y(null);
+  const l = m2(i), c = Y(null);
   return /* @__PURE__ */ m.jsxs(
     "div",
     {
@@ -4053,7 +4053,7 @@ const O7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     ]
   }
 ), B7 = (o) => /* @__PURE__ */ t.createElement("svg", { viewBox: "0 0 450 550", ...o }, /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 260.23993,277.87889 -0.17,-0.35 0.5,-1.77 -0.86,-1.4 0.11,-1.46 0.46,-1.37 -0.25,-0.32 -0.89,0.36 -1.14,-0.35 0,0 -0.97,-1.57 -0.32,-1.21 0,0 0.22,-2.19 1.69,-2.97 1.28,0.15 1.66,-0.5 1.48,-1.13 -0.02,0.57 1.18,0.87 -0.03,0.65 0.5,0.21 -0.09,0.48 0.27,0.32 0.32,0.15 0.3,-0.21 0.94,0.39 0.52,0.71 0.85,-0.17 0.92,-0.73 0.63,-0.01 0.75,0.47 -0.07,0.24 0.84,0.05 -0.02,0.31 0.99,0.5 1.72,-1.4 0.8,-0.08 0,0 -0.32,0.83 0.64,0.81 -0.01,0.51 1.26,-0.26 0.85,-0.55 1.56,0.3 0.22,0.39 0.84,-0.27 0,0 -0.31,0.98 0.52,0.5 -0.58,0.57 0.08,0.47 -0.46,0.24 -1.46,2 -0.03,1.06 -1.28,1.93 -2.75,1.53 -0.43,1.23 0.16,2.32 0,0 -3.41,0.79 -3.43,1.23 -2.03,0.27 -0.26,-0.21 0.8,-1.71 0.49,0.05 0.25,0.57 2.36,-1.02 0.86,-0.53 -0.1,-0.44 0.45,-0.36 0.48,0.15 0.22,-0.19 0.21,-1.14 -0.57,-0.7 -1.69,-0.31 -0.52,0.46 -0.24,0.93 -0.81,-0.57 -2.13,0.25 -1.42,-1.37 0.31,-1.08 -0.44,-0.19 -0.42,0.59 -0.27,2.22 1.02,0.93 0.15,0.88 -1.69,-0.6 -0.77,-0.73 z", title: "Aichi", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round", id: "JP-23" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 323.48993,155.40889 -0.69,-2.75 -1.39,-1.62 0.51,-0.81 0.74,0.23 0.6,0.89 0.19,-1.14 -0.26,-0.41 0.4,-0.61 0.19,-1.4 -0.34,-1.41 -1.07,-0.44 -0.45,0.43 -0.54,0.81 -0.61,2.06 0.54,0.42 -0.08,1.26 -0.75,-0.29 -0.89,0.15 -0.19,0.25 0.17,0.85 -2.1,-0.09 -0.96,-1.84 -0.22,-1.3 0.14,-0.73 1.93,1.32 0.67,-0.21 1.48,-1.46 0.87,-1.57 0.8,-2.39 0.6,-3 0.03,-1.67 -1.72,-1.81 0,0 0.51,-0.11 1.13,0.35 0.26,-0.87 0.77,-0.35 0.54,0.32 0.21,0.49 1.48,-0.13 0.81,0.28 1.35,-0.38 0.86,0.18 0.5,-1 1.31,-0.11 0.27,0.84 0.8,0 1.15,1.19 1,-0.84 1.25,0.84 0.79,-0.63 0.76,-0.05 0.72,-0.62 0.71,0.1 0.24,-1.08 1.23,-0.49 -0.16,2.35 2.13,-0.23 0.28,1.84 -0.41,0.27 -0.5,1.22 0.14,1.31 0,0 -0.4,0.57 -0.61,0.22 -0.81,1.11 0.4,0.49 -0.15,1.56 -0.52,0.46 -0.05,2.68 0.62,2.5 -0.56,0.18 -0.49,-0.48 -0.82,0.45 0.07,1.06 1.12,0.66 -0.82,1.47 -0.39,0.14 0.66,1.17 0.13,1.08 -0.51,1.19 -0.27,-0.03 -0.61,0.86 -0.42,0.11 0.21,0.72 -0.43,1.34 -0.78,0.85 0.05,0.81 -0.45,0.12 -0.05,0.65 0.39,0.09 0.6,1.25 -0.15,0.92 0.53,0.75 1.12,0.77 -0.33,1.06 0.85,0.44 -0.6,0.3 -0.47,0.83 0.27,0.22 -0.28,0.97 0.97,0.38 0.14,0.4 -0.79,1.37 0.08,1.15 0,0 -0.71,0.17 -1.64,1.57 -1.76,0.36 -0.27,-0.18 0,0 -0.24,-0.45 -1.52,-0.53 -0.58,-1.8 -1.06,-0.08 -0.35,-0.77 -1.08,0.27 -3.08,-0.94 -0.79,-0.7 -0.71,-0.18 -0.2,-1.17 -0.98,0.24 -0.37,0.46 -2.51,-0.41 0,0 0.68,-1.47 -0.23,-0.93 0.39,-0.78 -0.04,-0.53 0.39,-0.61 0.7,-0.11 0.94,-2.39 0.8,-4.19 0.04,-4.1 z", title: "Akita", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#242424", d: "m 344.61993,125.64889 0.92,-0.83 0.58,-1.05 0.57,-1.85 0.23,-2.45 0.59,-1.14 -0.72,-2.06 -0.86,-1.04 -0.79,-0.08 -0.85,1.61 -1.13,0.81 -1.52,-0.42 -0.67,0.65 -1.81,0.34 -0.85,0.87 -0.93,-0.47 0.69,-4.59 0.42,-0.66 0.31,-1.84 1.43,-2.03 -0.22,-0.82 0.3,-0.55 1.72,1.57 1.32,0.11 0.89,0.5 1.57,1.97 1.46,0.85 0.89,0.11 1,-0.37 2.04,-1.67 -1.49,6.85 -0.1,5.09 0.55,5.55 1.37,4.86 1.18,1.09 0.67,-0.39 0.23,0.55 1.91,1.89 0,0 -0.47,0.54 -1.39,0.62 -0.11,0.83 -0.89,0.69 -1.24,-0.77 -0.68,0.09 -1.72,1.1 -0.68,-1.08 -1.96,1.49 -1.52,0.38 -0.74,0.5 -0.04,0.72 -0.46,0.02 -1,0.78 -0.94,-0.01 -0.46,-0.68 0,0 -0.14,-1.31 0.5,-1.22 0.41,-0.27 -0.28,-1.84 -2.13,0.23 0.16,-2.35 -1.23,0.49 -0.24,1.08 -0.71,-0.1 -0.72,0.62 -0.76,0.05 -0.79,0.63 -1.25,-0.84 -1,0.84 -1.15,-1.19 -0.8,0 -0.27,-0.84 -1.31,0.11 -0.5,1 -0.86,-0.18 -1.35,0.38 -0.81,-0.28 -1.48,0.13 -0.21,-0.49 -0.54,-0.32 -0.77,0.35 -0.26,0.87 -1.13,-0.35 -0.51,0.11 0,0 0.26,-1.78 -0.19,-1.44 -0.45,-0.86 -0.96,0.05 -0.15,-0.82 1.78,-1.42 1.02,-1.8 0.65,-0.44 0.61,-0.25 1.23,0.69 1.43,-1.07 0.81,-0.1 0.42,-0.61 1.02,-3.61 0.07,-3.8 -0.69,-0.75 -0.7,-0.08 0.17,-0.39 0.88,0.23 0.38,-0.43 0.4,-2.95 1.09,0.69 0.67,0.99 0.64,0.36 0.67,-0.19 1,-1.01 1.09,0.38 0.65,0.72 -0.11,2.27 0.39,2.52 0.73,3.28 0.93,1.19 1.33,-0.11 1.19,-1.28 0.22,-0.56 -0.22,-1.24 0.33,-1.45 1.49,0.54 0.68,0.96 -0.18,0.55 0.73,-0.01 0.92,0.45 0.53,0.88 0.77,0.21 z", title: "Aomori", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#222221", d: "m 319.14993,263.11889 0.14,-0.21 0.96,0.42 0.39,-0.47 -0.3,-0.72 0.09,-0.58 1.35,-0.38 -0.12,-0.51 0.28,-0.13 0.24,0.38 1.51,-2.16 0.57,0.45 0.23,-0.35 -0.54,-1.29 -0.76,-0.83 -1.21,-1.19 -0.69,0.29 -0.35,-0.76 0,0 -1.08,-2.26 0,0 0.34,-0.26 0.22,-1.33 -1.68,-3.22 -0.05,-1.04 -0.71,-1.41 0,0 0.42,0.03 0.33,0.84 1.63,2.01 0.72,0.24 0.2,0.71 1.04,0.7 2.46,0.86 0.58,0.72 1.02,-0.41 0.86,0.11 0.59,-0.4 0.8,0.23 0.86,-0.82 2.01,-0.52 1.08,0.52 0.91,-0.04 1.13,0.97 1.23,0.26 1.11,1.53 2.5,1.54 0,0 -0.11,0.65 -0.76,-0.51 -1.5,0.5 -0.8,-0.22 -0.75,0.19 -2.72,2.07 -1.39,1.57 -1.12,2.16 -0.29,2.32 0.47,1.23 -0.61,2.85 -0.67,0.14 -0.47,1.02 -0.28,0.1 -2.15,0.62 -0.23,-0.44 -1.28,0.19 -0.81,1.1 -1.97,1.36 -0.51,1.21 0.1,0.58 -0.45,0.61 -1.04,0.43 -1.17,-0.21 -0.19,-0.72 -1.31,-0.67 0.03,-0.29 0.8,0.11 1.25,-0.56 -0.78,-1.66 0.46,-0.5 -0.36,-0.36 0.29,-0.7 -0.41,-0.57 0.01,-0.83 0.92,-0.71 0.08,-0.52 -0.44,-0.75 0.06,-0.39 -0.75,-0.46 0.54,-1.46 z", title: "Chiba", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#2e2e2e", d: "m 174.06993,312.76889 0.23,-0.43 0.35,-0.26 0.35,0.04 0.02,-0.2 -0.29,-0.13 -0.38,-0.16 -0.47,0.16 -0.28,0.23 -0.44,-0.25 -0.2,0.38 -0.4,-0.13 -0.14,-0.23 -0.46,0 0.13,-0.45 0.17,-0.13 0.14,-0.1 0.31,-0.12 -0.03,-0.17 -0.04,-0.25 -0.3,0.03 -0.22,-0.37 0.35,-0.29 -0.07,-0.36 -0.27,-0.07 0.35,-0.32 0.16,-0.04 0.22,-0.27 0.09,-0.46 -0.23,0.13 -0.4,-0.05 0.17,-0.41 -0.51,0.1 -0.33,-0.36 -0.23,0.06 -0.35,0.29 -0.86,0.6 -0.52,0.14 -0.33,0.37 -1.1,0.33 -0.57,0.53 -0.16,0.31 -0.31,0.28 -0.51,0.06 -0.03,-0.24 0.35,-0.22 0.01,-0.17 -0.51,0.02 -0.85,0.71 -0.51,0.31 -0.25,0.01 2.15,-1.81 0.51,-0.3 0.66,-0.36 0.57,0.08 0.31,-0.33 0.31,-0.14 0.46,-0.04 0.24,-0.14 0.1,-0.18 1.16,-0.52 0.86,-0.64 0.75,-0.4 0.21,-0.5 0.83,-0.99 0.63,-0.46 1.55,-0.56 1.22,-0.91 0.21,-0.24 0.37,-0.98 0.45,-0.4 -0.23,-0.72 -0.01,-0.99 0.2,-1.04 0.24,-0.66 0.43,0.17 0.43,-0.29 0.34,-1.22 0.07,-0.62 1.77,-1.67 1.11,-0.17 -0.06,-0.45 0.26,-0.17 -0.15,-0.56 0.36,-0.6 0.75,0.87 0.98,1.41 0.72,1.48 0.38,0.6 0.13,0.43 0.5,0.36 0.95,-0.32 1.38,-0.34 0.37,-0.1 -0.12,-0.46 1.2,-0.2 0.24,-0.26 0.38,0.05 0.37,0.33 0.7,-0.3 0.68,0.1 0.48,0.1 0.73,0.33 0.5,-0.07 0.69,-0.5 0.2,-0.34 0.14,-0.44 0.16,-0.08 0.4,-0.27 0,0 0.33,0.27 0.95,0.13 0.61,0.34 0,0 -0.29,0.68 0.27,0.49 0,1.04 -0.22,0.61 -0.34,0.29 0,0 -0.41,0.01 -0.65,-0.01 -0.47,0.33 -0.51,-0.34 -0.21,0.04 -0.56,0.77 -0.21,0.27 -0.2,0.16 -2.07,0.07 -0.8,-0.13 -1.47,0.02 -0.2,0.17 -0.22,0.73 -0.18,0.11 -0.52,0.19 -0.34,-0.34 -0.2,0.02 -0.26,0.69 -0.39,0.79 -0.4,0.4 -0.35,0.5 -0.06,0.55 -0.22,0.28 -0.61,0.1 -0.18,0.65 -0.25,0.73 -0.19,0.46 0.29,0.29 0.04,0.52 -0.36,0.27 -0.57,0.88 -0.01,0.27 -1.2,0.34 -0.21,-0.13 -0.66,0.08 -1.3,-0.21 -0.41,0.11 -0.32,0.3 0.35,0.32 0.15,0.94 0.15,0.2 0.2,0 0.23,0.72 0.45,0.14 0.27,0.36 0.04,0.57 -0.08,0.22 -0.8,0.46 -1.21,0.42 -0.31,0.52 -0.18,1.14 -0.43,0.03 -0.17,0.15 -0.14,0.47 -0.71,0.9 -0.19,0.07 -0.95,-0.92 -0.11,-0.27 -0.2,0.07 -0.14,0.29 0.29,0.62 -0.03,0.26 0.47,0.51 0.21,0.05 0.09,0.3 -0.2,0.92 0.3,0.31 0.21,0.94 -0.01,1.33 -0.41,0.1 -0.05,0.38 0,0 -0.32,-0.12 -0.94,0.35 -0.14,-0.27 -0.25,-0.34 -0.09,-0.18 -0.46,0.16 -0.19,0.09 -0.26,0.06 -0.02,0.29 0.02,0.13 -0.19,0.26 -0.35,-0.03 -0.27,0.01 -0.25,-0.04 0.08,-0.37 -0.32,-0.38 0.1,-0.12 0.36,-0.04 0.35,-0.26 -0.63,-0.34 0.28,-0.23 0.24,0.14 0.15,0.04 0.14,-0.1 -0.21,-0.39 0.1,-0.26 -0.3,-0.14 -0.12,-0.04 -0.01,-0.83 -0.28,-0.04 -0.35,0.33 -0.42,-0.24 -0.38,0.17 -0.13,0.08 -0.09,0.21 -0.05,0.29 -0.36,-0.18 0.33,-0.4 0.02,-0.38 0.15,-0.35 0.22,-0.05 0.2,0.11 0.14,0.34 0.33,-0.06 0.57,-0.22 0.13,-0.27 -0.3,-0.12 0.21,-0.39 0.38,-0.6 -0.02,-0.33 -0.39,-0.09 -0.15,0.01 -0.22,0.08 -0.15,0.13 -0.22,-0.14 0.05,-0.25 -0.36,-0.17 0.15,-0.33 0.29,-0.35 -0.52,-0.56 0.51,0.2 0.69,0.34 0.29,0.33 0.35,0.02 -0.08,-0.37 -0.2,-0.41 0.31,-0.27 0.56,0.04 0.23,-0.03 0.09,-0.16 -0.14,-0.34 -0.28,0.04 -0.38,-0.34 0.39,-0.21 0.04,-0.31 -0.8,0.05 -0.49,-0.19 z", title: "Ehime", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 238.25993,258.18889 1.16,0.72 0.07,0.38 0.31,-0.04 0.42,-0.26 -0.65,-0.81 0.2,-0.13 0.54,0.36 0.37,-0.65 -0.58,-0.45 -0.25,-0.84 0.59,0.15 0.43,0.69 0.76,-0.4 0.15,0.35 1.22,-0.36 0.23,-0.43 -0.25,-0.32 0.06,-0.95 -0.43,-0.68 1.24,-0.99 0.39,0.6 -0.23,1.43 0.36,0.54 0.6,-0.11 0.48,-1.52 0.02,-1.28 -0.57,-1.13 -1.52,-1.52 0.08,-1.1 -0.79,-1.19 1.06,-1.27 0.35,-1.49 2.1,-3.09 -0.24,-0.66 0.85,0 1.53,-1.09 0,0 1.68,1.59 0.25,1.25 0.41,0.38 0.9,-0.13 0.65,0.76 0.47,0.05 1.75,-0.42 1.86,1.46 0.24,0.62 1.89,-0.48 0,0 0.21,0.49 -0.49,0.37 -0.25,1.39 0.5,0.37 -0.05,0.53 0.79,0.28 -0.13,0.49 0.64,0.53 0.3,1.22 -0.63,0.46 -0.17,0.78 -1.34,-0.02 -1.13,0.49 -0.42,-0.52 -0.46,0.45 -0.52,-0.17 -0.49,0.44 -0.82,-0.21 -0.56,0.77 -0.3,-0.51 -1.06,0.02 -1.17,-0.42 -0.9,0.48 -0.01,0.97 -0.99,1.64 0,0 -1.81,-0.94 -0.67,0.13 -0.31,0.67 0.83,1.76 -0.13,0.75 -1.1,-0.32 -0.35,1.07 -1.29,0.13 -0.45,0.87 -0.46,0.1 -0.77,-0.77 -1.04,2.77 -0.57,0.28 -0.35,-0.4 -0.66,-0.01 -0.05,0.5 -0.37,0.1 -0.45,0.74 0,0 -1.37,0.26 -1.51,-0.59 -1.73,-0.19 -0.13,-0.87 -1.31,-1.21 0.29,-1 -0.52,-0.42 0.41,-0.9 0,0 0.88,0.17 -0.21,1.09 0.18,0.25 2.58,0.39 1.78,-0.38 0.27,-0.88 -0.65,0.27 -0.03,-0.5 -0.57,-0.11 0.52,-0.59 0.41,-0.08 z", title: "Fukui", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 133.13993,303.07889 1.24,-1.35 0.14,-0.6 -0.12,-0.36 -0.33,0.01 -0.06,-0.68 0.56,-0.05 0.25,-0.81 0.85,-0.52 -0.08,-0.39 0.78,-0.03 0.25,0.3 1.04,-0.11 0.68,-0.4 0.71,-0.94 1.1,0.45 0.45,-0.34 1.79,0.39 0.43,0.58 0.74,-0.28 0.32,-0.77 1.16,-0.76 0.4,0.31 -0.72,1.35 0.17,0.96 -0.79,0.7 0.22,0.46 0.66,-0.13 0.55,2.53 1.4,2.1 0.56,-0.28 1.08,0.76 0,0 -0.15,0.37 0.3,0.8 -0.39,0.52 0.13,0.46 -1.91,0.11 -0.97,-0.27 -0.93,0.23 -1.61,1.38 -0.3,1.65 -0.49,0.13 -0.47,0.69 0.3,0.16 0.29,0.95 -0.14,0.64 -0.52,0.26 -0.12,0.38 0.36,0.19 -0.03,0.62 0.84,0.73 -0.48,1.38 -0.35,0.25 0,0 -1.53,-0.52 -0.67,-0.61 -0.81,0.04 -0.16,-0.4 -0.53,1.44 -1.5,-0.17 -1.62,1.49 0.18,1.07 -2.14,-0.08 0,0 0.48,-1.1 -0.32,-0.8 -0.74,-0.78 0.03,-0.41 -0.37,-0.19 0,0 0.17,-1.23 0.59,-1.04 1.85,-1.42 0.51,-0.86 0.51,0.03 0.02,-2.25 -0.41,-0.21 -0.74,0.25 -0.99,0.95 -0.62,-0.71 -0.77,-0.17 -1.7,-1.07 -0.48,0.22 -0.86,-0.24 -0.69,0.32 -2.63,-0.08 0,0 0.15,-0.68 1.61,-0.32 0.54,-0.64 0.19,-0.55 -0.42,0.3 -0.15,-0.45 -0.27,-0.16 -0.45,0.24 -0.22,-0.4 1.19,-0.35 0.29,-0.38 -0.12,-0.38 0.85,-0.3 0.15,-0.61 0.59,0.4 -0.25,0.37 0.18,0.42 0.82,0.14 0.11,0.7 0.48,-0.08 0.16,-0.34 0.66,0.07 1.04,-0.49 0.12,-0.84 0.57,-0.23 -0.08,-0.6 -0.59,-0.04 z", title: "Fukuoka", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#303030", d: "m 341.40993,223.74889 -0.62,0.81 -2.49,1.19 -0.39,0.66 0.04,0.48 0,0 -3.43,-1.04 -0.57,-1.03 -0.34,0.46 0.46,1.3 -1.12,0.49 -1.46,1.4 -0.43,-0.57 -1.14,-0.42 -0.33,-1.16 -0.82,-0.25 -0.76,-1.02 -0.55,-0.03 0,0 -0.33,-0.33 0.16,-1.86 -0.85,0.05 -0.23,-0.94 -1.02,-0.98 -2.39,-1 -2.41,-0.28 -1.36,0.59 -0.18,0.91 -2.79,0.87 -0.26,0.42 -0.79,0.19 -0.23,0.44 -0.63,0.09 -0.92,0.74 -1.36,0.24 -0.71,1.02 -0.94,0.43 0,0 -2.3,-0.72 -0.52,0.2 -0.01,-0.37 0,0 0.24,-0.42 -0.11,-1.34 0.22,-0.78 -0.42,-1.39 0.35,-1.28 -0.47,-0.93 -0.68,-0.16 -0.59,-0.8 0.97,-1.4 0.2,-1.16 0.14,-1.19 -0.67,-0.56 0.57,-0.92 2.15,-0.24 0.55,-0.29 0.68,0.24 0.32,-1.19 0.41,-0.16 0.47,-0.04 0.39,0.32 0.37,-0.24 1.26,0.22 0.48,-0.23 -0.38,-0.82 0.09,-0.81 -0.42,-1.03 0.03,-0.73 1.53,-1.04 -0.13,-0.24 0.71,-1.3 1.58,-1.71 0,0 0.79,-0.18 0.63,0.68 0.94,-0.58 0.61,0.39 0.63,-0.07 0.33,-0.35 0.97,1.68 1.23,-0.46 1.47,1.12 0.74,-0.56 1.3,0.26 1.33,-1.61 -0.55,-0.41 -0.04,-2.01 0.3,-1.71 0,0 1.39,0.66 1.13,-0.57 1.14,0.69 0.37,1.09 2.65,-0.27 0.82,0.28 0.56,0.46 -0.18,1.14 0.28,0.75 0.63,0.5 1.21,0.27 0.15,-0.16 -0.47,-0.39 1.58,0.06 0.13,-0.22 -0.03,-2.17 0.72,-0.27 0.69,0.18 0,0 0.38,1.28 0.71,0.43 0.05,1.28 0.44,0.75 0.55,6.03 0,3.31 -1.4,9.34 z m -3.43,3.16 0,0 0.03,0.01 -0.03,-0.01 z", title: "Fukushima", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 251.72993,266.75889 -0.72,-0.69 0.32,-0.21 0.02,-0.93 0.32,-0.52 0.04,-1.34 0.55,-0.44 -0.53,-0.85 0.09,-1 -0.63,-0.64 0.24,-0.89 -0.55,-0.71 -0.31,0.5 -0.78,-0.29 0.12,-1.6 -0.66,-0.07 -0.26,-1.07 0,0 0.98,-1.64 0.01,-0.97 0.9,-0.48 1.17,0.42 1.06,-0.01 0.3,0.51 0.56,-0.77 0.82,0.22 0.48,-0.44 0.52,0.17 0.46,-0.44 0.41,0.52 1.13,-0.49 1.35,0.02 0.17,-0.78 0.62,-0.46 -0.3,-1.22 -0.64,-0.52 0.12,-0.49 -0.79,-0.28 0.05,-0.53 -0.49,-0.37 0.24,-1.39 0.5,-0.37 -0.21,-0.49 0,0 0.5,-1.09 -0.23,-0.74 0.61,-0.23 0.94,-1.67 -0.04,-0.39 -0.76,-0.43 -0.25,-0.58 0,0 0.58,-0.08 0.29,-1.06 0.77,-0.56 0.25,0.59 0.35,-0.36 0.92,0.51 0.34,0.77 -0.26,0.73 0.34,0.08 1.39,-1.22 0.25,-1.15 2.08,-2.02 0.55,-0.02 0.25,0.44 1.46,-0.69 0.59,0.05 0.04,0.88 0.21,0.04 1.35,-0.8 0.28,0.78 1.13,0.35 0.71,-0.34 0.84,0.82 0.94,0.07 0,0 0.13,0.51 1.03,0.66 0.09,0.53 -0.09,0.78 -1.39,1.81 0.38,0.55 -0.05,0.52 -0.75,0.71 -0.01,0.81 0.46,0.5 0.72,0.25 -0.39,1.57 -1,0.76 -0.37,0.92 -0.44,0.1 -0.52,1.06 -0.42,0.07 -0.33,-0.33 -1.15,0.35 -0.35,1.06 -0.59,0.25 -0.11,0.54 0.29,0.39 1.04,0.01 0.05,0.51 1.23,0.37 0.8,1.79 0.78,0.7 -0.43,1.28 0.39,0.45 -0.07,1.1 0.31,0.55 1.07,-0.32 0.57,0.54 0,0.91 -0.65,0.7 0.71,0.98 -0.87,0.29 0.26,1.27 -0.84,0.65 0.01,0.53 0,0 -0.8,0.08 -1.72,1.4 -0.99,-0.49 0.02,-0.32 -0.84,-0.04 0.07,-0.24 -0.75,-0.48 -0.63,0.02 -0.92,0.73 -0.85,0.17 -0.52,-0.71 -0.94,-0.39 -0.3,0.21 -0.32,-0.15 -0.27,-0.32 0.09,-0.49 -0.49,-0.2 0.03,-0.65 -1.18,-0.87 0.02,-0.56 -1.49,1.12 -1.66,0.5 -1.27,-0.15 -1.69,2.98 -0.22,2.19 0,0 -1.08,-0.12 -1.69,-2.5 z", title: "Gifu", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#42403c", d: "m 315.66993,242.52889 -0.31,0.58 -0.49,0.18 -0.52,-0.48 -2.54,0.48 -1.81,-1.34 -0.86,0.21 -0.97,-0.29 -0.6,0.15 -1.69,-0.86 -0.7,-0.05 -1.23,1.97 -0.02,0.93 -0.42,0.76 -1.53,0.07 -0.46,0.78 -1.52,0.4 -0.92,1.01 -1.23,0.02 -0.75,1.01 0,0 -0.36,0.09 -0.36,-0.52 -0.61,-0.19 -0.38,-1.77 0.33,-0.35 -0.28,-0.67 -0.65,-0.08 -0.44,-0.76 0.16,-0.17 0.46,0.33 0.45,-0.48 0.03,-0.81 -0.42,-0.44 -0.23,-1.11 1.03,-0.68 0.07,-1.48 -0.29,-1.15 -0.83,-0.25 -0.7,0.1 -0.44,0.4 -0.88,-0.25 -0.21,0.31 -0.43,-0.07 -1.25,-0.74 -0.06,-1.3 0.6,-1.66 -0.02,-0.99 0.96,-1.18 0.96,-0.16 0.01,-1.09 1.79,-0.36 1.55,-0.83 0,0 0.25,0.17 0.36,-0.63 1.2,0.44 0.79,-0.67 -0.1,-1 0.64,0.03 1.49,-0.62 -0.25,-0.44 0.29,-0.95 0.85,0.11 0.09,-0.26 -0.27,-1.93 1.64,-0.28 0.82,-0.73 0.12,-0.95 1.54,1.55 0.11,0.76 0.92,0.07 0.23,0.34 0,0 0.01,0.37 0.52,-0.2 2.3,0.71 0,0 -0.58,1.54 1.02,0.44 -1.02,1.41 0.28,1.17 -0.59,0.89 -0.18,1.37 1.47,0.74 1.23,-0.07 0.34,0.68 -0.82,0.65 -0.4,1.2 0.33,0.76 -1.19,1.55 -0.18,0.96 1.05,0.78 -0.04,0.58 1.11,0.97 1.01,-0.29 0.71,0.43 1.11,-0.18 0.38,0.24 -0.09,0.28 z", title: "Gunma", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 213.21993,277.54889 -1.09,0.9 -1.21,-0.22 0,0 -0.54,-1.37 -1.08,-0.96 -0.18,-0.47 0.7,-1.31 -0.68,-0.85 0.35,-0.32 0.15,-0.91 -0.2,-0.59 0.92,-0.54 0.06,-0.93 0.59,-0.25 0.24,-1.1 0.24,-0.26 0.67,0.07 0.08,-0.78 -0.63,-0.66 0.44,-0.8 0,0 0.58,0.26 1.64,-1.15 -0.26,-1.16 0.15,-0.43 -0.73,-0.96 0.09,-1.08 -0.73,-0.34 -0.49,-1.88 0.12,-1.02 -0.38,-0.77 -0.69,-0.52 0,0 2.13,-0.66 1.22,-0.74 1.2,0.31 0.42,0.47 0.82,-0.67 1.38,0.2 1.28,-0.29 0.45,0.33 0.98,-0.06 0,0 0.02,2.02 0.86,0.8 0.21,0.61 0.72,0.18 1.33,-0.66 0.32,0.54 0,2.63 -0.91,0.52 -1.14,-0.55 -0.37,1 0.02,1.27 1.49,0.61 1.32,1.13 0.76,-0.46 1.02,0.02 0.02,0.78 0.86,0.82 -0.25,0.55 0.55,0.24 0.43,-0.36 0.81,0.04 0.22,0.06 0.04,0.73 0.85,-0.18 0.97,0.49 0.29,1.26 -0.38,0.21 -0.17,0.54 0,0 -0.43,-0.05 -0.29,0.31 0.4,0.24 0.08,0.97 -0.24,0.36 1.4,0.81 0.96,0.14 -0.91,0.51 0.43,0.25 -0.47,2.04 0.74,1.24 0.15,1.43 -0.54,1.21 0,0 -0.44,-0.33 0.14,-0.47 -0.25,-0.52 -0.92,0.32 -0.42,-0.6 -0.97,-0.13 -1.98,0.94 -0.1,0.68 -2.58,0.64 -4.27,-1.72 -1.67,-1.65 -5.72,0.05 z m 9.4,11.08 0.22,0.77 -2.06,0.84 -0.98,0.82 -1.34,0.19 -0.01,-0.45 -0.59,-0.31 0.06,-0.5 -0.43,-0.16 -0.54,-1.01 0.67,-0.96 0.38,0.24 0.47,-0.24 1.33,-2.82 0.4,-0.46 0.41,0.01 0.95,-1.5 0.95,-0.43 0.77,-1.12 0.55,-0.29 0.44,0.83 -0.6,0.72 -0.15,0.77 -1.78,2.33 -0.01,1.54 0.89,1.19 z", title: "Hyogo", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 330.00993,71.568887 2.71,-2.13 0.04,-0.59 -1.96,-3.17 -1.38,-0.99 -0.7,-1.16 0.68,-2.54 -0.27,-0.48 1.64,0.11 0.6,-0.42 0.21,-0.54 0.53,-0.21 2.75,2.66 1.93,0.87 1.13,1.28 2.48,-0.47 0.17,-0.42 1.02,-0.32 0.72,0.02 -0.14,1.17 3.04,1.39 2.2,-1.22 1.97,-2.15 0.99,-1.6 0.1,-2.35 -1.38,-2.76 0.54,-1.94 -0.66,-1.44 -0.45,-2.27 1.02,-2.1 1.47,-0.89 0.76,-0.05 2.03,-1.32 0.93,-1.89 0.41,-1.95 -0.35,-7.86 0.5,-0.32 1.64,-3.44 0.21,-2.86 0.38,-0.79 0.13,-1.6 -0.3,-3.27 -0.77,-3.84 -3.04,-7.32 -0.31,-1.1600002 0.07,-0.99 0.86,-1.27 0.79,-1.95 -0.41,-1.4 0.15,-1.28 0.75,0.77 0.13,0.52 0.39,0.16 1.76,-0.28 1.35,-0.94 0.55,-1.99 0.87,-0.31 0.47,0.33 0.56,1.29 0.59,0.34 0.63,1.47 2.32,1.7 2.21,3.12 4.95,5.5600002 3.91,7.23 2.58,2.55 2.44,3.1 5.58,4.4 1.57,0.89 0.33,0.95 1.26,0.96 3.7,1.94 3.24,1.28 5.88,1.69 2.79,0.53 0.44,-0.31 0.29,0.77 -0.06,1.28 0.87,1.55 0.58,0.48 3.21,1.01 3.41,0.21 2.57,-0.32 2.28,-1.99 1.54,-1.92 2.18,-2.04 1.83,-1.26 0.66,-1.45 1.1,-1.16 0.78,-1.38 0.46,0.03 0.45,2.23 -1.21,2.49 -0.91,0.92 -0.6,2.4 -1.73,2.13 -0.94,2.12 0.1,0.83 -0.77,2.05 0.22,1.06 1.35,2.58 1.49,1.97 1.52,5.23 1.49,1.96 -1.16,-0.53 -0.19,-0.53 -1.14,-0.22 -0.24,0.37 0.21,1.26 0.86,-0.67 0.47,0.4 -0.29,0.55 0.37,0.39 0.4,-0.28 2.55,0.62 2.09,-1.7 0.32,-0.6 1.11,-0.71 0.24,-0.5 3.28,0.2 -0.19,0.5 -1.17,0.91 -1.73,0.31 -1.87,1.03 -0.8,2.93 -0.77,-0.36 -1.24,-0.05 -2.71,0.51 -1.51,0.9 -1.26,-0.21 -0.62,0.6 -0.14,1.15 -1.6,2.15 -1.02,0.49 -1.9,-0.1 -0.9,-0.79 0.03,-0.53 0.33,-0.31 -0.55,-0.37 -0.73,0.1 -1.19,1.73 -0.02,0.41 1.15,1.13 -2.01,-0.12 -1.15,-0.35 -3.58,-0.02 -0.69,-0.15 -1.58,-1.27 -3.06,0.54 -2.43,1.18 -3.4,2.53 -5.27,5.27 -4.08,5.8 -1.53,3.31 -0.28,1.67 0.55,1.44 -0.82,3.88 -0.91,1.53 0,1.61 -3.7,-3.72 -4.85,-2.02 -8.09,-4.45 -2.38,-1.67 -1.84,-2.05 -3.21,-0.94 -2.21,-2.05 -1.82,-1.2 -1.83,-0.53 -2.38,-0.04 -3.17,1.04 -2.08,1.29 -2.68,2.28 -1.59,0.89 -2.12,2.45 -0.34,0.75 -1.07,-0.4 -0.33,-0.55 0.38,-0.29 0.59,0.64 0.12,-0.81 -1.35,-0.41 -0.87,-2.37 -0.79,-0.4 -1.07,-1.12 -0.12,-0.58 -1.27,-1.23 -1.24,-0.09 -1.25,0.53 -0.97,-0.59 -1.21,0.03 -1.68,1.81 -1.44,2.75 -0.71,2.55 0.28,1.94 2.32,1.2 2.74,2.35 0.75,0.14 1.37,-0.53 2.04,0.31 1.23,2.21 1.63,1.22 1.08,1.88 3.15,1.36 0.55,0.890003 0.79,0.59 -0.61,0.61 -0.95,0.01 -1.1,1.3 -1.66,0.66 -0.86,-0.79 -2.78,-0.91 -0.93,0.16 -0.28,0.62 -0.41,0.1 -0.18,-0.61 0.68,-0.45 -0.2,-0.67 -0.59,-0.37 -0.86,0.08 -0.41,0.33 -0.43,1.68 -1.44,1.06 -1.29,0.1 -0.35,0.33 -0.31,3.94 -0.4,0.48 -0.94,0.03 -1.96,0.87 -0.9,1.89 -0.39,0.32 -1.02,-0.8 -1.14,0.22 -0.9,-0.71 -1.08,-2.72 -0.09,-0.86 0.41,-1.77 1.35,-3.03 0,-1.05 0.77,0.08 0.29,-0.59 0.31,-2.700003 -0.4,-1.98 -1.9,-2.94 -0.67,-0.36 -1.3,-0.12 -0.51,-1.33 -0.85,-0.88 -1.14,-0.41 -0.39,-0.73 -0.19,-1.39 0.31,-1.12 0.94,-1.03 0.33,-0.95 0.03,-2.65 -0.49,-2.23 0.92,-1.45 1.12,-0.62 2.28,-0.06 0.61,-0.91 1.39,-0.73 0.85,-1.92 0.82,0.57 0.56,0.97 0.89,-0.23 0.09,-1.39 0.82,-0.84 0.85,-1.71 z m 14.72,-61.43 -0.09,-1.2300002 1.28,-1.25 2.07,1.21 0.51,1.8100002 -1.81,1.49 -1.37,-1.07 -0.59,-0.96 z m -31.88,81.17 -0.29,2.22 -0.39,0.63 -0.65,0.23 -0.02,0.36 -0.61,-0.54 0.06,-1.71 -0.42,-1.11 0.74,-1.09 1.91,-0.38 0.46,-0.52 0.03,0.64 -0.82,1.27 z m 30.35,-86.7800002 -0.26,2.59 -0.39,0.13 -0.88,-2.97 0.22,-1.31 -0.61,-0.34 0.09,-0.73 0.65,0.85 0.66,-0.15 -0.02,-0.59 0.34,0.27 0.35,0.78 -0.15,1.47 z", title: "Hokkaido\\x8D", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#272727", d: "m 177.17993,290.93889 -0.78,-0.7 -1.45,1.75 0.31,0.9 0.76,-0.2 0.32,0.31 -0.15,0.21 -0.7,0.53 -0.28,-0.28 -1.54,0.26 -0.18,-0.59 1.14,-0.63 -0.25,-0.46 0.14,-0.63 0.53,-0.44 0.08,-0.97 -0.71,-1.73 0.15,-0.97 -1.31,-0.65 -2.28,1.04 -0.02,0.37 -1.73,1.61 -0.21,0.51 0.27,0.15 0,0 -0.33,0.19 -1.28,-0.31 -0.5,-1.46 0.08,-0.63 -0.92,-0.78 -0.24,-1.36 0.17,-0.81 -0.3,-0.68 0,0 -0.49,-0.63 0.3,-0.64 0.6,-0.18 0.63,-0.68 0.21,-1.78 0.7,-1.03 -0.55,-0.34 0.3,-0.48 1.45,-0.86 0.31,-1.14 0.79,0.11 0.4,0.48 0.21,-0.44 1.24,-0.13 0.52,0.42 0.51,-0.43 -0.07,-0.25 0.41,-0.14 0.25,0.41 1.63,0.13 1.47,-1.06 1.76,-0.14 -0.01,-0.87 -0.69,-0.21 -0.38,-0.47 0.85,-1 1.19,-0.25 2.4,-3.33 0.4,-0.07 1.15,0.7 0.79,-0.62 0.98,0.79 1.42,-0.42 0.58,0.22 0,0 0,0.26 2.1,-0.32 0.42,0.5 0,0 1.01,1.22 -0.46,1.21 -0.01,1.6 1.6,2 -0.29,1.12 0.41,1.9 -0.01,1.38 1.21,1.65 0.12,1.74 0,0 -0.45,1.24 -0.88,0.09 -0.04,0.9 -0.33,0.31 -2.4,-0.51 -0.04,-0.21 0.57,-0.19 -0.04,-0.6 -0.56,-0.21 0.07,0.43 -0.66,0.3 -1.65,0.67 -0.74,-0.09 -0.23,0.98 -1.26,0.39 -1.28,-0.21 -1.15,0.26 -0.35,0.57 -0.55,0.26 -0.25,-0.56 -0.71,0.08 -0.26,0.86 -0.45,-0.15 -0.04,0.98 -1.16,0.08 -1.31,0.85 z", title: "Hiroshima", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#5f5d5a", d: "m 333.51993,240.30889 -0.1,2.12 0.89,3.27 2.68,5.5 1.63,2.49 0.82,0.47 0.04,0.45 0,0 -2.5,-1.54 -1.11,-1.53 -1.23,-0.26 -1.13,-0.97 -0.91,0.04 -1.08,-0.52 -2.01,0.52 -0.86,0.82 -0.8,-0.23 -0.59,0.4 -0.86,-0.11 -1.02,0.41 -0.58,-0.72 -2.46,-0.86 -1.04,-0.7 -0.2,-0.71 -0.72,-0.24 -1.63,-2.01 -0.33,-0.84 -0.42,-0.03 0,0 -0.39,0.35 -0.39,-0.1 -0.87,-1.96 0.17,-0.89 0,0 0.73,-0.06 1.65,-0.87 0.55,-1.69 1.13,0.28 0.12,-0.88 1,-0.47 0.13,-0.45 1.56,-0.08 0.26,-0.13 0.05,-0.52 0.67,0.24 0.41,-0.46 0.44,-0.02 0.28,0.39 0.67,-0.21 0.21,-1.17 0.92,-1.85 -0.02,-1.81 -0.57,-1.95 0.28,-0.38 0.95,-0.21 0.1,-0.31 -0.63,-1 0.22,-1.3 -0.28,-0.99 0.09,-1.99 0,0 0.55,0.03 0.76,1.02 0.82,0.25 0.33,1.16 1.14,0.42 0.43,0.57 1.46,-1.4 1.12,-0.49 -0.46,-1.3 0.34,-0.46 0.57,1.03 3.43,1.04 0,0 0.04,0.02 0,0 0.03,0.01 0,0 0.18,0.64 -0.63,0.17 -0.49,0.95 -1.18,4 -0.7,1.17 -0.78,2.27 0.16,2.88 -1.04,1.29 z", title: "Ibaraki", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#2e2e2e", d: "m 257.72993,221.14889 -0.06,-1.29 -0.32,-0.14 -0.36,0.34 -0.3,-0.28 0.61,-2.33 0.4,-0.35 0,-1.67 0.35,-0.38 1.44,-1.17 1.13,-0.51 1.13,0.28 2.9,-1.48 0.42,-0.58 0.98,-0.48 1.27,-0.17 1.32,-0.71 1.03,0.13 0.47,0.66 -0.24,0.47 0.41,0.81 -0.61,0.29 -1.01,-0.04 -0.53,0.36 -0.28,1.17 0.6,1.05 -0.66,0.98 -1.79,-0.05 -0.89,0.5 -0.57,1.49 -1.16,0.86 -0.56,-0.53 -0.49,-0.08 0.17,-0.61 -0.35,0 -1.46,2.17 0.54,0.23 -0.17,0.62 -0.51,0.12 0.12,0.43 -0.26,0.39 0.56,0.09 0.56,-0.57 1.13,1.11 0.75,-0.65 0.2,-0.68 0.56,0 0.04,3.49 0,0 -1.24,-0.1 -0.72,0.26 -1.4,1.37 -0.6,3.49 -0.55,0.65 -0.16,0.98 0.23,0.46 -0.76,1.23 0.19,1.13 0.46,0.58 -0.75,2.96 0.45,1.88 -0.32,0.42 0.14,0.88 0,0 0.25,0.58 0.76,0.43 0.04,0.39 -0.94,1.68 -0.6,0.23 0.22,0.73 -0.5,1.09 0,0 -1.89,0.48 -0.24,-0.62 -1.86,-1.46 -1.75,0.42 -0.47,-0.05 -0.65,-0.76 -0.9,0.13 -0.41,-0.38 -0.25,-1.25 -1.68,-1.59 0,0 1.1,-1.4 0.92,-0.32 1.41,-1.36 4.47,-6.03 1.09,-1.97 1.33,-3.8 0.04,-2.3 -0.95,-1.48 -0.02,-0.87 z", title: "Ishikawa", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 359.85993,166.19889 0.42,0.16 0.05,0.45 -0.83,-0.04 0.53,0.53 0.5,-0.01 0.33,0.68 -1.03,0.43 -0.73,-0.03 0.01,0.36 0.49,0.27 0.55,-0.12 0.01,0.24 -0.66,0.53 -0.74,-0.03 -0.26,0.27 1.67,1.04 -0.86,0.3 -1.26,-0.53 0.21,0.97 1.02,0.26 -1.22,0.18 0.74,0.57 -0.27,0.28 -1.09,-0.08 -0.47,0.25 -0.42,-0.47 0.04,-0.57 -0.35,-0.17 0.06,0.61 -0.3,0.44 0.69,0.86 -0.43,0.06 0.11,0.91 -0.47,0.34 -0.72,-0.96 0.25,-0.53 -0.2,-0.19 -0.92,0.09 0.16,0.75 0,0 -1.17,-0.49 -1.44,-0.13 -0.24,0.52 0.11,1.78 -0.68,0.7 0.1,0.51 -0.5,1.94 -2.45,-1 -0.9,0.87 -0.17,0.7 -0.52,0.18 -1.77,-1.01 -0.47,-1.09 0.59,-0.55 -0.25,-0.5 -0.72,-0.2 -2.21,0.25 -0.55,-0.81 -1.44,-0.48 -1.22,-0.91 -0.95,0.14 0,0 -0.08,-1.15 0.79,-1.37 -0.14,-0.4 -0.97,-0.38 0.28,-0.97 -0.27,-0.22 0.47,-0.83 0.6,-0.3 -0.85,-0.44 0.33,-1.06 -1.12,-0.77 -0.53,-0.75 0.15,-0.92 -0.6,-1.25 -0.39,-0.09 0.05,-0.65 0.45,-0.12 -0.05,-0.81 0.78,-0.85 0.43,-1.34 -0.21,-0.72 0.42,-0.11 0.61,-0.86 0.27,0.03 0.51,-1.19 -0.13,-1.08 -0.66,-1.17 0.39,-0.14 0.82,-1.47 -1.12,-0.66 -0.07,-1.06 0.82,-0.45 0.49,0.48 0.56,-0.18 -0.62,-2.5 0.05,-2.68 0.52,-0.46 0.15,-1.56 -0.4,-0.49 0.81,-1.11 0.61,-0.22 0.4,-0.57 0,0 0.46,0.68 0.94,0.01 1,-0.78 0.46,-0.02 0.04,-0.72 0.74,-0.5 1.52,-0.38 1.96,-1.49 0.68,1.08 1.72,-1.1 0.68,-0.09 1.24,0.77 0.89,-0.69 0.11,-0.83 1.39,-0.62 0.47,-0.54 0,0 1.37,2.04 1.54,3.46 -0.98,1.08 1.39,0.6 0.46,0.64 -0.12,0.25 -0.49,0.01 -0.36,0.54 0.11,0.98 0.33,0.48 0.51,0.17 0.49,0.89 0.69,0.12 0.4,0.7 -0.32,1.6 0.72,1.21 0.23,2.98 -0.42,1.69 0.44,0.07 -0.85,2.57 0.25,0 1.33,-1.8 0.02,2.02 0.6,0.08 0.29,0.7 -0.15,0.36 -0.62,0.08 -0.86,1.17 -0.7,0.25 0.43,0.88 1.16,-1.13 0.31,-0.05 0.2,0.37 -0.43,1.33 -1.12,0.26 -0.89,0.6 -0.81,1.19 0.34,0.35 0.79,-0.42 0.44,0.54 -1.7,0.29 0.37,0.39 z", title: "Iwate", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 186.50993,317.65889 -0.24,1.03 -1.01,-0.35 -0.6,0.44 -0.44,1.59 0.34,1.66 -1.14,0.48 -0.02,1.1 1.03,0.63 0.33,1.48 -0.31,0.05 -1.68,-1.5 -0.77,-0.11 -0.35,0 -1.21,1.04 -0.59,-0.36 -0.28,0.2 -0.91,-1.06 -1.59,0.88 -0.09,-0.84 0.68,-1.01 -0.05,-0.36 1.16,-1.26 -0.24,-0.38 -0.83,0.07 0.05,-0.38 0.41,-0.1 0.01,-1.33 -0.51,-1.25 0.2,-0.92 -0.76,-0.86 -0.27,-0.88 0.34,-0.37 1.05,1.18 0.19,-0.07 0.85,-1.38 0.6,-0.17 0.49,-1.66 1.21,-0.42 0.89,-0.67 -0.04,-0.57 -0.71,-0.51 -1.08,-2.18 0.73,-0.41 2.17,0.26 1.2,-0.34 0.94,-1.42 -0.32,-0.8 0.62,-1.84 0.83,-0.38 0.06,-0.55 0.75,-0.9 0.65,-1.48 0.54,0.33 0.52,-0.19 0.59,-1.01 4.34,0.04 0.97,-1.2 0.71,0.3 0.47,-0.33 1.06,0 0,0 0.37,0.54 1.34,0.52 1.81,-0.17 0.65,0.9 0.79,0.32 0.61,-0.2 0.42,-0.81 0.39,-0.13 0.25,0.46 0.7,-0.17 0.51,1.26 0.1,2 1.97,0.05 0.23,0.8 -0.47,0.54 0.1,0.47 0.78,1.19 2.11,0.22 0,0 -1.88,3.58 -0.65,3.57 -0.74,-1.21 -0.61,0 -0.12,-0.73 -0.98,-1 -0.43,-1.03 -1.41,-0.68 -0.51,-1.08 -3.23,-0.6 -0.45,-0.55 -3.15,0.5 -0.25,0.47 -2.33,1.17 0.02,0.64 -2.19,0.41 -0.55,1.07 -0.25,-0.58 -0.92,0.3 0.08,0.62 -0.27,0.28 0.21,0.44 -0.34,0.8 0.34,-0.09 0.07,0.53 -0.33,0.19 0.19,0.56 -0.9,0.94 0.25,0.73 -0.24,0.15 -0.07,-0.4 -0.44,0.03 -1.52,2.22 z", title: "Kochi", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 199.67993,288.81889 2.14,-1.22 0.18,-0.96 2.08,0.7 1.61,0.07 1.07,-1.2 0.53,0.38 -0.19,0.96 0.18,0.37 0.36,0.06 0.13,-0.4 0.45,-0.09 1.11,0.23 -0.01,0.41 -0.39,0.31 0.19,0.48 1.13,0.26 0.82,0.63 0.39,-0.06 1.37,1.05 0,0 -0.16,0.96 -0.42,0.22 -1.09,-0.58 -0.28,0.3 -1.63,-0.26 -1.7,0.18 -0.74,0.58 0.06,0.42 -0.32,0.34 -1.24,0.14 -1.17,0.91 -0.47,0 -0.86,-0.97 -1.38,0.25 -0.76,0.29 -0.28,0.5 -0.58,-0.19 -1,0.84 -0.14,0.51 -0.62,0.22 0,0 -1.88,-0.74 0.69,-0.5 0.33,-3.08 -1.51,-1.21 0.07,-0.33 0.31,-0.09 1.59,0.8 0.55,-0.17 1.48,-1.32 z", title: "Kagawa", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 139.62993,340.21889 -1.25,-0.65 -0.26,-0.49 -0.57,-0.13 -0.4,-0.71 -0.54,0.76 -0.91,0.41 -0.84,-0.01 -0.6,0.55 -1.04,-0.16 -0.32,-0.62 -0.54,-0.26 0,0 0.18,-1.08 1.04,-1.13 1.25,-2.63 1.66,-1.67 -0.12,-0.96 -0.38,-0.03 -0.07,-0.45 0.67,0.03 0.13,-0.22 -0.9,-0.55 2.44,-2.42 -0.23,-0.2 -1.11,0.46 -2.62,0.1 0.01,-0.38 2.72,-1.83 -0.02,-1.52 0.23,-0.35 -0.85,-1.16 -0.77,-0.18 -0.13,-0.75 -1.46,-0.68 -0.32,-1.75 -0.57,-0.48 0,0 2.14,0.08 -0.18,-1.07 1.62,-1.49 1.5,0.17 0.53,-1.44 0.16,0.4 0.81,-0.04 0.67,0.61 1.53,0.52 0,0 -0.01,0.29 0.87,0.17 0.6,0.79 0.63,0.05 0.4,0.63 0.38,0.01 0.49,-0.63 0.18,-0.85 -0.83,-1.21 0.13,-0.74 1.02,-0.56 1.41,0.26 1.04,1.09 0.19,1.17 0.86,0.78 0.59,1.62 0.21,2.27 1.4,1.27 0,0 -1.26,0.16 -0.56,1 -0.03,0.9 -0.97,0.64 -0.2,0.93 -0.59,0 -0.36,0.54 -0.25,1.41 -0.46,0.34 -0.71,-0.21 -0.29,0.72 -0.4,0.17 -0.25,1.38 0.25,1.13 0.42,0.68 0.44,0.09 0.19,1.15 0.76,0.68 -0.63,1.03 -0.56,0.03 -0.2,0.59 1.15,1.34 0.17,0.91 -0.88,0.11 -1.11,-0.36 -0.7,1.19 -0.4,0.13 -0.85,-0.35 -1,0.71 -2.57,-0.05 z m -6.02,-9.78 0.47,-0.07 -0.23,1.28 -0.54,0.76 0.28,0.09 -0.56,0.85 -0.83,0.38 -1.19,-0.52 -0.9,0.08 -0.06,-0.38 -0.51,-0.17 -0.39,0.4 0.5,0.4 0.05,0.44 -0.43,0.99 -1.86,1.35 -0.23,0.86 -1.06,0.71 0.05,0.96 -0.47,0.17 -0.66,-1.1 0.25,-0.87 -0.73,-0.21 0.65,-1.42 -0.44,-0.58 -0.02,-0.72 1.19,-2.41 0.18,-1.13 1.39,-0.65 1.41,-0.15 0.24,0.28 -0.15,0.92 0.26,1.03 1.62,-0.81 0.6,-0.72 0.87,-0.27 0.57,0.37 0.68,-0.14 z m -5.17,7.12 -0.08,-0.71 0.58,-0.59 -0.22,0.96 0.66,1.7 -0.46,0.28 -0.47,1.24 -1.02,-0.82 0.08,-0.75 -0.34,-0.36 0.14,-0.87 1.13,-0.08 z m 5.67,-7.95 -0.53,0.27 -0.36,-0.16 -0.22,-0.87 0.96,-0.89 0.33,0.88 -0.32,0.42 0.14,0.35 z", title: "Kumamoto", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#171613", d: "m 301.02993,262.33889 0.41,-1.13 1.79,-0.83 0.46,-0.65 0.71,-0.1 0.49,-0.52 0.34,-0.7 0.02,-2.61 0,0 0.6,0.13 0.46,0.55 0.61,-0.03 0.59,0.99 0.86,-0.16 2.17,0.71 1.35,1.89 0.3,-0.03 0.19,-2.02 -0.79,-0.62 0.22,-0.23 0.49,0.47 0.76,-0.91 2.68,1.27 0.33,0.67 0.48,0.23 0.01,0.38 0,0 0.64,-0.19 0,0 0.01,0 0,0 0.03,0 0,0 0.02,0 0,0 0.42,0.73 -1.49,0.78 -0.74,-0.06 -0.41,0.41 0.38,0.45 0.4,-0.12 0.4,0.29 -0.41,0.88 -0.35,-0.25 -0.47,0.08 -0.1,0.39 0.49,0.26 0.27,1.32 -0.34,0.7 0.96,0.78 1.07,0.23 -0.43,1.06 -0.71,0.09 -0.65,0.55 0.12,0.59 0.34,0.09 -0.04,0.43 -1.34,-0.03 0.15,-1.18 -0.33,-1.18 -0.63,-0.68 0.06,-0.63 -2.54,-0.62 -2.45,0.34 -2.12,0.66 -1.16,0.93 -0.17,2.09 -0.64,0.35 0,0 -1.52,-0.21 -0.13,-0.68 -0.7,-0.54 -0.24,-1.51 0.57,-0.63 0.27,-0.96 -0.34,-1.53 -0.15,-0.24 -1.53,0.01 z", title: "Kanagawa", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#1f1f1f", d: "m 130.42993,355.81889 1.13,-1.89 0.27,-2.34 -0.2,-1.07 -3.09,-3.19 1.13,-2.7 -0.18,-1.09 -0.73,-1.4 0.57,-1.08 -0.72,-0.58 0.21,-0.54 0.84,-0.43 0.52,0.01 0.68,0.46 1.08,-0.1 0.44,-0.96 0,0 0.54,0.26 0.32,0.62 1.04,0.16 0.6,-0.55 0.84,0.01 0.91,-0.41 0.54,-0.76 0.4,0.71 0.57,0.13 0.26,0.49 1.25,0.65 0,0 -0.48,1 0.65,0.23 0.82,0.79 0.42,1.42 1.08,0.35 0.74,0.85 -0.12,1.26 -0.2,0.07 0.17,0.88 0.65,0.1 0.3,0.36 1.08,0.13 -0.18,0.61 0.79,0.19 0.16,1.57 0.55,0.97 0.5,-0.58 0.71,0.64 0.96,-0.11 0.47,0.29 0.3,0.92 -0.25,0.62 0.19,0.84 -0.62,0.66 -0.12,0.72 0,0 -1.17,-0.42 -0.99,0.78 -0.7,1.09 -0.08,0.8 1.77,0.61 0.02,0.43 -0.65,0.71 0.18,0.18 0.79,-0.28 0.12,0.25 -1.27,1.13 -1.01,0.03 -0.21,0.84 -0.79,1.17 -1.76,0.98 -1.44,0.25 -2.74,2.05 0.36,-1.36 -0.51,-0.4 1.8,-1.39 0.44,-1.12 -0.25,-0.72 0.7,-0.89 0.27,-1.93 -0.94,-2.06 -0.46,-0.6 -0.67,-0.28 0.11,-1.94 -1.35,0.03 -0.87,-0.82 0.68,-0.91 1.05,-0.2 0.74,0.62 -0.11,0.83 1.06,0.09 1.13,-2.06 -0.49,-1.1 -2.67,-0.78 -0.84,0.67 -0.22,1.19 -0.93,1.34 0.15,0.54 -0.7,1.47 -0.24,-0.03 -0.16,0.98 0.26,1.32 0.8,2.06 1.07,0.98 0.89,0.23 -0.52,1.76 -1.03,0.74 -0.62,-0.49 -0.76,0.29 -0.24,-0.29 0.06,-0.82 -0.96,-0.85 -2.12,0.02 -0.86,-0.37 -1.86,0.41 -0.18,-1.48 -0.64,-0.23 0.72,-0.55 -1.54,-1.48 0.54,-0.66 0.26,0.48 1.03,0.51 0.76,-0.54 z m 4.64,21.96 1.42,0.63 -0.06,0.33 1.37,0.37 0.67,0.63 -0.38,1.76 -1.31,1.32 -1.24,0.3 -1.69,-0.28 -0.26,-0.79 -0.22,0.18 0.01,-0.69 -0.45,-0.58 -0.27,-1.14 0.04,-0.47 0.94,-0.08 0.74,-0.91 0.01,-0.47 0.55,0.09 0.11,-0.37 0.02,0.17 z m 8.86,-2.67 -0.18,-2.06 0.82,-1.3 0.3,0.01 0.15,-1.34 1.06,-1.27 0.51,1.14 -0.24,0.56 0.16,1.58 -0.51,0.72 0.08,1.15 -0.48,0.63 0.04,0.47 -0.69,0.42 -0.74,1.52 0.14,0.28 -0.22,0.25 0.43,0.52 -0.23,0.47 0.27,0.35 -0.33,0.12 -0.01,0.46 -0.81,-0.01 -1,0.68 -0.3,-0.58 0.17,-0.88 -0.34,-1.35 0.48,0.01 1.47,-2.55 z m -24.13,-24.35 -0.77,0.47 -0.41,-0.29 -0.13,-0.56 0.37,-0.21 0.39,-1.12 1.32,-0.49 0.43,-1.24 0.36,0.17 -0.05,0.49 -0.63,1.15 -0.6,0.18 0.11,0.41 -0.38,0.41 0.26,0.32 -0.27,0.31 z m 2.16,-4.5 -0.32,-0.56 0.35,-0.47 0.54,0.08 0.38,0.49 0.85,-0.19 0.12,0.38 -0.03,0.6 -0.91,0.3 -0.51,-0.27 0.08,-0.33 -0.4,-0.33 -0.15,0.3 z m 7.82,31.36 0.69,0.49 -0.01,0.26 -0.4,-0.07 -0.67,0.39 -0.38,-0.45 0.08,-0.48 -0.5,0.13 -0.53,-0.75 1.72,0.48 z", title: "Kagoshima", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 231.14993,270.89889 0.17,-0.53 0.37,-0.21 -0.29,-1.26 -0.97,-0.49 -0.86,0.18 -0.04,-0.74 -0.22,-0.06 -0.81,-0.04 -0.42,0.36 -0.56,-0.24 0.25,-0.55 -0.86,-0.83 -0.02,-0.77 -1.02,-0.03 -0.77,0.47 -1.32,-1.14 -1.49,-0.61 -0.02,-1.26 0.37,-1 1.14,0.55 0.91,-0.52 0.01,-2.63 -0.33,-0.54 -1.33,0.66 -0.72,-0.18 -0.21,-0.61 -0.86,-0.8 -0.02,-2.02 0,0 0.26,0.3 0.97,-0.02 0.59,-0.3 0.45,-0.78 0.81,0.06 1.92,-1.35 1.89,-0.6 1.08,0.68 0.66,1.2 -1.07,1.01 -0.19,0.74 -1.09,1.32 0.06,0.6 0.3,-0.01 0.59,-0.97 0.61,0.34 0.13,0.17 -0.64,0.55 1.35,0.61 0.25,-0.33 0.14,1.38 0.48,-0.48 0.84,0.21 0.05,-0.51 -1.26,-0.79 0.85,-0.68 0.93,-0.11 0.15,-0.58 0.35,-0.01 0.01,0.57 0.41,0.25 0,0 -0.41,0.89 0.52,0.42 -0.29,1.01 1.31,1.21 0.13,0.87 1.73,0.19 1.5,0.59 1.37,-0.26 0,0 1.18,1.84 0.42,-0.01 -0.38,1.44 0.43,2.11 -0.31,1.74 -0.34,0.25 0.29,1.17 0.89,1.51 -0.24,1.07 0.71,0.47 0.73,-0.38 0.13,0.88 0.31,-0.05 0.3,0.37 0.4,-0.15 0.61,0.6 -0.26,0.26 0.15,0.41 0,0 0.45,1.2 0,0 -0.34,0.75 -0.58,-0.08 -0.49,-0.67 -0.99,-0.01 0.08,-0.36 -0.74,1.13 -0.73,0.08 -1.92,-0.52 -0.52,-1.22 0,0 0.28,-0.62 -1.02,-1.15 -0.31,-1.06 -1.24,-1.15 0,-0.62 -0.75,-0.02 -0.26,0.68 0.38,0.42 -0.79,0.26 -0.69,-0.73 -0.25,0.11 -0.07,-1.16 -2.16,-0.6 z", title: "Kyoto", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 257.23993,288.86889 -0.19,0.13 0.66,-1.2 -0.57,-0.33 -0.66,1.41 -1.1,0.74 -0.37,0.05 -0.27,-0.79 -0.28,0.09 -0.23,0.84 -0.09,-0.69 -0.7,-0.01 0.28,0.94 -0.22,0.24 -2.95,0.72 -0.41,-0.11 -0.64,0.55 -0.55,1.01 0.35,0.61 0.42,-0.06 -0.35,0.69 -0.61,0.1 -0.37,-0.54 -0.41,0.11 0.18,0.32 -0.7,0.24 0.18,0.32 0.68,-0.1 0.01,0.68 0.72,0.37 -0.17,1.2 -0.66,0.09 -0.78,1.13 -0.94,0.18 -0.41,0.66 -0.61,-0.03 -1.06,1.88 -0.72,2 0,0 -1.29,-0.27 -1.7,-1.94 0.07,-1.92 0,0 1.1,-1.72 1.21,-0.39 0.83,-1.12 1.62,0.25 -0.14,-1.33 0.24,-0.27 0.12,-1.75 -0.37,-0.68 0.73,-1.36 -0.69,-1.15 0.67,-0.36 -1.16,-1.85 0.5,-0.95 2.18,-0.32 0.39,-0.94 -0.29,-0.96 -0.65,0.26 -0.46,-1.01 -0.82,0.27 -1.04,-0.51 -0.26,-0.41 0.44,-1 -0.05,-0.6 0.38,-0.52 -0.8,-1.57 0,0 -0.45,-1.21 0,0 1.34,-0.55 -0.07,-0.51 0.77,-0.63 -0.08,-0.25 -0.62,-0.05 -0.07,-0.25 0.47,-0.39 0.32,0.38 1.02,-0.02 1.34,0.66 2.33,-1.13 0.21,-0.92 0.79,-1.1 0.04,-1.38 0.73,-2.5 -0.71,-0.73 -0.08,-0.85 0,0 0,0 0,0 2.21,-0.95 1.7,2.49 1.08,0.12 0,0 0.32,1.21 0.97,1.57 0,0 -0.76,0.2 -0.92,0.69 -0.36,1.02 0.26,1.12 -1.93,2.95 -0.56,1.63 0.06,0.66 0.67,0.29 -0.38,1.33 2.1,0.61 0.28,0.68 1.28,0.47 1.08,0.81 1.18,0.03 0.22,0.65 0.56,0.13 -0.21,0.28 0.16,0.28 0.71,-0.13 0.28,0.29 0.08,0.73 -1.13,0.67 0.11,0.33 0.63,0.14 -0.63,0.71 0.29,0.47 -0.46,1.27 -0.97,0.27 -1.37,-0.47 1.08,-0.16 0.54,0.27 0.07,-0.65 -0.48,-0.12 -0.27,0.2 -1.46,-0.34 -0.53,0.36 z", title: "Mie", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 343.28993,189.88889 -0.41,0.71 0.32,0.25 0.34,-0.15 0.18,0.65 -1.26,0.75 -1.71,3.62 -0.4,3.7 0.32,1.95 0,0 -0.69,-0.18 -0.72,0.27 0.03,2.17 -0.13,0.22 -1.58,-0.06 0.47,0.39 -0.15,0.16 -1.21,-0.27 -0.63,-0.5 -0.28,-0.75 0.18,-1.14 -0.56,-0.46 -0.82,-0.28 -2.65,0.27 -0.37,-1.09 -1.14,-0.69 -1.13,0.57 -1.39,-0.66 0,0 -0.06,-1.98 1.72,-0.01 0.99,-0.55 0.19,-1.02 1.11,-1.58 -0.23,-1.23 0.16,-1.02 1.05,-1.32 -0.16,-0.6 1.09,-1.14 0.61,-1.6 -0.2,-0.7 -0.6,-0.39 -0.27,-0.91 0.38,-0.65 -0.03,-0.54 -0.61,-1.37 0.1,-0.23 0.66,0.35 0.4,-0.1 0.43,-1.15 -0.22,-0.97 0.68,-1.1 -0.83,-0.45 -0.19,-1.06 -1.06,-1.02 0.23,-0.35 0,0 0.27,0.18 1.76,-0.36 1.64,-1.57 0.71,-0.17 0,0 0.95,-0.14 1.22,0.91 1.44,0.48 0.55,0.81 2.21,-0.25 0.72,0.2 0.25,0.5 -0.59,0.55 0.47,1.09 1.77,1.01 0.52,-0.18 0.17,-0.7 0.9,-0.87 2.45,1 0.5,-1.94 -0.1,-0.51 0.68,-0.7 -0.11,-1.78 0.24,-0.52 1.44,0.13 1.17,0.49 0,0 0.85,2.85 -0.38,-0.12 -0.51,-0.82 -0.69,0.2 -0.09,1.67 -1.36,0.84 -0.15,0.56 1.02,0.68 -0.05,1.21 -0.71,-0.64 -1.01,0.94 -0.6,0.18 -0.03,0.72 1.72,0.21 -0.12,0.68 -0.72,0.64 -0.47,0.05 0.03,0.49 0.45,0.2 0.16,0.54 0.48,-0.17 0.61,0.36 -0.29,0.95 -0.47,-0.65 -0.36,0.11 0,1.65 -0.93,-0.02 0.36,0.32 0.12,0.94 1.33,-0.16 0.03,0.29 -0.66,0.12 0.69,1.8 -0.34,0.98 -1.46,-1.06 0.26,-0.52 -0.93,-0.27 0.26,-0.45 0.57,-0.22 -0.54,-0.64 -1.13,0.38 -0.17,-0.66 -0.27,-0.11 -0.97,-0.06 -1.56,0.45 -1.25,0.84 0.12,0.92 -0.54,0.17 -0.07,-1.38 -0.92,-0.12 -0.51,0.31 0.02,0.4 z", title: "Miyagi", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#222222", d: "m 154.90993,341.45889 -1,3.38 -0.15,1.45 0.83,1.17 -0.56,1.56 0.06,2.02 -0.79,0.46 -0.9,2.09 0.24,0.8 -0.55,0.34 0.19,0.96 -0.78,0.73 0.34,0.71 -0.51,0.03 -0.52,-0.46 -0.88,0.08 -0.68,-1.51 -1.05,-0.26 0,0 0.12,-0.72 0.62,-0.66 -0.19,-0.84 0.25,-0.62 -0.3,-0.92 -0.47,-0.29 -0.96,0.11 -0.71,-0.64 -0.5,0.58 -0.55,-0.97 -0.16,-1.57 -0.79,-0.19 0.18,-0.61 -1.08,-0.13 -0.3,-0.36 -0.65,-0.1 -0.17,-0.88 0.2,-0.07 0.12,-1.26 -0.74,-0.85 -1.08,-0.35 -0.42,-1.42 -0.82,-0.79 -0.65,-0.23 0.48,-1 0,0 2.57,0.05 1,-0.71 0.85,0.35 0.4,-0.13 0.7,-1.19 1.11,0.36 0.88,-0.11 -0.17,-0.91 -1.15,-1.34 0.2,-0.59 0.56,-0.03 0.63,-1.03 -0.76,-0.68 -0.19,-1.15 -0.44,-0.09 -0.42,-0.68 -0.25,-1.13 0.25,-1.38 0.4,-0.17 0.29,-0.72 0.71,0.21 0.46,-0.34 0.25,-1.41 0.36,-0.54 0.59,0 0.2,-0.93 0.97,-0.64 0.03,-0.9 0.56,-1 1.26,-0.16 0,0 0.48,0.58 0.38,0.01 2.02,-0.7 0.83,0.86 -0.18,0.47 0.19,0.29 0.9,0.3 0.52,-0.44 2.23,0.02 0.49,-0.58 0.15,-0.74 0.8,-0.15 1.64,0.62 -0.26,1.56 0.56,0.01 0,0 -0.23,0.52 -1.56,0.97 -0.59,1.67 -1.08,0.53 -0.4,0.87 0.23,0.63 0.73,0.53 -0.66,0.54 -0.9,0.17 0.19,0.55 0.59,0.35 -0.92,0.36 -1.17,2.78 -1.55,5.64 z", title: "Miyazaki", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 287.08993,219.25889 1.85,-1.22 2.56,-2.64 2.31,-1.3 2.29,-3.85 0.84,-0.58 0.68,-1.18 1.38,-4.61 0.91,-1.1 4.07,-2.93 2.38,-0.63 1.71,-1.11 1.75,-1.88 1.24,-2 0.41,-1.59 0.13,-3.88 1.85,-3.75 0,0 1.81,0.96 1.48,0.32 0.24,0.29 -0.4,1.99 0.8,1.13 1.84,0.48 1.15,1.23 -0.79,1.59 -1.37,0.86 -1.58,-0.22 -0.52,0.82 0.16,1.31 -0.34,0.82 0.35,0.76 -0.69,0.51 -0.59,3.17 0.66,1.16 0.66,0.32 0.45,-0.13 0.45,0.77 0,0 -1.58,1.71 -0.71,1.3 0.13,0.24 -1.53,1.04 -0.03,0.73 0.42,1.03 -0.09,0.81 0.38,0.82 -0.48,0.23 -1.26,-0.22 -0.37,0.24 -0.39,-0.32 -0.47,0.04 -0.41,0.16 -0.32,1.19 -0.68,-0.24 -0.55,0.29 -2.15,0.24 -0.57,0.92 0.67,0.56 -0.14,1.19 -0.2,1.16 -0.97,1.4 0.59,0.8 0.68,0.16 0.47,0.93 -0.35,1.28 0.42,1.39 -0.22,0.78 0.11,1.34 -0.24,0.42 0,0 -0.23,-0.34 -0.92,-0.07 -0.11,-0.76 -1.54,-1.55 -0.12,0.96 -0.82,0.73 -1.63,0.28 0.27,1.93 -0.1,0.25 -0.84,-0.1 -0.29,0.95 0.25,0.44 -1.49,0.62 -0.65,-0.03 0.11,1 -0.79,0.67 -1.2,-0.44 -0.36,0.63 -0.25,-0.16 0,0 -0.12,-0.48 -0.38,-0.25 0.52,-0.85 -0.23,-0.46 0.14,-0.73 -0.98,-0.45 -1.03,-1.09 -0.04,-1.55 -0.42,-0.94 -0.81,-0.23 -2.56,0.81 -0.73,1.56 -1.19,0.53 -0.26,1.65 -0.25,0.04 -0.29,-0.63 -0.85,-0.06 -1.01,0.66 -1.24,0.02 -0.93,1.06 -0.95,-0.69 0.55,-1.29 -0.37,-0.56 -1.86,-0.39 -1.01,0.09 0.08,1.29 -0.78,1.31 -1.37,1.05 0,0 -0.59,-1.68 0,-0.77 -0.39,-0.6 -0.03,-1.19 -0.82,-0.25 -0.7,-0.81 0,0 5.42,-1.98 1.81,-1.33 0.86,-0.3 0.92,-1.1 1.11,0.28 1.2,-0.21 z m 5,-24.77 -0.59,1.26 0.19,1.07 0.7,0.3 1.61,-0.65 0.2,0.25 -1.42,3.93 -2.75,2.23 -1.1,0.06 -1.01,0.61 -0.74,-0.15 -0.21,-0.47 1.31,-0.57 0.34,-0.84 -0.1,-0.85 1.11,-1 0.23,-0.89 -0.25,0.41 -0.52,-0.58 -0.61,-0.1 -0.56,1.05 -0.41,-0.24 0.01,-0.88 -0.23,-0.15 0.35,-0.35 0.03,-1.37 0.98,-1.25 0.7,-1.59 0.78,-0.38 0.68,-0.99 0.71,-0.18 0.46,-1.54 1.09,-0.26 -0.44,3.21 -0.54,0.9 z", title: "Niigata", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 274.32993,265.08889 -0.01,-0.53 0.84,-0.65 -0.26,-1.27 0.87,-0.29 -0.71,-0.98 0.65,-0.7 0,-0.91 -0.57,-0.54 -1.07,0.32 -0.31,-0.55 0.07,-1.1 -0.39,-0.45 0.43,-1.28 -0.78,-0.7 -0.8,-1.79 -1.23,-0.37 -0.05,-0.51 -1.04,-0.01 -0.29,-0.39 0.11,-0.54 0.59,-0.25 0.35,-1.06 1.15,-0.35 0.33,0.33 0.42,-0.07 0.52,-1.06 0.44,-0.1 0.37,-0.92 1,-0.76 0.39,-1.57 -0.72,-0.25 -0.46,-0.5 0.01,-0.81 0.75,-0.71 0.05,-0.52 -0.38,-0.55 1.39,-1.81 0.09,-0.78 -0.09,-0.53 -1.03,-0.66 -0.13,-0.51 0,0 0.9,-0.86 0.42,-0.81 -0.02,-0.75 0.39,-0.53 0.61,-0.17 -0.12,-0.49 -0.21,0.04 0.11,-0.77 1.18,-0.7 0.2,-4.18 0,0 1.37,-1.05 0.78,-1.31 -0.08,-1.29 1.01,-0.09 1.86,0.39 0.37,0.56 -0.55,1.3 0.95,0.69 0.93,-1.06 1.24,-0.03 1.01,-0.65 0.85,0.06 0.29,0.62 0.24,-0.04 0.26,-1.65 1.19,-0.53 0.73,-1.57 2.57,-0.81 0.81,0.23 0.42,0.94 0.04,1.55 1.03,1.09 0.98,0.45 -0.14,0.73 0.23,0.45 -0.52,0.86 0.38,0.24 0.12,0.48 0,0 -1.55,0.83 -1.79,0.36 -0.01,1.09 -0.96,0.16 -0.96,1.18 0.02,0.99 -0.6,1.66 0.06,1.3 1.25,0.74 0.43,0.07 0.21,-0.31 0.88,0.25 0.44,-0.4 0.7,-0.1 0.83,0.25 0.29,1.15 -0.07,1.48 -1.03,0.68 0.23,1.11 0.42,0.44 -0.03,0.81 -0.45,0.48 -0.46,-0.33 -0.16,0.17 0.44,0.76 0.65,0.08 0.28,0.67 -0.33,0.35 0.38,1.77 0.61,0.19 0.36,0.52 0.36,-0.09 0,0 -0.1,0.46 0.52,1.05 -0.2,0.52 0,0 -0.4,-0.01 -0.73,0.94 -0.97,0.01 -0.54,-1.14 -1.76,-0.03 -0.22,0.41 -0.48,0.09 -0.48,-0.53 0.01,-0.67 -1.43,-0.58 -1.77,2.71 -0.72,-0.62 -0.2,0.12 -0.97,1.97 0.88,0.86 -1,1.1 0.73,1.77 0,0 -0.58,1.64 -0.36,-0.14 -0.56,0.65 0.33,0.26 -0.41,0.56 0.42,1.31 -0.74,0.26 0,0.67 0.53,0.67 -0.14,0.72 -1.65,0.63 -1.21,1.01 -1.28,0.64 -0.21,0.43 -0.51,0.01 -0.46,0.93 -1.07,0.11 0,0 -0.84,0.26 -0.22,-0.39 -1.55,-0.3 -0.86,0.56 -1.25,0.26 0,-0.51 -0.63,-0.81 z", title: "Nagano", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#232323", d: "m 244.43993,278.17889 0.8,1.57 -0.38,0.52 0.05,0.59 -0.43,1.01 0.26,0.41 1.03,0.5 0.82,-0.27 0.47,1.01 0.65,-0.27 0.29,0.96 -0.39,0.95 -2.18,0.32 -0.5,0.95 1.15,1.85 -0.66,0.36 0.69,1.16 -0.72,1.36 0.37,0.68 -0.13,1.75 -0.24,0.27 0.14,1.33 -1.62,-0.25 -0.82,1.11 -1.21,0.39 -1.1,1.72 0,0 -2.01,0.34 -0.66,-0.41 -0.66,-0.01 -1.15,0.68 -0.22,-0.57 -0.37,-0.13 0.71,-1.83 -0.28,-0.51 -0.58,-0.21 0.06,-0.52 -1.14,-0.96 0.12,-0.54 1.5,-1.45 0.38,-0.58 -0.01,-0.71 0.54,-0.27 0.81,0.37 0.39,-0.6 -0.21,-0.65 -0.89,-0.5 -0.2,-1.72 -0.4,-0.68 0,0 0.61,-0.37 0.19,-1.1 -0.08,-1.17 -0.53,-1.25 0.57,-0.9 -0.21,-0.45 -0.38,-0.07 0.51,-2.37 0.51,-0.44 0.16,-1.36 0.35,0.06 0,0 0.52,1.22 1.92,0.52 0.73,-0.08 0.74,-1.13 -0.08,0.36 0.99,0.01 0.49,0.67 0.58,0.08 z", title: "Nara", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 130.35993,322.23889 0.95,-0.14 0.49,0.36 0.88,1.71 0,1.1 -0.61,0.8 0.23,0.31 -0.21,0.49 -1.61,0.6 -0.66,0.85 -1.27,0.47 0.03,-0.68 -0.8,-0.49 0.08,-0.87 1.41,-1.12 0.06,-0.61 -0.47,-0.25 0.19,-0.42 -0.26,-0.29 -1.86,-0.03 -1.08,0.71 -1.53,-0.09 -0.19,0.99 -0.94,1.49 -0.96,0.57 -0.84,1.1 -1.31,0.48 0.24,-0.54 0.59,-0.24 1.01,-3.05 -1.29,-1.53 0.19,-0.45 -0.56,-0.09 -0.18,0.41 -0.9,-0.87 -0.6,-1.76 -0.63,-0.82 -0.07,-0.57 0.46,-0.73 0.23,-1.58 0.97,-0.27 0.56,0.72 -0.15,1.17 0.39,0.09 0.25,-0.42 1.01,0.62 0.02,1.63 -0.38,-0.01 0.15,0.72 -0.32,0.66 0.59,0.06 0.59,0.76 0.97,-1.13 1.63,1.03 0.57,-0.25 -1.53,-1.8 0.39,-1.47 -0.38,-0.94 -1.4,-0.94 -1.56,0.12 -0.83,-0.39 -0.32,-2.01 -0.45,0.09 0.22,0.81 -0.88,0.59 -0.19,-0.72 0.64,-0.08 -0.23,-0.69 -0.82,-0.06 -0.34,-0.68 -0.73,-0.49 -0.55,0.01 0.13,-0.89 0.58,-0.42 -0.26,-1.42 0.4,-1.14 0.59,0.46 0.9,-0.88 0.29,0.27 -0.35,0.53 0.19,0.27 0.75,0.15 0.66,-0.46 0.34,0.32 0.33,-0.45 0.21,0.84 0,0 -0.59,0.99 1.05,1.38 0.03,1.26 1.38,0.58 1.02,-0.1 0.36,0.87 -0.1,0.42 -0.52,0.1 -0.05,0.36 1.15,0.77 1.55,1.65 2.8,0.68 0,0 -0.05,0.6 -0.68,0.34 -0.8,0.93 0.85,0.74 1.74,-0.7 z m -18.32,-34.3 0.35,-1.14 -0.56,0.71 -1.32,-0.05 -0.5,-0.3 0.52,-0.14 0.28,-0.44 0.13,-1.99 0.67,-1.35 0.41,-0.18 -0.02,-0.42 -0.78,-0.11 -0.03,-0.37 0.37,-0.44 0.3,-1.43 1.44,-0.07 0.39,-0.96 0.71,-0.35 0.65,0.29 0.31,0.61 -0.55,1.46 0.07,1.24 -0.76,1.21 -1.3,1.23 0.57,0.97 -0.26,1.12 0.49,0.06 0.11,0.29 -0.88,0.74 0.03,0.4 0.38,0.16 -0.67,0.63 -0.61,-0.13 -0.91,3.46 -1.37,1.09 -0.2,-0.45 -0.72,0.01 0.76,-5.44 0.48,0.3 -0.12,0.61 0.85,-0.28 0.02,-0.39 1.27,-0.16 z m -9.63,37.35 0.14,1.19 0.94,0.82 -0.08,0.33 -1.45,0.1 -0.22,-0.45 -0.74,0.25 -0.15,0.58 0.51,0.27 0.11,0.39 -0.43,0.44 -0.38,-0.13 -0.35,-0.67 -1.600004,0.39 -1.11,-0.51 0.27,-0.82 0.2,0.3 0.96,-0.41 -0.44,-0.67 -0.17,-1.9 0.33,-0.45 0.47,0.04 0.54,0.68 2.000004,-1.13 -0.01,0.47 0.66,0.89 z m 5.18,-7.19 -0.31,1.55 0.65,-0.04 0.87,-0.58 0.32,0.14 0.03,0.57 -1.71,1.49 0.08,1.28 -0.69,-0.06 -0.13,1.09 -0.32,-0.16 0.31,-1.54 -0.46,-1.31 -0.27,0.3 -0.6,-0.27 0.41,-0.77 0.7,0.02 -0.12,-1.21 1.19,-1.24 -0.16,-0.96 0.38,-0.99 0.16,1.34 -0.33,1.35 z m 8.27,-7.75 0.31,0.1 0.06,-0.34 -0.55,0.01 0.15,-0.38 0.63,-0.08 0.16,0.66 -0.19,0.26 0.32,0.31 -0.47,0.21 -0.03,0.42 -0.45,0.1 0.22,0.36 -1.35,2.28 -1.85,1.04 -0.41,-0.28 0.07,-0.54 0.38,0.44 0.44,-0.03 -0.28,-0.88 0.92,-0.52 -0.45,-0.59 0.77,-1.26 1.29,-1.3 0.31,0.01 z m -13.11,12.54 0.83,0.52 -0.43,1.36 -0.75,-0.49 -0.08,-1.28 0.43,-0.11 z m 2.94,-0.38 -0.53,-0.26 -0.4,-0.66 0.71,0.1 -0.37,-0.54 0.2,-0.33 0.9,0.82 -0.11,1.23 -0.4,-0.36 z m 2.64,-10.19 -0.02,0.42 0.32,0.14 -0.56,0.28 0.04,0.24 -1.14,-0.24 -0.06,-0.27 0.44,-0.38 0.58,-0.03 0.05,-0.32 0.35,0.16 z m -3.98,11.59 -0.16,-0.41 -0.35,-0.08 -0.02,-0.42 -0.82,-0.53 0.33,-0.36 0.57,0.16 0.26,0.74 0.37,-0.81 0.18,0.07 0.13,0.43 -0.44,0.54 0.2,0.29 -0.25,0.38 z m 9.2,-13.4 0.55,-1.66 0,2.09 -0.72,-0.1 0.17,-0.33 z m 3.33,-2.56 -0.45,0.29 -1.1,-0.06 1.17,-0.93 0.54,0.35 -0.16,0.35 z m -10.14,6.9 -0.23,0.13 -0.39,-0.31 0.32,-0.54 0.43,0.27 0.59,-0.18 -0.18,0.68 -0.54,-0.05 z", title: "Nagasaki", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 82.159926,466.98889 0.83,-0.81 2.11,-0.89 0.38,-0.75 -0.74,-0.6 -1,-0.1 -0.33,-0.83 0.31,-0.35 -0.38,-0.53 0.06,-0.6 0.52,0.27 1.11,-0.17 0.77,0.3 0.19,0.2 -0.34,0.71 0.32,0.48 0.92,-0.11 0.94,-0.6 0.31,-0.9 0.82,-0.39 -0.02,-0.31 1.44,-1.37 0.42,-1 -0.09,-0.59 0.25,-0.12 0.91,0.71 0.39,2.04 -1.76,2.62 -1.76,0.03 0.05,0.69 -0.52,-0.1 0.55,0.79 -1.15,0.72 -1.15,-0.38 0.33,0.67 -1.71,1.16 -0.33,0.67 -1.59,-0.45 -0.75,0.57 0.21,0.58 0.7,0.53 -0.07,0.48 0.99,1.06 -0.05,0.35 -1.01,-0.89 -0.67,0.14 -1.32,2.79 0.2,0.3 0.74,-0.1 0.28,0.56 -1.64,1.05 -0.45,0.63 -0.95,0.34 -0.39,-0.21 -0.39,-2.51 1.4,-1.64 0.96,-0.49 0.05,-0.26 -0.88,-2.1 0.03,-0.64 0.16,-0.15 0.24,0.38 1.55,-0.88 z m 35.080004,-42.13 -1.1,1.43 -1.07,0.4 -0.5,-0.19 -0.28,1.13 0.38,0.75 -1.07,0.74 -0.18,0.6 -0.35,-0.3 -0.29,0.3 0.21,1.01 -1.64,-0.93 0.03,-0.5 -0.45,-0.87 -1.89,-0.3 -0.85,-0.66 1.8,-0.45 0.18,-0.19 -0.38,-0.46 0.97,-0.56 0.76,-0.04 0.72,-0.88 0.53,0.33 0.55,-0.71 1.04,0.12 0.3,-0.74 0.3,0.31 0.56,-0.01 0.23,-0.9 0.49,-0.52 0.51,0.15 1.04,-0.46 0.16,0.95 -0.22,0.26 0.37,0.19 0.72,-1 -0.57,-0.93 0.89,-0.62 0.11,0.91 0.48,0.33 -0.07,1 -1.01,0.73 -1.02,-0.09 -0.39,0.67 z m -111.440004,87.79 -0.22,0.94 -0.5,0.16 0.03,0.73 -0.4,-0.04 -0.11,0.46 -0.85,-0.37 -1.59,-0.15 -0.59,-0.42 -0.12,0.46 -0.75,-0.1 -0.38,-0.54 0.83,-0.91 0.52,0.19 0.27,0.45 0.18,-1.2 -0.19,-0.39 0.66,-0.95 0.71,0.59 1.23,0.16 1.27,0.93 z m 99.160004,-76.37 -0.05,0.87 1.38,1.22 -0.97,2.05 -1.03,0.19 -1.12,-1.37 0.51,-0.9 -0.54,-1.57 0.42,-1.32 1.44,0.04 -0.04,0.79 z m -94.630004,74.41 1.06,-0.13 -0.05,-0.35 0.71,-1.03 0.44,0.28 0.33,-0.74 -0.26,-0.44 0.51,-0.56 0.06,-0.49 0.57,0.1 -0.14,0.79 -0.59,0.52 0.11,0.29 -0.51,0.5 -0.03,0.42 -0.62,0.54 0.16,1.09 -0.36,1.4 -1.69,0.37 -0.24,-0.46 -0.62,-0.29 0.5,-0.46 0.11,-0.58 -0.86,-0.41 -0.3,0.36 -0.31,-0.33 0.14,-0.51 0.83,0.18 -0.01,-0.8 1.06,0.74 z m 21.34,-6.62 0.17,-0.26 0.12,0.38 0.34,-0.03 -0.56,-0.99 0.45,-0.33 0.14,-0.65 -0.56,-1.37 0.18,-0.19 1.38,2.04 0.01,0.52 1.91,0.79 0.4,0.67 -2.86,0.41 -0.93,-0.5 -0.19,-0.49 z m 66.54,-56.89 -0.59,0.55 -0.8,0.23 -0.57,-0.52 -0.14,-0.81 0.21,-0.37 1.23,0.17 1.89,-0.96 0.38,0.04 -1.61,1.67 z m 11.680004,-17.61 0.39,0.18 0.3,-0.52 0.61,1.09 1.12,0.16 0.21,0.33 -0.28,0.58 -0.38,0.18 -0.55,-0.51 -0.18,0.65 -0.71,-0.83 -0.66,0.51 0.1,-1.4 -0.63,-0.38 -0.27,-0.69 0.69,-0.29 0.19,0.22 -0.3,0.23 0.35,0.49 z m -48.320004,40.42 -0.89,-0.5 -0.26,-0.5 1.45,-0.38 0.79,0.92 -0.38,0.49 0.14,0.71 -0.66,-0.3 -0.19,-0.44 z m 64.350004,-45.08 -1.2,1.87 -0.58,0.22 -0.49,-0.38 0.05,-0.73 0.61,-0.07 1.2,-1.14 0.41,0.23 z m -96.490004,77.84 0.01,-0.67 0.31,0.37 0.2,-0.73 0.9,0.39 0.24,0.7 -1.2,0.27 -0.46,-0.33 z m 55.41,-48.5 0.9,-1.03 0.5,-0.09 -0.59,1.1 -1.46,1.17 0.65,-1.15 z m -2.64,6.79 0.24,0.54 -1.3,0.04 -0.26,-0.23 0.21,-0.42 1.11,0.07 z m -9.03,11.13 0.29,0.24 0,0.55 -0.26,0.21 0.09,0.5 -0.45,0.41 -0.06,-0.98 0.39,-0.93 z m 11.43,-16 0.39,0.45 -0.07,0.47 -0.28,0.08 -0.56,-0.59 0.52,-0.41 z m -77.58,58.68 0.56,0.25 -0.31,0.53 -0.47,-0.41 0.22,-0.37 z m 65.24,-43.19 0.42,0.21 -0.48,0.46 -0.49,-0.15 0.55,-0.52 z", title: "Okinawa", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#232323", d: "m 232.13993,283.27889 0.37,-0.8 -0.64,-0.14 -0.03,-0.81 0.3,-0.51 0.74,-0.43 -0.46,-0.23 0,0 0.54,-1.21 -0.15,-1.43 -0.74,-1.24 0.47,-2.04 -0.43,-0.25 0.91,-0.51 -0.96,-0.14 -1.4,-0.81 0.24,-0.36 -0.08,-0.97 -0.4,-0.24 0.29,-0.31 0.43,0.05 0,0 0.19,0.74 2.16,0.6 0.07,1.16 0.25,-0.11 0.69,0.73 0.79,-0.26 -0.38,-0.42 0.26,-0.68 0.75,0.02 0,0.61 1.24,1.15 0.3,1.06 1.03,1.16 -0.29,0.62 0,0 -0.35,-0.06 -0.15,1.36 -0.51,0.44 -0.51,2.37 0.38,0.08 0.21,0.45 -0.57,0.9 0.53,1.26 0.08,1.16 -0.19,1.1 -0.61,0.37 0,0 -1.29,0.18 -1.2,0.8 -1.62,-0.14 -2.06,0.74 -1.63,0.09 -1.23,0.79 -1.04,0.18 -0.43,-0.04 -0.13,-0.88 -0.27,-0.09 0,0 2.57,-0.85 1.84,-1.68 0.97,-1.49 1.15,-1.04 z", title: "Osaka", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 204.66993,282.20889 -1.41,1.09 -0.47,1.72 -1.96,-0.54 -0.52,0.34 -1.84,-0.34 -0.62,-0.78 -1.6,0.29 -0.27,0.31 0.24,0.22 -2.22,0.76 -0.69,-0.84 0,0 -0.12,-1.74 -1.21,-1.65 0.01,-1.38 -0.41,-1.9 0.29,-1.12 -1.6,-2 0.01,-1.6 0.46,-1.21 -1.01,-1.22 0,0 0.36,-0.25 0.24,-0.84 0.38,0.22 1.81,-0.63 -0.33,-1.19 0.27,-0.38 0.78,0.33 1.21,-0.49 0.21,-0.5 -0.21,-0.48 0.96,-0.25 0.78,-2.43 1.7,0.63 1.27,0.01 1.07,0.74 0.52,0.91 0.66,-0.5 0.2,-0.54 1.16,-0.49 0.03,-0.48 1.5,-0.43 -0.15,0.89 0.19,0.17 0.79,0.21 0.94,-0.17 0.69,0.59 0.22,0.42 -0.12,0.61 0.49,0.31 -0.19,0.71 0.51,0.63 1.48,-0.92 0.54,0.27 0.69,-0.13 1.39,-1.16 0.3,0.23 0,0 -0.44,0.8 0.63,0.66 -0.08,0.78 -0.67,-0.07 -0.24,0.26 -0.24,1.1 -0.59,0.25 -0.06,0.93 -0.92,0.54 0.2,0.59 -0.15,0.91 -0.35,0.32 0.68,0.85 -0.7,1.31 0.18,0.47 1.08,0.96 0.54,1.37 0,0 -0.5,0.33 -0.2,-0.28 -0.66,-0.01 -1.76,1.98 -0.37,0.89 -0.98,0.59 -1.28,0.06 -0.52,0.38 z m 5.26,2.84 -0.37,0.06 0.68,-0.71 -0.86,0.2 -0.67,1.29 -0.23,-0.59 0.37,-0.49 -0.11,-0.24 -0.5,-0.29 -1.17,0.5 -0.21,-0.25 0.45,-0.86 3.68,-1.35 -0.12,0.47 0.3,0.34 -0.4,2.25 -0.4,-0.52 -0.44,0.19 z", title: "Okayama", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#222222", d: "m 141.90993,316.82889 0.35,-0.25 0.48,-1.38 -0.84,-0.73 0.03,-0.62 -0.36,-0.19 0.12,-0.38 0.52,-0.26 0.14,-0.64 -0.29,-0.95 -0.3,-0.16 0.47,-0.69 0.49,-0.13 0.3,-1.65 1.61,-1.38 0.93,-0.23 0.97,0.27 1.91,-0.11 -0.13,-0.46 0.39,-0.52 -0.3,-0.8 0.15,-0.37 0,0 0.32,-0.43 1.78,0.91 2.57,0.12 0.09,-0.45 1,-0.9 0.49,-0.96 1.68,-0.5 1.6,0.81 1.25,1.67 0.27,1.08 -0.09,1.79 -0.32,0.15 -0.4,1.21 -1.37,-0.4 -0.18,0.29 0.5,0.65 -0.12,0.22 -0.91,0.1 -0.21,0.59 -0.73,-0.11 -0.24,-0.42 -0.71,0.15 -0.12,0.71 0.35,1.5 1.5,0.51 1.88,-0.81 1.34,0.96 2.96,-0.67 -1.36,2.03 -0.5,1.26 0.7,0.31 1.08,-0.49 0.32,0.28 -0.69,0.34 -0.4,0.68 0.99,0.29 0.3,0.03 0.29,-0.71 0.59,0.84 0.36,-0.17 -0.03,-0.51 0.29,-0.14 0.07,0.8 -0.5,0.36 -1.03,-0.11 -0.75,1.38 0.12,0.28 0.58,0.19 0.25,0.46 0.72,-0.26 0.45,0.37 1.64,0.07 0.07,0.26 -2.11,0.27 0.17,0.77 0.61,-0.02 -0.81,0.76 0.66,0.7 -1.43,1.02 -0.92,-0.47 -0.25,1.53 0,0 -0.56,-0.01 0.26,-1.56 -1.64,-0.62 -0.8,0.15 -0.15,0.74 -0.49,0.58 -2.23,-0.02 -0.52,0.44 -0.9,-0.3 -0.19,-0.29 0.18,-0.47 -0.83,-0.86 -2.02,0.7 -0.38,-0.01 -0.48,-0.58 0,0 -1.4,-1.27 -0.21,-2.27 -0.59,-1.62 -0.86,-0.78 -0.19,-1.17 -1.04,-1.09 -1.41,-0.26 -1.02,0.56 -0.13,0.74 0.83,1.21 -0.18,0.85 -0.49,0.63 -0.38,-0.01 -0.4,-0.63 -0.63,-0.05 -0.6,-0.79 -0.87,-0.17 0.02,-0.31 z", title: "Oita", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 121.38993,311.53889 0.67,0.96 0.16,-0.92 -0.19,-0.19 0.67,-1.39 -1.75,-1.34 0.48,-0.15 -0.26,-0.34 0.27,-0.32 0.39,0.14 0.35,0.8 0.28,-0.22 -0.56,-1.18 -0.03,-0.32 0.54,-0.03 -0.2,-0.88 0.64,0.48 0.32,-0.04 0.02,-0.27 0.68,-0.03 0.03,0.34 0.74,0.63 -0.63,0.74 0.61,0.54 1.14,0.19 0.28,-0.16 -0.05,-0.33 0,0 2.63,0.08 0.69,-0.32 0.86,0.24 0.47,-0.21 1.7,1.07 0.77,0.17 0.62,0.71 0.99,-0.95 0.74,-0.25 0.41,0.21 -0.02,2.25 -0.51,-0.03 -0.51,0.86 -1.85,1.42 -0.59,1.04 -0.17,1.23 0,0 -1.31,-0.01 -0.2,-0.52 -0.88,-0.58 -0.19,0.66 -1.79,1.44 1.78,3.06 0.04,0.41 -0.42,0.03 0,0 -2.8,-0.68 -1.55,-1.65 -1.15,-0.77 0.05,-0.36 0.52,-0.1 0.1,-0.42 -0.36,-0.87 -1.02,0.1 -1.38,-0.58 -0.03,-1.26 -1.05,-1.38 0.59,-0.99 0,0 0.22,0.24 z m -1.61,-8.98 -0.61,-0.03 -0.39,-1.1 -0.37,0.5 -0.21,-0.74 0.34,-0.5 -0.19,-0.39 1.06,-1.34 1.37,0.5 -0.26,0.85 0.52,0.45 -0.57,0.29 0.78,0.27 -0.17,0.54 -1.09,0.05 -0.21,0.65 z m 0.24,6.65 0.37,-1 0.78,0.95 -0.61,-0.06 -0.08,0.42 -0.48,0.23 -0.3,-0.3 0.32,-0.24 z", title: "Saga", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 251.72993,266.75889 0.07,0.85 0.71,0.73 -0.73,2.5 -0.04,1.38 -0.78,1.1 -0.21,0.92 -2.34,1.13 -1.33,-0.66 -1.02,0.01 -0.33,-0.38 -0.47,0.39 0.07,0.26 0.62,0.04 0.08,0.26 -0.77,0.62 0.07,0.52 -1.34,0.55 0,0 -0.15,-0.41 0.26,-0.26 -0.61,-0.6 -0.4,0.15 -0.3,-0.37 -0.31,0.05 -0.13,-0.88 -0.73,0.38 -0.71,-0.47 0.24,-1.07 -0.89,-1.51 -0.29,-1.17 0.34,-0.25 0.31,-1.74 -0.43,-2.11 0.38,-1.44 -0.42,0.01 -1.18,-1.84 0,0 0.45,-0.74 0.37,-0.1 0.06,-0.5 0.65,0 0.35,0.4 0.57,-0.28 1.04,-2.76 0.77,0.77 0.46,-0.1 0.46,-0.88 1.29,-0.12 0.35,-1.07 1.1,0.32 0.14,-0.75 -0.83,-1.76 0.31,-0.67 0.67,-0.13 1.81,0.93 0,0 0.26,1.07 0.66,0.07 -0.12,1.6 0.78,0.29 0.31,-0.5 0.55,0.71 -0.24,0.89 0.63,0.64 -0.09,1 0.53,0.85 -0.55,0.44 -0.04,1.34 -0.32,0.52 -0.02,0.93 -0.32,0.21 z", title: "Shiga", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#181818", d: "m 170.75993,270.55889 0.28,-0.79 1.23,-0.93 0.08,-0.67 0.5,-0.67 2.51,-1.8 1.42,-0.54 0.56,-0.51 0.41,-0.78 0.13,-1.61 -0.96,-0.39 0.1,-0.37 1.12,-0.46 0.5,0.3 0.85,-0.17 0.11,-0.21 -0.62,-0.35 1.44,-0.3 0.24,-0.32 2.13,-0.51 1,0.04 -0.07,-0.65 1.17,0.12 0.41,-0.96 0.93,-0.64 0.91,1.06 1.08,-0.17 0.41,-0.33 2.16,0.32 -1.21,0.3 -0.41,0.51 0.49,0.99 1.14,0.68 0,0 -0.16,2.44 -0.42,0.62 0.27,1.63 -3.1,1.38 0.02,0.29 0.61,0.13 0.23,0.69 -0.89,0.7 -0.17,1.54 0,0 -0.58,-0.22 -1.42,0.42 -0.98,-0.79 -0.79,0.62 -1.15,-0.7 -0.4,0.07 -2.4,3.33 -1.19,0.25 -0.85,1 0.38,0.47 0.69,0.21 0.01,0.87 -1.76,0.14 -1.47,1.06 -1.63,-0.13 -0.25,-0.41 -0.41,0.14 0.07,0.25 -0.51,0.43 -0.52,-0.42 -1.24,0.13 -0.21,0.44 -0.4,-0.48 -0.79,-0.11 -0.31,1.14 -1.45,0.86 -0.3,0.48 0.55,0.34 -0.7,1.03 -0.21,1.78 -0.63,0.68 -0.6,0.18 -0.3,0.64 0.49,0.63 0,0 -0.81,0.45 -0.48,0.71 -0.15,0.31 0.43,0.89 -1.12,1.58 -0.69,-0.63 -0.94,0.7 -1.05,0.1 -0.87,-0.86 -0.17,-0.77 0.55,-1.54 -1.87,0.04 -0.61,-1.65 0.66,-0.64 0.02,-0.82 0.43,-0.16 -0.83,-2.54 0,0 1.15,0.03 1.51,-0.45 1.33,-1.52 1.13,-0.82 0.23,-0.66 0.63,-0.2 1.16,-1.24 0.75,-1.24 2.86,-2.38 1.58,-0.63 z m 18.1,-27.33 -0.39,-0.5 -0.48,-0.07 0.17,-0.81 -0.3,-0.17 0.08,-0.87 0.87,-0.99 1.08,-0.31 0.79,0.33 1.29,1.46 -0.3,1.5 -0.45,0.19 -0.1,-0.56 -0.14,0.45 -0.58,0.09 0.6,0.14 0.11,0.56 -0.26,0.07 -1.79,0.05 0.14,-0.43 -0.34,-0.13 z m -46.02,-33.19 0.32,-0.19 0.21,0.22 -0.22,0.32 0.1,0.97 -0.76,0.88 -1.29,-0.54 -0.34,-0.96 0.61,-0.41 1.37,-0.29 z m 43.06,34.31 0.27,0.09 -0.09,0.33 -0.93,0.46 0.33,0.5 -0.22,0.63 -0.44,-0.06 -0.37,-0.71 -0.35,-0.03 -0.19,0.23 0.43,1.12 -1.03,-0.64 0.63,-1.24 0.71,-0.05 -0.02,-0.46 0.68,0.17 0.59,-0.34 z m 1.14,1.38 -1.32,1.26 0.22,-0.83 -0.31,-0.8 0.26,-0.18 0.26,0.3 0.07,-0.5 0.37,-0.08 0.39,0.22 0.06,0.61 z m -2.59,1.29 1.35,0.53 -0.14,0.35 -1.18,-0.16 -0.03,-0.72 z", title: "Shimane", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#3a3939", d: "m 297.31993,250.08889 0.2,-0.52 -0.52,-1.05 0.1,-0.46 0,0 0.75,-1.01 1.23,-0.02 0.92,-1.01 1.52,-0.4 0.46,-0.78 1.53,-0.07 0.42,-0.76 0.02,-0.93 1.23,-1.97 0.7,0.05 1.69,0.86 0.6,-0.15 0.97,0.29 0.86,-0.21 1.81,1.34 2.54,-0.48 0.52,0.48 0.49,-0.18 0.31,-0.58 0,0 0.84,0.41 0,0 -0.17,0.89 0.86,1.96 0.39,0.1 0.39,-0.35 0,0 0.71,1.4 0.06,1.04 1.67,3.22 -0.22,1.33 -0.35,0.27 0,0 -0.92,0.07 -0.17,-0.42 -0.52,0.14 -0.45,-0.28 -0.41,0.74 -1.78,-0.31 -0.67,0.8 -0.55,-0.29 -0.91,0.37 -0.28,-0.87 -1.59,0.75 -1.25,0.03 -0.53,-0.6 -0.78,-0.15 -0.41,-0.87 -2.1,-0.15 -1.03,-0.56 -1.66,-0.28 -0.7,-0.54 -1.39,0.58 -0.18,0.44 0,0 -1.09,0.29 -0.69,-0.53 -1.16,-0.2 -0.29,-0.64 z", title: "Saitama", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 304.84993,274.99889 -1.07,2.05 -1.23,1.02 -0.48,1.26 0.29,0.76 -0.45,0.17 -0.48,-0.25 -0.41,0.19 -0.2,0.52 -1.26,0.74 -0.38,-0.14 -1.08,-1.02 0.23,-0.29 -0.14,-0.37 -0.73,-0.33 0.01,-0.81 0.74,-0.73 -0.48,-1.08 0.27,-0.2 -0.2,-1.79 0.67,-0.61 -0.54,-1.53 0.49,-1.23 2.05,0.16 0.27,-0.71 -1.78,-1.59 -2.32,-0.51 -2.74,0.82 -0.9,1.57 0.4,0.5 -0.22,0.6 -3.07,1.66 -0.8,1.34 0.18,1 -0.69,1.23 -1.52,1.15 -0.54,1.37 0.01,0.72 0.75,0.71 -0.09,0.22 -4.47,-1.58 -2.06,-0.07 -1.84,0.45 -2.66,-0.61 -3.56,-0.07 0,0 -0.16,-2.32 0.43,-1.23 2.75,-1.54 1.28,-1.92 0.03,-1.06 1.46,-2 0.47,-0.24 -0.08,-0.47 0.57,-0.58 -0.51,-0.5 0.31,-0.98 0,0 1.07,-0.11 0.46,-0.93 0.51,-0.01 0.21,-0.43 1.28,-0.64 1.21,-1.01 1.65,-0.63 0.14,-0.72 -0.53,-0.67 0,-0.67 0.74,-0.26 -0.42,-1.31 0.41,-0.56 -0.33,-0.26 0.56,-0.65 0.36,0.14 0.58,-1.64 0,0 0.94,3.18 -0.38,1.18 0.23,1.07 -0.46,0.93 0.33,1.3 0.68,0.51 0.76,-0.52 0.76,0.36 0.69,2.69 0.69,0.5 1.24,0.12 0.72,-0.63 -0.4,-2.66 0.43,-0.61 -0.05,-1.71 0.99,-0.91 0.57,1.26 1.03,-0.12 0.45,0.97 2.8,-0.47 0.37,-0.27 0.7,0.07 0.67,-0.39 0,0 1.51,-0.03 0.15,0.24 0.35,1.52 -0.28,0.97 -0.57,0.62 0.24,1.52 0.7,0.54 0.13,0.68 1.52,0.21 0,0 -0.67,0.97 -0.14,1.01 0.63,0.25 -0.13,1.33 1.03,0.83 -0.11,1.53 z", title: "Shizuoka", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#171614", d: "m 327.45993,225.02889 -0.09,1.99 0.27,0.99 -0.22,1.3 0.62,1 -0.09,0.32 -0.95,0.21 -0.28,0.38 0.57,1.95 0.02,1.81 -0.92,1.86 -0.21,1.17 -0.67,0.2 -0.28,-0.39 -0.45,0.02 -0.41,0.47 -0.68,-0.24 -0.05,0.52 -0.26,0.13 -1.56,0.08 -0.13,0.45 -1,0.47 -0.12,0.88 -1.13,-0.28 -0.56,1.69 -1.64,0.87 -0.73,0.06 0,0 -0.84,-0.41 0,0 -0.51,-0.79 0.09,-0.28 -0.38,-0.24 -1.11,0.18 -0.71,-0.43 -1.01,0.29 -1.11,-0.97 0.04,-0.58 -1.05,-0.78 0.18,-0.96 1.19,-1.55 -0.33,-0.76 0.4,-1.2 0.82,-0.65 -0.34,-0.68 -1.23,0.07 -1.47,-0.74 0.18,-1.37 0.59,-0.89 -0.28,-1.17 1.02,-1.41 -1.02,-0.44 0.58,-1.54 0,0 0.94,-0.43 0.71,-1.02 1.35,-0.24 0.92,-0.75 0.63,-0.09 0.23,-0.43 0.79,-0.2 0.26,-0.41 2.8,-0.87 0.18,-0.91 1.36,-0.59 2.42,0.28 2.39,1 1.02,0.98 0.23,0.93 0.85,-0.05 -0.16,1.86 z", title: "Tochigi", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#000000", className: "animate-pulse", d: "m 310.35993,279.40889 -0.68,-0.39 -0.14,-0.41 -0.06,-1.39 0.23,-0.5 1.22,0.43 0.52,0.92 -0.16,1.5 -0.93,-0.16 z m -2.11,6.15 -0.33,2.29 -0.49,-0.4 -0.06,-0.52 0.88,-1.37 z m -1.42,2.19 0.25,0.27 -0.61,0.2 0.36,-0.47 z m 12.32,-31.08 -0.82,-0.06 -0.2,-0.93 -0.5,0.44 -0.3,1.56 0.32,0.75 0.25,-0.15 0.44,0.71 -0.87,-0.2 -0.93,0.29 0,0 -0.01,-0.38 -0.48,-0.23 -0.33,-0.67 -2.68,-1.27 -0.76,0.91 -0.49,-0.47 -0.22,0.23 0.79,0.62 -0.19,2.02 -0.3,0.03 -1.35,-1.89 -2.15,-0.7 -0.86,0.16 -0.59,-0.99 -0.61,0.03 -0.46,-0.55 -0.6,-0.13 0,0 -2.1,-1.16 -1.58,-3.24 0,0 0.19,-0.44 1.38,-0.58 0.71,0.54 1.66,0.29 1.03,0.56 2.1,0.15 0.41,0.87 0.78,0.16 0.53,0.6 1.25,-0.04 1.59,-0.75 0.28,0.87 0.92,-0.37 0.55,0.29 0.67,-0.8 1.78,0.32 0.41,-0.75 0.45,0.28 0.52,-0.14 0.17,0.42 0.93,-0.07 0,0 1.08,2.26 0,0 0.35,0.76 -0.56,0.32 0.4,0.38 -0.83,0.57 -1.17,-0.43 z m -5.62,37.62 0.27,-0.46 -0.03,-0.53 -0.52,-0.53 -0.93,0.11 -0.4,1 0.18,0.63 0.69,0.09 0.74,-0.31 z m 4.5,23.31 0.97,0.6 0.15,-0.7 0.39,-0.09 -0.25,-0.91 -0.55,-0.05 -0.88,-0.9 -0.48,0.01 -0.16,0.72 0.28,0.56 0.42,0.13 0.11,0.63 z m 0,0 0.97,0.6 0.15,-0.7 0.39,-0.09 -0.25,-0.91 -0.55,-0.05 -0.88,-0.9 -0.48,0.01 -0.16,0.72 0.28,0.56 0.42,0.13 0.11,0.63 z", title: "Tokyo", id: "JP-23", stroke: "#f30", strokeWidth: 0.48, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#141414", d: "m 218.38993,299.89889 -2.09,0.87 -0.89,0.77 -0.18,0.51 -1.25,0.91 -1.19,0.7 -0.92,0.19 -0.64,1.79 -0.89,-0.04 -0.21,0.47 0.26,0.14 -0.3,0.18 0,0 -2.11,-0.22 -0.78,-1.19 -0.1,-0.47 0.47,-0.54 -0.23,-0.8 -1.97,-0.05 -0.1,-2 -0.51,-1.26 -0.7,0.17 -0.25,-0.46 -0.39,0.13 -0.42,0.81 -0.61,0.2 -0.79,-0.32 -0.65,-0.9 -1.81,0.17 -1.34,-0.52 -0.37,-0.54 0,0 0.56,-0.9 0,-1.04 -0.27,-0.49 0.29,-0.68 0,0 0.62,-0.22 0.14,-0.51 1,-0.84 0.58,0.19 0.28,-0.5 0.76,-0.29 1.38,-0.25 0.86,0.97 0.47,0 1.17,-0.91 1.24,-0.14 0.32,-0.34 -0.06,-0.42 0.74,-0.58 1.7,-0.18 1.63,0.26 0.28,-0.3 1.09,0.58 0.42,-0.22 0.16,-0.96 0,0 2.81,-0.79 0,0.94 0.75,0.49 -0.72,2.96 0.09,1.1 0.48,0.53 0.36,-0.56 0.59,1.07 0.63,0.36 -0.52,0.39 0.7,0.19 -0.14,0.46 -1.29,0.94 -0.09,0.33 0.27,0.21 1.98,0.04 0.14,0.21 -0.44,0.2 z", title: "Tokushima", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 190.80993,260.73889 1.46,0.29 0.47,-0.16 0.47,-0.86 0.98,-0.5 1.8,-0.38 1.44,0.58 1.8,0.17 3.37,-0.23 0.67,-0.37 1.4,0.17 1.85,-0.2 2.78,-0.74 0.56,-0.77 0.76,-0.05 0.13,-0.39 0.61,-0.13 0,0 0.69,0.52 0.38,0.77 -0.12,1.02 0.49,1.88 0.73,0.34 -0.09,1.08 0.73,0.96 -0.15,0.43 0.26,1.16 -1.64,1.15 -0.58,-0.26 0,0 -0.3,-0.23 -1.39,1.16 -0.69,0.13 -0.54,-0.27 -1.48,0.92 -0.51,-0.63 0.19,-0.71 -0.49,-0.31 0.12,-0.61 -0.22,-0.42 -0.69,-0.59 -0.94,0.17 -0.79,-0.21 -0.19,-0.17 0.15,-0.89 -1.5,0.43 -0.03,0.48 -1.16,0.49 -0.2,0.54 -0.66,0.5 -0.52,-0.91 -1.07,-0.74 -1.27,-0.01 -1.7,-0.63 -0.78,2.43 -0.96,0.25 0.21,0.48 -0.21,0.5 -1.21,0.49 -0.78,-0.33 -0.27,0.38 0.33,1.19 -1.81,0.63 -0.38,-0.22 -0.24,0.84 -0.36,0.25 0,0 -0.42,-0.5 -2.1,0.32 0,-0.26 0,0 0.17,-1.54 0.89,-0.7 -0.23,-0.69 -0.61,-0.13 -0.02,-0.29 3.1,-1.38 -0.27,-1.63 0.42,-0.62 0.16,-2.44 z", title: "Tottori", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#222222", d: "m 265.53993,228.68889 1.31,0.68 0.98,-0.23 1.94,0.09 1.17,-1.11 0.36,-1.01 -0.03,-1.21 0.37,-0.71 1.34,-0.71 2.78,-0.6 0,0 0.7,0.81 0.82,0.25 0.03,1.2 0.39,0.6 0,0.77 0.59,1.68 0,0 -0.2,4.18 -1.18,0.7 -0.11,0.77 0.21,-0.04 0.12,0.49 -0.61,0.17 -0.39,0.53 0.02,0.75 -0.42,0.81 -0.9,0.86 0,0 -0.94,-0.07 -0.84,-0.82 -0.71,0.34 -1.13,-0.35 -0.28,-0.78 -1.35,0.8 -0.21,-0.04 -0.04,-0.88 -0.59,-0.05 -1.46,0.69 -0.25,-0.44 -0.55,0.02 -2.08,2.02 -0.25,1.15 -1.39,1.22 -0.34,-0.08 0.26,-0.73 -0.34,-0.77 -0.92,-0.51 -0.35,0.36 -0.25,-0.59 -0.77,0.56 -0.29,1.06 -0.58,0.08 0,0 -0.15,-0.89 0.32,-0.42 -0.45,-1.89 0.75,-2.95 -0.46,-0.58 -0.19,-1.13 0.77,-1.23 -0.23,-0.46 0.16,-0.97 0.55,-0.65 0.6,-3.49 1.4,-1.37 0.73,-0.26 1.24,0.1 0,0 -1.33,2.29 1.42,1.56 0.69,0.5 z", title: "Toyama", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 240.04993,307.16889 -0.54,0.38 -0.32,0.69 0.09,0.71 -0.48,0.08 -0.25,-0.35 0.32,-0.75 -0.79,0.11 -1.88,-0.75 -2.35,-0.38 -2.02,-1.21 -0.41,-0.74 0.15,-0.79 -1.27,-0.63 0.98,-0.53 0.25,-0.57 -1.44,-1.22 -2.62,-1.21 -0.68,-1.41 -0.77,-0.38 -1.11,0.32 0.21,-2.33 1.57,-0.64 0.49,-0.63 -0.73,-0.76 -1.12,-0.25 0.61,-0.64 0.3,-0.83 0.87,0.07 0.3,-0.35 -0.13,-0.75 -0.75,-0.2 -0.43,-1.22 -1,-1.08 0.13,-0.48 0.36,-0.14 0,0 0.27,0.09 0.13,0.88 0.43,0.04 1.04,-0.18 1.23,-0.79 1.63,-0.09 2.06,-0.74 1.62,0.14 1.2,-0.8 1.29,-0.18 0,0 0.4,0.68 0.2,1.72 0.89,0.5 0.21,0.66 -0.39,0.6 -0.81,-0.37 -0.55,0.27 0.01,0.71 -0.38,0.57 -1.49,1.45 -0.13,0.54 1.14,0.96 -0.06,0.53 0.58,0.21 0.28,0.51 -0.71,1.83 0.38,0.13 0.21,0.57 1.15,-0.68 0.66,0.01 0.66,0.41 2.01,-0.34 0,0 -0.07,1.92 1.7,1.94 1.29,0.27 0,0 -0.33,0.45 -0.15,1.15 -0.96,0.26 -0.23,0.85 0.72,0.28 -0.07,0.35 -2.08,1.46 -0.52,0.09 z", title: "Wakayama", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 154.99993,295.15889 -0.59,-0.41 -0.35,0.88 -0.74,0.35 -0.29,-0.2 0.15,-0.59 -0.44,-0.14 -0.77,1.46 -1.72,1.03 -2.18,-0.78 0.08,-0.79 -2.26,-1.28 -0.69,0.38 -0.32,0.88 -1.84,1.78 -0.19,-0.59 0.46,-0.87 -0.03,-1.68 -1.06,-1.52 0.12,-0.61 0.75,-0.13 0.55,-1.11 -0.24,-1.21 -1.07,-1.17 0.3,-0.16 0.38,-1.37 2.64,-0.41 -0.3,-0.48 -1.22,-0.38 0.28,-0.82 0.92,0.74 1.08,-0.34 0.52,0.15 1.09,1.11 2.96,-0.26 0.62,-0.83 1.02,0.03 1.44,-1.68 -0.27,-0.66 0.35,-0.56 0.7,0.14 0.7,-0.71 0.34,-0.42 0.03,-0.86 0.46,-0.11 0.38,-0.88 0.25,-0.23 0.97,0.29 0.47,-0.49 0,0 0.83,2.54 -0.43,0.16 -0.02,0.82 -0.66,0.64 0.61,1.65 1.87,-0.04 -0.55,1.54 0.17,0.77 0.87,0.86 1.05,-0.1 0.94,-0.7 0.69,0.63 1.12,-1.58 -0.43,-0.89 0.15,-0.31 0.48,-0.71 0.81,-0.45 0,0 0.3,0.68 -0.17,0.81 0.24,1.36 0.92,0.78 -0.08,0.63 0.5,1.46 1.28,0.31 0.33,-0.19 0,0 0.24,0.49 -0.29,0.52 0.37,0.47 -0.98,0.91 0.24,2.96 -0.57,0.96 -1.09,0.12 0.01,1.62 0.58,0.68 -0.33,0.63 -0.49,-1.07 -1.43,-0.73 -0.37,0.17 -3.61,-2.76 -0.47,0.6 -0.03,0.55 -0.91,-0.2 1.12,-1.18 -1.25,-0.71 -0.52,-0.08 -1.82,0.55 -2.1,0.96 -0.56,-0.62 z m 15.14,3.62 -0.9,-0.14 -0.52,0.46 -0.58,-0.87 -0.06,-0.79 1.18,-0.95 1.36,1.13 0.98,0.06 1.26,-0.85 1.1,0.06 -1.26,0.96 -0.71,-0.01 -0.19,0.31 0.19,0.83 -0.87,0.1 -0.1,-0.82 -0.44,-0.1 -0.54,0.09 0.1,0.53 z", title: "Yamaguchi", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#0A0A0A", d: "m 305.23993,255.79889 -0.02,2.61 -0.34,0.7 -0.49,0.52 -0.71,0.1 -0.46,0.65 -1.79,0.83 -0.4,1.13 0,0 -0.67,0.39 -0.7,-0.07 -0.37,0.27 -2.8,0.47 -0.45,-0.97 -1.03,0.12 -0.57,-1.26 -0.99,0.91 0.05,1.71 -0.43,0.61 0.4,2.66 -0.72,0.63 -1.24,-0.12 -0.69,-0.5 -0.69,-2.69 -0.76,-0.36 -0.76,0.52 -0.68,-0.51 -0.33,-1.3 0.46,-0.93 -0.23,-1.07 0.38,-1.18 -0.94,-3.18 0,0 -0.73,-1.77 1,-1.1 -0.88,-0.86 0.97,-1.97 0.2,-0.12 0.72,0.62 1.77,-2.71 1.43,0.58 -0.01,0.67 0.48,0.53 0.48,-0.09 0.22,-0.41 1.76,0.03 0.54,1.14 0.97,-0.01 0.73,-0.94 0.4,0.01 0,0 1.02,0.23 0.29,0.64 1.16,0.2 0.69,0.53 1.09,-0.29 0,0 1.57,3.24 z", title: "Yamanashi", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("path", { fill: "#212121", d: "m 327.89993,199.31889 -0.3,1.71 0.04,2.01 0.55,0.41 -1.33,1.61 -1.3,-0.26 -0.74,0.56 -1.47,-1.12 -1.23,0.46 -0.97,-1.68 -0.33,0.35 -0.63,0.07 -0.61,-0.39 -0.94,0.58 -0.63,-0.68 -0.79,0.18 0,0 -0.45,-0.77 -0.45,0.13 -0.66,-0.32 -0.66,-1.16 0.59,-3.17 0.69,-0.51 -0.35,-0.76 0.34,-0.82 -0.16,-1.31 0.52,-0.82 1.58,0.22 1.37,-0.86 0.79,-1.59 -1.15,-1.23 -1.84,-0.48 -0.8,-1.13 0.4,-1.99 -0.24,-0.29 -1.48,-0.32 -1.81,-0.96 0,0 1.17,-3.08 1.74,-1.51 1.14,-1.5 1.13,-4.08 0.61,-1.04 0.7,-2.64 -0.18,-0.58 0,0 2.51,0.41 0.37,-0.46 0.98,-0.24 0.2,1.17 0.71,0.18 0.79,0.7 3.08,0.94 1.08,-0.27 0.35,0.77 1.06,0.08 0.58,1.8 1.52,0.53 0.24,0.45 0,0 -0.23,0.35 1.06,1.02 0.19,1.06 0.83,0.45 -0.68,1.1 0.22,0.97 -0.43,1.15 -0.4,0.1 -0.66,-0.35 -0.1,0.23 0.61,1.37 0.03,0.54 -0.38,0.65 0.27,0.91 0.6,0.39 0.2,0.7 -0.61,1.6 -1.09,1.14 0.16,0.6 -1.05,1.32 -0.16,1.02 0.23,1.23 -1.11,1.58 -0.19,1.02 -0.99,0.55 -1.72,0.01 0.07,1.99 z", title: "Yamagata", id: "JP-23", stroke: "white", strokeWidth: 0.28, strokeLinecap: "round" }), /* @__PURE__ */ t.createElement("g", { transform: "translate(255, 242) scale(0.5)", className: "transform-scale-[20%]" }, /* @__PURE__ */ t.createElement("svg", { width: 154, height: 221, viewBox: "0 0 174 228", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...o }, /* @__PURE__ */ t.createElement("path", { id: "redcircle", d: "M143.315 17.7699C142.633 15.2291 141.294 12.9126 139.434 11.0525C137.574 9.1924 135.257 7.8543 132.716 7.17247C130.175 6.49065 127.499 6.48902 124.958 7.16784C122.416 7.84666 120.098 9.18203 118.235 11.0399C116.841 12.4329 115.735 14.0869 114.981 15.9075C114.227 17.728 113.838 19.6793 113.838 21.6499C113.838 23.6205 114.227 25.5719 114.981 27.3924C115.735 29.213 116.841 30.8669 118.235 32.2599C120.089 34.1174 122.4 35.4525 124.935 36.13C127.477 36.8081 130.152 36.8059 132.692 36.1238C135.232 35.4416 137.549 34.1035 139.409 32.2435C141.269 30.3836 142.607 28.0672 143.289 25.5268C143.971 22.9865 143.973 20.3113 143.295 17.7699H143.315ZM122.645 19.98L133.365 17.11L130.495 27.8299L122.645 19.98Z", fill: "#DD1920", stroke: "black", strokeWidth: 1.5 }), /* @__PURE__ */ t.createElement("g", { id: "bordergroup" }, /* @__PURE__ */ t.createElement("path", { className: "border", d: "M122.795 41.85V43.2999H116.335L113.105 37.7L114.365 36.98L117.175 41.85H122.795Z", fill: "white", stroke: "white", strokeWidth: 2.5 }), /* @__PURE__ */ t.createElement("path", { className: "border", d: "M144.565 37.7L141.335 43.2999H134.875V41.85H140.495L143.305 36.98L144.565 37.7Z", fill: "white", stroke: "white", strokeWidth: 2.5 }), /* @__PURE__ */ t.createElement("path", { className: "border", d: "M153.835 21.6499L150.605 27.24L149.345 26.5199L152.155 21.6499L149.345 16.7799L150.605 16.0499L153.835 21.6499Z", fill: "white", stroke: "white", strokeWidth: 2.5 }), /* @__PURE__ */ t.createElement("path", { className: "border", d: "M144.565 5.58997L143.305 6.31995L140.495 1.44995H134.875V0H141.335L144.565 5.58997Z", fill: "white", stroke: "white", strokeWidth: 2.5 }), /* @__PURE__ */ t.createElement("path", { className: "border", d: "M122.795 0V1.44995H117.175L114.365 6.31995L113.105 5.58997L116.335 0H122.795Z", fill: "white", stroke: "white", strokeWidth: 2.5 }), /* @__PURE__ */ t.createElement("path", { className: "border", d: "M108.325 16.7799L105.505 21.6499L108.325 26.5199L107.065 27.24L103.835 21.6499L107.065 16.0499L108.325 16.7799Z", fill: "white", stroke: "white", strokeWidth: 2.5 })), /* @__PURE__ */ t.createElement("path", { id: "pathline", d: "M10.33786e-06 219.57H100.8L116 43.5699", stroke: "white", fill: "none", strokeWidth: 1.7, strokeMiterlimit: 10 }), /* @__PURE__ */ t.createElement("text", { id: "text", opacity: 0, x: 0, y: 164, fontSize: 18, fontWeight: 400, fill: "white", className: "text text-white font-[Oxanium]" }, /* @__PURE__ */ t.createElement("tspan", { x: 0, dy: 0 }, "TOKYO"), /* @__PURE__ */ t.createElement("tspan", { x: 0, dy: 22 }, "35.6764°N"), /* @__PURE__ */ t.createElement("tspan", { x: 0, dy: 22 }, "139.6500°E"))))), F7 = (o) => /* @__PURE__ */ t.createElement("svg", { className: "w-full h-full", viewBox: "0 0 344 344", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...o }, /* @__PURE__ */ t.createElement("path", { d: "M172 343.7C77.3003 343.7 0.300293 266.7 0.300293 172C0.300293 77.3 77.3003 0.299805 172 0.299805C266.7 0.299805 343.7 77.3 343.7 172C343.7 266.7 266.7 343.7 172 343.7ZM172 10.2998C82.9003 10.2998 10.3003 82.8 10.3003 172C10.3003 261.2 82.8003 333.7 172 333.7C261.2 333.7 333.7 261.2 333.7 172C333.7 82.8 261.1 10.2998 172 10.2998Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M172 343.7C147.7 343.7 125.2 325.4 108.6 292.1C92.5002 259.9 83.7002 217.3 83.7002 172C83.7002 126.7 92.6002 84.0999 108.6 51.8999C125.2 18.5999 147.7 0.299805 172 0.299805C196.3 0.299805 218.8 18.5999 235.4 51.8999C251.5 84.0999 260.3 126.7 260.3 172C260.3 217.3 251.4 259.9 235.4 292.1C218.8 325.3 196.3 343.7 172 343.7ZM172 10.2998C151.7 10.2998 132.4 26.6999 117.5 56.3999C102.1 87.1999 93.6002 128.3 93.6002 172C93.6002 215.7 102.1 256.8 117.5 287.6C132.3 317.3 151.7 333.7 172 333.7C192.3 333.7 211.6 317.3 226.5 287.6C241.9 256.8 250.4 215.7 250.4 172C250.4 128.3 241.9 87.1999 226.5 56.3999C211.6 26.6999 192.3 10.2998 172 10.2998Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M172 343.7C169.2 343.7 167 341.5 167 338.7V5.3999C167 2.5999 169.2 0.399902 172 0.399902C174.8 0.399902 177 2.5999 177 5.3999V338.7C177 341.4 174.8 343.7 172 343.7Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M172 343.7C77.3003 343.7 0.300293 266.7 0.300293 172C0.300293 77.3 77.3003 0.299805 172 0.299805C266.7 0.299805 343.7 77.3 343.7 172C343.7 266.7 266.7 343.7 172 343.7ZM172 10.2998C82.9003 10.2998 10.3003 82.8 10.3003 172C10.3003 261.2 82.8003 333.7 172 333.7C261.2 333.7 333.7 261.2 333.7 172C333.7 82.8 261.1 10.2998 172 10.2998Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M338.7 177H5.30029C2.50029 177 0.300293 174.8 0.300293 172C0.300293 169.2 2.50029 167 5.30029 167H338.6C341.4 167 343.6 169.2 343.6 172C343.6 174.8 341.4 177 338.7 177Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M316.4 93.7002H27.6001C24.8001 93.7002 22.6001 91.5002 22.6001 88.7002C22.6001 85.9002 24.8001 83.7002 27.6001 83.7002H316.3C319.1 83.7002 321.3 85.9002 321.3 88.7002C321.3 91.5002 319.1 93.7002 316.4 93.7002Z", fill: "white" }), /* @__PURE__ */ t.createElement("path", { d: "M316.4 260.3H27.6001C24.8001 260.3 22.6001 258.1 22.6001 255.3C22.6001 252.5 24.8001 250.3 27.6001 250.3H316.3C319.1 250.3 321.3 252.5 321.3 255.3C321.3 258.1 319.1 260.3 316.4 260.3Z", fill: "white" })), i8 = ({ width: o, height: L, bgColor: e, appear: r }) => {
-  const i = Y(T.timeline()), n = Y(null), a = W2(r);
+  const i = Y(T.timeline()), n = Y(null), a = m2(r);
   return D1(() => {
     const l = T.utils.selector(n.current), c = l("#redcircle"), s = l("#pathline"), h = l("#text"), d = s == null ? void 0 : s[0].getTotalLength(), f = T.utils.toArray("#bordergroup", n.current);
     T.set(c, { opacity: 0 }), T.set(f, { opacity: 0 }), T.set(s, {

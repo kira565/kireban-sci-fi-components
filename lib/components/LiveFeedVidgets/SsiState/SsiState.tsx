@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Globe from '../../../assets/svg/modular_parts/GLOBE.svg?react';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { AppearDirection } from '../../../utils';
+import { AppearDirection, useAppearFrom } from '../../../utils';
 import lat from '@assets/svg/icons/lat.svg';
 import lon from '@assets/svg/icons/lon.svg';
 
@@ -50,7 +50,7 @@ export const SsiState: React.FC<SsiStateProps> = ({
   showCoordinates = true
 }) => {
   const globeRef = useRef(null);
-  const panelRef = useRef(null);
+  const panelRef = useAppearFrom(appear);
   const [position, setPosition] = useState({
     lon: 170,
     lat: 10,
@@ -131,7 +131,7 @@ export const SsiState: React.FC<SsiStateProps> = ({
       },
       ease: 'bounce.inOut'
     });
-  }, [appear]);
+  }, []);
 
   return (
     <div
