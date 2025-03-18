@@ -2,7 +2,7 @@ import SolarChargeSvg from '../../../assets/svg/solar-charge.svg?react';
 import SolarGraph from '../../../assets/svg/graph.svg?react';
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react';
-import { appearFrom, dissApearTo } from '../../../utils';
+import { dissApearTo, useAppearFrom } from '../../../utils';
 
 export interface LoadingBatteryProps {
   width?: string;
@@ -62,7 +62,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
   chargingDurationSec = 5
 }) => {
   const loadingBarRef = useRef<SVGSVGElement>(null);
-  const panelRef = useRef(null);
+  const panelRef = useAppearFrom(appear);
   const [scale, setScale] = useState({ text: 12, header: 24, showLabels: true });
 
   useEffect(() => {
@@ -96,10 +96,6 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
 
     if (panelRef.current) {
       observer.observe(panelRef.current);
-    }
-
-    if (appear) {
-      appearFrom(panelRef, appear);
     }
 
     if (loadingBarRef.current) {

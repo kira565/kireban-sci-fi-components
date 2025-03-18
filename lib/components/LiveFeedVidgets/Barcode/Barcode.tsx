@@ -1,6 +1,6 @@
+import { useAppearFrom } from '@/utils';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
-import { appearFrom } from '../../../utils';
 export interface BarcodeProps {
   fill?: string;
   width?: string;
@@ -10,14 +10,10 @@ export interface BarcodeProps {
 
 export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, opacity }) => {
   const pointsRef = useRef(null);
-  const containerRef = useRef(null);
+  const containerRef = useAppearFrom(appear);
 
   useEffect(() => {
     const rects = gsap.utils.toArray('#points rect', containerRef.current); // Select all rect elements inside #points
-
-    if (appear) {
-      appearFrom(containerRef, appear);
-    }
 
     const animation = gsap.to(rects, {
       opacity: 0, // Fade out

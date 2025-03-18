@@ -1,6 +1,6 @@
+import { AppearDirection } from '@/utils';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
-export type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
 
 export function useAppearFrom(direction?: AppearDirection) {
   const ref = useRef(null);
@@ -39,44 +39,4 @@ export function useAppearFrom(direction?: AppearDirection) {
   }, [direction]); // Запуск только при изменении `direction`
 
   return ref;
-}
-
-export function dissApearTo(
-  ref: React.RefObject<HTMLElement | null>,
-  direction: AppearDirection,
-  onComplete?: () => void
-) {
-  console.log('dissapear');
-  if (!ref.current) return;
-
-  let coord: string = 'x';
-  let coordVal: string = '-100%';
-
-  switch (direction) {
-    case 'top':
-      coord = 'y';
-      coordVal = '-100%';
-      break;
-    case 'bottom':
-      coord = 'y';
-      coordVal = '100%';
-      break;
-    case 'right':
-      coord = 'x';
-      coordVal = '100%';
-      break;
-    case 'left':
-    default:
-      coord = 'x';
-      coordVal = '-100%';
-      break;
-  }
-
-  gsap.to(ref.current, {
-    [coord]: coordVal,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    onComplete
-  });
 }

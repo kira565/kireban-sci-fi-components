@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import BorderT2 from '@assets/svg/modular_parts/bordert2.svg?react';
 import gsap from 'gsap';
-import { AppearDirection, appearFrom } from '@/utils';
+import { AppearDirection, useAppearFrom } from '@/utils';
 
 export interface AvatarPanelProps {
   imageSrc?: string;
@@ -15,7 +15,7 @@ export const AvatarPanel: React.FC<AvatarPanelProps> = ({
   colorSchema = '#fa0',
   appear
 }) => {
-  const avatarContainer = useRef(null);
+  const avatarContainer = useAppearFrom(appear);
   const q1 = useRef(null);
   const q2 = useRef(null);
   const q3 = useRef(null);
@@ -23,9 +23,6 @@ export const AvatarPanel: React.FC<AvatarPanelProps> = ({
   const timeline = useRef(gsap.timeline({ paused: true, yoyo: true, repeat: -1, repeatDelay: 2 }));
 
   useEffect(() => {
-    if (appear) {
-      appearFrom(avatarContainer, appear);
-    }
     timeline.current
       .to([q1.current, q2.current, q3.current], {
         duration: 1,

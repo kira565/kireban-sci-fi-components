@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import './AboutHeader.css';
 import DotSquare from '@assets/svg/icons/linesquare.svg?react';
-import { appearFrom } from '@/utils';
 import useSciFiCode from '@/hooks/useSciFiCode';
+import { useAppearFrom } from '@/utils';
 
 export interface AboutHeaderProps {
   text?: string;
@@ -23,14 +23,8 @@ export const AboutHeader: React.FC<AboutHeaderProps> = ({
   height = '110px',
   width
 }) => {
-  const container = useRef(null);
+  const container = useAppearFrom(appear);
   const textRef = useRef(null);
-
-  useEffect(() => {
-    if (appear) {
-      appearFrom(container, appear);
-    }
-  }, []);
 
   return (
     <div

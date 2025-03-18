@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Globe from '../../../assets/svg/modular_parts/GLOBE.svg?react';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { AppearDirection, appearFrom } from '../../../utils';
+import { AppearDirection } from '../../../utils';
 import lat from '@assets/svg/icons/lat.svg';
 import lon from '@assets/svg/icons/lon.svg';
 
@@ -62,10 +62,6 @@ export const SsiState: React.FC<SsiStateProps> = ({
     const totalDuration = 90;
 
     gsap.registerPlugin(MotionPathPlugin);
-
-    if (appear) {
-      appearFrom(panelRef, appear);
-    }
 
     if (!globeRef.current) return;
     const selector = gsap.utils.selector(globeRef.current);

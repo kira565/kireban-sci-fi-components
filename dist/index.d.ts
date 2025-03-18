@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { RefObject } from 'react';
 
 export declare const AboutHeader: React.FC<AboutHeaderProps>;
 
@@ -13,8 +14,6 @@ declare interface AboutHeaderProps {
 }
 
 declare type AppearDirection = 'top' | 'left' | 'bottom' | 'right';
-
-export declare function appearFrom(ref: React.RefObject<HTMLElement | null>, direction: AppearDirection): void;
 
 export declare const AvatarPanel: React.FC<AvatarPanelProps>;
 
@@ -84,6 +83,7 @@ declare interface EvaOptionListProps {
     options: EvaListOptionProps[];
     mobileView?: boolean;
     width?: string;
+    appear?: AppearDirection;
 }
 
 export declare const EvaProgressBar: React.FC<EvaProgressBarProps>;
@@ -154,5 +154,7 @@ declare interface SsiStateProps {
     appear?: AppearDirection;
     showCoordinates?: boolean;
 }
+
+export declare function useAppearFrom(direction?: AppearDirection): RefObject<null>;
 
 export { }

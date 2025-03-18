@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import JapanMap from '../../../assets/svg/modular_parts/japan.svg?react';
 import gsap from 'gsap';
 import Globe from '@assets/svg/icons/lat.svg?react';
-import { AppearDirection, appearFrom } from '@/utils';
+import { AppearDirection, useAppearFrom } from '@/utils';
 
 export interface JpMapProps {
   width?: string;
@@ -14,13 +14,9 @@ export interface JpMapProps {
 export const JpMap: React.FC<JpMapProps> = ({ width, height, bgColor, appear }) => {
   const timeline = useRef<gsap.core.Timeline>(gsap.timeline());
   const mapRef = useRef(null); // Reference for SVG container
-  const containerRef = useRef(null);
+  const containerRef = useAppearFrom(appear);
 
   useEffect(() => {
-    if (appear) {
-      appearFrom(containerRef, appear);
-    }
-
     const selector = gsap.utils.selector(mapRef.current);
 
     const redCircle = selector('#redcircle');
@@ -68,7 +64,7 @@ export const JpMap: React.FC<JpMapProps> = ({ width, height, bgColor, appear }) 
         opacity: 1,
         duration: 0.5
       });
-  }, [appear]);
+  }, []);
 
   return (
     <div

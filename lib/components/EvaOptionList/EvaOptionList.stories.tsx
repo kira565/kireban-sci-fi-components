@@ -15,6 +15,7 @@ export const Default: Story = {
   args: {
     width: '250px',
     mobileView: true,
+    appear: 'left',
     options: [
       { title: 'ABOUT', clickHandler: () => {}, isActive: true, sciFiCode: 0 },
       { title: 'SKILLS', clickHandler: () => {}, isActive: false, sciFiCode: 1 },
