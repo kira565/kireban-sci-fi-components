@@ -248,7 +248,7 @@
   }
 
   .hoveredItem {
-    @apply group-hover:bg-darkGrayBg group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-darkText;
+    @apply group-hover:bg-darkGrayBg group-hover:text-white group-hover:fill-white dark:group-hover:bg-white dark:group-hover:text-darkText dark:group-hover:fill-black;
   }
   .activeItem {
     @apply text-darkText bg-evaTextWarning dark:text-white;

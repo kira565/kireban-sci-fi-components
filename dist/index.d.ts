@@ -69,23 +69,6 @@ declare interface EvaBorderPanelProps {
     pulseAnimation?: boolean;
 }
 
-declare interface EvaListOptionProps {
-    title: string;
-    clickHandler: () => void;
-    sciFiCode: number;
-    isActive?: boolean;
-    showMobileView?: boolean;
-}
-
-export declare const EvaOptionList: React.FC<EvaOptionListProps>;
-
-declare interface EvaOptionListProps {
-    options: EvaListOptionProps[];
-    mobileView?: boolean;
-    width?: string;
-    appear?: AppearDirection;
-}
-
 export declare const EvaProgressBar: React.FC<EvaProgressBarProps>;
 
 declare interface EvaProgressBarProps {
@@ -132,6 +115,25 @@ declare interface LoadingBatteryProps {
     chargingDurationSec?: number;
     chargingCompleted?: () => void;
     needHideAfterComplete?: boolean;
+}
+
+export declare const NavList: React.FC<NavListProps> & {
+    NavOption: React.FC<NavOptionProps>;
+};
+
+declare interface NavListProps {
+    width?: string;
+    appear?: AppearDirection;
+    children: ReactNode;
+    selected: string;
+    onSelect?: (value?: string) => void;
+}
+
+declare interface NavOptionProps {
+    title: string;
+    sciFiCode: number;
+    value?: string;
+    image?: ReactNode;
 }
 
 export declare const Panel: React.FC<PanelProps>;

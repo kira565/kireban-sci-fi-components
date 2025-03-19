@@ -1,8 +1,10 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="2" y="2" width="5" height="5" fill="white"/>
-<path d="M2.5 9V11.5V14" stroke="white"/>
-<path d="M4.5 9V11.5V14" stroke="white"/>
-<path d="M6.5 9V11.5V14" stroke="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2V3.29308L12.9144 2.37867L13.6215 3.08578L12.7073 4H14V5H12.7073L13.6215 5.91422L12.9144 6.62133L12 5.70692L12 7H11L11 5.70729L10.086 6.62131L9.37887 5.91421L10.2931 5H9V4H10.2931L9.37887 3.08579L10.086 2.37869L11 3.29271L11 2H12Z" fill="white"/>
-<circle cx="11.5" cy="11.5" r="2.5" fill="white"/>
+<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="5" height="5" fill="currentColor" />
+    <path d="M2.5 9V11.5V14" stroke="currentColor" />
+    <path d="M4.5 9V11.5V14" stroke="currentColor" />
+    <path d="M6.5 9V11.5V14" stroke="currentColor" />
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M12 2V3.29308L12.9144 2.37867L13.6215 3.08578L12.7073 4H14V5H12.7073L13.6215 5.91422L12.9144 6.62133L12 5.70692L12 7H11L11 5.70729L10.086 6.62131L9.37887 5.91421L10.2931 5H9V4H10.2931L9.37887 3.08579L10.086 2.37869L11 3.29271L11 2H12Z"
+        fill="currentColor" />
+    <circle cx="11.5" cy="11.5" r="2.5" fill="currentColor" />
 </svg>

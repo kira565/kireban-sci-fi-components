@@ -7,7 +7,7 @@ export { EvaProgressBar } from './components/EvaProgressBar/EvaProgressBar';
 export { EvaUnitBox } from './components/EvaUnitBox/EvaUnitBox';
 export { ButtonFinger } from './components/ButtonFinger/ButtonFinger';
 export { EvaTilePanel } from './components/EvaTilePanel/EvaTilePanel';
-export { EvaOptionList } from './components/EvaOptionList/EvaOptionList';
+export { NavList } from './components/NavList/NavList';
 export { GeometricLayout } from './components/GeometricLayout/GeometricLayout';
 export { CircleIndicator } from './components/LiveFeedVidgets/CircleIndicator/CircleIndIcator';
 export { LoadingBattery } from './components/LiveFeedVidgets/LoadingBattery/LoadingBattery';
