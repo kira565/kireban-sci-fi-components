@@ -159,4 +159,11 @@ declare interface SsiStateProps {
 
 export declare function useAppearFrom(direction?: AppearDirection): RefObject<null>;
 
+/**
+ * Hook to generate a futuristic sci-fi code.
+ * @param index {number} - The index of the component.
+ * @returns {string} A unique sci-fi code string, e.g., "U-1S25".
+ */
+export declare const useSciFiCode: (index: number) => string;
+
 export { }
