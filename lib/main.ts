@@ -18,3 +18,4 @@ export { AboutHeader } from './components/AboutPanel/AboutHeader';
 export { Panel } from './components/Panel/Panel';
 export { JpMap } from './components/LiveFeedVidgets/JpMap/JpMap';
 export { useAppearFrom } from '@/hooks/useAppearFrom';
+export { useSciFiCode } from '@/hooks/useSciFiCode';

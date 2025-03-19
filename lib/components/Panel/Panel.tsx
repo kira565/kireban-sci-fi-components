@@ -1,4 +1,4 @@
-import useSciFiCode from '@/hooks/useSciFiCode';
+import { useSciFiCode } from '@/hooks/useSciFiCode';
 import { ReactNode } from 'react';
 
 export interface PanelProps {

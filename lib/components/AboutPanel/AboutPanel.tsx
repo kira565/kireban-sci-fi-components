@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { AboutHeader, AvatarPanel, Barcode, Panel } from '@/main';
 import photo from '@assets/kireban.png';
-import useSciFiCode from '@/hooks/useSciFiCode';
+import { useSciFiCode } from '@/hooks/useSciFiCode';
 import profile from '@assets/svg/icons/profile.svg';
 import drill from '@assets/svg/icons/docdrill.svg';
 import citadel from '@assets/svg/icons/citadel.svg';

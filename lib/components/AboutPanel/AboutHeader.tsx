@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import './AboutHeader.css';
 import DotSquare from '@assets/svg/icons/linesquare.svg?react';
-import useSciFiCode from '@/hooks/useSciFiCode';
+import { useSciFiCode } from '@/hooks/useSciFiCode';
 import { useAppearFrom } from '@/utils';
 
 export interface AboutHeaderProps {

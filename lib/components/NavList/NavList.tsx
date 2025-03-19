@@ -1,6 +1,6 @@
 import { AppearDirection, useAppearFrom } from '@/utils';
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
-import useSciFiCode from '@/hooks/useSciFiCode';
+import { useSciFiCode } from '@/hooks/useSciFiCode';
 
 export interface NavOptionProps {
   title: string;

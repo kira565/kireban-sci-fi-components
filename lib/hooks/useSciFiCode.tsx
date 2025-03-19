@@ -5,7 +5,7 @@ import { useMemo } from 'react';
  * @param index {number} - The index of the component.
  * @returns {string} A unique sci-fi code string, e.g., "U-1S25".
  */
-const useSciFiCode = (index: number): string => {
+export const useSciFiCode = (index: number): string => {
   return useMemo(() => {
     // Function to get a pseudo-random character based on index and seed
     const getChar = (seed: number, base: number) => {
@@ -25,5 +25,3 @@ const useSciFiCode = (index: number): string => {
     return `${part1}${part2}`; // Combine parts into "U-1S25"
   }, [index]);
 };
-
-export default useSciFiCode;
