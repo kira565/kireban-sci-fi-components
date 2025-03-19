@@ -43,12 +43,8 @@ export const SsiStateTile = ({
   );
 };
 
-export const SsiState: React.FC<SsiStateProps> = ({
-  width,
-  height,
-  appear,
-  showCoordinates = true
-}) => {
+export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => {
+  const [showCoordinates, setShowCordinates] = useState(false);
   const globeRef = useRef(null);
   const panelRef = useAppearFrom(appear);
   const [position, setPosition] = useState({
@@ -60,6 +56,22 @@ export const SsiState: React.FC<SsiStateProps> = ({
 
   useEffect(() => {
     const totalDuration = 90;
+
+    const resizeOvserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const containerWidth = entry.target.getBoundingClientRect().width;
+
+        if (containerWidth < 211) {
+          setShowCordinates(false);
+        } else {
+          setShowCordinates(true);
+        }
+      }
+    });
+
+    if (panelRef.current) {
+      resizeOvserver.observe(panelRef.current);
+    }
 
     gsap.registerPlugin(MotionPathPlugin);
 
@@ -131,6 +143,8 @@ export const SsiState: React.FC<SsiStateProps> = ({
       },
       ease: 'bounce.inOut'
     });
+
+    return () => resizeOvserver.disconnect();
   }, []);
 
   return (
