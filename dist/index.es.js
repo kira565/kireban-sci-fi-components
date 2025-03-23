@@ -4044,7 +4044,7 @@ const z7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
 }) => /* @__PURE__ */ p.jsxs(
   "div",
   {
-    className: "text-black dark:text-white font-[Oxanium] flex gap-2 border-r-[0.8px] pr-2 h-full",
+    className: "text-black dark:text-white flex gap-2 border-r-[0.8px] pr-2 h-full",
     style: { width: l, height: e, borderColor: L },
     children: [
       /* @__PURE__ */ p.jsx("div", { className: "h-full bg-evaTextWarning trapezoid", style: { width: i }, children: r }),
