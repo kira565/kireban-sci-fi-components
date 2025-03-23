@@ -22,7 +22,7 @@ export const Panel: React.FC<PanelProps> = ({
 }) => {
   return (
     <div
-      className="text-black dark:text-white font-[Oxanium] flex gap-2 border-r-[0.8px] pr-2 h-full"
+      className="text-black dark:text-white flex gap-2 border-r-[0.8px] pr-2 h-full"
       style={{ width, height, borderColor: colorSchema }}>
       <div className={`h-full bg-evaTextWarning trapezoid`} style={{ width: leftBlockWidth }}>
         {leftBlockContent}
