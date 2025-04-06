@@ -3049,7 +3049,7 @@ const a3 = () => /* @__PURE__ */ p.jsxs("div", { className: "w-[150px] h-[50px] 
     "div",
     {
       ref: o,
-      style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
+      style: { width: l, height: L, visibility: e ? "hidden" : "visible" },
       className: "font-[Oxanium] text-white flex gap-1 flex-row dark:bg-black bg-transparent w-full border-[0.5px] border-opacity-50 border-evaTextWarning p-1",
       children: /* @__PURE__ */ p.jsxs("div", { className: "flex-col flex w-full", children: [
         /* @__PURE__ */ p.jsxs("div", { className: "flex flex-row h-[70%] p-[2%] gap-1", children: [
@@ -3682,7 +3682,7 @@ const z7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     "div",
     {
       ref: a,
-      style: { width: l, height: L, visibility: `${e ? "hidden" : "visible"}` },
+      style: { width: l, height: L, visibility: e ? "hidden" : "visible" },
       className: "border-[0.5px] flex flex-col border-opacity-50 border-evaTextWarning p-2 dark:bg-black bg-transparent text-black dark:text-white font-[Oxanium]",
       children: [
         r && /* @__PURE__ */ p.jsxs("div", { className: "w-full grid grid-rows-2 grid-cols-2 h-[30%] gap-2 mb-[35px] p-2 border-b border-[0.5px] border-evaTextWarning border-opacity-50", children: [
@@ -3740,6 +3740,7 @@ const z7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     {
       ref: n,
       style: {
+        visibility: e ? "hidden" : "visible",
         width: L
       },
       children: /* @__PURE__ */ p.jsxs(
@@ -4137,8 +4138,8 @@ function o8(l) {
     }
     T.fromTo(
       L.current,
-      { [e]: r, opacity: 0, visibility: "visible" },
-      { [e]: "0%", opacity: 1, duration: 1.5, ease: "power3.out" }
+      { [e]: r, opacity: 0 },
+      { [e]: "0%", opacity: 1, visibility: "visible", duration: 1.5, ease: "power3.out" }
     );
   }, [l]), L;
 }

@@ -38,6 +38,7 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, 
     <div
       ref={containerRef}
       style={{
+        visibility: appear ? 'hidden' : 'visible',
         width
       }}>
       <svg

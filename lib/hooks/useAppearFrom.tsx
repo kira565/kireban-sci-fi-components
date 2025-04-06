@@ -33,8 +33,8 @@ export function useAppearFrom(direction?: AppearDirection) {
 
     gsap.fromTo(
       ref.current,
-      { [coord]: coordVal, opacity: 0, visibility: 'visible' },
-      { [coord]: '0%', opacity: 1, duration: 1.5, ease: 'power3.out' }
+      { [coord]: coordVal, opacity: 0 },
+      { [coord]: '0%', opacity: 1, visibility: 'visible', duration: 1.5, ease: 'power3.out' }
     );
   }, [direction]); // Запуск только при изменении `direction`
 

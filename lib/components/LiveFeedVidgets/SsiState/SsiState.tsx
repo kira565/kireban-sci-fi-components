@@ -150,7 +150,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
   return (
     <div
       ref={panelRef}
-      style={{ width, height, visibility: `${appear ? 'hidden' : 'visible'}` }}
+      style={{ width, height, visibility: appear ? 'hidden' : 'visible' }}
       className="border-[0.5px] flex flex-col border-opacity-50 border-evaTextWarning p-2 dark:bg-black bg-transparent text-black dark:text-white font-[Oxanium]">
       {showCoordinates && (
         <div className="w-full grid grid-rows-2 grid-cols-2 h-[30%] gap-2 mb-[35px] p-2 border-b border-[0.5px] border-evaTextWarning border-opacity-50">
