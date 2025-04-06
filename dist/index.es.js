@@ -4101,7 +4101,7 @@ const z7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     "div",
     {
       ref: a,
-      style: { width: l, height: L, backgroundColor: e },
+      style: { width: l, height: L, backgroundColor: e, visibility: r ? "hidden" : "visible" },
       className: "border-[0.5px] border-evaTextWarning border-opacity-50 overflow-hidden bg-black relative text-black dark:text-white font-[Oxanium]",
       children: [
         /* @__PURE__ */ p.jsx(Y7, { ref: n }),

@@ -69,7 +69,7 @@ export const JpMap: React.FC<JpMapProps> = ({ width, height, bgColor, appear }) 
   return (
     <div
       ref={containerRef}
-      style={{ width, height, backgroundColor: bgColor }}
+      style={{ width, height, backgroundColor: bgColor, visibility: appear ? 'hidden' : 'visible' }}
       className="border-[0.5px] border-evaTextWarning border-opacity-50 overflow-hidden bg-black relative text-black dark:text-white font-[Oxanium]">
       <JapanMap ref={mapRef} />
       <div className="absolute top-[2%] left-[2%] text-[0.6rem]">
