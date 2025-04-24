@@ -1,0 +1,17 @@
+<svg class="w-full h-full" id="logosandtypes_com" data-name="logosandtypes com" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 150 150">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+            }
+
+            .cls-2 {
+                fill: #ec1c24;
+            }
+        </style>
+    </defs>
+    <path class="cls-1" d="M0,0H150V150H0Z" transform="translate(0 0)" />
+    <polygon points="21.59 17.41 21.59 133.72 137.9 133.72 79.57 75.74 137.9 17.41 21.59 17.41" />
+    <polygon class="cls-2" points="50.58 104.73 108.91 104.73 79.57 75.74 108.91 46.75 50.58 46.75 50.58 104.73" />
+</svg>
