@@ -8,6 +8,7 @@ export interface CircleIndicatorProps {
   width?: string;
   height?: string;
   sm?: boolean;
+  reverted?: boolean;
 }
 export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   children,
@@ -15,7 +16,8 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   secondaryColour = '#909090',
   width = '230px',
   height = '165px',
-  sm
+  sm,
+  reverted = false
 }) => {
   const timeline = useRef<gsap.core.Timeline>(gsap.timeline({ paused: true }));
   const contentRef = useRef<HTMLDivElement>(null);
@@ -83,7 +85,7 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
       <div ref={contentRef} className="text-black dark:text-white flex w-full">
         {children}
       </div>
-      <div>
+      <div style={{ transform: reverted ? 'scaleX(-1)' : 'none' }}>
         <svg className="" viewBox="0 16 107 55" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* <path
           ref={rectRef}
