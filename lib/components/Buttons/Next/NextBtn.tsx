@@ -1,61 +1,109 @@
 import gsap from 'gsap';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export interface NextBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   colourSchema?: string;
   augBorderWidth?: string;
   fontSize?: string;
+  isAnimationPermanent?: boolean;
 }
 
 export const NextBtn: React.FC<NextBtnProps> = ({
   text,
   colourSchema = '#fa0',
-  augBorderWidth = '1.5px',
+  augBorderWidth = '2px',
   fontSize = '16px',
+  isAnimationPermanent = false,
   ...props
 }) => {
-  useEffect(() => {
-    const tl = gsap.timeline({
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const timeline = useRef(
+    gsap.timeline({
       repeat: -1,
-      defaults: { duration: 0.3, ease: 'sine.inOut' }
-    });
+      paused: true,
+      defaults: { duration: 0.3, ease: 'power1.inOut' }
+    })
+  );
+
+  useEffect(() => {
+    const tl = timeline.current;
 
     tl.set('#arrow1', { strokeOpacity: 0.2 });
     tl.set('#arrow2', { strokeOpacity: 0.2 });
     tl.set('#arrow3', { strokeOpacity: 0.2 });
 
     tl.to('#arrow3', { strokeOpacity: 1 })
-      .to('#arrow2', { strokeOpacity: 1 }, '-=0.1')
-      .to('#arrow1', { strokeOpacity: 1 }, '-=0.1')
-      .to('#arrow3', { strokeOpacity: 0.2 }, '+=0.2')
-      .to('#arrow2', { strokeOpacity: 0.2 }, '-=0.1')
-      .to('#arrow1', { strokeOpacity: 0.2 }, '-=0.1');
+      .to('#arrow2', { strokeOpacity: 1 }, '-=0.2')
+      .to('#arrow1', { strokeOpacity: 1 }, '-=0.2')
+      .to('#arrow3', { strokeOpacity: 0.2 }, '+=0.3')
+      .to('#arrow2', { strokeOpacity: 0.2 }, '-=0.2')
+      .to('#arrow1', { strokeOpacity: 0.2 }, '-=0.2');
+
+    if (isAnimationPermanent) {
+      timeline.current.play();
+    }
 
     return () => {
       tl.kill();
     };
   }, []);
 
+  function onPlay() {
+    if (!isAnimationPermanent) {
+      timeline.current.play();
+    }
+    if (btnRef.current) {
+      btnRef.current.classList.add('aug-glow');
+    }
+  }
+
+  function onPause() {
+    if (!isAnimationPermanent) {
+      timeline.current.pause();
+      timeline.current.revert();
+    }
+    if (btnRef.current) {
+      btnRef.current.classList.remove('aug-glow');
+    }
+  }
+
+  function onClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    if (!props.onClick) return;
+    if (btnRef.current) {
+      // Лёгкий скейл
+      gsap.fromTo(
+        btnRef.current,
+        { scale: 1 },
+        { scale: 1.3, duration: 0.1, yoyo: true, repeat: 1, ease: 'power1.out' }
+      );
+    }
+    props.onClick(event);
+  }
+
   return (
     <button
       {...props}
+      ref={btnRef}
+      onClick={onClick}
+      onMouseEnter={onPlay}
+      onMouseLeave={onPause}
       style={
         {
           '--aug-border-bg': colourSchema,
-          '--aug-tl': '2.3rem',
+          '--aug-tl': '1.5rem',
           '--aug-l-offset': '1px',
           '--aug-border-all': augBorderWidth,
           '--aug-tr': '1.5rem',
-          paddingLeft: '2.3rem',
+          paddingLeft: '1.5rem',
           fontSize
         } as React.CSSProperties
       }
-      className="p-1 text-black dark:text-white font-[Oxanium] flex gap-1 items-center"
+      className="p-[0.5px] text-black dark:text-white font-[Oxanium] flex gap-1 items-center"
       data-augmented-ui="tl-clip border">
       <span>{text}</span>
       <svg
-        style={{ width: '1.9em', height: '1.9em' }}
+        style={{ width: '2em', height: '2em', marginRight: '0.5em' }}
         viewBox="0 0 16 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

@@ -151,6 +151,13 @@
     box-shadow: 0 0 10px 2px var(--glow-color);
   }
 
+  .aug-glow {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 0.6px #ffae00) drop-shadow(0 0 0.6px #ffae00)
+      drop-shadow(0 0 0.6px #ffaa00) brightness(1) saturate(1);
+    animation: pulse-glow 1.5s infinite alternate;
+  }
+
   .glowedBorder {
     --border-glow-color: rgba(var(--glow-rgb), 0.7);
     border-radius: var(--gutter-size);
