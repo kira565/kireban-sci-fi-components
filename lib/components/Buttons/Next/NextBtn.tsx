@@ -2,22 +2,24 @@ import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 
 export interface NextBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  title?: string;
   colourSchema?: string;
   augBorderWidth?: string;
   fontSize?: string;
   isAnimationPermanent?: boolean;
+  ref?: React.RefObject<HTMLButtonElement | null>;
 }
 
 export const NextBtn: React.FC<NextBtnProps> = ({
-  text,
+  title,
   colourSchema = '#fa0',
   augBorderWidth = '2px',
   fontSize = '16px',
   isAnimationPermanent = false,
+  style,
+  ref,
   ...props
 }) => {
-  const btnRef = useRef<HTMLButtonElement>(null);
   const timeline = useRef(
     gsap.timeline({
       repeat: -1,
@@ -53,8 +55,8 @@ export const NextBtn: React.FC<NextBtnProps> = ({
     if (!isAnimationPermanent) {
       timeline.current.play();
     }
-    if (btnRef.current) {
-      btnRef.current.classList.add('aug-glow');
+    if (ref?.current) {
+      ref.current.classList.add('aug-glow');
     }
   }
 
@@ -63,19 +65,19 @@ export const NextBtn: React.FC<NextBtnProps> = ({
       timeline.current.pause();
       timeline.current.revert();
     }
-    if (btnRef.current) {
-      btnRef.current.classList.remove('aug-glow');
+    if (ref?.current) {
+      ref.current.classList.remove('aug-glow');
     }
   }
 
   function onClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (!props.onClick) return;
-    if (btnRef.current) {
+    if (ref?.current) {
       // Лёгкий скейл
       gsap.fromTo(
-        btnRef.current,
+        ref.current,
         { scale: 1 },
-        { scale: 1.3, duration: 0.1, yoyo: true, repeat: 1, ease: 'power1.out' }
+        { scale: 1.1, duration: 0.1, yoyo: true, repeat: 1, ease: 'power1.out' }
       );
     }
     props.onClick(event);
@@ -84,7 +86,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
   return (
     <button
       {...props}
-      ref={btnRef}
+      ref={ref}
       onClick={onClick}
       onMouseEnter={onPlay}
       onMouseLeave={onPause}
@@ -96,12 +98,13 @@ export const NextBtn: React.FC<NextBtnProps> = ({
           '--aug-border-all': augBorderWidth,
           '--aug-tr': '1.5rem',
           paddingLeft: '1.5rem',
-          fontSize
+          fontSize,
+          ...style
         } as React.CSSProperties
       }
-      className="p-[0.5px] text-black dark:text-white font-[Oxanium] flex gap-1 items-center"
+      className="p-[0.5px] text-black dark:text-white font-[Oxanium] flex gap-1 items-center font-bold"
       data-augmented-ui="tl-clip border">
-      <span>{text}</span>
+      <span>{title}</span>
       <svg
         style={{ width: '2em', height: '2em', marginRight: '0.5em' }}
         viewBox="0 0 16 16"
@@ -119,7 +122,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
           d="M6.5 5L9.5 8L6.5 11"
           stroke="#2AFFB2"
           strokeOpacity="0.6"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
         <path
           id="arrow3"

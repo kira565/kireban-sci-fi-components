@@ -13,9 +13,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    width: '70px',
-    height: '50px',
-    colorSchema: '#fa0',
-    companyLogo: <Logo />
+    width: '250px',
+    height: '150px',
+    colourSchema: '#fa0',
+    logoHeight: '45px',
+    logoWidth: '45px',
+    companyLogo: <Logo />,
+    onClick: () => {},
+    contentTop: <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>,
+    btnTitle: 'EXPLORE'
   }
 };

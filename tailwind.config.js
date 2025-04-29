@@ -23,6 +23,7 @@ export default {
       },
       backgroundImage: {
         crossGrid: "url('assets/svg/icons/svgbgelem.svg')",
+        crossGrid2: "url('assets/svg/icons/svgbgelem2.svg')",
         backgroundSize: {
           gridSize: '200px 250px' // SVG size + gap
         },
