@@ -46,7 +46,6 @@ export function dissApearTo(
   direction: AppearDirection,
   onComplete?: () => void
 ) {
-  console.log('dissapear');
   if (!ref.current) return;
 
   let coord: string = 'x';
@@ -79,4 +78,52 @@ export function dissApearTo(
     ease: 'power3.out',
     onComplete
   });
+}
+
+type BlinkOpts = {
+  blinks?: number;
+  duration?: number;
+  delayBetween?: number;
+};
+
+type BlinkEntities = {
+  options?: BlinkOpts;
+  ref: React.RefObject<HTMLElement | null>;
+};
+
+//** Only if opacity 0 */
+export function useBlinkingAppear(
+  entities?: BlinkEntities[],
+  isAnimationStarted = true,
+  onComplete?: () => void
+) {
+  useEffect(() => {
+    if (!entities || !isAnimationStarted) return;
+    const timeline = gsap.timeline({ onComplete });
+
+    entities.forEach((entity, index) => {
+      const { ref } = entity;
+      const { blinks = 4, duration = 0.2, delayBetween = 0.2 } = entity.options || {};
+
+      const el = ref.current;
+      if (!el) return;
+
+      const delay = index * (blinks * duration * 2 + delayBetween);
+
+      for (let i = 0; i < blinks; i++) {
+        timeline.to(el, { opacity: 1, duration, ease: 'power1.inOut' }, delay + i * duration * 2);
+        timeline.to(
+          el,
+          { opacity: 0, duration, ease: 'power1.inOut' },
+          delay + i * duration * 2 + duration
+        );
+      }
+
+      timeline.to(el, { opacity: 1, duration }, delay + blinks * duration * 2);
+    });
+
+    return () => {
+      timeline.kill();
+    };
+  }, [entities, onComplete, isAnimationStarted]);
 }

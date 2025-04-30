@@ -21,6 +21,7 @@ export const Default: Story = {
     companyLogo: <Logo />,
     onClick: () => {},
     contentTop: <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>,
-    btnTitle: 'EXPLORE'
+    btnTitle: 'EXPLORE',
+    appearAnimation: true
   }
 };

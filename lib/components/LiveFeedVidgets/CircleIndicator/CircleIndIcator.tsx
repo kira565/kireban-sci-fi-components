@@ -9,23 +9,26 @@ export interface CircleIndicatorProps {
   height?: string;
   sm?: boolean;
   reverted?: boolean;
+  onAnimationComplete?: () => void;
 }
 export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   children,
   primaryColour = '#CFFF55',
   secondaryColour = '#909090',
-  width = '230px',
-  height = '165px',
+  width = '350px',
+  height = '285px',
   sm,
-  reverted = false
+  reverted = false,
+  onAnimationComplete
 }) => {
-  const timeline = useRef<gsap.core.Timeline>(gsap.timeline({ paused: true }));
+  const timeline = useRef<gsap.core.Timeline>(
+    gsap.timeline({ paused: true, onComplete: onAnimationComplete })
+  );
   const contentRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<SVGPathElement>(null);
   const circleRef = useRef<SVGPathElement>(null);
   const redIndicator = useRef<SVGPathElement>(null);
   const greenIndicator = useRef<SVGPathElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (/* !rectRef.current || */ !lineRef.current || !circleRef.current) return;
@@ -60,14 +63,6 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
         duration: 1, // Время анимации
         ease: 'power2.out'
       })
-      // .fromTo( // TODO
-      //   rectRef.current,
-      //   { scaleX: 0, transformOrigin: 'left center' }, // Start with scaleX 0
-      //   { scaleX: 1, duration: 1, ease: 'power3.out' } // End with scaleX 1
-      // )
-      .to(textRef.current, {
-        opacity: 1
-      })
       .to(redIndicator.current, {
         opacity: 0.45,
         duration: 0.5
@@ -85,28 +80,12 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
       <div ref={contentRef} className="text-black dark:text-white flex w-full">
         {children}
       </div>
-      <div style={{ transform: reverted ? 'scaleX(-1)' : 'none' }}>
-        <svg className="" viewBox="0 16 107 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* <path
-          ref={rectRef}
-          id="text-path"
-          opacity="0.9"
-          d="M65 0H0V15H135V0Z"
-          fill="white"
-          fillOpacity="0.15"
-        /> */}
-          {/* <text
-          ref={textRef}
-          className="text font-[Oxanium]"
-          fontWeight={600}
-          fontSize="8"
-          opacity={0}
-          fill="white"
-          x="2"
-          y="9.5"
-          textAnchor="left">
-          {children}
-        </text> */}
+      <div style={{ transform: reverted ? 'scaleX(-1)' : 'none', width: '100%' }}>
+        <svg
+          className=""
+          viewBox={sm ? '0 16 107 55' : '0 16 120 70'}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <path d="M4.80008 21.3872H3.27393V22.9385H4.80008V21.3872Z" fill={secondaryColour} />
           <path
             className="animate-pulse"

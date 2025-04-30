@@ -1,11 +1,14 @@
 import React, { ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import { NextBtn } from '../Buttons/Next/NextBtn';
 import SquareVector from '@assets/svg/modular_parts/vector_squares.svg?react';
+import { useBlinkingAppear } from '@/utils';
 
 export interface CompanyGeneralInfoProps {
   width?: string;
   height?: string;
   colourSchema?: string;
+  secondaryColourSchema?: string;
+  bottomText?: string;
   contentTop?: ReactNode;
   companyLogo?: ReactNode;
   leftBlockWidth?: string;
@@ -15,12 +18,15 @@ export interface CompanyGeneralInfoProps {
   logoHeight?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   btnTitle?: string;
+  appearAnimation?: boolean;
+  isAnimationStarted?: boolean;
 }
 
 export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
   width,
   height,
   colourSchema = '#fa0',
+  secondaryColourSchema = '#f30',
   augBorderWidth = '1px',
   topleftAug = '0.8rem',
   logoWidth = '45px',
@@ -28,10 +34,48 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
   companyLogo,
   contentTop,
   onClick,
+  bottomText,
+  appearAnimation = false,
+  isAnimationStarted = true,
   btnTitle
 }) => {
   const btnRef = useRef<HTMLButtonElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
+
   const [br, setBr] = useState({ width: '0px', height: '0px' });
+
+  useBlinkingAppear(
+    appearAnimation
+      ? [
+          {
+            ref: iconRef,
+            options: {
+              blinks: 2,
+              duration: 0.2,
+              delayBetween: 0.2
+            }
+          },
+          {
+            ref: bodyRef,
+            options: {
+              blinks: 1,
+              duration: 0.3,
+              delayBetween: 0.2
+            }
+          },
+          {
+            ref: btnRef,
+            options: {
+              blinks: 3,
+              duration: 0.1,
+              delayBetween: 0.2
+            }
+          }
+        ]
+      : undefined,
+    isAnimationStarted
+  );
 
   useLayoutEffect(() => {
     if (!btnRef.current) return;
@@ -53,6 +97,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
       className="text-black dark:text-white relative"
       style={{ width, height, borderColor: colourSchema }}>
       <div
+        ref={iconRef}
         style={
           {
             '--aug-border-bg': colourSchema,
@@ -61,13 +106,15 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
             borderColor: colourSchema,
             width: logoWidth,
             height: logoHeight,
-            position: 'absolute'
+            position: 'absolute',
+            opacity: appearAnimation ? '0' : '1'
           } as React.CSSProperties
         }
         data-augmented-ui="br-clip border">
         {companyLogo}
       </div>
       <div
+        ref={bodyRef}
         style={
           {
             '--aug-border-bg': colourSchema,
@@ -80,7 +127,8 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
             '--aug-br-inset1': `calc(${br.width} - 1.5rem)`,
             width: '100%',
             height: '100%',
-            borderColor: colourSchema
+            borderColor: colourSchema,
+            opacity: appearAnimation ? '0' : '1'
           } as React.CSSProperties
         }
         className="flex flex-col bg-crossGrid2 bg-backgroundSize bg-repeat"
@@ -94,12 +142,12 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           {contentTop}
         </div>
         <div
-          className="pl-1 flex flex-col gap-1 font-[Oxanium]"
+          className="pl-1 flex flex-col justify-end gap-[0.5] pb-1 font-[Oxanium]"
           style={{ height: br.height, width: `calc(100% - ${br.width} - 0.2rem` }}>
-          <div className="text-nowrap" style={{ fontSize: '0.8em', lineHeight: '0.8em' }}>
-            LOCATION DATA
+          <div className="text-nowrap" style={{ fontSize: '0.7em', lineHeight: '0.8em' }}>
+            {bottomText}
           </div>
-          <div style={{ color: '#f30' }} className="flex justify-start">
+          <div style={{ color: secondaryColourSchema }} className="flex justify-start">
             <SquareVector />
           </div>
         </div>
@@ -111,7 +159,12 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           title={btnTitle}
           fontSize="14px"
           augBorderWidth="1px"
-          style={{ position: 'absolute', right: '0', bottom: '0' }}
+          style={{
+            position: 'absolute',
+            right: '0',
+            bottom: '0',
+            opacity: appearAnimation ? '0' : '1'
+          }}
         />
       )}
     </div>
