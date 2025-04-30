@@ -2,6 +2,7 @@ import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 
 import './preview.css';
 import '../lib/index.css';
+import 'augmented-ui';
 // Decorator to toggle dark mode
 
 // Example decorator to toggle dark mode
