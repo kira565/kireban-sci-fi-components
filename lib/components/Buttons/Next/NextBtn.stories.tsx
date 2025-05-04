@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    text: 'EXPLORE',
+    title: 'EXPLORE',
     onClick: () => {}
   }
 };

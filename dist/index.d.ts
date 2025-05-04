@@ -1,3 +1,4 @@
+import { default as default_2 } from 'react';
 import { ReactNode } from 'react';
 import { RefObject } from 'react';
 
@@ -59,6 +60,30 @@ declare interface CircleIndicatorProps {
     secondaryColour?: string;
     width?: string;
     height?: string;
+    sm?: boolean;
+    reverted?: boolean;
+    onAnimationComplete?: () => void;
+}
+
+export declare const CompanyGeneralInfo: default_2.FC<CompanyGeneralInfoProps>;
+
+declare interface CompanyGeneralInfoProps {
+    width?: string;
+    height?: string;
+    colourSchema?: string;
+    secondaryColourSchema?: string;
+    bottomText?: string;
+    contentTop?: ReactNode;
+    companyLogo?: ReactNode;
+    leftBlockWidth?: string;
+    augBorderWidth?: string;
+    topleftAug?: string;
+    logoWidth?: string;
+    logoHeight?: string;
+    onClick?: (event: default_2.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    btnTitle?: string;
+    appearAnimation?: boolean;
+    isAnimationStarted?: boolean;
 }
 
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
