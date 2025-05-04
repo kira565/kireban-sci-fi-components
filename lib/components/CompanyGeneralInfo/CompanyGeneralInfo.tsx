@@ -9,7 +9,7 @@ export interface CompanyGeneralInfoProps {
   colourSchema?: string;
   secondaryColourSchema?: string;
   bottomText?: string;
-  contentTop?: ReactNode;
+  children?: ReactNode;
   companyLogo?: ReactNode;
   leftBlockWidth?: string;
   augBorderWidth?: string;
@@ -32,7 +32,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
   logoWidth = '45px',
   logoHeight = '45px',
   companyLogo,
-  contentTop,
+  children,
   onClick,
   bottomText,
   appearAnimation = false,
@@ -139,7 +139,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
             paddingLeft: `calc(${logoWidth} + 10px)`,
             paddingRight: topleftAug
           }}>
-          {contentTop}
+          {children}
         </div>
         <div
           className="pl-1 flex flex-col justify-end gap-[0.5] pb-1 font-[Oxanium]"

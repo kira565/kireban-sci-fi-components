@@ -4230,7 +4230,7 @@ const F7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
   logoWidth: a = "45px",
   logoHeight: l = "45px",
   companyLogo: s,
-  contentTop: c,
+  children: c,
   onClick: h,
   bottomText: d,
   appearAnimation: f = !1,

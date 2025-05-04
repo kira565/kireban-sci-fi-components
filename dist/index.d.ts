@@ -73,7 +73,7 @@ declare interface CompanyGeneralInfoProps {
     colourSchema?: string;
     secondaryColourSchema?: string;
     bottomText?: string;
-    contentTop?: ReactNode;
+    children?: ReactNode;
     companyLogo?: ReactNode;
     leftBlockWidth?: string;
     augBorderWidth?: string;

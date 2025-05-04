@@ -20,7 +20,7 @@ export const Default: Story = {
     logoWidth: '45px',
     companyLogo: <Logo />,
     onClick: () => {},
-    contentTop: <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>,
+    children: <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>,
     btnTitle: 'EXPLORE',
     appearAnimation: true
   }

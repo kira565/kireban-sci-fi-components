@@ -29,12 +29,12 @@ const Wrapper = (args: CircleIndicatorProps) => {
         colourSchema="#fa0"
         btnTitle="EXPLORE"
         onClick={() => {}}
-        contentTop={<span className="font-[Oxanium]">KALASHNIKOV GROUP</span>}
         width="100%"
         height="80px"
         appearAnimation
-        isAnimationStarted={isAnimationStarted}
-      />
+        isAnimationStarted={isAnimationStarted}>
+        <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>
+      </CompanyGeneralInfo>
     </CircleIndicator>
   );
 };
