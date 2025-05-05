@@ -20,6 +20,7 @@ export interface CompanyGeneralInfoProps {
   btnTitle?: string;
   appearAnimation?: boolean;
   isAnimationStarted?: boolean;
+  firstAnimationDelay?: number;
 }
 
 export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
@@ -37,6 +38,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
   bottomText,
   appearAnimation = false,
   isAnimationStarted = true,
+  firstAnimationDelay = 0,
   btnTitle
 }) => {
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -74,7 +76,8 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           }
         ]
       : undefined,
-    isAnimationStarted
+    isAnimationStarted,
+    firstAnimationDelay
   );
 
   useLayoutEffect(() => {

@@ -10,6 +10,7 @@ export interface CircleIndicatorProps {
   sm?: boolean;
   reverted?: boolean;
   onAnimationComplete?: () => void;
+  animationDelay?: number;
 }
 export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   children,
@@ -19,10 +20,11 @@ export const CircleIndicator: React.FC<CircleIndicatorProps> = ({
   height = '285px',
   sm,
   reverted = false,
-  onAnimationComplete
+  onAnimationComplete,
+  animationDelay = 0
 }) => {
   const timeline = useRef<gsap.core.Timeline>(
-    gsap.timeline({ paused: true, onComplete: onAnimationComplete })
+    gsap.timeline({ paused: true, onComplete: onAnimationComplete, delay: animationDelay })
   );
   const contentRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<SVGPathElement>(null);

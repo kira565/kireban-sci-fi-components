@@ -63,6 +63,7 @@ declare interface CircleIndicatorProps {
     sm?: boolean;
     reverted?: boolean;
     onAnimationComplete?: () => void;
+    animationDelay?: number;
 }
 
 export declare const CompanyGeneralInfo: default_2.FC<CompanyGeneralInfoProps>;
@@ -84,6 +85,7 @@ declare interface CompanyGeneralInfoProps {
     btnTitle?: string;
     appearAnimation?: boolean;
     isAnimationStarted?: boolean;
+    firstAnimationDelay?: number;
 }
 
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;

@@ -95,6 +95,7 @@ type BlinkEntities = {
 export function useBlinkingAppear(
   entities?: BlinkEntities[],
   isAnimationStarted = true,
+  firstAnimationDelay?: number,
   onComplete?: () => void
 ) {
   useEffect(() => {
@@ -109,9 +110,22 @@ export function useBlinkingAppear(
       if (!el) return;
 
       const delay = index * (blinks * duration * 2 + delayBetween);
+      let initialDelay = 0;
+      if (index === 0 && firstAnimationDelay) {
+        initialDelay = firstAnimationDelay;
+      }
 
       for (let i = 0; i < blinks; i++) {
-        timeline.to(el, { opacity: 1, duration, ease: 'power1.inOut' }, delay + i * duration * 2);
+        timeline.to(
+          el,
+          {
+            opacity: 1,
+            duration,
+            ease: 'power1.inOut',
+            delay: i === 0 && initialDelay ? initialDelay : 0
+          },
+          delay + i * duration * 2
+        );
         timeline.to(
           el,
           { opacity: 0, duration, ease: 'power1.inOut' },
