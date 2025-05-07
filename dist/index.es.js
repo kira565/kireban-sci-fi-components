@@ -4138,9 +4138,10 @@ const F7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
   isAnimationPermanent: i = !1,
   style: n,
   ref: a,
-  ...l
+  backdropBlur: l,
+  ...c
 }) => {
-  const c = I(
+  const s = I(
     T.timeline({
       repeat: -1,
       paused: !0,
@@ -4148,44 +4149,46 @@ const F7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     })
   );
   H1(() => {
-    const f = c.current;
-    return f.set("#arrow1", { strokeOpacity: 0.2 }), f.set("#arrow2", { strokeOpacity: 0.2 }), f.set("#arrow3", { strokeOpacity: 0.2 }), f.to("#arrow3", { strokeOpacity: 1 }).to("#arrow2", { strokeOpacity: 1 }, "-=0.2").to("#arrow1", { strokeOpacity: 1 }, "-=0.2").to("#arrow3", { strokeOpacity: 0.2 }, "+=0.3").to("#arrow2", { strokeOpacity: 0.2 }, "-=0.2").to("#arrow1", { strokeOpacity: 0.2 }, "-=0.2"), i && c.current.play(), () => {
-      f.kill();
+    const u = s.current;
+    return u.set("#arrow1", { strokeOpacity: 0.2 }), u.set("#arrow2", { strokeOpacity: 0.2 }), u.set("#arrow3", { strokeOpacity: 0.2 }), u.to("#arrow3", { strokeOpacity: 1 }).to("#arrow2", { strokeOpacity: 1 }, "-=0.2").to("#arrow1", { strokeOpacity: 1 }, "-=0.2").to("#arrow3", { strokeOpacity: 0.2 }, "+=0.3").to("#arrow2", { strokeOpacity: 0.2 }, "-=0.2").to("#arrow1", { strokeOpacity: 0.2 }, "-=0.2"), i && s.current.play(), () => {
+      u.kill();
     };
   }, []);
-  function s() {
-    i || c.current.play(), a != null && a.current && a.current.classList.add("aug-glow");
-  }
   function h() {
-    i || (c.current.pause(), c.current.revert()), a != null && a.current && a.current.classList.remove("aug-glow");
+    i || s.current.play(), a != null && a.current && a.current.classList.add("aug-glow");
   }
-  function d(f) {
-    l.onClick && (a != null && a.current && T.fromTo(
+  function d() {
+    i || (s.current.pause(), s.current.revert()), a != null && a.current && a.current.classList.remove("aug-glow");
+  }
+  function f(u) {
+    c.onClick && (a != null && a.current && T.fromTo(
       a.current,
       { scale: 1 },
       { scale: 1.1, duration: 0.1, yoyo: !0, repeat: 1, ease: "power1.out" }
-    ), l.onClick(f));
+    ), c.onClick(u));
   }
   return /* @__PURE__ */ p.jsxs(
     "button",
     {
-      ...l,
+      ...c,
       ref: a,
-      onClick: d,
-      onMouseEnter: s,
-      onMouseLeave: h,
+      onClick: f,
+      onMouseEnter: h,
+      onMouseLeave: d,
       style: {
         "--aug-border-bg": L,
         "--aug-tl": "1.5rem",
         "--aug-l-offset": "1px",
         "--aug-border-all": e,
+        "--aug-inlay-bg": l ? "#000000" : void 0,
+        "--aug-inlay-opacity": l ? "0.3" : void 0,
         "--aug-tr": "1.5rem",
         paddingLeft: "1.5rem",
         fontSize: r,
         ...n
       },
       className: "p-[0.5px] text-black dark:text-white font-[Oxanium] flex gap-1 items-center font-bold",
-      "data-augmented-ui": "tl-clip border",
+      "data-augmented-ui": "tl-clip border inlay",
       children: [
         /* @__PURE__ */ p.jsx("span", { children: o }),
         /* @__PURE__ */ p.jsxs(
@@ -4374,6 +4377,7 @@ const F7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
             title: C,
             fontSize: "14px",
             augBorderWidth: "1px",
+            backdropBlur: !0,
             style: {
               position: "absolute",
               right: "0",

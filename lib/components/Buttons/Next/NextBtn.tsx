@@ -8,6 +8,7 @@ export interface NextBtnProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   fontSize?: string;
   isAnimationPermanent?: boolean;
   ref?: React.RefObject<HTMLButtonElement | null>;
+  backdropBlur?: boolean;
 }
 
 export const NextBtn: React.FC<NextBtnProps> = ({
@@ -18,6 +19,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
   isAnimationPermanent = false,
   style,
   ref,
+  backdropBlur,
   ...props
 }) => {
   const timeline = useRef(
@@ -96,6 +98,8 @@ export const NextBtn: React.FC<NextBtnProps> = ({
           '--aug-tl': '1.5rem',
           '--aug-l-offset': '1px',
           '--aug-border-all': augBorderWidth,
+          '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
+          '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
           '--aug-tr': '1.5rem',
           paddingLeft: '1.5rem',
           fontSize,
@@ -103,7 +107,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
         } as React.CSSProperties
       }
       className="p-[0.5px] text-black dark:text-white font-[Oxanium] flex gap-1 items-center font-bold"
-      data-augmented-ui="tl-clip border">
+      data-augmented-ui="tl-clip border inlay">
       <span>{title}</span>
       <svg
         style={{ width: '2em', height: '2em', marginRight: '0.5em' }}

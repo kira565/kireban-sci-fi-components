@@ -170,6 +170,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           title={btnTitle}
           fontSize="14px"
           augBorderWidth="1px"
+          backdropBlur
           style={{
             position: 'absolute',
             right: '0',
