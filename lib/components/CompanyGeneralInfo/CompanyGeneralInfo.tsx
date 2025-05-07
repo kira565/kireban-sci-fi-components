@@ -21,6 +21,7 @@ export interface CompanyGeneralInfoProps {
   appearAnimation?: boolean;
   isAnimationStarted?: boolean;
   firstAnimationDelay?: number;
+  backdropBlur?: boolean;
 }
 
 export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
@@ -39,7 +40,8 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
   appearAnimation = false,
   isAnimationStarted = true,
   firstAnimationDelay = 0,
-  btnTitle
+  btnTitle,
+  backdropBlur
 }) => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -97,7 +99,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
 
   return (
     <div
-      className="text-black dark:text-white relative"
+      className={`text-black dark:text-white relative`}
       style={{ width, height, borderColor: colourSchema }}>
       <div
         ref={iconRef}
@@ -105,15 +107,18 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           {
             '--aug-border-bg': colourSchema,
             '--aug-br': '1.3rem',
+            '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
+            '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
             '--aug-border-all': augBorderWidth,
             borderColor: colourSchema,
             width: logoWidth,
             height: logoHeight,
             position: 'absolute',
-            opacity: appearAnimation ? '0' : '1'
+            opacity: appearAnimation ? '0' : '1',
+            backdropFilter: backdropBlur ? 'blur(12px)' : undefined
           } as React.CSSProperties
         }
-        data-augmented-ui="br-clip border">
+        data-augmented-ui="br-clip border inlay">
         {companyLogo}
       </div>
       <div
@@ -121,6 +126,8 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
         style={
           {
             '--aug-border-bg': colourSchema,
+            '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
+            '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
             '--aug-tl-inset1': `calc(${logoWidth} - 1.15rem)`,
             '--aug-tl-inset2': `calc(${logoHeight} - 1.15rem)`,
             '--aug-tl': '1.4rem',
@@ -131,11 +138,12 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
             width: '100%',
             height: '100%',
             borderColor: colourSchema,
-            opacity: appearAnimation ? '0' : '1'
+            opacity: appearAnimation ? '0' : '1',
+            backdropFilter: backdropBlur ? 'blur(12px)' : undefined
           } as React.CSSProperties
         }
         className="flex flex-col bg-crossGrid2 bg-backgroundSize bg-repeat"
-        data-augmented-ui="tl-clip-inset tr-clip br-clip-x border">
+        data-augmented-ui="tl-clip-inset tr-clip br-clip-x border inlay">
         <div
           style={{
             height: `calc(100% - ${br.height})`,

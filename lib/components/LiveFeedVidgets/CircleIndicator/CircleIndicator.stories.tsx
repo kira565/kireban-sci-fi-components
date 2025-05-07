@@ -32,6 +32,7 @@ const Wrapper = (args: CircleIndicatorProps) => {
         width="100%"
         height="80px"
         appearAnimation
+        backdropBlur
         isAnimationStarted={isAnimationStarted}>
         <span className="font-[Oxanium]">KALASHNIKOV GROUP</span>
       </CompanyGeneralInfo>

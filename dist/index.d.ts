@@ -86,6 +86,7 @@ declare interface CompanyGeneralInfoProps {
     appearAnimation?: boolean;
     isAnimationStarted?: boolean;
     firstAnimationDelay?: number;
+    backdropBlur?: boolean;
 }
 
 export declare const EvaBorderPanel: React.FC<EvaBorderPanelProps>;
