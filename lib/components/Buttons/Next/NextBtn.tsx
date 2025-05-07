@@ -31,18 +31,21 @@ export const NextBtn: React.FC<NextBtnProps> = ({
   );
 
   useEffect(() => {
+    if (!ref?.current) return;
+
     const tl = timeline.current;
+    const q = gsap.utils.selector(ref?.current);
 
-    tl.set('#arrow1', { strokeOpacity: 0.2 });
-    tl.set('#arrow2', { strokeOpacity: 0.2 });
-    tl.set('#arrow3', { strokeOpacity: 0.2 });
+    tl.set(q('#arrow1'), { strokeOpacity: 0.2 });
+    tl.set(q('#arrow2'), { strokeOpacity: 0.2 });
+    tl.set(q('#arrow3'), { strokeOpacity: 0.2 });
 
-    tl.to('#arrow3', { strokeOpacity: 1 })
-      .to('#arrow2', { strokeOpacity: 1 }, '-=0.2')
-      .to('#arrow1', { strokeOpacity: 1 }, '-=0.2')
-      .to('#arrow3', { strokeOpacity: 0.2 }, '+=0.3')
-      .to('#arrow2', { strokeOpacity: 0.2 }, '-=0.2')
-      .to('#arrow1', { strokeOpacity: 0.2 }, '-=0.2');
+    tl.to(q('#arrow3'), { strokeOpacity: 1 })
+      .to(q('#arrow2'), { strokeOpacity: 1 }, '-=0.2')
+      .to(q('#arrow1'), { strokeOpacity: 1 }, '-=0.2')
+      .to(q('#arrow3'), { strokeOpacity: 0.2 }, '+=0.3')
+      .to(q('#arrow2'), { strokeOpacity: 0.2 }, '-=0.2')
+      .to(q('#arrow1'), { strokeOpacity: 0.2 }, '-=0.2');
 
     if (isAnimationPermanent) {
       timeline.current.play();
@@ -99,9 +102,10 @@ export const NextBtn: React.FC<NextBtnProps> = ({
           '--aug-l-offset': '1px',
           '--aug-border-all': augBorderWidth,
           '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
-          '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
+          '--aug-inlay-opacity': backdropBlur ? '0.1' : undefined,
           '--aug-tr': '1.5rem',
           paddingLeft: '1.5rem',
+          backdropFilter: backdropBlur ? 'blur(12px)' : undefined,
           fontSize,
           ...style
         } as React.CSSProperties
