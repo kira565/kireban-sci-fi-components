@@ -4375,6 +4375,7 @@ const F7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
           G7,
           {
             onClick: h,
+            colourSchema: e,
             ref: g,
             title: C,
             fontSize: "14px",

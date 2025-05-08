@@ -166,6 +166,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
       {onClick && (
         <NextBtn
           onClick={onClick}
+          colourSchema={colourSchema}
           ref={btnRef}
           title={btnTitle}
           fontSize="14px"
