@@ -108,7 +108,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
             '--aug-border-bg': colourSchema,
             '--aug-br': '1.3rem',
             '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
-            '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
+            '--aug-inlay-opacity': backdropBlur ? '0.3' : '0',
             '--aug-border-all': augBorderWidth,
             borderColor: colourSchema,
             width: logoWidth,
@@ -127,7 +127,7 @@ export const CompanyGeneralInfo: React.FC<CompanyGeneralInfoProps> = ({
           {
             '--aug-border-bg': colourSchema,
             '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
-            '--aug-inlay-opacity': backdropBlur ? '0.3' : undefined,
+            '--aug-inlay-opacity': backdropBlur ? '0.3' : '0',
             '--aug-tl-inset1': `calc(${logoWidth} - 1.15rem)`,
             '--aug-tl-inset2': `calc(${logoHeight} - 1.15rem)`,
             '--aug-tl': '1.4rem',

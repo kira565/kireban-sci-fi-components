@@ -12,7 +12,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    colourSchema: '#f30',
     title: 'EXPLORE',
+    backdropBlur: true,
     onClick: () => {}
   }
 };

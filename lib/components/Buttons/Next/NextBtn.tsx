@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { createRef, useEffect, useRef } from 'react';
 
 export interface NextBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title?: string;
@@ -18,7 +18,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
   fontSize = '16px',
   isAnimationPermanent = false,
   style,
-  ref,
+  ref = createRef(),
   backdropBlur,
   ...props
 }) => {
@@ -61,7 +61,18 @@ export const NextBtn: React.FC<NextBtnProps> = ({
       timeline.current.play();
     }
     if (ref?.current) {
-      ref.current.classList.add('aug-glow');
+      gsap.killTweensOf(ref.current);
+
+      gsap.to(ref.current, {
+        filter: `
+          brightness(1.1)
+          drop-shadow(0 2px 6px ${colourSchema})
+          drop-shadow(0 2px 10px ${colourSchema})
+        `,
+        boxShadow: `0 0 4px 2px ${colourSchema}`,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
     }
   }
 
@@ -71,7 +82,14 @@ export const NextBtn: React.FC<NextBtnProps> = ({
       timeline.current.revert();
     }
     if (ref?.current) {
-      ref.current.classList.remove('aug-glow');
+      gsap.killTweensOf(ref.current); // остановка незавершённых glow-анимаций
+
+      gsap.to(ref.current, {
+        filter: 'none',
+        boxShadow: 'none',
+        duration: 0.3,
+        ease: 'power2.in'
+      });
     }
   }
 
@@ -102,7 +120,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
           '--aug-l-offset': '1px',
           '--aug-border-all': augBorderWidth,
           '--aug-inlay-bg': backdropBlur ? '#000000' : undefined,
-          '--aug-inlay-opacity': backdropBlur ? '0.1' : undefined,
+          '--aug-inlay-opacity': backdropBlur ? '0.1' : '0',
           '--aug-tr': '1.5rem',
           paddingLeft: '1.5rem',
           backdropFilter: backdropBlur ? 'blur(12px)' : undefined,
