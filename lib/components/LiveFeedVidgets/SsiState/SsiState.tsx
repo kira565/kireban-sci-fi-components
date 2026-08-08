@@ -145,7 +145,7 @@ export const SsiState: React.FC<SsiStateProps> = ({ width, height, appear }) => 
     });
 
     return () => resizeOvserver.disconnect();
-  }, []);
+  }, [panelRef]);
 
   return (
     <div

@@ -139,5 +139,5 @@ export function useBlinkingAppear(
     return () => {
       timeline.kill();
     };
-  }, [entities, onComplete, isAnimationStarted]);
+  }, [entities, onComplete, isAnimationStarted, firstAnimationDelay]);
 }

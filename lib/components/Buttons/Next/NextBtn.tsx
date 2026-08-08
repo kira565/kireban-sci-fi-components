@@ -54,7 +54,7 @@ export const NextBtn: React.FC<NextBtnProps> = ({
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [isAnimationPermanent, ref]);
 
   function onPlay() {
     if (!isAnimationPermanent) {

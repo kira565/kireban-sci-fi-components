@@ -133,7 +133,7 @@ export const LoadingBattery: React.FC<LoadingBatteryProps> = ({
       });
     }
     return () => observer.disconnect();
-  }, [appear, chargingCompleted, needHideAfterComplete]);
+  }, [appear, chargingCompleted, needHideAfterComplete, chargingDurationSec, panelRef]);
 
   return (
     <div

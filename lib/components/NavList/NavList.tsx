@@ -93,7 +93,7 @@ export const NavList: React.FC<NavListProps> & { NavOption: React.FC<NavOptionPr
     }
 
     return () => resizeOvserver.disconnect();
-  }, []);
+  }, [container]);
 
   return (
     <OptionListContext.Provider value={{ mobileView, onSelect, selected }}>
