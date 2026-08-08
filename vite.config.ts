@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react-swc';
@@ -51,5 +52,10 @@ export default defineConfig({
     postcss: {
       plugins: [tailwindcss]
     }
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./lib/setupTests.ts'],
+    passWithNoTests: true
   }
 });
