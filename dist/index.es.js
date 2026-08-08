@@ -2727,7 +2727,7 @@ function r7(o, L = !0, e, r) {
     }), () => {
       i.kill();
     };
-  }, [o, r, L]);
+  }, [o, r, L, e]);
 }
 const j0 = (o) => T4(() => {
   const L = (n, a) => {
@@ -2800,7 +2800,7 @@ const j0 = (o) => T4(() => {
         h.target.getBoundingClientRect().width < 200 ? l(!0) : l(!1);
     });
     return n.current && c.observe(n.current), () => c.disconnect();
-  }, []), /* @__PURE__ */ m.jsx(u4.Provider, { value: { mobileView: a, onSelect: r, selected: i }, children: /* @__PURE__ */ m.jsx("div", { ref: n, className: "flex flex-col gap-2", style: { width: o }, children: e }) });
+  }, [n]), /* @__PURE__ */ m.jsx(u4.Provider, { value: { mobileView: a, onSelect: r, selected: i }, children: /* @__PURE__ */ m.jsx("div", { ref: n, className: "flex flex-col gap-2", style: { width: o }, children: e }) });
 };
 n7.NavOption = i7;
 const a3 = () => /* @__PURE__ */ m.jsxs("div", { className: "w-[150px] h-[50px] flex flex-row align-top gap-[2px]", children: [
@@ -3060,7 +3060,7 @@ const a3 = () => /* @__PURE__ */ m.jsxs("div", { className: "w-[150px] h-[50px] 
         // Keep x within range
       }
     })), () => d.disconnect();
-  }, [e, r, i]), /* @__PURE__ */ m.jsx(
+  }, [e, r, i, n, l]), /* @__PURE__ */ m.jsx(
     "div",
     {
       ref: l,
@@ -3693,7 +3693,7 @@ const I7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
       },
       ease: "bounce.inOut"
     }), () => h.disconnect();
-  }, []), /* @__PURE__ */ m.jsxs(
+  }, [a]), /* @__PURE__ */ m.jsxs(
     "div",
     {
       ref: a,
@@ -3750,7 +3750,7 @@ const I7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     return () => {
       l.kill();
     };
-  }, [e]), /* @__PURE__ */ m.jsx(
+  }, [e, n]), /* @__PURE__ */ m.jsx(
     "div",
     {
       ref: n,
@@ -3893,7 +3893,7 @@ const I7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
         }
       }
     );
-  }, [e]), /* @__PURE__ */ m.jsxs(
+  }, [e, r]), /* @__PURE__ */ m.jsxs(
     "div",
     {
       ref: r,
@@ -4154,7 +4154,7 @@ const I7 = "data:image/svg+xml,%3csvg%20class='w-full%20h-full'%20viewBox='0%200
     return u.set(p("#arrow1"), { strokeOpacity: 0.2 }), u.set(p("#arrow2"), { strokeOpacity: 0.2 }), u.set(p("#arrow3"), { strokeOpacity: 0.2 }), u.to(p("#arrow3"), { strokeOpacity: 1 }).to(p("#arrow2"), { strokeOpacity: 1 }, "-=0.2").to(p("#arrow1"), { strokeOpacity: 1 }, "-=0.2").to(p("#arrow3"), { strokeOpacity: 0.2 }, "+=0.3").to(p("#arrow2"), { strokeOpacity: 0.2 }, "-=0.2").to(p("#arrow1"), { strokeOpacity: 0.2 }, "-=0.2"), i && s.current.play(), () => {
       u.kill();
     };
-  }, []);
+  }, [i, a]);
   function h() {
     i || s.current.play(), a != null && a.current && (j.killTweensOf(a.current), j.to(a.current, {
       filter: `

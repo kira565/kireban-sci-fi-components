@@ -32,7 +32,7 @@ export const Barcode: React.FC<BarcodeProps> = ({ fill = '#fa0', width, appear, 
     return () => {
       animation.kill();
     };
-  }, [appear]);
+  }, [appear, containerRef]);
 
   return (
     <div

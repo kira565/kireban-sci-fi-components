@@ -70,7 +70,7 @@ export const AvatarPanel: React.FC<AvatarPanelProps> = ({
         }
       }
     );
-  }, [appear]);
+  }, [appear, avatarContainer]);
 
   return (
     <div

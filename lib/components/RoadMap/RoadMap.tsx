@@ -8,8 +8,10 @@ export interface RoadMapItemProps {
   children: ReactNode;
 }
 
-const RoadmapItem: React.FC<RoadMapItemProps> = () => {};
+export const RoadMapItem: React.FC<RoadMapItemProps> = ({ children }) => {
+  return <div className="roadmap-item">{children}</div>;
+};
 
-export const RoadMap: React.FC<RoadMapProps> = () => {
-  return <div></div>;
+export const RoadMap: React.FC<RoadMapProps> = ({ children }) => {
+  return <div className="roadmap flex flex-col gap-2">{children}</div>;
 };
